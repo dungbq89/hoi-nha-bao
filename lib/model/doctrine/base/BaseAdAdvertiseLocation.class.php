@@ -36,7 +36,7 @@ abstract class BaseAdAdvertiseLocation extends sfDoctrineRecord
 {
     public function setTableDefinition()
     {
-        $this->setTableName('vtp_advertise_location');
+        $this->setTableName('ad_advertise_location');
         $this->hasColumn('name', 'string', 200, array(
              'type' => 'string',
              'notnull' => true,

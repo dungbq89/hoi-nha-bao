@@ -13,8 +13,8 @@ Doctrine_Manager::getInstance()->bindComponent('AdDocument', 'doctrine');
  * @property string $extension
  * @property string $document_number
  * @property timestamp $document_date
- * @property interger $priority
- * @property interger $category_id
+ * @property integer $priority
+ * @property integer $category_id
  * @property AdDocumentCategory $AdDocCategory
  * 
  * @method string             getName()            Returns the current record's "name" value
@@ -23,8 +23,8 @@ Doctrine_Manager::getInstance()->bindComponent('AdDocument', 'doctrine');
  * @method string             getExtension()       Returns the current record's "extension" value
  * @method string             getDocumentNumber()  Returns the current record's "document_number" value
  * @method timestamp          getDocumentDate()    Returns the current record's "document_date" value
- * @method interger           getPriority()        Returns the current record's "priority" value
- * @method interger           getCategoryId()      Returns the current record's "category_id" value
+ * @method integer            getPriority()        Returns the current record's "priority" value
+ * @method integer            getCategoryId()      Returns the current record's "category_id" value
  * @method AdDocumentCategory getAdDocCategory()   Returns the current record's "AdDocCategory" value
  * @method AdDocument         setName()            Sets the current record's "name" value
  * @method AdDocument         setDescription()     Sets the current record's "description" value
@@ -77,13 +77,13 @@ abstract class BaseAdDocument extends sfDoctrineRecord
              'notnull' => false,
              'length' => 25,
              ));
-        $this->hasColumn('priority', 'interger', 4, array(
-             'type' => 'interger',
+        $this->hasColumn('priority', 'integer', 5, array(
+             'type' => 'integer',
              'notnull' => false,
-             'length' => 4,
+             'length' => 5,
              ));
-        $this->hasColumn('category_id', 'interger', 8, array(
-             'type' => 'interger',
+        $this->hasColumn('category_id', 'integer', 8, array(
+             'type' => 'integer',
              'notnull' => false,
              'length' => 8,
              ));

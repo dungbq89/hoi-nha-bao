@@ -14,16 +14,20 @@ all:
 #    dashboard_name: Administration
     header:
       menu:
+        Phân hệ khác:
+          credentials: [admin]
+          dropdown:
+            Quản lý chuyên mục:
+              route: ad_category
+
         Quản trị hệ thống:
           credentials: [admin]
-          khdn: 1
           dropdown:
             Danh sách người dùng:
               route: sf_guard_user
             Danh sách quyền hạn:
               route: sf_guard_permission
-  khcn: 0
-  khdn: 1
+
   sf_captchagd:
      image_width:                180 # image width in pixels
      image_height:               27 # image height in pixels

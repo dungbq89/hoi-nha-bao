@@ -16,4 +16,21 @@ class AdUserSigninLockTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('AdUserSigninLock');
     }
+
+    public function resetUserSigninLock($user_name) {
+        $q = $this->createQuery()
+            ->delete()
+            ->where('user_name = ?', $user_name);
+
+        return $q->execute();
+    }
+
+    public function getCountUserSig($user_name, $time) {
+        $q = $this->createQuery()
+            ->where('user_name = ?', $user_name)
+            ->andwhere('created_time >=?', $time);
+
+        return $q->count();
+    }
+
 }

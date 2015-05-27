@@ -10,13 +10,13 @@ Doctrine_Manager::getInstance()->bindComponent('AdDocumentCategory', 'doctrine')
  * @property string $name
  * @property string $image_path
  * @property string $description
- * @property interger $priority
+ * @property integer $priority
  * @property Doctrine_Collection $DocumentCategory
  * 
  * @method string              getName()             Returns the current record's "name" value
  * @method string              getImagePath()        Returns the current record's "image_path" value
  * @method string              getDescription()      Returns the current record's "description" value
- * @method interger            getPriority()         Returns the current record's "priority" value
+ * @method integer             getPriority()         Returns the current record's "priority" value
  * @method Doctrine_Collection getDocumentCategory() Returns the current record's "DocumentCategory" collection
  * @method AdDocumentCategory  setName()             Sets the current record's "name" value
  * @method AdDocumentCategory  setImagePath()        Sets the current record's "image_path" value
@@ -50,10 +50,10 @@ abstract class BaseAdDocumentCategory extends sfDoctrineRecord
              'notnull' => false,
              'length' => 500,
              ));
-        $this->hasColumn('priority', 'interger', 4, array(
-             'type' => 'interger',
+        $this->hasColumn('priority', 'integer', 5, array(
+             'type' => 'integer',
              'notnull' => false,
-             'length' => 4,
+             'length' => 5,
              ));
     }
 

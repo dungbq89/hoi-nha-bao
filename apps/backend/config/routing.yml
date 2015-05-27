@@ -1,3 +1,12 @@
+ad_category:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AdCategory
+    module:               adManageCategory
+    prefix_path:          /adManageCategory
+    column:               id
+    with_wildcard_routes: true
+
 sf_guard_change_password:
   url:   /guard/change_password
   param: { module: sfGuardAuth, action: changePassword }

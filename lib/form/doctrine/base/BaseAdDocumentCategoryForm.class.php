@@ -31,7 +31,7 @@ abstract class BaseAdDocumentCategoryForm extends BaseFormDoctrine
       'name'        => new sfValidatorString(array('max_length' => 255)),
       'image_path'  => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'description' => new sfValidatorString(array('max_length' => 500, 'required' => false)),
-      'priority'    => new sfValidatorPass(array('required' => false)),
+      'priority'    => new sfValidatorInteger(array('required' => false)),
       'created_by'  => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('CreatedBy'), 'required' => false)),
       'updated_by'  => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('UpdatedBy'), 'required' => false)),
       'created_at'  => new sfValidatorDateTime(),
