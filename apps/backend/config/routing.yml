@@ -1,3 +1,12 @@
+ad_video:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AdVideo
+    module:               adVideo
+    prefix_path:          /adVideo
+    column:               id
+    with_wildcard_routes: true
+
 sf_guard_change_password:
   url:   /guard/change_password
   param: { module: sfGuardAuth, action: changePassword }
