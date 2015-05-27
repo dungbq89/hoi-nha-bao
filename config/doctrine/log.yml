@@ -1,0 +1,14 @@
+connection: slave
+options:
+  collate: utf8_general_ci
+  charset: utf8
+  type: InnoDB
+#Bảng ghi log hành động của người dùng
+AdUsersLog:
+  tableName: ad_users_log
+  columns:
+    user_name: { type: string(25), comment: "Tài khoản của người dùng front end"}
+    error_code: { type: string(255), comment: "Mã lỗi"}
+    error_desc: { type: string(255), comment: "Mô tả lỗi"}
+    content: { type: string(500), comment: "Nội dung ghi log"}
+    datetime: { type: timestamp(25), notnull: true, comment: "Thời gian ghi log"}
