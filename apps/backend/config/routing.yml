@@ -1,9 +1,16 @@
+
 ad_video:
   class: sfDoctrineRouteCollection
   options:
     model:                AdVideo
     module:               adVideo
     prefix_path:          /adVideo
+ad_category:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AdCategory
+    module:               adManageCategory
+    prefix_path:          /adManageCategory
     column:               id
     with_wildcard_routes: true
 

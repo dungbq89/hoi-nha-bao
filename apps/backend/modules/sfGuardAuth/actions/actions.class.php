@@ -25,7 +25,6 @@ class sfGuardAuthActions extends BasesfGuardAuthActions
   {
     $this->getUser()->signOut();
 
-    //tuanbm: them ham xoa cookie va reset SESSION
     session_unset();
     session_destroy();
 
@@ -38,7 +37,7 @@ class sfGuardAuthActions extends BasesfGuardAuthActions
 
   private function redirectLogin($request)
   {
-    //tuanbm code them 1 doan de dam bao luon login theo dung duong dan:  http://localhost/backend.php/login
+
     $domain = $request->getUriPrefix();
     $linkLogin = $domain . sfcontext::getinstance()->getRouting()->generate("sf_guard_signin");
     $this->redirect($linkLogin);
@@ -46,7 +45,7 @@ class sfGuardAuthActions extends BasesfGuardAuthActions
 
   public function executeSignin($request)
   {
-    //tuanbm code them 1 doan de dam bao luon login theo dung duong dan:  http://localhost/backend.php/login
+
     $domain = $request->getUriPrefix();
     $linkLogin = $domain . sfContext::getinstance()->getRouting()->generate("sf_guard_signin");
     if ($linkLogin !== $request->getUri()) {
@@ -62,7 +61,7 @@ class sfGuardAuthActions extends BasesfGuardAuthActions
     $this->form = new $class();
     $this->change_password = $change_password = $request->getParameter('change_password',0);
     if ($change_password == 1) {
-      $this->form = new VtSignInChangePasswordForm();
+      $this->form = new adSignInChangePasswordForm();
     }
     $form = $this->form;
     if ($request->isMethod('post')) {
@@ -84,7 +83,7 @@ class sfGuardAuthActions extends BasesfGuardAuthActions
             elseif(!$form['captcha']->hasError())//ngoctv them dieu kien check captcha truoc khi mo khoa user
             {
               sfGuardUserTable::getInstance()->setUnLockUser($username);
-              VtUserSigninLockTable::getInstance()->resetUserSigninLock($username);
+              adUserSigninLockTable::getInstance()->resetUserSigninLock($username);
             }
           }
           if ($form->isValid()) {
@@ -93,7 +92,7 @@ class sfGuardAuthActions extends BasesfGuardAuthActions
             if (!$sf_user->getPassUpdateAt() || (time() - strtotime($sf_user->getPassUpdateAt()) > sfConfig::get('app_passuser_lifetime', 7776000))) {
               //            $this->redirect('@sf_guard_user_vtManageUserInfo_edit?id='.$sf_user->getId());
               //            return;
-              $this->form = new VtSignInChangePasswordForm();
+              $this->form = new adSignInChangePasswordForm();
               $this->form->setUserName($username);
               $this->change_password = 1;
               $this->getUser()->setFlash('notice', $i18n->__('Mật khẩu của bạn đã quá 90 ngày không được thay đổi hoặc đã bị reset. Vui lòng thay đổi mật khẩu'));
@@ -101,7 +100,7 @@ class sfGuardAuthActions extends BasesfGuardAuthActions
             } else
             {
               $this->getUser()->signin($form->getValue('user'), $form->getValue('remember'));
-              VtUserSigninLockTable::getInstance()->resetUserSigninLock($username);
+              adUserSigninLockTable::getInstance()->resetUserSigninLock($username);
               // always redirect to a URL set in app.yml
               // or to the referer
               // or to the homepage
@@ -119,7 +118,7 @@ class sfGuardAuthActions extends BasesfGuardAuthActions
           {
             $time_now = time();
             $time_log = $time_now - 3600;
-            $failed_times = VtUserSigninLockTable::getInstance()->getCountUserSig($username, $time_log);
+            $failed_times = adUserSigninLockTable::getInstance()->getCountUserSig($username, $time_log);
             if ($failed_times >= 4) {
               // check du 5 lan hay chua
               // du 5 lan thong bao loi va insert vao
@@ -130,7 +129,7 @@ class sfGuardAuthActions extends BasesfGuardAuthActions
             }
             if ($form['username']->hasError()) {
               // insert vao vt-user-log
-              $vt_user_log = new VtUserSigninLock();
+              $vt_user_log = new adUserSigninLock();
               $vt_user_log->setUserName($username);
               $vt_user_log->setCreatedTime($time_now);
               $vt_user_log->save();
@@ -192,7 +191,7 @@ class sfGuardAuthActions extends BasesfGuardAuthActions
   
   public function executeChangePassword($request)
     {
-        $this->form = new VtGuardChangePasswordForm();
+        $this->form = new adGuardChangePasswordForm();
                  
         if ($request->isMethod(sfRequest::POST)) {
             $this->form->bind($request->getParameter($this->form->getName()));

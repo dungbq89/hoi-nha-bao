@@ -14,22 +14,22 @@ all:
 #    dashboard_name: Administration
     header:
       menu:
-        Các phân hệ khác:
+        Phân hệ khác:
           credentials: [admin]
           dropdown:
+            Quản lý chuyên mục:
+              route: ad_category
             Quản lý video:
               credentials: [[admin]]
               route: ad_video
+
         Quản trị hệ thống:
           credentials: [admin]
-          khdn: 1
           dropdown:
             Danh sách người dùng:
               route: sf_guard_user
             Danh sách quyền hạn:
               route: sf_guard_permission
-
-
 
   khcn: 0
   khdn: 1

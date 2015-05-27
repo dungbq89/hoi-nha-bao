@@ -38,7 +38,7 @@ abstract class BaseAdDocumentForm extends BaseFormDoctrine
       'extension'       => new sfValidatorString(array('max_length' => 25, 'required' => false)),
       'document_number' => new sfValidatorString(array('max_length' => 150, 'required' => false)),
       'document_date'   => new sfValidatorDateTime(array('required' => false)),
-      'priority'        => new sfValidatorPass(array('required' => false)),
+      'priority'        => new sfValidatorInteger(array('required' => false)),
       'category_id'     => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('AdDocCategory'), 'required' => false)),
       'created_by'      => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('CreatedBy'), 'required' => false)),
       'updated_by'      => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('UpdatedBy'), 'required' => false)),

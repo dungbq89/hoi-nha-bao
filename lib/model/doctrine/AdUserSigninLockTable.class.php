@@ -32,4 +32,5 @@ class AdUserSigninLockTable extends Doctrine_Table
 
         return $q->count();
     }
+
 }
