@@ -16,4 +16,21 @@ class AdVideoTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('AdVideo');
     }
+    public static function checkSlug($slug,$id)
+    {
+        $query=  AdVideoTable::getInstance()->createQuery()
+            ->select('slug')
+            ->where('slug=?',$slug)
+            ->andWhere('id<>?',$id);
+        return $query;
+    }
+
+    public static function updateDefault()
+    {
+        $query=AdVideoTable::getInstance()->createQuery()
+            ->update()
+            ->set('is_default', '?', VtCommonEnum::NUMBER_ZERO)
+            ->where('is_default=?',VtCommonEnum::NUMBER_ONE);
+        return $query->execute();
+    }
 }

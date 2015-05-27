@@ -16,9 +16,8 @@ class adVideoActions extends autoAdVideoActions
     protected function getPager()
     {
         $query = $this->buildQuery();
-        $query->andWhere('lang=?',sfContext::getInstance()->getUser()->getCulture());
         $pages = ceil($query->count() / $this->getMaxPerPage());
-        $pager = $this->configuration->getPager('AdxVideo');
+        $pager = $this->configuration->getPager('AdVideo');
         $pager->setQuery($query);
         $pager->setPage(($this->getPage() > $pages) ? $pages : $this->getPage());
         $pager->init();

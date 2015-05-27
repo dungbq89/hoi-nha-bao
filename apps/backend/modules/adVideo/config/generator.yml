@@ -32,10 +32,11 @@ generator:
       filter:
         display: [name]
       form:
-        class: vtpManageVideoFormAdmin
+        class: adVideoFormAdmin
         fields:
           name: {label: Tên sự kiện*}
           event_date: {label: Ngày sự kiện*}
+          description: {label: Mô tả}
       edit:
         fields:
           jwplayer: {label: Xem thử}

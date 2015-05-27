@@ -5,6 +5,8 @@ ad_video:
     model:                AdVideo
     module:               adVideo
     prefix_path:          /adVideo
+    column:               id
+    with_wildcard_routes: true
 ad_category:
   class: sfDoctrineRouteCollection
   options:
