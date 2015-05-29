@@ -1,3 +1,21 @@
+ad_photo:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AdPhoto
+    module:               adPhoto
+    prefix_path:          /adPhoto
+    column:               id
+    with_wildcard_routes: true
+
+ad_album:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AdAlbum
+    module:               adAlbum
+    prefix_path:          /adAlbum
+    column:               id
+    with_wildcard_routes: true
+
 
 ad_video:
   class: sfDoctrineRouteCollection

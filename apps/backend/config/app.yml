@@ -22,6 +22,9 @@ all:
             Quản lý video:
               credentials: [[admin]]
               route: ad_video
+            Quản lý album:
+              credentials: [[admin]]
+              route: ad_album
 
         Quản trị hệ thống:
           credentials: [admin]
