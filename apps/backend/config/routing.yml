@@ -1,3 +1,39 @@
+ad_contact:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AdContact
+    module:               adManageContact
+    prefix_path:          /adManageContact
+    column:               id
+    with_wildcard_routes: true
+
+ad_article_adArticlesPublish:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AdArticle
+    module:               adArticlesPublish
+    prefix_path:          /adArticlesPublish
+    column:               id
+    with_wildcard_routes: true
+
+ad_article_adArticlesAproved:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AdArticle
+    module:               adArticlesAproved
+    prefix_path:          /adArticlesAproved
+    column:               id
+    with_wildcard_routes: true
+
+ad_article:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AdArticle
+    module:               adArticlesEditor
+    prefix_path:          /adArticlesEditor
+    column:               id
+    with_wildcard_routes: true
+
 ad_category:
   class: sfDoctrineRouteCollection
   options:

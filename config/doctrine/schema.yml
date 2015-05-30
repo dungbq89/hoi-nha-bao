@@ -124,7 +124,7 @@ AdAdvertiseImage:
 
 AdAdvertiseLocation:
   #connection: doctrine
-  tableName: vtp_advertise_location
+  tableName: ad_advertise_location
   columns:
     name: { type: string(200), notnull: true, comment: 'Ten vi tri quang cao'}
     page: { type: string(200), comment: "Trang hiển thị"}
@@ -216,7 +216,7 @@ AdDocumentCategory:
     name: {type: string(255), notnull: true, comment: "Ho ten nguoi gop y"}
     image_path: {type: string(255), notnull: false, default: null}
     description: {type: string(500), notnull: false, default: null}
-    priority: {type: interger(4), notnull: false, default: null}
+    priority: {type: integer(5), notnull: false, default: null}
 #Quan ly van ban
 AdDocument:
   tableName: ad_document
@@ -230,8 +230,8 @@ AdDocument:
     extension: {type: string(25), notnull: false, default: null}
     document_number: {type: string(150), notnull: false, default: null}
     document_date: {type: timestamp(25), notnull: false, default: null}
-    priority: {type: interger(4), notnull: false, default: null}
-    category_id: {type: interger(8), notnull: false, default: null}
+    priority: {type: integer(5), notnull: false, default: null}
+    category_id: {type: integer(8), notnull: false, default: null}
   relations:
     AdDocCategory: { class: AdDocumentCategory, local: category_id, type: one, foreignAlias: DocumentCategory }
 #luu thong tin gop y nguoi dung

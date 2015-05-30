@@ -65,15 +65,15 @@ class AdCategoryPermissionTable extends Doctrine_Table
         return $arrPer;
     }
     //Lay danh sach category theo mang permission truyen vao
-    public static function getCatgoryIdByArrPermission($arrPermission, $type)
+    public static function getCatgoryIdByArrPermission($arrPermission)
     {
         $result = AdCategoryPermissionTable::getInstance()->createQuery()
             ->select('cp.category_id')
-            ->from('VtpCategoryPermission cp')
+            ->from('AdCategoryPermission cp')
             ->leftJoin('cp.CategoryPermission c ON c.id=cp.category_id')
             ->whereIn('permission_id', $arrPermission)
             ->andWhere('c.lang=?', sfContext::getInstance()->getUser()->getCulture())
-            ->andWhere('type=?',  $type)
+
             ->fetchArray();
         $arrCat = array();
         if(!empty($result)){

@@ -16,4 +16,29 @@ class AdArticlesRelatedTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('AdArticlesRelated');
     }
+
+    public static function deleteArticleRelated($article)
+    {
+        $query=  AdArticlesRelatedTable::getInstance()->createQuery()
+            ->delete()
+            ->where('article_id=?',$article);
+        return $query->execute();
+    }
+
+    public static function getArticleRelated($articleId){
+        $query=  AdArticlesRelatedTable::getInstance()->createQuery()
+            ->select('related_article_id')
+            ->where('article_id=?',$articleId);
+        $listArticle=$query->execute();
+        $strItem='';
+        foreach ($listArticle as $item){
+            $strItem .=$item->related_article_id .',';
+        }
+        if ($strItem!=''){
+            if(VtHelper::endsWith($strItem,',')){
+                $strItem= substr($strItem, 0 ,strlen($strItem)-1);
+            }
+        }
+        return $strItem;
+    }
 }
