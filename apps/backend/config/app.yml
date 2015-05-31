@@ -30,6 +30,22 @@ all:
               route: ad_category
             Trang liên hệ:
               route: ad_contact
+            Quản lý video:
+              credentials: [[admin]]
+              route: ad_video
+            Quản lý album:
+              credentials: [[admin]]
+              route: ad_album
+            Quản lý nội dung:
+              route: ad_html
+            Quản lý thông tin phản hồi:
+              route: ad_comment
+            Danh sách hội viên:
+              route: ad_personal
+            Vị trí quảng cao:
+              route: ad_advertise_location
+            Quản lý Banner - quảng cáo:
+              route: ad_advertise
         Quản trị hệ thống:
           credentials: [admin]
           dropdown:

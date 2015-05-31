@@ -1,3 +1,61 @@
+ad_personal_import:
+  url:   /adManagePersonal/import
+  param: { module: adManagePersonal, action: import }
+ad_comment:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AdComment
+    module:               adManageComment
+    prefix_path:          /adManageComment
+    column:               id
+    with_wildcard_routes: true
+
+ad_advertise_image:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AdAdvertiseImage
+    module:               adManageAdvertiseImage
+    prefix_path:          /adManageAdvertiseImage
+    column:               id
+    with_wildcard_routes: true
+
+ad_advertise:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AdAdvertise
+    module:               adManageAdvertise
+    prefix_path:          /adManageAdvertise
+    column:               id
+    with_wildcard_routes: true
+
+ad_advertise_location:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AdAdvertiseLocation
+    module:               adManageLocation
+    prefix_path:          /adManageLocation
+    column:               id
+    with_wildcard_routes: true
+
+ad_personal:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AdPersonal
+    module:               adManagePersonal
+    prefix_path:          /adManagePersonal
+    column:               id
+    with_wildcard_routes: true
+
+ad_html:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AdHtml
+    module:               adManageHtml
+    prefix_path:          /adManageHtml
+    column:               id
+    with_wildcard_routes: true
+
+
 ad_contact:
   class: sfDoctrineRouteCollection
   options:
@@ -34,6 +92,33 @@ ad_article:
     column:               id
     with_wildcard_routes: true
 
+ad_photo:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AdPhoto
+    module:               adPhoto
+    prefix_path:          /adPhoto
+    column:               id
+    with_wildcard_routes: true
+
+ad_album:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AdAlbum
+    module:               adAlbum
+    prefix_path:          /adAlbum
+    column:               id
+    with_wildcard_routes: true
+
+
+ad_video:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AdVideo
+    module:               adVideo
+    prefix_path:          /adVideo
+    column:               id
+    with_wildcard_routes: true
 ad_category:
   class: sfDoctrineRouteCollection
   options:

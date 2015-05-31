@@ -16,4 +16,30 @@ class AdHtmlTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('AdHtml');
     }
+
+    public static function checkSlug($slug,$id)
+    {
+        $query=  AdHtmlTable::getInstance()->createQuery()
+            ->select('slug')
+            ->where('slug=?',$slug)
+            ->andWhere('id<>?',$id);
+        return $query;
+    }
+
+    public static  function getAllHtml($lang,$portalId)
+    {
+        $query=  AdHtmlTable::getInstance()->createQuery()
+            ->select('slug, prefix_path')
+            ->where('is_active=?',VtCommonEnum::NUMBER_ONE)
+            ->andWhere('lang=?',$lang);
+        return $query->execute();
+    }
+
+    public static function getHtmlByHtml($slug,$portalId){
+        $query=  AdHtmlTable::getInstance()->createQuery()
+            ->where('is_active=?',VtCommonEnum::NUMBER_ONE)
+            ->andWhere('slug=?',$slug)
+            ->andWhere('lang=?',sfContext::getInstance()->getUser()->getCulture());
+        return $query->fetchOne();
+    }
 }

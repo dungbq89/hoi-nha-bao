@@ -21,7 +21,9 @@ all:
   album_images: album
   video_images: video
 
-  upload_media_file: e:/Data_E/VietTel/VTP2/cms/web/uploads
+  upload_media_file: F:/code/hnb/hoi-nha-bao/web/uploads
+  url_media_file: http://localhost:8086/uploads
+  url_media_default_file: http://localhost:8086/images/default-image.jpg
   #upload_media_file: /uploads
 
   url_media_file: /uploads

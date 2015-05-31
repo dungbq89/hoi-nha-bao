@@ -16,4 +16,27 @@ class AdAlbumTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('AdAlbum');
     }
+
+    public static function getALbumById($id){
+        $q=AdAlbumTable::getInstance()->createQuery()
+            ->where('id=?',$id);
+        return $q->fetchOne();
+    }
+    public static function checkSlug($slug,$id)
+    {
+        $query=  AdAlbumTable::getInstance()->createQuery()
+            ->select('slug')
+            ->where('slug=?',$slug)
+            ->andWhere('id<>?',$id);
+        return $query;
+    }
+
+    //cap nhat gia tri defaul
+    public static function updateDefault($id){
+        $query = AdAlbumTable::getInstance()->createQuery()
+            ->update()
+            ->set('is_default','?',  VtCommonEnum::NUMBER_ZERO)
+            ->where('id<>?',$id);
+        $query->execute();
+    }
 }
