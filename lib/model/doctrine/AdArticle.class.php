@@ -12,5 +12,17 @@
  */
 class AdArticle extends BaseAdArticle
 {
+    public function getStatusName(){
+        $nameArr = array(
+            -1=>'Bản nháp',
+            0=>'Đợi duyệt',
+            1=>'Đã duyệt',
+            2=>'Đã đăng'
+        );
+        if($this->getIsActive()!=null){
+            return $nameArr[$this->getIsActive()];
+        }
+        return false;
 
+    }
 }

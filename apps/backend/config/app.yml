@@ -14,11 +14,22 @@ all:
 #    dashboard_name: Administration
     header:
       menu:
+        Phân hệ Tin tức:
+          credentials: [admin]
+          dropdown:
+            Quản lý tin đợi duyệt:
+              route: ad_article
+            Quản lý tin đợi đăng:
+              route: ad_article_adArticlesAproved
+            Quản lý tin đã đăng:
+              route: ad_article_adArticlesPublish
         Phân hệ khác:
           credentials: [admin]
           dropdown:
             Quản lý chuyên mục:
               route: ad_category
+            Trang liên hệ:
+              route: ad_contact
             Quản lý video:
               credentials: [[admin]]
               route: ad_video
@@ -31,7 +42,16 @@ all:
             Quản lý văn bản:
               credentials: [[admin]]
               route: ad_document
-
+            Quản lý nội dung:
+              route: ad_html
+            Quản lý thông tin phản hồi:
+              route: ad_comment
+            Danh sách hội viên:
+              route: ad_personal
+            Vị trí quảng cao:
+              route: ad_advertise_location
+            Quản lý Banner - quảng cáo:
+              route: ad_advertise
         Quản trị hệ thống:
           credentials: [admin]
           dropdown:
@@ -40,8 +60,6 @@ all:
             Danh sách quyền hạn:
               route: sf_guard_permission
 
-  khcn: 0
-  khdn: 1
   sf_captchagd:
      image_width:                180 # image width in pixels
      image_height:               27 # image height in pixels

@@ -16,4 +16,41 @@ class AdAdvertiseLocationTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('AdAdvertiseLocation');
     }
+
+    public function getAllForSelectionBoxQuery() {
+        return $this->createQuery('a')
+            ->select('a.id, a.name')
+            ->orderBy('a.priority asc, a.name asc');
+    }
+
+    public static function getLocationByPortal() {
+        return AdAdvertiseLocationTable::getInstance()->createQuery()
+            ->select('id, name')
+            ->orderBy('priority asc, name asc')->fetchArray();
+    }
+
+    public function getAllForSelectionBox() {
+        return $this->getAllForSelectionBoxQuery()
+            ->execute();
+    }
+
+    public static function getAdvertiseLocationByID($advertisId) {
+        return AdAdvertiseLocationTable::getInstance()->createQuery()
+            ->select('id, name')
+            ->orderBy('priority asc')
+            ->where('advertise_id = ?', $advertisId)
+            ->execute();
+    }
+
+    //Cập nhật banner quảng cáo vào vị trí quảng cáo
+    public static function updateLocationAdvertise($advertisId, $arrLocaltionId) {
+
+        $query2 = AdAdvertiseLocationTable::getInstance()->createQuery()
+            ->update()
+            ->set('advertise_id', $advertisId)
+            ->whereIn('id', $arrLocaltionId);
+
+        return $query2->execute();
+    }
+
 }

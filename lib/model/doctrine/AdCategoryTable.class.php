@@ -73,7 +73,7 @@ class AdCategoryTable extends Doctrine_Table
         }
     }
 
-    public static function getCategoryByType($listChild)
+    public static function getCategoryByType($listChild,$is_category=false)
     {
         $query = AdCategoryTable::getInstance()->createQuery()
             ->select('name, parent_id, level, priority')
@@ -82,6 +82,9 @@ class AdCategoryTable extends Doctrine_Table
             ->orderby('priority asc');
         if ($listChild != '') {
             $query->andWhereNotIn('id', explode(',', $listChild));
+        }
+        if($is_category){
+            $query->andWhere('is_category=1');
         }
         $arrCat = $query->execute();
         $arrResult = array();
