@@ -1,3 +1,21 @@
+ad_document:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AdDocument
+    module:               adDocument
+    prefix_path:          /adDocument
+    column:               id
+    with_wildcard_routes: true
+
+ad_document_category:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AdDocumentCategory
+    module:               adDocumentCategory
+    prefix_path:          /adDocumentCategory
+    column:               id
+    with_wildcard_routes: true
+
 ad_photo:
   class: sfDoctrineRouteCollection
   options:

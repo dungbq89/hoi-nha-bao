@@ -25,6 +25,12 @@ all:
             Quản lý album:
               credentials: [[admin]]
               route: ad_album
+            Quản lý chuyên mục văn bản:
+              credentials: [[admin]]
+              route: ad_document_category
+            Quản lý văn bản:
+              credentials: [[admin]]
+              route: ad_document
 
         Quản trị hệ thống:
           credentials: [admin]

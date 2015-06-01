@@ -21,8 +21,8 @@ generator:
         is_active: {label: Trạng thái}
         is_default: {label: Mặc định}
       list:
-          title: Danh sách Album
-          display: [name, event_date, priority, is_active]
+        title: Danh sách Album
+        display: [name, event_date, priority, is_active]
       filter:  
         display: [name]
 #        class: vtpAlbumFilterAdmin
