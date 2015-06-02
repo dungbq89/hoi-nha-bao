@@ -12,9 +12,14 @@ default:
     #language:     en
     #robots:       index, follow
 
-  stylesheets:    [main.css]
+  stylesheets:
+    - reset.css
+    - style.css
+    - jquery.mCustomScrollbar.css
 
-  javascripts:    []
+  javascripts:
+    - jquery.min.js
+    - jquery.mCustomScrollbar.concat.min.js
 
   has_layout:     true
   layout:         layout
