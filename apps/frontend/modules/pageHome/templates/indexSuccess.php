@@ -8,75 +8,9 @@
 
 <div class="box-hot">
     <div class="box-hot-news">
-        <div class="item item-hot-news">
-            <a href="#" title="">
-                <img class="img-news" src="img/img-hot-new.png" alt="">
-                <h4 class="title">Trung quốc gửi công hàm khiếu nại tới chính phủ Mỹ<img class="icon-new"
-                                                                                         src="img/new.gif"/></h4>
-            </a>
+        <?php include_component('moduleArticle','newArticle',array('limit'=>10,'att'=>1)) ?>
+        <?php include_component('moduleVideo','hotVideo',array('limit'=>5)) ?>
 
-            <p>TTO - Ngày 25-5, chính quyền Trung Quốc chính thức phản đối vụ máy bay Mỹ tuần tra
-                biển Đông. Tờ Thời Báo Hoàn Cầu thậm chí hùng hổ đòi ...
-            </p>
-
-        </div>
-        <div class="item item-lastest-news">
-            <h3 class="title">Tin nổi bật</h3>
-            <ul class="box-scroll mCustomScrollbar">
-                <li>
-                    <a href="" title="">Gần 100 công nhân nhiễm độc khí ga</a>
-                </li>
-                <li>
-                    <a href="" title="">‘Tra tấn’ phụ xe nghi ngờ ăn bớt tiền<img class="icon-new" src="img/new.gif"
-                                                                                  alt=""> </a>
-                </li>
-                <li>
-                    <a href="" title="">Trung Quốc công bố sách trắng quốc phòng 2015 </a>
-                </li>
-                <li>
-                    <a href="" title="">Gần 100 công nhân nhiễm độc khí ga</a>
-                </li>
-                <li>
-                    <a href="" title="">‘Tra tấn’ phụ xe nghi ngờ ăn bớt tiền<img src="img/new.gif" alt=""> </a>
-                </li>
-                <li>
-                    <a href="" title="">Trung Quốc công bố sách trắng quốc phòng 2015 </a>
-                </li>
-                <li>
-                    <a href="" title="">‘Tra tấn’ phụ xe nghi ngờ ăn bớt tiền<img class="icon-new" src="img/new.gif"
-                                                                                  alt=""> </a>
-                </li>
-                <li>
-                    <a href="" title="">Trung Quốc công bố sách trắng quốc phòng 2015 </a>
-                </li>
-                <li>
-                    <a href="" title="">‘Tra tấn’ phụ xe nghi ngờ ăn bớt tiền<img src="img/new.gif" alt=""> </a>
-                </li>
-                <li>
-                    <a href="" title="">Trung Quốc công bố sách trắng quốc phòng 2015 </a>
-                </li>
-                <li>
-                    <a href="" title="">‘Tra tấn’ phụ xe nghi ngờ ăn bớt tiền<img class="icon-new" src="img/new.gif"
-                                                                                  alt=""> </a>
-                </li>
-                <li>
-                    <a href="" title="">Trung Quốc công bố sách trắng quốc phòng 2015 </a>
-                </li>
-            </ul>
-        </div>
-        <div class="item item-video">
-            <div class="video-play">
-                <img class="img-responsive" src="img/img-video.png" alt="">
-                <span class="icon-play"></span>
-            </div>
-
-            <div class="more-video">
-                <a href="" title="">Video Phó bí thư tỉnh Lâm Đồng bày tỏ quan điểm về chính sách khuyến nông</a>
-                <a href="" title="">Quốc hội Việt Nam chính thức thông qua điều lệ hợp pháp - hiến pháp<img
-                        class="icon-new" src="img/new.gif" alt=""></a>
-                <a href="" title="">Người dân thấy bớt thêm lỗi no về giá xăng đã tăng nhẹ</a>
-            </div>
-        </div>
     </div>
     <div class="clear"></div>
     <div class="line"></div>

@@ -1,0 +1,194 @@
+table {
+    *border-collapse: collapse; /* IE7 and lower */
+    border-spacing: 0;
+
+}
+.box-article-detail table.bordered{
+    width: 625px;
+}
+.box-article-detail table.bordered th.td-3{
+    width: 70px;
+    text-align: center;
+}
+.news-tel-main .bordered{
+    width: 710px;
+    margin-left: 20px;
+}
+.specifications-info table,
+.bordered-info,
+.bordered-selfcare,
+.bordered{
+    width: 100%;
+}
+.bordered-info td.td-label{
+    width: 105px;
+}
+.bordered-selfcare{
+    margin-top: 15px;
+}
+.container-fluid td,
+.specifications-info td{
+text-align:left;
+}
+.bordered-selfcare,
+.bordered {
+    font-size: 12px;
+    border-bottom: 1px solid #ddd;
+}
+.bordered {
+    margin-bottom: 47px;
+}
+.specifications-info,
+.container-fluid ,
+.bordered-selfcare {
+    margin-bottom: 25px;
+}
+.bordered-selfcare tr:hover,
+.bordered tr:hover {
+    background: #fbf8e9;
+    -o-transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+.container-fluid  table td,
+.specifications-info td{
+    border: 1px solid #ddd;
+}
+.container-fluid  table  th,
+ .specifications-info th,
+.bordered-selfcare td,.bordered-selfcare th,
+.bordered td, .bordered th {
+    border-left: 1px solid #ddd;
+    padding: 0px;
+    text-align: left;
+}
+.container-fluid  table  th,
+.specifications-info th,
+.bordered th, .bordered-selfcare th{
+    text-align: center;
+    color: #fff;
+    font-weight: normal;
+    vertical-align: middle;
+}
+.container-fluid  table  td,
+.specifications-info td{
+	padding: 5px 10px;
+    color: #58595b;
+}
+.news-tel-main .bordered td{
+    padding: 5px 0px;
+    text-align: center;
+    color: #58595b;
+}
+.box-article-detail .bordered td{
+    text-align: center;
+}
+
+ .bordered-selfcare td,
+ .box-article-detail .bordered td{
+     padding: 10px 0px;
+
+     color: #58595b;
+ }
+ tr.tr-bold td{
+     font-weight: bold;
+ }
+.bordered-info td{
+    padding: 10px 12px;
+    text-align: left;
+    color: #58595b;
+    font-size: 13px;
+}
+
+.bordered-selfcare td{
+    line-height: 20px;
+    padding: 5px 3px 5px 5px;
+}
+.bordered-selfcare th,
+.box-article-detail .bordered th{
+    height: 35px;
+    line-height: 17px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+td.txt-center{
+    text-align: center;
+}
+.specifications-info th.th-colspan,
+.bordered th.th-colspan{
+    padding: 8px 0px;
+    background-color: #acacac;
+}
+.bordered th.td-8{
+    width:56px;
+}
+.bordered th.th-border{
+    border-left:1px solid #ccc;
+}
+.bordered th.td-1{
+    width:32px;
+    border: none;
+}
+.bordered th.td-2{
+    width:68px;
+}
+.bordered th.td-5{
+    width:65px;
+}
+.bordered th.td-6{
+    width:65px;
+}
+.bordered th.td-7{
+    width:65px;
+}
+.bordered th.td-tk{
+    width:75px;
+    background-color: #fff;
+    color: #404041;
+    padding: 4px 0px;
+    border-bottom:1px solid #ddd;
+}
+.bordered-info tr:nth-child(2n) td,
+.bordered-selfcare tr:nth-child(2n) td,
+.bordered tr:nth-child(2n) td{
+    background-color: #ebebeb;
+}
+.bordered-selfcare th,
+.bordered th {
+    background-color: #f7941e;
+    color: #231f20;
+}
+.bordered-selfcare td:first-child, .bordered-selfcare th:first-child,
+.bordered td:first-child, .bordered th:first-child {
+    border-left: none;
+}
+
+/*----------------------*/
+.zebra td, .zebra th {
+    border-bottom: 1px solid #f2f2f2;
+}
+.zebra tbody tr:nth-child(even) {
+    background: #f5f5f5;
+    -webkit-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+    -moz-box-shadow:0 1px 0 rgba(255,255,255,.8) inset;
+    box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+}
+.zebra th {
+    text-align: left;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    border-bottom: 1px solid #ccc;
+    background-color: #eee;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#eee));
+    background-image: -webkit-linear-gradient(top, #f5f5f5, #eee);
+    background-image:    -moz-linear-gradient(top, #f5f5f5, #eee);
+    background-image:     -ms-linear-gradient(top, #f5f5f5, #eee);
+    background-image:      -o-linear-gradient(top, #f5f5f5, #eee);
+    background-image:         linear-gradient(top, #f5f5f5, #eee);
+}
+.zebra tfoot td {
+    border-bottom: 0;
+    border-top: 1px solid #fff;
+    background-color: #f1f1f1;
+}

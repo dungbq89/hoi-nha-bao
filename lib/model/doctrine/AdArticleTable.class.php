@@ -80,7 +80,7 @@ class AdArticleTable extends Doctrine_Table
         return self::getActiveArticleQuery()
             ->select('a.title, a.alttitle, a.header, a.image_path, a.slug, a.published_time')
             ->andWhere('a.attributes & ?=?', array($attributes, $attributes))
-            ->orderBy('a.priority, a.published_time desc')
+            ->orderBy('a.published_time desc')
             ->limit($limit)
             ->fetchArray();
     }
@@ -94,7 +94,7 @@ class AdArticleTable extends Doctrine_Table
 
     public static function getArticleBySlug($slug)
     {
-        return self::getActiveArticleQuery($portalId)
+        return self::getActiveArticleQuery()
             ->addWhere('a.slug=?', $slug)
             ->fetchOne();
     }

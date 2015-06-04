@@ -4,3 +4,5 @@ advertise_template:
   bottom: {value: bottom, alias: "Mẫu hiển thị cuối trang"}
 view_page:
   homepage: {value: homepage, alias: "Trang chủ"}
+promotion_attributes:
+  new: {value: 1, alias: "Tin mới"}
