@@ -70,7 +70,7 @@ class AdArticleTable extends Doctrine_Table
     {
         return AdArticleTable::getInstance()->createQuery('a')
             ->where('a.is_active=?', VtCommonEnum::NUMBER_TWO)
-            ->andWhere('a.published_time <= ?', date('Y-m-d H:i:s', time()))
+            ->andWhere('a.published_time is null or a.published_time <= ?', date('Y-m-d H:i:s', time()))
             ->andWhere('(a.expiredate_time is null or a.expiredate_time >= ?)', date('Y-m-d H:i:s', time()))
             ->andWhere('a.lang=?', sfContext::getInstance()->getUser()->getCulture());
     }
