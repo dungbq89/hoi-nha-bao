@@ -28,6 +28,8 @@ class AdDocumentCategoryAdminForm extends BaseAdDocumentCategoryForm
                 'template' => '<div>%file%<br />%input%</div>',
             )),
             'priority' => new sfWidgetFormInputText(),
+            'is_active'  => new sfWidgetFormInputCheckbox(),
+            'is_home'  => new sfWidgetFormInputCheckbox(),
         ));
         $this->setValidators(array(
             'id' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
@@ -48,6 +50,8 @@ class AdDocumentCategoryAdminForm extends BaseAdDocumentCategoryForm
                 )
             ),
             'priority' => new sfValidatorInteger(array('required' => false, "min" => 0), array('min' => $i18n->__('Giá trị không phải là số âm'), 'invalid' => $i18n->__('Giá trị phải là kiểu số nguyên dương'))),
+            'is_active'  => new sfValidatorBoolean(array('required' => false)),
+            'is_home'  => new sfValidatorBoolean(array('required' => false)),
         ));
         $this->widgetSchema->setNameFormat('ad_document_category[%s]');
     }

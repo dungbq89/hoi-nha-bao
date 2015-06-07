@@ -24,6 +24,7 @@ generator:
         priority: {label: Vị trí}
         is_category: {label: Chuyên mục}
         is_active: { label: Trạng thái}
+        is_hot: { label: Hiển thị cột phải}
         link: { label: Đường dẫn}
       list:
         title: Danh sách chuyên mục tin tức
@@ -50,7 +51,7 @@ generator:
           priority: {label: Vị trí*}
           image_path: {label: Ảnh đại diện}
           permission: { label: Phân quyền *}
-        display: [name, parent_id, description, image_path, link, priority, is_active,is_category, permission, slug]
+        display: [name, parent_id, description, image_path, link, priority, is_active,is_category, is_hot, permission, slug]
       edit:
         title: Chỉnh sửa chuyên mục
       new:

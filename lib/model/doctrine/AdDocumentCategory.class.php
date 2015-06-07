@@ -12,5 +12,7 @@
  */
 class AdDocumentCategory extends BaseAdDocumentCategory
 {
-
+    public function getDocumentByCatId(){
+        return AdDocumentTable::getDocumentByCatId($this->getId(), 5)->fetchArray();
+    }
 }

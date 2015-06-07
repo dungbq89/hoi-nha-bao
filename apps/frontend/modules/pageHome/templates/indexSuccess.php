@@ -22,6 +22,8 @@
 
         </div>
         <div class="col-right">
+            <?php include_component('moduleDocument','hotDocument',array('limit'=>3)) ?>
+
             <div class="box-mod">
                 <h3 class="title"><span class="label">Góc thư giãn &raquo;</span></h3>
 
