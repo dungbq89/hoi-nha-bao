@@ -15,6 +15,8 @@ Doctrine_Manager::getInstance()->bindComponent('AdDocument', 'doctrine');
  * @property timestamp $document_date
  * @property integer $priority
  * @property integer $category_id
+ * @property boolean $is_home
+ * @property boolean $is_active
  * @property AdDocumentCategory $AdDocCategory
  * 
  * @method string             getName()            Returns the current record's "name" value
@@ -25,6 +27,8 @@ Doctrine_Manager::getInstance()->bindComponent('AdDocument', 'doctrine');
  * @method timestamp          getDocumentDate()    Returns the current record's "document_date" value
  * @method integer            getPriority()        Returns the current record's "priority" value
  * @method integer            getCategoryId()      Returns the current record's "category_id" value
+ * @method boolean            getIsHome()          Returns the current record's "is_home" value
+ * @method boolean            getIsActive()        Returns the current record's "is_active" value
  * @method AdDocumentCategory getAdDocCategory()   Returns the current record's "AdDocCategory" value
  * @method AdDocument         setName()            Sets the current record's "name" value
  * @method AdDocument         setDescription()     Sets the current record's "description" value
@@ -34,6 +38,8 @@ Doctrine_Manager::getInstance()->bindComponent('AdDocument', 'doctrine');
  * @method AdDocument         setDocumentDate()    Sets the current record's "document_date" value
  * @method AdDocument         setPriority()        Sets the current record's "priority" value
  * @method AdDocument         setCategoryId()      Sets the current record's "category_id" value
+ * @method AdDocument         setIsHome()          Sets the current record's "is_home" value
+ * @method AdDocument         setIsActive()        Sets the current record's "is_active" value
  * @method AdDocument         setAdDocCategory()   Sets the current record's "AdDocCategory" value
  * 
  * @package    Vt_Portals
@@ -86,6 +92,18 @@ abstract class BaseAdDocument extends sfDoctrineRecord
              'type' => 'integer',
              'notnull' => false,
              'length' => 8,
+             ));
+        $this->hasColumn('is_home', 'boolean', null, array(
+             'type' => 'boolean',
+             'notnull' => true,
+             'default' => false,
+             'comment' => 'Hiển thị trang chủ (0: không hiển thị, 1: hiển thị)',
+             ));
+        $this->hasColumn('is_active', 'boolean', null, array(
+             'type' => 'boolean',
+             'notnull' => true,
+             'default' => false,
+             'comment' => 'Trạng thái hiển thị (0: Chưa kích hoạt, 1: đã kích hoạt)',
              ));
     }
 

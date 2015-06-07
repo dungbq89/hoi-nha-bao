@@ -3,47 +3,16 @@ table {
     border-spacing: 0;
 
 }
-.box-article-detail table.bordered{
-    width: 625px;
-}
-.box-article-detail table.bordered th.td-3{
-    width: 70px;
-    text-align: center;
-}
-.news-tel-main .bordered{
-    width: 710px;
-    margin-left: 20px;
-}
-.specifications-info table,
-.bordered-info,
-.bordered-selfcare,
 .bordered{
-    width: 100%;
+    width: 655px;
 }
-.bordered-info td.td-label{
-    width: 105px;
-}
-.bordered-selfcare{
-    margin-top: 15px;
-}
-.container-fluid td,
-.specifications-info td{
+.bordered td{
 text-align:left;
 }
-.bordered-selfcare,
 .bordered {
     font-size: 12px;
     border-bottom: 1px solid #ddd;
 }
-.bordered {
-    margin-bottom: 47px;
-}
-.specifications-info,
-.container-fluid ,
-.bordered-selfcare {
-    margin-bottom: 25px;
-}
-.bordered-selfcare tr:hover,
 .bordered tr:hover {
     background: #fbf8e9;
     -o-transition: all 0.1s ease-in-out;
@@ -52,25 +21,23 @@ text-align:left;
     -ms-transition: all 0.1s ease-in-out;
     transition: all 0.1s ease-in-out;
 }
-.container-fluid  table td,
 .specifications-info td{
     border: 1px solid #ddd;
 }
-.container-fluid  table  th,
- .specifications-info th,
-.bordered-selfcare td,.bordered-selfcare th,
+
 .bordered td, .bordered th {
-    border-left: 1px solid #ddd;
+    border-left: 1px solid #f1f1f1;
     padding: 0px;
     text-align: left;
 }
-.container-fluid  table  th,
-.specifications-info th,
-.bordered th, .bordered-selfcare th{
-    text-align: center;
+
+.bordered th{
     color: #fff;
     font-weight: normal;
     vertical-align: middle;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 5px;
 }
 .container-fluid  table  td,
 .specifications-info td{
@@ -102,9 +69,9 @@ text-align:left;
     font-size: 13px;
 }
 
-.bordered-selfcare td{
+.bordered td{
     line-height: 20px;
-    padding: 5px 3px 5px 5px;
+    padding: 5px 5px 5px 5px;
 }
 .bordered-selfcare th,
 .box-article-detail .bordered th{
@@ -125,7 +92,7 @@ td.txt-center{
     width:56px;
 }
 .bordered th.th-border{
-    border-left:1px solid #ccc;
+    border-left:1px solid #f9f9f9;
 }
 .bordered th.td-1{
     width:32px;
@@ -150,45 +117,13 @@ td.txt-center{
     padding: 4px 0px;
     border-bottom:1px solid #ddd;
 }
-.bordered-info tr:nth-child(2n) td,
-.bordered-selfcare tr:nth-child(2n) td,
 .bordered tr:nth-child(2n) td{
-    background-color: #ebebeb;
+    background-color: #fcfcfc;
 }
-.bordered-selfcare th,
 .bordered th {
     background-color: #f7941e;
     color: #231f20;
 }
-.bordered-selfcare td:first-child, .bordered-selfcare th:first-child,
 .bordered td:first-child, .bordered th:first-child {
     border-left: none;
-}
-
-/*----------------------*/
-.zebra td, .zebra th {
-    border-bottom: 1px solid #f2f2f2;
-}
-.zebra tbody tr:nth-child(even) {
-    background: #f5f5f5;
-    -webkit-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
-    -moz-box-shadow:0 1px 0 rgba(255,255,255,.8) inset;
-    box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
-}
-.zebra th {
-    text-align: left;
-    text-shadow: 0 1px 0 rgba(255,255,255,.5);
-    border-bottom: 1px solid #ccc;
-    background-color: #eee;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#eee));
-    background-image: -webkit-linear-gradient(top, #f5f5f5, #eee);
-    background-image:    -moz-linear-gradient(top, #f5f5f5, #eee);
-    background-image:     -ms-linear-gradient(top, #f5f5f5, #eee);
-    background-image:      -o-linear-gradient(top, #f5f5f5, #eee);
-    background-image:         linear-gradient(top, #f5f5f5, #eee);
-}
-.zebra tfoot td {
-    border-bottom: 0;
-    border-top: 1px solid #fff;
-    background-color: #f1f1f1;
 }

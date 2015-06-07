@@ -18,6 +18,8 @@ generator:
         image_path: {label: Ảnh đại diện}
         description: {label: Mô tả}
         priority: {label: Thứ tự}
+        is_home: {label: Trang chủ}
+        is_active: {label: Hiển thị}
       list:
         title: Danh sách chuyên mục văn bản
         display: [name, description, priority]
@@ -25,7 +27,7 @@ generator:
         display: [name]
       form:
         class: AdDocumentCategoryAdminForm
-        display: [name, image_path, description, priority]
+        display: [name, image_path, description, priority, is_home, is_active]
         fields:
           name: {label: Tên chuyên mục *}
       edit:

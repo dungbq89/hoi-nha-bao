@@ -24,5 +24,17 @@ class moduleArticleComponents extends sfComponents
         }
     }
 
+    public function executeCategoryNews(sfWebRequest $request){
+        $limit = $this->getVar('limit');
+        if (!isset($limit))
+            $limit = 10;
+        $categories = AdCategoryTable::getCategoryFrontend($limit)->execute();
+        if($categories){
+            $this->categories = $categories;
+        }
+        else{
+            return sfView::NONE;
+        }
+    }
 
 }

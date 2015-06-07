@@ -11,17 +11,23 @@ Doctrine_Manager::getInstance()->bindComponent('AdDocumentCategory', 'doctrine')
  * @property string $image_path
  * @property string $description
  * @property integer $priority
+ * @property boolean $is_active
+ * @property boolean $is_home
  * @property Doctrine_Collection $DocumentCategory
  * 
  * @method string              getName()             Returns the current record's "name" value
  * @method string              getImagePath()        Returns the current record's "image_path" value
  * @method string              getDescription()      Returns the current record's "description" value
  * @method integer             getPriority()         Returns the current record's "priority" value
+ * @method boolean             getIsActive()         Returns the current record's "is_active" value
+ * @method boolean             getIsHome()           Returns the current record's "is_home" value
  * @method Doctrine_Collection getDocumentCategory() Returns the current record's "DocumentCategory" collection
  * @method AdDocumentCategory  setName()             Sets the current record's "name" value
  * @method AdDocumentCategory  setImagePath()        Sets the current record's "image_path" value
  * @method AdDocumentCategory  setDescription()      Sets the current record's "description" value
  * @method AdDocumentCategory  setPriority()         Sets the current record's "priority" value
+ * @method AdDocumentCategory  setIsActive()         Sets the current record's "is_active" value
+ * @method AdDocumentCategory  setIsHome()           Sets the current record's "is_home" value
  * @method AdDocumentCategory  setDocumentCategory() Sets the current record's "DocumentCategory" collection
  * 
  * @package    Vt_Portals
@@ -54,6 +60,18 @@ abstract class BaseAdDocumentCategory extends sfDoctrineRecord
              'type' => 'integer',
              'notnull' => false,
              'length' => 5,
+             ));
+        $this->hasColumn('is_active', 'boolean', null, array(
+             'type' => 'boolean',
+             'notnull' => true,
+             'default' => false,
+             'comment' => 'Trạng thái hiển thị (0: Chưa kích hoạt, 1: đã kích hoạt)',
+             ));
+        $this->hasColumn('is_home', 'boolean', null, array(
+             'type' => 'boolean',
+             'notnull' => true,
+             'default' => false,
+             'comment' => 'Trang chủ (0: không hiển thị, 1: hiển thị)',
              ));
     }
 

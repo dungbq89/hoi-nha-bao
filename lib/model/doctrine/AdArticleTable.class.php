@@ -130,12 +130,16 @@ class AdArticleTable extends Doctrine_Table
      * @param $catId
      * @return mixed
      */
-    public static function getListArticle( $catId)
+    public static function getListArticle($catId, $limit = null)
     {
-        return self::getActiveArticleQuery()
-            ->select('a.title, a.header, a.image_path, a.slug, a.published_time')
+        $query =  self::getActiveArticleQuery()
+            ->select('a.title, a.alttitle, a.header, a.image_path, a.slug, a.published_time')
             ->andWhere('a.category_id=?', $catId)
-            ->orderBy('a.is_hot DESC, a.published_time desc');
+            ->orderBy('a.published_time desc');
+        if($limit){
+            $query->limit($limit);
+        }
+        return $query;
     }
 
 

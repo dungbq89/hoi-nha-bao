@@ -18,6 +18,7 @@ Doctrine_Manager::getInstance()->bindComponent('AdCategory', 'doctrine');
  * @property integer $level
  * @property integer $priority
  * @property boolean $is_category
+ * @property boolean $is_hot
  * @property AdCategory $AdParentCategory
  * @property AdCategoryPermission $AdCatPermission
  * @property Doctrine_Collection $ParentCategory
@@ -34,6 +35,7 @@ Doctrine_Manager::getInstance()->bindComponent('AdCategory', 'doctrine');
  * @method integer              getLevel()            Returns the current record's "level" value
  * @method integer              getPriority()         Returns the current record's "priority" value
  * @method boolean              getIsCategory()       Returns the current record's "is_category" value
+ * @method boolean              getIsHot()            Returns the current record's "is_hot" value
  * @method AdCategory           getAdParentCategory() Returns the current record's "AdParentCategory" value
  * @method AdCategoryPermission getAdCatPermission()  Returns the current record's "AdCatPermission" value
  * @method Doctrine_Collection  getParentCategory()   Returns the current record's "ParentCategory" collection
@@ -49,6 +51,7 @@ Doctrine_Manager::getInstance()->bindComponent('AdCategory', 'doctrine');
  * @method AdCategory           setLevel()            Sets the current record's "level" value
  * @method AdCategory           setPriority()         Sets the current record's "priority" value
  * @method AdCategory           setIsCategory()       Sets the current record's "is_category" value
+ * @method AdCategory           setIsHot()            Sets the current record's "is_hot" value
  * @method AdCategory           setAdParentCategory() Sets the current record's "AdParentCategory" value
  * @method AdCategory           setAdCatPermission()  Sets the current record's "AdCatPermission" value
  * @method AdCategory           setParentCategory()   Sets the current record's "ParentCategory" collection
@@ -123,6 +126,12 @@ abstract class BaseAdCategory extends sfDoctrineRecord
              'notnull' => true,
              'default' => false,
              'comment' => 'có xem bài chi tiết hay không',
+             ));
+        $this->hasColumn('is_hot', 'boolean', null, array(
+             'type' => 'boolean',
+             'notnull' => true,
+             'default' => false,
+             'comment' => 'Hiển thị cột phải (0: không hiển thị, 1: hiển thị)',
              ));
     }
 

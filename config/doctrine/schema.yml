@@ -18,6 +18,7 @@ AdCategory:
     level: { type: integer, default: 0, comment: "phân cấp chuyên mục"}
     priority: { type: integer(5), notnull: true, comment: "Độ ưu tiên hiển thị" }
     is_category: { type: boolean, notnull: true, default: false, comment: "có xem bài chi tiết hay không"}
+    is_hot: { type: boolean, notnull: true, default: false, comment: "Hiển thị cột phải (0: không hiển thị, 1: hiển thị)" }
   relations:
     AdParentCategory: { class: AdCategory, local: parent_id, type: one, foreignAlias: ParentCategory }
     AdCatPermission: { class: AdCategoryPermission, local: category_id, type: one, foreignAlias: CategoryPermission }
@@ -217,6 +218,8 @@ AdDocumentCategory:
     image_path: {type: string(255), notnull: false, default: null}
     description: {type: string(500), notnull: false, default: null}
     priority: {type: integer(5), notnull: false, default: null}
+    is_active: { type: boolean, notnull: true, default: false, comment: "Trạng thái hiển thị (0: Chưa kích hoạt, 1: đã kích hoạt)" }
+    is_home: { type: boolean, notnull: true, default: false, comment: "Trang chủ (0: không hiển thị, 1: hiển thị)" }
 #Quan ly van ban
 AdDocument:
   tableName: ad_document
@@ -232,6 +235,8 @@ AdDocument:
     document_date: {type: timestamp(25), notnull: false, default: null}
     priority: {type: integer(5), notnull: false, default: null}
     category_id: {type: integer(8), notnull: false, default: null}
+    is_home: { type: boolean, notnull: true, default: false, comment: "Hiển thị trang chủ (0: không hiển thị, 1: hiển thị)" }
+    is_active: { type: boolean, notnull: true, default: false, comment: "Trạng thái hiển thị (0: Chưa kích hoạt, 1: đã kích hoạt)" }
   relations:
     AdDocCategory: { class: AdDocumentCategory, local: category_id, type: one, foreignAlias: DocumentCategory }
 #luu thong tin gop y nguoi dung

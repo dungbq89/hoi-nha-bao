@@ -16,4 +16,10 @@ class AdDocumentCategoryTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('AdDocumentCategory');
     }
+
+    public static function getCategoryDocumentById($id){
+        $query = AdDocumentCategoryTable::getInstance()->createQuery()
+            ->Where('id=?', $id);
+        return $query->fetchOne();
+    }
 }

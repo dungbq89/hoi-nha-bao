@@ -12,5 +12,7 @@
  */
 class AdCategory extends BaseAdCategory
 {
-
+    public function getNewsByCategory(){
+        return AdArticleTable::getListArticle($this->getId(),4)->fetchArray();
+    }
 }

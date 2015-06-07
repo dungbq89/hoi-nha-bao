@@ -17,13 +17,16 @@
 <body>
 <div class="container wrapper">
     <div class="header">
-        <div class="box-btn">
-            <button class="btn">Diễn đàn</button>
-            <button class="btn">Danh bạ</button>
-            <button class="btn">Liên hệ</button>
-        </div>
-
+        <a href="" class="logo">
+            <img src="img/img-logo.png" class=""/>
+        </a>
+        <img class="img-adv" src="img/img-qc.png" alt="" width="">
         <div class="box-form-search">
+            <div class="box-btn">
+                <button class="btn">Diễn đàn</button>
+                <button class="btn">Danh bạ</button>
+                <button class="btn">Liên hệ</button>
+            </div>
             <form class="frm-search">
                 <input type="text" class="in-search" name="" value="">
                 <input type="submit" value="">

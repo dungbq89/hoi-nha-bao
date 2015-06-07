@@ -13,6 +13,8 @@ ad_document_category:
     model:                AdDocumentCategory
     module:               adDocumentCategory
     prefix_path:          /adDocumentCategory
+    column:               id
+    with_wildcard_routes: true
 ad_personal_import:
   url:   /adManagePersonal/import
   param: { module: adManagePersonal, action: import }

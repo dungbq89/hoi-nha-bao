@@ -21,6 +21,8 @@ generator:
         document_date: {label: Ngày ban hành}
         priority: {label: Thứ tự}
         category_id: {label: Chuyên mục văn bản}
+        is_home: {label: Trang chủ}
+        is_active: {label: Hiển thị}
       list:
         title: Danh sách văn bản
         display: [name, category_id, document_number, priority]
@@ -28,7 +30,7 @@ generator:
         display: [name]
       form:
         class: AdDocumentAdminForm
-        display: [name, category_id, file_path, document_number, document_date, description, priority]
+        display: [name, category_id, file_path, document_number, document_date, description, priority, is_home, is_active]
         fields:
           name: {label: Tên văn bản *}
           category_id: {label: Chuyên mục tài liệu*}
