@@ -404,4 +404,15 @@ class AdCategoryTable extends Doctrine_Table
         return $query;
     }
 
+    //lay danh sach chuyen muc tin tuc
+    public static function getCategoryFrontendHot($limit=null){
+        $query = self::getActiveCategoryQuery()
+            ->andWhere('c.is_category=?',VtCommonEnum::NUMBER_ONE)
+            ->andWhere('c.is_hot=?',VtCommonEnum::NUMBER_ONE);
+        if($limit){
+            $query->limit($limit);
+        }
+        return $query;
+    }
+
 }

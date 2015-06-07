@@ -37,4 +37,17 @@ class moduleArticleComponents extends sfComponents
         }
     }
 
+    public function executeCategoryHot(sfWebRequest $request){
+        $limit = $this->getVar('limit');
+        if (!isset($limit))
+            $limit = 5;
+        $categories = AdCategoryTable::getCategoryFrontendHot($limit)->execute();
+        if($categories){
+            $this->categories = $categories;
+        }
+        else{
+            return sfView::NONE;
+        }
+    }
+
 }

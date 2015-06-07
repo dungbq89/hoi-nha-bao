@@ -23,73 +23,10 @@
         </div>
         <div class="col-right">
             <?php include_component('moduleDocument','hotDocument',array('limit'=>3)) ?>
-
-            <div class="box-mod">
-                <h3 class="title"><span class="label">Góc thư giãn &raquo;</span></h3>
-
-                <div class="item news-item">
-                    <a href="#" title="" class="news-img"><img src="img/img-news.png" alt=""></a>
-                    <a href="" title="" class="news-title">Hà Nội, nắng nóng lên tới đỉnh điểm ở trạm Láng</a>
-
-                    <p class="news-date">08:20 12/05/2015</p>
-
-                    <div class="clear"></div>
-                </div>
-
-                <div class="item news-item">
-                    <a href="#" title="" class="news-img"><img src="img/img-news2.png" alt=""></a>
-                    <a href="" title="" class="news-title">Hà Nội, nắng nóng lên tới đỉnh điểm ở trạm Láng<img
-                            class="icon-new" src="img/new.gif"/> </a>
-
-                    <p class="news-date">08:20 12/05/2015</p>
-
-                    <div class="clear"></div>
-                </div>
+            <?php include_component('moduleArticle','categoryHot',array('limit'=>3)) ?>
 
 
-                <div class="item news-item">
-                    <a href="#" title="" class="news-img"><img src="img/img-news4.png" alt=""></a>
-                    <a href="" title="" class="news-title">Hà Nội, nắng nóng lên tới đỉnh điểm ở trạm Láng</a>
 
-                    <p class="news-date">08:20 12/05/2015</p>
-
-                    <div class="clear"></div>
-                </div>
-            </div>
-
-
-            <div class="box-mod">
-                <h3 class="title"><span class="label">Trang thơ &raquo</span></h3>
-
-                <div class="item news-item">
-                    <a href="#" title="" class="news-img"><img src="img/img-news3.png" alt=""></a>
-                    <a href="" title="" class="news-title">Hà Nội, nắng nóng lên tới đỉnh điểm ở trạm Láng<img
-                            class="icon-new" src="img/new.gif"/> </a>
-
-                    <p class="news-date">08:20 12/05/2015</p>
-
-                    <div class="clear"></div>
-                </div>
-
-                <div class="item news-item">
-                    <a href="#" title="" class="news-img"><img src="img/img-news2.png" alt=""></a>
-                    <a href="" title="" class="news-title">Hà Nội, nắng nóng lên tới đỉnh điểm ở trạm Láng</a>
-
-                    <p class="news-date">08:20 12/05/2015</p>
-
-                    <div class="clear"></div>
-                </div>
-
-
-                <div class="item news-item">
-                    <a href="#" title="" class="news-img"><img src="img/img-news4.png" alt=""></a>
-                    <a href="" title="" class="news-title">Hà Nội, nắng nóng lên tới đỉnh điểm ở trạm Láng</a>
-
-                    <p class="news-date">08:20 12/05/2015</p>
-
-                    <div class="clear"></div>
-                </div>
-            </div>
 
             <div class="box-adv box-mod">
                 <img class="" src="img/img-adv.png" alt="">
