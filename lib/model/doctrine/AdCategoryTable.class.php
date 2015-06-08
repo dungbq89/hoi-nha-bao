@@ -415,4 +415,16 @@ class AdCategoryTable extends Doctrine_Table
         return $query;
     }
 
+    public static function getMenu()
+    {
+        $query = AdCategoryTable::getInstance()->createQuery()
+            ->select('id, name, parent_id, level, link, slug')
+            ->andWhere('is_active=?', VtCommonEnum::NUMBER_ONE)
+            ->andWhere('lang=?', sfContext::getInstance()->getUser()->getCulture())
+            ->orderby('priority asc');
+        return $query->fetchArray();
+    }
+
+
+
 }
