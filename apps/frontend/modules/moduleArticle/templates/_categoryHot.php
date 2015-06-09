@@ -12,8 +12,8 @@
                     $path = '/uploads/' . sfConfig::get('app_article_images') . $news['image_path'];
                     ?>
                     <div class="item news-item">
-                        <a href="#" title="" class="news-img"><img src="<?php echo VtHelper::getThumbUrl($path, 92, 55, '') ?>" alt=""></a>
-                        <a href="" title="<?php echo htmlspecialchars($news['title']); ?>" class="news-title"><?php echo htmlspecialchars($news['alttitle']); ?></a>
+                        <a href="<?php echo url_for2('article_detail',array('slug'=>$news['slug'])) ?>" title="" class="news-img"><img src="<?php echo VtHelper::getThumbUrl($path, 92, 55, '') ?>" alt=""></a>
+                        <a href="<?php echo url_for2('article_detail',array('slug'=>$news['slug'])) ?>" title="<?php echo htmlspecialchars($news['title']); ?>" class="news-title"><?php echo htmlspecialchars($news['alttitle']); ?></a>
 
                         <p class="news-date">
                             <?php

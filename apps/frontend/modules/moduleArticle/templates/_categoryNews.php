@@ -10,10 +10,10 @@
                         &raquo</span></h3>
 
                 <div class="item news-item">
-                    <a href="#" title="" class="news-img"><img src="<?php echo VtHelper::getThumbUrl($path, 197, 118, '') ?>" alt=""></a>
+                    <a href="<?php echo url_for2('article_detail',array('slug'=>$listNews[0]['slug'])) ?>" title="" class="news-img"><img src="<?php echo VtHelper::getThumbUrl($path, 197, 118, '') ?>" alt=""></a>
 
                     <div class="news-info">
-                        <a href="" title="" class="news-title"><?php echo htmlspecialchars($listNews[0]['alttitle']); ?></a>
+                        <a href="<?php echo url_for2('article_detail',array('slug'=>$listNews[0]['slug'])) ?>" title="" class="news-title"><?php echo htmlspecialchars($listNews[0]['alttitle']); ?></a>
 
                         <p class="news-txt"><?php echo htmlspecialchars($listNews[0]['header']); ?></p>
 
@@ -29,7 +29,7 @@
                 <div class="item news-more">
                     <ul>
                         <?php for($i=1;$i<count($listNews);$i++): ?>
-                        <li><a href="" title=""><?php echo htmlspecialchars($listNews[$i]['alttitle']); ?></a></li>
+                        <li><a href="<?php echo url_for2('article_detail',array('slug'=>$listNews[$i]['slug'])) ?>" title=""><?php echo htmlspecialchars($listNews[$i]['alttitle']); ?></a></li>
                         <?php endfor; ?>
                     </ul>
                 </div>

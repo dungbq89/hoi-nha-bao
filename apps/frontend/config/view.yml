@@ -16,10 +16,13 @@ default:
     - reset.css
     - style.css
     - jquery.mCustomScrollbar.css
+    - jquery.bxslider.css
 
   javascripts:
     - jquery.min.js
     - jquery.mCustomScrollbar.concat.min.js
+    - jquery.bxslider.min.js
+    - main.js
 
   has_layout:     true
   layout:         layout

@@ -6,6 +6,28 @@ h3.title-device,
 .menu-footer .item a.active{
     font-weight: bold;
 }
+.list-news{
+    border-bottom: 1px solid #ddd;
+}
+.box-mod,
+.box,
+.box-news{
+    border: 1px solid #ddd;
+}
+.box{
+    border-radius: 5px;
+    overflow: hidden;
+}
+.box .list-news{
+    margin: 10px;
+}
+.box-hot-news .item-hot-news{
+    border-right: 1px solid #ddd;
+}
+.box-hot-news .item-hot-news,
+.box-hot-news .item-lastest-news{
+    border-top: 1px solid #ddd;
+}
 body{
     margin: 0px;
     padding: 0px;
@@ -18,7 +40,6 @@ body{
     line-height: 16px;
 }
 .main{
-    background: url("../img/bg-main.png") repeat-y;
     overflow: hidden;
     margin-top: 15px;
 }
@@ -70,7 +91,8 @@ h3{
     padding: 0px 10px 0px 10px;
 }
 .slide{
-    margin-bottom: 12px;
+    margin-bottom: 5px;
+    margin-top: 10px;
 }
 .header{
     background-color: #fff;
@@ -107,12 +129,9 @@ li{
 .img-responsive{
     width: 100%;
 }
-.box-hot-news .item-hot-news{
-    border-right: 1px solid #d7d7d7;
-}
+
 .box-hot-news .item-hot-news,
 .box-hot-news .item-lastest-news{
-    border-top: 1px solid #d7d7d7;
     padding-top: 10px;
 }
 .item-hot-news img.img-news{
@@ -143,7 +162,7 @@ background: url("../img/bg-line-bottom.png") repeat-x left bottom;
 
 }
 .category ul li{
-    padding: 0px 0px 5px 10px;
+    padding: 0px 0px 12px 10px;
     background: url("../img/icon-bulet2.png") no-repeat 0px 5px;
 }
 .box-hot-news .item-lastest-news ul li{
@@ -152,34 +171,39 @@ background: url("../img/bg-line-bottom.png") repeat-x left bottom;
 }
 .category ul li a{
     display: block;
-    padding-bottom: 8px;
+    padding-bottom: 12px;
 }
 .box-mod h3.title{
     margin-bottom: 10px;
 }
 h3.title{
-    background: url("../img/bg-title-module.png") repeat-x;
-    height: 25px;
+    background: url("../img/bg-title-module.png") bottom repeat-x;
+    height: 22px;
     padding-left: 10px;
     padding-right: 10px;
-    padding-top: 7px;
+    padding-top: 12px;
+}
+.item-lastest-news h3.title,
+.col-right .box-mod h3.title{
+    color: #343434;
 }
 .col-main h3.title{
 
 }
 h3.title,
 .col-main h3.title-main{
-color: #454545;
+color: #fff;
     font-weight: bold;
 }
 .col-main h3.title-main{
     border-bottom: 1px solid #dbdbdb;
     height: 30px;
     overflow: hidden;
+    background-color: #e1f8ff;
 }
 .col-main h3.title-main span.label{
-    background: url("../img/bg-title-right.png") no-repeat top right #eee;
-    padding: 5px 30px 2px 10px;
+    background: url("../img/bg-title-right2.png") no-repeat top right #0788d9;
+    padding: 5px 58px 2px 10px;
     height: 22px;
     float: left;
     display: block;
@@ -212,7 +236,7 @@ color: #454545;
     color: #676767;
 }
 .line{
-    border: 3px solid #71B3EA;
+    border: 3px solid #0788d9;
     clear: both;
     margin-top: 12px;
 }
@@ -220,11 +244,11 @@ color: #454545;
     margin-top: 12px;
 }
 .col-right .box-adv{
-    padding-left: 10px;
+    padding: 10px;
 	
 }
 .col-right .box-adv img{
-width: 300px;
+width: 290px;
 	height: 180px
 }
 
@@ -241,16 +265,21 @@ width: 300px;
 .list-news,
 .box-news{
     margin-bottom: 15px;
-    margin-right: 10px;
-    background: url("../img/bg-line-bottom.png") repeat-x left bottom;
     padding-bottom: 15px;
+    overflow: hidden;
+
+}
+.box-news{
+    border-radius: 5px;
 }
 .box-news .item{
     float: left;
-    margin-top: 10px;
+    margin-top: 15px;
+    margin-left: 10px;
+
 }
 .box-news .news-item{
-    width: 430px;
+    width: 420px;
 }
 .box-news .news-item{
     overflow: hidden;
@@ -262,10 +291,13 @@ width: 300px;
 }
 .box-mod{
     margin-bottom: 12px;
+    border-radius: 5px;
+    overflow: hidden;
 }
 .box-mod .news-item{
     padding-bottom: 10px;
     margin-bottom: 10px;
+    margin-right: 10px;
 }
 .box-mod .news-item a.news-img img{
     width: 92px;
@@ -326,11 +358,12 @@ a.news-img img{
     border-bottom: 1px solid #ccc;
 }
 .news-more{
-    width: 190px;
+    width: 170px;
     background-color: #fcfcfc;
     padding: 2px 10px;
     height: 114px;
     overflow: hidden;
+    margin-right: 10px;
 }
 .news-more ul{
     margin: 0px;
@@ -365,6 +398,10 @@ a.news-img img{
 }
 .box-mequ{
     float: left;
+}
+.box-mequ a{
+    display: block;
+    margin-top: 3px;
 }
 .nav{
     background: url('../img/bg-nav.png') repeat-x top 1px left #c5ddec;
@@ -407,6 +444,7 @@ a.news-img img{
 .nav ul li ul{
     position: absolute;
     top: 37px;
+    z-index: 999;
 
 }
 .nav ul li ul li{
@@ -539,7 +577,9 @@ a.news-img img{
 
 
 
-
+.news-detail{
+	padding: 10px
+}
 .news-detail .title-article{
     font-size: 15px;
     margin: 10px 0px 10px 0px;
@@ -595,11 +635,7 @@ h3.h3-more{
     height: 358px;
 }
 .txt-gallary{
-    background-color: #acacac;
-    width: 255px;
-    float: right;
-    height: 248px;
-    padding: 90px 50px 20px 55px;
+    padding: 60px 40px 20px 40px;
 }
 .txt-gallary h3{
     font-size: 18px;
@@ -651,6 +687,8 @@ h3.h3-more{
 }
 .box-gallary{
     width: 1110px;
+    clear: both;
+    padding-top: 20px;
 }
 .box-gallary .box-pagging{
     margin-bottom: 30px;
@@ -741,6 +779,9 @@ h3.h3-more{
     overflow: hidden;
 
 }
+.main .box-btn{
+    margin-right: 28px;
+}
 .box-btn{
     float: right;
 }
@@ -808,9 +849,38 @@ span.btn-in input[type="text"]
     float: left;
     display: block;
 }
+.h3-log{
+    font-weight: bold;
+    margin-top: 5px;
+}
+.icon-link-url{
+    background: url("../img/icon-bulet2.png") no-repeat;
+    width: 7px;
+    height: 7px;
+    display: block;
+    margin: 4px 5px 0px 8px;
 
-
-
+}
+.url-link{
+    overflow: hidden;
+    height: 26px;
+    border-bottom: 1px solid #ddd;
+    margin-top: 15px;
+    padding-left: 12px;
+}
+.url-link span{
+    float: left;
+    font-size: 12px;
+}
+.result{
+    clear: both;
+    display: block;
+    font-weight: bold;
+    padding-top: 12px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    padding-left: 12px;
+}
 
 
 

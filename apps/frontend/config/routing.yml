@@ -8,6 +8,11 @@ homepage:
   param: { module: pageHome, action: index, slug: '' }
   requirements: { sf_method: get }
 
+#trang hiển thị chi tiết tin tức
+article_detail:
+  url: /chi-tiet-tin-tuc/:slug
+  param: {module: pageNewsDetails, action: index}
+
 # generic rules
 # please, remove them by adding more specific rules
 default_index:

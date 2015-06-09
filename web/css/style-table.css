@@ -3,8 +3,12 @@ table {
     border-spacing: 0;
 
 }
+th.col-stt{
+    width: 40px;
+}
 .bordered{
-    width: 655px;
+    width: 638px;
+    margin: 10px;
 }
 .bordered td{
 text-align:left;
@@ -35,9 +39,9 @@ text-align:left;
     color: #fff;
     font-weight: normal;
     vertical-align: middle;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-left: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
 }
 .container-fluid  table  td,
 .specifications-info td{
@@ -71,7 +75,7 @@ text-align:left;
 
 .bordered td{
     line-height: 20px;
-    padding: 5px 5px 5px 5px;
+    padding: 10px;
 }
 .bordered-selfcare th,
 .box-article-detail .bordered th{
@@ -118,11 +122,12 @@ td.txt-center{
     border-bottom:1px solid #ddd;
 }
 .bordered tr:nth-child(2n) td{
-    background-color: #fcfcfc;
+    background-color: #f9f9f9;
 }
 .bordered th {
-    background-color: #f7941e;
+    background-color: #e1f8ff;
     color: #231f20;
+    font-weight: bold;
 }
 .bordered td:first-child, .bordered th:first-child {
     border-left: none;

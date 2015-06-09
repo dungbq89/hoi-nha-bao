@@ -18,9 +18,9 @@
 <div class="container wrapper">
     <div class="header">
         <a href="" class="logo">
-            <img src="img/img-logo.png" class=""/>
+            <img src="../../img/img-logo.png" class=""/>
         </a>
-        <img class="img-adv" src="img/img-qc.png" alt="" width="">
+        <img class="img-adv" src="../../img/img-qc.png" alt="" width="">
         <div class="box-form-search">
             <div class="box-btn">
                 <button class="btn">Diễn đàn</button>
@@ -54,6 +54,14 @@
 <!--            <li><a href="" title="">Văn hóa nghệ thuật</a> </li>-->
 <!--        </ul>-->
 
+    </div>
+
+    <div class="slide">
+        <ul class="bxslider">
+            <li><a href=""><img src="../../img/banner.png"/></a></li>
+            <li><a href=""><img src="../../img/img-news.png"/></a></li>
+            <li><a href=""><img src="../../img/img-news.png"/></a></li>
+        </ul>
     </div>
 
     <?php echo $sf_content ?>
