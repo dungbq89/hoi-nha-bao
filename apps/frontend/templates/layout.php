@@ -37,23 +37,6 @@
 
     <div class="nav">
         <?php include_component('moduleMenu','mainMenu'); ?>
-<!--        <ul>-->
-<!--            <li><a href="" title="" class="active">Trang chủ</a> </li>-->
-<!--            <li><a href="" title="">Giới thiệu</a>-->
-<!--                <ul>-->
-<!--                    <li><a href="" title="">Thông tin chung</a> </li>-->
-<!--                    <li><a href="" title="">Thông tin chung</a> </li>-->
-<!--                    <li><a href="" title="">Thông tin chung</a> </li>-->
-<!--                    <li><a href="" title="">Thông tin chung</a> </li>-->
-<!--                    <li><a href="" title="">Thông tin chung</a> </li>-->
-<!--                </ul>-->
-<!--            </li>-->
-<!--            <li><a href="" title="">Tin hoạt động</a> </li>-->
-<!--            <li><a href="" title="">Tin tức sự kiện</a> </li>-->
-<!--            <li><a href="" title="">Hoạt động nghiệp vụ</a> </li>-->
-<!--            <li><a href="" title="">Văn hóa nghệ thuật</a> </li>-->
-<!--        </ul>-->
-
     </div>
 
     <div class="slide">

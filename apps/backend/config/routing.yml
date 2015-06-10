@@ -176,6 +176,10 @@ sf_guard_permission:
     column:               id
     with_wildcard_routes: true
 
+vtp_search_ajax_loadarticle:
+  url:   /ajax/LoadArticle
+  param: { module: ajax, action: loadArticle }
+
 # default rules
 homepage:
   url:   /
