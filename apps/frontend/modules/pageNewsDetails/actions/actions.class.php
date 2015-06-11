@@ -17,6 +17,7 @@ class pageNewsDetailsActions extends sfActions
             $article = AdArticleTable::getArticleBySlug($slug);
             if($article){
                 $this->article = $article;
+                $this->articleRelated = AdArticleTable::getListArticleRelated($article['id']);
             }
             else{
                 return $this->redirect404();
