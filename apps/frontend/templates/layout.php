@@ -17,7 +17,7 @@
 <body>
 <div class="container wrapper">
     <div class="header">
-        <a href="" class="logo">
+        <a href="<?php echo url_for('@homepage'); ?>" class="logo">
             <img src="../../img/img-logo.png" class=""/>
         </a>
         <img class="img-adv" src="../../img/img-qc.png" alt="" width="">

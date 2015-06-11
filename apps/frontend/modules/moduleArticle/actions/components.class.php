@@ -24,6 +24,19 @@ class moduleArticleComponents extends sfComponents
         }
     }
 
+    public function executeHotArticle(sfWebRequest $request){
+        $limit = $this->getVar('limit');
+        if (!isset($limit))
+            $limit = 10;
+        $articles = AdArticleTable::getHotArticle($limit);
+        if($articles){
+            $this->articles = $articles;
+        }
+        else{
+            return sfView::NONE;
+        }
+    }
+
     public function executeCategoryNews(sfWebRequest $request){
         $limit = $this->getVar('limit');
         if (!isset($limit))

@@ -1,10 +1,4 @@
-<div class="box-notic">
-    <div class="btn-hot">Hot</div>
-    <div class="box-mequ">
-        <p>TP Hồ Chí Minh thực hiện vay nóng 442 triệu USD để trống ngập úng</p>
-    </div>
-    <div class="date-time">Thứ 5, 20/05/2015</div>
-</div>
+<?php include_component('moduleArticle','hotArticle',array('limit'=>10,'att'=>1)) ?>
 
 <div class="box-hot">
     <div class="box-hot-news">
