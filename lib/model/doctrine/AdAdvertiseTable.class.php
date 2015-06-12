@@ -50,7 +50,7 @@ class AdAdvertiseTable extends Doctrine_Table
     public static function getAdvertise($page, $template,$portalId)
     {
         return self::getActiveAdvertise()
-            ->select('i.file_path, a.view_type, a.height, a.width, a.name, a.description, i.link, i.description, i.name')
+            ->select('i.file_path, a.view_type, a.height, a.width, a.name, i.link')
             ->innerJoin('a.AdvertiseImage i')
             ->innerJoin('a.AdvertiseLocation l')
             ->andWhere('l.page=?', $page)

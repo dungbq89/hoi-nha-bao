@@ -1,7 +1,8 @@
 advertise_template:
-  top_one: {value: topone, alias: "Quảng cáo top"}
+  topone: {value: topone, alias: "Quảng cáo top"}
   right: {value: right, alias: "Mẫu hiển thị cột phải"}
   bottom: {value: bottom, alias: "Mẫu hiển thị cuối trang"}
+  header: {value: header, alias: "Mẫu hiển thị đầu trang"}
 view_page:
   homepage: {value: homepage, alias: "Trang chủ"}
 promotion_attributes:

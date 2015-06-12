@@ -39,13 +39,7 @@
         <?php include_component('moduleMenu','mainMenu'); ?>
     </div>
 
-    <div class="slide">
-        <ul class="bxslider">
-            <li><a href=""><img src="../../img/banner.png"/></a></li>
-            <li><a href=""><img src="../../img/img-news.png"/></a></li>
-            <li><a href=""><img src="../../img/img-news.png"/></a></li>
-        </ul>
-    </div>
+    <?php include_component('moduleAdvertise','topOne'); ?>
 
     <?php echo $sf_content ?>
 
