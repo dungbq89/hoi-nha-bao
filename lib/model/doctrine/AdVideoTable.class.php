@@ -33,4 +33,20 @@ class AdVideoTable extends Doctrine_Table
             ->where('is_default=?',VtCommonEnum::NUMBER_ONE);
         return $query->execute();
     }
+
+    public static function getListVideoHome($limit)
+    {
+        $query=  AdVideoTable::getInstance()->createQuery()
+            ->where('is_active=?',VtCommonEnum::NUMBER_ONE)
+            ->limit($limit);
+        return $query;
+    }
+
+    public static function getVideoById($id)
+    {
+        $query=  AdVideoTable::getInstance()->createQuery()
+            ->where('is_active=?',VtCommonEnum::NUMBER_ONE)
+            ->andWhere('id=?',$id);
+        return $query;
+    }
 }

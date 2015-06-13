@@ -319,7 +319,7 @@ class VtHelper
         return '<embed id="player" height="' . $height . '" width="' . $width . '"
               flashvars="file=' . $url . '&controlbar=bottom&image='.$img.'" wmode="transparent" allowfullscreen="true"
               allowscriptaccess="always" bgcolor="undefined"
-              src="/js/player.swf" name="player"  type="application/x-shockwave-flash">';
+              src="/js/jwplayer/player.swf" name="player"  type="application/x-shockwave-flash">';
     }
 
     /**

@@ -42,7 +42,7 @@ class adVideoFormAdmin extends BaseAdVideoForm
         ));
         $this->validatorSchema['file_path'] = new sfValidatorFileViettel(
             array('required' => $this->isNew(),
-                'max_size' => sfConfig::get('app_upload_video_max_size'),
+                'max_size' => sfConfig::get('app_upload_video_max_size',99999999),
                 'upload_path'=>sfConfig::get('app_upload_media_file') . '/video',
                 'path' => sfConfig::get('app_upload_media_file') .  '/video',
                 'mime_types' => array( 'flv' => 'video/x-flv','mp4' =>'video/mp4')),
@@ -53,13 +53,36 @@ class adVideoFormAdmin extends BaseAdVideoForm
 
         if (!$this->isNew()) {
             $url_file =  sfConfig::get('app_url_media_file') . '/video/';
+            $imageUrl = '/uploads/' . sfConfig::get('app_advertise_images')  . $this->getObject()->getImagePath();
             $this->widgetSchema['jwplayer']= new sfWidgetFormPlainText(
-                array("value_data" => VtHelper::generateEmbedJwplayer($url_file . $this->getObject()->getFilePath(), 400, 300),
+                array("value_data" => VtHelper::generateEmbedJwplayer($url_file . $this->getObject()->getFilePath(), 400, 300,$imageUrl),
                     'label'=>$i18n->__('Xem thử'),
                     "encode" => false
                 ),array('required' => false));
             $this->validatorSchema['jwplayer'] = new sfValidatorPass();
         }
+
+        $this->widgetSchema['image_path'] = new sfWidgetFormInputFileEditable(array(
+            'label' => ' ',
+            'file_src' => VtHelper::getUrlImagePathThumb(sfConfig::get('app_advertise_images'), $this->getObject()->getImagePath()),
+            'is_image' => true,
+            'edit_mode' => !$this->isNew(),
+            'template' => '<div>%file%<br />%input%</div>',
+        ));
+
+        $this->validatorSchema['image_path'] = new sfValidatorFileViettel(
+            array(
+                'max_size' => sfConfig::get('app_image_maxsize', 999999),
+                'mime_types' => array('image/jpeg','image/jpg', 'image/png', 'image/gif'),
+                'path' => sfConfig::get("sf_upload_dir") . '/' . sfConfig::get('app_advertise_images'),
+                'required' => false
+            ),
+            array(
+                'mime_types' => $i18n->__('Bạn phải tải lên file hình ảnh.'),
+                'max_size' => $i18n->__('Tối đa 5MB')
+            ));
+
+
 
         $this->widgetSchema['event_date'] = new sfWidgetFormVnDatePicker(array(),array('readonly'=>true));
         $this->validatorSchema['event_date'] = new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d H:i:s'));

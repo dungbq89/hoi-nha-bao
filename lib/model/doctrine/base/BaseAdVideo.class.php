@@ -11,36 +11,36 @@ Doctrine_Manager::getInstance()->bindComponent('AdVideo', 'doctrine');
  * @property string $description
  * @property timestamp $event_date
  * @property string $file_path
+ * @property string $image_path
  * @property string $extension
  * @property integer $priority
  * @property boolean $is_active
  * @property boolean $is_default
  * @property string $lang
  * @property string $slug
- * @property string $image_path
  * 
  * @method string    getName()        Returns the current record's "name" value
  * @method string    getDescription() Returns the current record's "description" value
  * @method timestamp getEventDate()   Returns the current record's "event_date" value
  * @method string    getFilePath()    Returns the current record's "file_path" value
+ * @method string    getImagePath()   Returns the current record's "image_path" value
  * @method string    getExtension()   Returns the current record's "extension" value
  * @method integer   getPriority()    Returns the current record's "priority" value
  * @method boolean   getIsActive()    Returns the current record's "is_active" value
  * @method boolean   getIsDefault()   Returns the current record's "is_default" value
  * @method string    getLang()        Returns the current record's "lang" value
  * @method string    getSlug()        Returns the current record's "slug" value
- * @method string    getImagePath()   Returns the current record's "image_path" value
  * @method AdVideo   setName()        Sets the current record's "name" value
  * @method AdVideo   setDescription() Sets the current record's "description" value
  * @method AdVideo   setEventDate()   Sets the current record's "event_date" value
  * @method AdVideo   setFilePath()    Sets the current record's "file_path" value
+ * @method AdVideo   setImagePath()   Sets the current record's "image_path" value
  * @method AdVideo   setExtension()   Sets the current record's "extension" value
  * @method AdVideo   setPriority()    Sets the current record's "priority" value
  * @method AdVideo   setIsActive()    Sets the current record's "is_active" value
  * @method AdVideo   setIsDefault()   Sets the current record's "is_default" value
  * @method AdVideo   setLang()        Sets the current record's "lang" value
  * @method AdVideo   setSlug()        Sets the current record's "slug" value
- * @method AdVideo   setImagePath()   Sets the current record's "image_path" value
  * 
  * @package    Vt_Portals
  * @subpackage model
@@ -77,6 +77,11 @@ abstract class BaseAdVideo extends sfDoctrineRecord
              'comment' => 'Đường dẫn file',
              'length' => 255,
              ));
+        $this->hasColumn('image_path', 'string', 255, array(
+             'type' => 'string',
+             'comment' => 'File ảnh đại diện video',
+             'length' => 255,
+             ));
         $this->hasColumn('extension', 'string', 200, array(
              'type' => 'string',
              'comment' => 'phần mở rộng của file',
@@ -111,11 +116,6 @@ abstract class BaseAdVideo extends sfDoctrineRecord
              'unique' => true,
              'notnull' => true,
              'comment' => 'chuyển đổi url',
-             'length' => 255,
-             ));
-        $this->hasColumn('image_path', 'string', 255, array(
-             'type' => 'string',
-             'comment' => 'File ảnh đại diện video',
              'length' => 255,
              ));
     }
