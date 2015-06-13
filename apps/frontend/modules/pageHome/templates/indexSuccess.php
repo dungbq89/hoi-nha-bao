@@ -3,7 +3,7 @@
 <div class="box-hot">
     <div class="box-hot-news">
         <?php include_component('moduleArticle','newArticle',array('limit'=>10,'att'=>1)) ?>
-        <?php include_component('moduleVideo','hotVideo',array('limit'=>5)) ?>
+        <?php include_component('moduleVideo','listVideoHome',array('limit'=>5)) ?>
 
     </div>
     <div class="clear"></div>

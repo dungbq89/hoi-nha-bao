@@ -176,6 +176,7 @@ AdVideo:
     description: { type: string(1000), notnull: true, comment: "Giới thiệu video" }
     event_date: { type: timestamp(25), notnull: true, comment: "Ngày diễn ra sự kiện"}
     file_path: { type: string(255), notnull: true, comment: "Đường dẫn file"}
+    image_path: { type: string(255), notnull: true, comment: "Ảnh đại diện"}
     extension: { type: string(200), comment: "phần mở rộng của file"}
     priority: { type: integer(5), notnull: true, comment: "Độ ưu tiên hiển thị" }
     is_active: { type: boolean, notnull: true, default: false, comment: "Trạng thái hiển thị (0: Chưa kích hoạt, 1: đã kích hoạt)" }
