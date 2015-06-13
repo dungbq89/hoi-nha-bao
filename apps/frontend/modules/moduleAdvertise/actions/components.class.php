@@ -14,4 +14,12 @@ class moduleAdvertiseComponents extends sfComponents
         $page = sfContext::getInstance()->getRouting()->getCurrentRouteName();
         $this->advertise = AdAdvertiseTable::getAdvertise($page, 'topone',VtCommonEnum::portalDefault);
     }
+
+    public function executeAdvertise()
+    {
+        $location = $this->getVar('location');
+        $page = sfContext::getInstance()->getRouting()->getCurrentRouteName();
+        $this->advertise = AdAdvertiseTable::getAdvertise($page, $location, VtCommonEnum::portalDefault);
+        $this->location = $location;
+    }
 }

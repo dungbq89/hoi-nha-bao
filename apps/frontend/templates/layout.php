@@ -20,7 +20,7 @@
         <a href="<?php echo url_for('@homepage'); ?>" class="logo">
             <img src="../../img/img-logo.png" class=""/>
         </a>
-        <img class="img-adv" src="../../img/img-qc.png" alt="" width="">
+        <?php include_component('moduleAdvertise','advertise',array('location'=>'header')); ?>
         <div class="box-form-search">
             <div class="box-btn">
                 <button class="btn">Diễn đàn</button>

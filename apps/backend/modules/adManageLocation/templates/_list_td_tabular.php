@@ -1,6 +1,6 @@
 
   <td class="sf_admin_text sf_admin_list_td_name" field="name" title="<?php echo $ad_advertise_location->getName(); ?>">
-      <?php echo link_to(VtHelper::truncate($ad_advertise_location->getName(), 50, '...', true),'ad_advertise_location',$ad_advertise_location)  ?></td>
+      <?php echo link_to(VtHelper::truncate($ad_advertise_location->getName(), 50, '...', true),'ad_advertise_location_edit',$ad_advertise_location)  ?></td>
   <td class="sf_admin_text sf_admin_list_td_page" field="page">
       <?php
       echo  adManageLocationActions::getAliasPageAttribute($ad_advertise_location->getPage())  ?></td>

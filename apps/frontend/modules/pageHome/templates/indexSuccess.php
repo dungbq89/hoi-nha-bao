@@ -19,18 +19,11 @@
             <?php include_component('moduleDocument','hotDocument',array('limit'=>3)) ?>
             <?php include_component('moduleArticle','categoryHot',array('limit'=>3)) ?>
 
-
-
-
-            <div class="box-adv box-mod">
-                <img class="" src="img/img-adv.png" alt="">
-            </div>
+            <?php include_component('moduleAdvertise','advertise',array('location'=>'right')); ?>
 
         </div>
     </div>
     <div class="clear"></div>
 </div>
 
-<div class="box-adv-main">
-    <img class="img-responsive" src="img/img-qc.png" alt="">
-</div>
+<?php include_component('moduleAdvertise','advertise',array('location'=>'bottom')); ?>
