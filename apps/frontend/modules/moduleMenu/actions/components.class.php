@@ -20,7 +20,7 @@ class moduleMenuComponents extends sfComponents
 
     public function executeFooterMenu()
     {
-        $footerMenu=VtpMenuTable::getMenu();
+        $footerMenu=AdMenuTable::getMenu();
         if (!count($footerMenu))
             return sfView::NONE;
         $this->footerMenu=$footerMenu;

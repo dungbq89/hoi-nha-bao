@@ -20,14 +20,14 @@ class ajaxActions extends sfActions{
         $keyword = $request->getParameter('keyword');
         $pageIndex = $request->getParameter('pageIndex');
         $pageSize =  10;
-        $myPager = new sfDoctrinePager('VtpArticle', $pageSize);
+        $myPager = new sfDoctrinePager('AdArticle', $pageSize);
         $keyword = trim($keyword);
         $articleId = sfContext::getInstance()->getUser()->getAttribute('article_id');
         if($articleId){
-            $myPager->setQuery(VtpArticleTable::getSearchArticle($keyword,$articleId));
+            $myPager->setQuery(AdArticleTable::getSearchArticle($keyword,$articleId));
         }
         else{
-            $myPager->setQuery(VtpArticleTable::getSearchArticle($keyword));
+            $myPager->setQuery(AdArticleTable::getSearchArticle($keyword));
         }
         $myPager->setPage($this->getRequestParameter('page', $pageIndex));
         $myPager->init();
@@ -51,7 +51,7 @@ class ajaxActions extends sfActions{
 
         }
 
-        $table = Doctrine_Core::getTable('VtpCategory');
+        $table = Doctrine_Core::getTable('AdCategory');
 
         if (
             $table->hasField($field = $request->getParameter('field'))
@@ -114,49 +114,17 @@ class ajaxActions extends sfActions{
         }
     }
 
-    public function executeAjaxRemoveImageFiles(sfWebRequest $request) {
-        $i18n = $this->getContext()->getI18N();
-        //-- disable debug
-        sfConfig::set('sf_web_debug', false);
-
-        if ($this->getUser()->isAuthenticated()) {
-            if ($request->isXmlHttpRequest()) {
-                $appId = $request->getParameter('file_id', null);
-                $objImg = VtPictureAlbumTable::getInstance()->findOneBy("id", $appId);
-                if ($objImg) {
-                    try {
-                        $objImg->delete();
-                        return $this->renderText(json_encode(array(
-                                    'errorCode' => 0,
-                                    'message' => $i18n->_('Xóa file thành công')
-                        )));
-                    } catch (Exception $exc) {
-                        //ghi log
-                        // echo $exc->getTraceAsString();
-                        return $this->renderText(json_encode(array(
-                                    'errorCode' => 1,
-                                    'message' => $exc->getTraceAsString(),
-                        )));
-                    }
-                }
-            }
-        }
-        return $this->renderText(json_encode(array(
-                    'errorCode' => 1,
-                    'message' => $i18n->_('Xóa file thất bại')
-        )));
-    }
     
     public function executeAjaxLoadCategoryNews(sfWebRequest $request) {
-        $listCategoryNews = VtpCategoryTable::getCategoryByTypeClone(VtCommonEnum::NewCategory, VtCommonEnum::portalDefault,'');
+        $listCategoryNews = AdCategoryTable::getCategoryByTypeClone(VtCommonEnum::NewCategory, VtCommonEnum::portalDefault,'');
         return $this->renderText(json_encode($listCategoryNews));
     }
     public function executeAjaxLoadCategoryService(sfWebRequest $request) {
-        $listCategoryService = VtpCategoryTable::getCategoryByTypeClone(VtCommonEnum::ServiceCategory, VtCommonEnum::portalDefault,'');
+        $listCategoryService = AdCategoryTable::getCategoryByTypeClone(VtCommonEnum::ServiceCategory, VtCommonEnum::portalDefault,'');
         return $this->renderText(json_encode($listCategoryService));
     }
     public function executeAjaxLoadArticleDetail(sfWebRequest $request){
-        $listArticle = VtpArticleTable::getActiveArticleQuery(VtCommonEnum::portalDefault)->execute();
+        $listArticle = AdArticleTable::getActiveArticleQuery(VtCommonEnum::portalDefault)->execute();
         $arrResult = array();
         if(count($listArticle)>0){
             foreach($listArticle as $value){
@@ -166,7 +134,7 @@ class ajaxActions extends sfActions{
         return $this->renderText(json_encode($arrResult));
     }
     public function executeAjaxLoadServiceDetail(sfWebRequest $request){
-        $listService = VtpServicesTable::getServiceActiveQuery(VtCommonEnum::portalDefault)->execute();
+        $listService = AdServicesTable::getServiceActiveQuery(VtCommonEnum::portalDefault)->execute();
         $arrResult = array();
         if(count($listService)>0){
             foreach($listService as $value){
