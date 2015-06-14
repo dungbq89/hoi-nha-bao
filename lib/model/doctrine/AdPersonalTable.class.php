@@ -38,4 +38,19 @@ class AdPersonalTable extends Doctrine_Table
         }
         $list->save();
     }
+
+    //frontend
+    public static function getListPerson($full_name, $phone_number,$email,$limit)
+    {
+        $query = AdPersonalTable::getInstance()->createQuery()
+            ->select()
+            ->orWhere('LOWER(full_name) like LOWER(?) COLLATE utf8_bin', '%' . trim($full_name) . '%')
+            ->orWhere('phone_number=?',$phone_number)
+            ->orWhere('email=?',$email)
+            ->orderBy('full_name asc')
+            ->limit($limit);
+
+        return $query;
+    }
+
 }
