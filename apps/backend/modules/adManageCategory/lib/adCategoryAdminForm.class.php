@@ -23,6 +23,39 @@ class adCategoryAdminForm extends BaseadCategoryForm
           'S' => $i18n->__('Dịch vụ'),
         );
 
+        $arrType=array('1'=>$i18n->__('Bài viết'),'0'=>$i18n->__('Link'),'2'=>$i18n->__('Trang'));
+        $this->widgetSchema['type_link'] = new sfWidgetFormChoice(array(
+            'choices' => $arrType,
+            'multiple' => false,
+            'expanded' => false
+        ),array('onchange'=>'changeSelectLink()', 'class' =>'changeLink'));
+        $this->validatorSchema['type_link'] = new sfValidatorChoice(array(
+            'required' => true,
+            'choices' => array_keys($arrType),
+        ));
+
+        $this->widgetSchema['link_content'] = new sfWidgetFormChoice(array(
+            'choices' => $this->getHtmlContent(),
+            'multiple' => false,
+            'expanded' => false
+        ));
+        $this->validatorSchema['link_content'] = new sfValidatorChoice(array(
+            'required' => false,
+            'choices' => array_keys($this->getHtmlContent()),
+        ));
+        $this->widgetSchema['link_text'] = new sfWidgetFormInputText(array(),array('disabled'=>'false','style' => 'width:500px'));
+        $this->validatorSchema['link_text'] = new sfValidatorString(array('max_length' => 255, 'required' => false,'trim'=>true));
+        $this->widgetSchema['link'] = new sfWidgetFormInputText(array(),array('disabled'=>'false','style' => 'width:500px'));
+
+        $this->widgetSchema['page'] = new sfWidgetFormChoice(array(
+            'choices' => $this->getPage(),
+            'multiple' => false,
+            'expanded' => false
+        ),array('disabled'=>'false'));
+        $this->validatorSchema['page'] = new sfValidatorChoice(array(
+            'required' => false,
+            'choices' => array_keys($this->getPage()),
+        ));
         $this->widgetSchema['description'] =   new sfWidgetFormTextarea();
         $this->validatorSchema['description'] = new sfValidatorString(array('required' => false, 'trim'=>true, 'max_length' => 1000));
         
@@ -91,6 +124,31 @@ class adCategoryAdminForm extends BaseadCategoryForm
 
         return $values;
     }
+    public function getPage() {
+        $i18n = sfContext::getInstance()->getI18N();
+        $result=array();
+        $result['']=$i18n->__('--Chọn trang hiển thị--');
+        $pageAttr = Attributes::getAttributesList('view_page');
+
+        foreach ($pageAttr as $key=>$value){
+            $result[$key]=$value;
+        }
+
+        return $result;
+    }
+    public function getHtmlContent()
+    {
+        $i18n = sfContext::getInstance()->getI18N();
+        $result=array();
+        $result['']=$i18n->__('--Chọn bài viết nội dung--');
+        $lstHtml=AdHtmlTable::getAllHtml(sfContext::getInstance()->getUser()->getCulture());
+        foreach ($lstHtml as $item){
+            $link= '@'.$item->prefix_path .'?slug='.$item->slug;
+            $result[$link]=$item->getName();
+        }
+        return $result;
+    }
+
 //Hàm đệ quy lấy các chuyên mục con
     public static function getCategoryByParent($category_id){
         $strCat=$category_id;
@@ -136,6 +194,20 @@ class adCategoryAdminForm extends BaseadCategoryForm
             }
         }
         $values['permission'] = $total;
+
+        $item = $values['type_link'];
+        $strItem="";
+        if ($item=='1'){
+            $strItem=$values['link_content'];
+        }elseif ($item=='0'){
+            $strItem=$values['link_text'];
+        }elseif($item=='2')
+        {
+            $strItem='@'.$values['page'];
+        }
+        if (strlen($strItem) <256)
+            $values['link'] = $strItem;
+
         $values['name']=trim($values['name']);
         $values['description']=trim($values['description']);
 

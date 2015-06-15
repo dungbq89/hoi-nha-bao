@@ -17,6 +17,7 @@ default:
     - style.css
     - jquery.mCustomScrollbar.css
     - jquery.bxslider.css
+    - style-table.css
     - coder_update.css
 
   javascripts:

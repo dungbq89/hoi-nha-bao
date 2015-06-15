@@ -10,6 +10,10 @@ category_news:
   param: {module: pageNews, action: index}
 
 #trang danh ba hoi vien
+document:
+  url: /van-ban-phap-quy
+  param: {module: pageDocument, action: index}
+#trang danh ba hoi vien
 contact:
   url: /lien-he
   param: {module: pageContact, action: index}

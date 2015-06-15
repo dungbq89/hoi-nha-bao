@@ -598,6 +598,7 @@ class adManageCategoryActions extends autoAdManageCategoryActions
                     $objCat = count(AdCategoryTable::checkSlug($slug,$ad_category->id));
                 }
                 $ad_category->slug=$slug;
+
                 //save category
                 $ad_category->save();
                 $priority=$ad_category->priority;
