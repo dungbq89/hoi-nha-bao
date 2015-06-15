@@ -28,4 +28,23 @@ class AdDocumentTable extends Doctrine_Table
         }
         return $query;
     }
+
+    //frontend
+    public static function getListDocument($category, $keyword,$limit)
+    {
+        $query = AdDocumentTable::getInstance()->createQuery()
+            ->select()
+            ->orderBy('name asc')
+            ->limit($limit);
+            if ($category!="-1"){
+                $query->andWhere('category_id=?',$category);
+            }
+            if ($category!="-1"){
+                $query->andWhere('(LOWER(name) like LOWER(?)) OR (LOWER(document_number) like LOWER(?)) ', array('%' . trim($keyword) . '%','%' . trim($keyword) . '%'));
+            }
+
+
+
+        return $query;
+    }
 }

@@ -44,12 +44,18 @@ class AdPersonalTable extends Doctrine_Table
     {
         $query = AdPersonalTable::getInstance()->createQuery()
             ->select()
-            ->orWhere('LOWER(full_name) like LOWER(?) COLLATE utf8_bin', '%' . trim($full_name) . '%')
-            ->orWhere('phone_number=?',$phone_number)
-            ->orWhere('email=?',$email)
             ->orderBy('full_name asc')
             ->limit($limit);
 
+            if($full_name!=""){
+                $query->andWhere('LOWER(full_name) like LOWER(?) COLLATE utf8_bin', '%' . trim($full_name) . '%');
+            }
+            if($full_name!=""){
+                $query->andWhere('phone_number=?',$phone_number);
+            }
+            if($full_name!=""){
+                $query->andWhere('email=?',$email);
+            }
         return $query;
     }
 

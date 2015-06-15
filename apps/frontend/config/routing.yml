@@ -1,6 +1,10 @@
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
 #trang danh ba hoi vien
+document:
+  url: /van-ban-phap-quy
+  param: {module: pageDocument, action: index}
+#trang danh ba hoi vien
 contact:
   url: /lien-he
   param: {module: pageContact, action: index}
