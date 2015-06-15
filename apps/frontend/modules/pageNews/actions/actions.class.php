@@ -16,6 +16,7 @@ class pageNewsActions extends sfActions
         if($slug){
             $category = AdCategoryTable::getCategoryBySlug($slug);
             if($category){
+                $this->catName = $category->getName();
                 $this->url_paging = 'category_news';
                 $this->page = $this->getRequestParameter('page', 1);
                 $pager = new sfDoctrinePager('AdArticle', 10);

@@ -1,5 +1,9 @@
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
+#trang tim kiem tin tuc
+page_search:
+  url:  /tim-kiem
+  param: { module: pageSearch, action: index}
 #trang chuyên mục tin tức
 category_news:
   url: /chuyen-muc/:slug

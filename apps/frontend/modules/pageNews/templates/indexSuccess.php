@@ -1,6 +1,6 @@
 <div class="col-main">
     <div class="box">
-        <h3 class="title-main"><span class="label">Tin tức »</span></h3>
+        <h3 class="title-main"><span class="label"><?php echo htmlspecialchars($catName); ?> »</span></h3>
         <?php
         if (isset($listArticle) && count($listArticle)):
             foreach ($listArticle as $item):

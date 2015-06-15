@@ -27,8 +27,8 @@
                 <button class="btn">Danh bạ</button>
                 <button class="btn">Liên hệ</button>
             </div>
-            <form class="frm-search">
-                <input type="text" class="in-search" name="" value="">
+            <form class="frm-search" method="get" action="<?php echo url_for1('@page_search') ?>">
+                <input type="text" class="in-search" name="query" value="">
                 <input type="submit" value="">
             </form>
         </div>
