@@ -26,7 +26,7 @@ class AdHtmlTable extends Doctrine_Table
         return $query;
     }
 
-    public static  function getAllHtml($lang,$portalId)
+    public static  function getAllHtml($lang)
     {
         $query=  AdHtmlTable::getInstance()->createQuery()
             ->select('slug, prefix_path')
@@ -35,7 +35,7 @@ class AdHtmlTable extends Doctrine_Table
         return $query->execute();
     }
 
-    public static function getHtmlByHtml($slug,$portalId){
+    public static function getHtmlByHtml($slug){
         $query=  AdHtmlTable::getInstance()->createQuery()
             ->where('is_active=?',VtCommonEnum::NUMBER_ONE)
             ->andWhere('slug=?',$slug)
