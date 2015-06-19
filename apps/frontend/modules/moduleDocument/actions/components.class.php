@@ -11,10 +11,10 @@ class moduleDocumentComponents extends sfComponents
     public function executeHotDocument(sfWebRequest $request){
         $limit = $this->getVar('limit');
         if (!isset($limit))
-            $limit = 5;
-        $categoriesDoc = AdDocumentCategoryTable::getCategoryDocumentHot($limit)->execute();
-        if($categoriesDoc){
-            $this->categoriesDoc = $categoriesDoc;
+            $limit = 6;
+        $listDocument = AdDocumentTable::getDocumentHot($limit)->fetchArray();
+        if($listDocument){
+            $this->listDocument = $listDocument;
         }
         else{
             return sfView::NONE;

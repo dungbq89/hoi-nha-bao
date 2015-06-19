@@ -47,4 +47,15 @@ class AdDocumentTable extends Doctrine_Table
 
         return $query;
     }
+
+    //lay danh sach tai lieu hien thi trang chu
+    public static function getDocumentHot($limit=null){
+        $query = AdDocumentTable::getInstance()->createQuery()
+            ->where('is_active=?',VtCommonEnum::NUMBER_ONE)
+            ->andWhere('is_home=?',VtCommonEnum::NUMBER_ONE);
+        if($limit){
+            $query->limit($limit);
+        }
+        return $query;
+    }
 }
