@@ -15,7 +15,7 @@
                     <div class="news-info">
                         <a href="<?php echo url_for2('article_detail',array('slug'=>$listNews[0]['slug'])) ?>" title="" class="news-title"><?php echo htmlspecialchars($listNews[0]['alttitle']); ?></a>
 
-                        <p class="news-txt"><?php echo htmlspecialchars($listNews[0]['header']); ?></p>
+                        <p class="news-txt"><?php echo VtHelper::truncate($listNews[0]['header'],80,'...'); ?></p>
 
                         <p class="news-date">
                             <?php
@@ -29,7 +29,7 @@
                 <div class="item news-more">
                     <ul>
                         <?php for($i=1;$i<count($listNews);$i++): ?>
-                        <li><a href="<?php echo url_for2('article_detail',array('slug'=>$listNews[$i]['slug'])) ?>" title=""><?php echo htmlspecialchars($listNews[$i]['alttitle']); ?></a></li>
+                        <li><a href="<?php echo url_for2('article_detail',array('slug'=>$listNews[$i]['slug'])) ?>" title="<?php echo htmlspecialchars($listNews[$i]['title']); ?>"><?php echo VtHelper::truncate($listNews[$i]['alttitle'],40,'...'); ?></a></li>
                         <?php endfor; ?>
                     </ul>
                 </div>

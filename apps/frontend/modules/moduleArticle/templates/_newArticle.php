@@ -8,7 +8,7 @@ if (isset($articles) && $articles):
             <h4 class="title"><?php echo htmlspecialchars($articles[0]['alttitle']); ?></h4>
         </a>
 
-        <p><?php echo htmlspecialchars($articles[0]['header']); ?></p>
+        <p><?php echo VtHelper::truncate($articles[0]['header'],200,'...'); ?></p>
 
     </div>
     <div class="item item-lastest-news">

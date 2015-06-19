@@ -10,7 +10,7 @@
     <div class="line"></div>
     <div class="main">
         <div class="col-main">
-        <?php include_component('moduleArticle','categoryNews',array('limit'=>6)) ?>
+        <?php include_component('moduleArticle','categoryNews',array('limit'=>15)) ?>
 
 
 

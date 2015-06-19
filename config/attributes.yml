@@ -9,5 +9,7 @@ view_page:
   contact: {value: contact, alias: "Trang liên hệ"}
   personnal: {value: personnal, alias: "Trang danh bạ hội viên"}
   article_detail: {value: article_detail, alias: "Trang chi tiết tin"}
+  introduction: {value: introduction, alias: "Trang giới thiệu"}
+  category_news: {value: category_news, alias: "Trang tin chuyên mục"}
 promotion_attributes:
   new: {value: 1, alias: "Tin mới"}

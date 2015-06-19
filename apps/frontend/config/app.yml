@@ -3,4 +3,4 @@
 
 # default values
 all:
-  cat_id: 1
+  cat_id: 2
