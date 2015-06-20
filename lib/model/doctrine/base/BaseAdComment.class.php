@@ -59,10 +59,10 @@ abstract class BaseAdComment extends sfDoctrineRecord
              'notnull' => false,
              'length' => 255,
              ));
-        $this->hasColumn('description', 'string', 500, array(
+        $this->hasColumn('description', 'string', 255, array(
              'type' => 'string',
              'notnull' => false,
-             'length' => 500,
+             'length' => 255,
              ));
         $this->hasColumn('create_date', 'timestamp', 25, array(
              'type' => 'timestamp',

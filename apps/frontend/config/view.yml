@@ -18,6 +18,7 @@ default:
     - jquery.mCustomScrollbar.css
     - jquery.bxslider.css
     - style-table.css
+    - lightslider.css
     - coder_update.css
 
   javascripts:
@@ -25,6 +26,7 @@ default:
     - jquery.mCustomScrollbar.concat.min.js
     - jquery.bxslider.min.js
     - main.js
+    - lightslider.js
 
   has_layout:     true
   layout:         layout

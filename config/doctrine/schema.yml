@@ -147,6 +147,7 @@ AdAlbum:
     priority: { type: integer(5), notnull: true, comment: "Độ ưu tiên hiển thị" }
     is_active: { type: boolean, notnull: true, default: false, comment: "Trạng thái hiển thị (0: Chưa kích hoạt, 1: đã kích hoạt)" }
     is_default: { type: boolean, notnull: true, default: false, comment: "Trạng thái mặc định để hiển thị, 1: hiển thị, 0: không hiển thị." }
+    image_path: { type: string(255), comment: "Đường dẫn ảnh đại diện" }
     lang: { type: string(10), notnull: true, comment: "Đa ngôn ngữ" }
     slug: { type: string(255), unique: true, notnull: true, comment: "chuyển đổi url"}
 AdPhoto:

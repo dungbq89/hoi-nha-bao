@@ -35,7 +35,7 @@ body{
    /* font-family: cambria;*/
 
     font-size: 13px;
-    background-color: #c4c0c0;
+    background-color: #fafafa;
     color: #231f20;
     line-height: 16px;
 }
@@ -74,7 +74,7 @@ h3{
 	margin: 0px;
 }
 .header{
-    height: 70px;
+    height: 75px;
     overflow: hidden;
 }
 .navitor{
@@ -123,15 +123,14 @@ li{
 
 }
 .box-hot-news .item-hot-news p{
-    height: 32px;
+    height: 64px;
     overflow: hidden;
 }
 .img-responsive{
     width: 100%;
 }
 
-.box-hot-news .item-hot-news,
-.box-hot-news .item-lastest-news{
+.box-hot-news .item-hot-news{
     padding-top: 10px;
 }
 .item-hot-news img.img-news{
@@ -177,11 +176,11 @@ background: url("../img/bg-line-bottom.png") repeat-x left bottom;
     margin-bottom: 10px;
 }
 h3.title{
-    background: url("../img/bg-title-module.png") bottom repeat-x;
-    height: 22px;
+    background: url("../img/bg-title-module.png") bottom repeat-x #fbfbfb;
+    height: 24px;
     padding-left: 10px;
     padding-right: 10px;
-    padding-top: 12px;
+    padding-top: 9px;
 }
 .item-lastest-news h3.title,
 .col-right .box-mod h3.title{
@@ -203,7 +202,7 @@ color: #fff;
 }
 .col-main h3.title-main span.label{
     background: url("../img/bg-title-right2.png") no-repeat top right #0788d9;
-    padding: 5px 58px 2px 10px;
+    padding: 7px 58px 2px 10px;
     height: 22px;
     float: left;
     display: block;
@@ -233,13 +232,13 @@ color: #fff;
     padding-bottom: 8px;
 }
 .box-mod .news-title{
-    color: #676767;
+    color: #505050;
 }
-.line{
+/*.line{
     border: 3px solid #0788d9;
     clear: both;
     margin-top: 12px;
-}
+}*/
 .box-adv-main{
     margin-top: 12px;
 }
@@ -275,11 +274,11 @@ width: 290px;
 .box-news .item{
     float: left;
     margin-top: 15px;
-    margin-left: 10px;
+
 
 }
 .box-news .news-item{
-    width: 420px;
+    width: 425px;
 }
 .box-news .news-item{
     overflow: hidden;
@@ -358,7 +357,7 @@ a.news-img img{
     border-bottom: 1px solid #ccc;
 }
 .news-more{
-    width: 170px;
+    width: 192px;
     background-color: #fcfcfc;
     padding: 2px 10px;
     height: 114px;
@@ -404,7 +403,7 @@ a.news-img img{
     margin-top: 3px;
 }
 .nav{
-    background: url('../img/bg-nav.png') repeat-x top 1px left #c5ddec;
+    background: url('../img/bg-nav1.png') repeat-x top 1px left #0788d9;
     height: 37px;
     border-radius: 3px;
 }
@@ -449,29 +448,32 @@ a.news-img img{
 }
 .nav ul li ul li{
     padding: 0px;
+    background: transparent url("../img/bg-line-bottom.png") repeat-x scroll left bottom;
+    padding: 5px 20px 8px 0px;
+    clear: both;
+    width: 80%;
 }
 .nav ul li ul li a{
     border-right: none;
     color: #232323;
     line-height: 16px;
-    background: transparent url("../img/bg-line-bottom.png") repeat-x scroll left bottom;
-    padding: 5px 20px 8px 5px;
+    display: block;
 }
 .box-form-search{
     float: right;
 }
 .box-scroll{
-    height: 332px;
+    height: 363px;
     overflow: auto;
 }
 
 .header .box-btn{
     margin-top: 8px;
-    overflow: hidden;
+    /*overflow: hidden;*/
     margin-bottom: 5px;
 }
 .img-adv{
-    height: 50px;
+    height: 55px;
     margin-top: 10px;
     width: 520px;
 }
@@ -494,7 +496,7 @@ a.news-img img{
 .frm-search input[type="text"]{
     border: none;
     float: left;
-    width: 220px;
+    width: 205px;
 }
 .box-form-search{
     float: right;
@@ -506,6 +508,8 @@ a.news-img img{
     background: url("../img/icon-search.png") no-repeat;
     border: none;
     cursor: pointer;
+    width: 20px;
+    height: 20px;
 }
 .box-btn button{
     float: left;
@@ -524,6 +528,7 @@ a.news-img img{
     margin-bottom: 10px;
 
 }
+.box-play-video .icon-play,
 .video-play .icon-play{
     position: absolute;
     top: 50%;
@@ -634,24 +639,35 @@ h3.h3-more{
     width: 640px;
     height: 358px;
 }
-.txt-gallary{
-    padding: 60px 40px 20px 40px;
+.lSSlideOuter .lSPager.lSGallery li img{
+    width: 100%;
 }
-.txt-gallary h3{
+
+.txt-gallery{
+    padding: 75px 40px 20px 40px;
+    float: right;
+    width: 270px;
+    background-color: #6C8091;
+    height:250px;
+}
+.bxslider li{
+    overflow: hidden;
+}
+.txt-gallery h3{
     font-size: 18px;
     color: #fff;
     line-height: 20px;
 }
-.txt-gallary,.txt-gallary h3 a{
+.txt-gallery,.txt-gallery h3 a{
     color: #fff;
 }
-.txt-gallary span.txt-gallary-date{
+.txt-gallery span.txt-gallery-date{
     display: block;
     clear: both;
     font-size: 12px;
-    margin: 3px 0px 20px 0px;
+    margin: 10px 0px 20px 0px;
 }
-.txt-gallary span.txt-gallary-news{
+.txt-gallery span.txt-gallery-news{
     line-height: 18px;
     font-size: 13px;
     display: block;
@@ -659,21 +675,26 @@ h3.h3-more{
     overflow: hidden;
 }
 .gallary-item{
-    width: 312px;
+    width: 230px;
     float: left;
-    margin-right: 18px;
-    height: 368px;
-    margin-bottom: 12px;
+    margin-right: 19px;
+    height: 288px;
+    margin-bottom: 15px;
+}
+.gallary-item h3{
+    font-size: 13px;
+    font-weight: bold;
 }
 .img-gallary-item{
-    width: 321px;
-    height: 184px;
+    width: 100%;
+    height: 144px;
 }
 .gallary-item span.txt-date{
-    margin-top:8px;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 8px;
     display: block;
-
+    font-size: 11px;
+    color: #565656;
 }
 .gallary-item span.txt-news{
     display: block;
@@ -681,20 +702,25 @@ h3.h3-more{
     overflow: hidden;
     height: 72px;
 }
-.gallary-item h3, .gallary-item span{
-    margin-left:10px;
-    margin-right: 10px;
+.box-gallary .title-item{
+    font-size: 17px;
+    margin-bottom: 12px;
 }
 .box-gallary{
-    width: 1110px;
+    width: 1000px;
     clear: both;
-    padding-top: 20px;
+    padding-top: 25px;
 }
 .box-gallary .box-pagging{
     margin-bottom: 30px;
 }
+.box-gallary .gallary-item p.txt-news{
+    height: 65px;
+    overflow: hidden;
+}
 .pag-gallary{
     margin-bottom:40px;
+    clear: both;
 }
 .box-ctrol-slide{
     position: absolute;
@@ -709,6 +735,23 @@ h3.h3-more{
     border-radius: 4px;
     float: left;
     margin-right: 10px;
+    cursor: pointer;
+}
+.gallary-item a{
+    position: relative;
+    display: block;
+}
+.gallary-item .icon-play{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -20px;
+    margin-left: -20px;
+    background: url("../img/icon-play.png") no-repeat;
+    background-size: 40px 40px;
+    height: 40px;
+    width: 40px;
+    display: block;
     cursor: pointer;
 }
 .box-ctrol-slide span:hover{
@@ -785,10 +828,22 @@ h3.h3-more{
 .box-btn{
     float: right;
 }
+.box-btn .btn:hover{
+    background: url("../img/bg-btn-header-hover.png") repeat-x #3c75a5;
+}
 .box-btn .btn{
-    background-color: #d4d4d4;
+    background-color: #4C94B6;
     text-align: right;
     display: inline-block;
+    padding: 5px 10px 6px;
+    color: #fff;
+    text-decoration: none;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.6);
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+    cursor: pointer
 }
 
 .box-form .btn{
@@ -812,13 +867,17 @@ h3.h3-more{
     margin-top: 25px;
     font-size: 13px;
 }
+.frm-contact{
+    margin-top: 15px;
+    font-size: 13px;
+}
 
-.frm-log .frm-item{
+.frm-item{
     margin-bottom: 12px;
     clear: both;
     overflow: hidden;
 }
-.frm-log .frm-item span.label{
+.frm-item span.label{
     width: 130px;
     display: block;
     float: left;
@@ -826,10 +885,34 @@ h3.h3-more{
     height: 25px;
     font-weight: bold;
 }
-span.btn-in input[type="text"]
-{
+.box-form-contact{
+    width: 520px;
+    margin: auto;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.box-form-contact textarea{
+    width: 318px;
+    height: 120px;
+}
+.frm-item select,
+.box-form-contact textarea,
+.box-form-contact span.btn-in input[type="text"]{
+    border: 1px solid #d7d7d7;
+    padding: 7px 10px;
+}
+
+.box-form-contact span.btn-in input[type="text"]{
+    width: 320px;
+}
+.frm-item select{
+    width: 242px;
+    padding: 5px 10px;
+}
+span.btn-in input[type="text"]{
     width: 220px;
     padding: 5px 10px;
+    border: 1px solid #d7d7d7;
 }
 
 .box-form input[type="submit"]{
@@ -882,7 +965,18 @@ span.btn-in input[type="text"]
     padding-left: 12px;
 }
 
+.gallery{
+    margin-top: 10px;
+}
+.gallery .img-gallery{
+    float: left;
+    width: 630px;
 
+}
+.gallery li{
+    height: 320px;
+    overflow: hidden;
+}
 
 
 
@@ -905,4 +999,50 @@ span.btn-in input[type="text"]
     width: 196px;
     height: 98px;
     background: url("../img/bg-word.png") no-repeat;
+}
+.box-info{
+    background-color: #f9f9f9;
+    padding: 12px 15px;
+}
+.box-info table{
+    margin: 15px auto;
+
+}
+.box-info table td{
+    padding: 4px 0px;
+}
+.box-info table .txt-label{
+    width: 120px;
+    font-weight: bold;
+}
+.box-map{
+    width: 620px;
+    margin: 20px auto;
+}
+h3.title-item{
+    background: url("../img/icon-bulet2.png") no-repeat left 4px;
+    padding-left: 12px;
+    font-weight: bold;
+    font-size: 13px;
+    margin: 15px 0px 10px 0px;
+    font-size: 15px;
+}
+.box-form-contact .box-btn{
+    margin-right: 50px;
+}
+.slide .gallery{
+    margin-top: 0px
+}
+.box-play-video{
+    overflow: hidden;
+    margin-top: 10px;
+}
+.play-video{
+    width: 630px;
+    float: left;
+    height: 345px;
+    background-color: #444;
+}
+.play-video{
+    position: relative;
 }

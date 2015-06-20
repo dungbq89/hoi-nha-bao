@@ -13,6 +13,7 @@ Doctrine_Manager::getInstance()->bindComponent('AdAlbum', 'doctrine');
  * @property integer $priority
  * @property boolean $is_active
  * @property boolean $is_default
+ * @property string $image_path
  * @property string $lang
  * @property string $slug
  * @property Doctrine_Collection $AlbumPhoto
@@ -23,6 +24,7 @@ Doctrine_Manager::getInstance()->bindComponent('AdAlbum', 'doctrine');
  * @method integer             getPriority()    Returns the current record's "priority" value
  * @method boolean             getIsActive()    Returns the current record's "is_active" value
  * @method boolean             getIsDefault()   Returns the current record's "is_default" value
+ * @method string              getImagePath()   Returns the current record's "image_path" value
  * @method string              getLang()        Returns the current record's "lang" value
  * @method string              getSlug()        Returns the current record's "slug" value
  * @method Doctrine_Collection getAlbumPhoto()  Returns the current record's "AlbumPhoto" collection
@@ -32,6 +34,7 @@ Doctrine_Manager::getInstance()->bindComponent('AdAlbum', 'doctrine');
  * @method AdAlbum             setPriority()    Sets the current record's "priority" value
  * @method AdAlbum             setIsActive()    Sets the current record's "is_active" value
  * @method AdAlbum             setIsDefault()   Sets the current record's "is_default" value
+ * @method AdAlbum             setImagePath()   Sets the current record's "image_path" value
  * @method AdAlbum             setLang()        Sets the current record's "lang" value
  * @method AdAlbum             setSlug()        Sets the current record's "slug" value
  * @method AdAlbum             setAlbumPhoto()  Sets the current record's "AlbumPhoto" collection
@@ -81,6 +84,11 @@ abstract class BaseAdAlbum extends sfDoctrineRecord
              'notnull' => true,
              'default' => false,
              'comment' => 'Trạng thái mặc định để hiển thị, 1: hiển thị, 0: không hiển thị.',
+             ));
+        $this->hasColumn('image_path', 'string', 255, array(
+             'type' => 'string',
+             'comment' => 'Đường dẫn ảnh đại diện',
+             'length' => 255,
              ));
         $this->hasColumn('lang', 'string', 10, array(
              'type' => 'string',
