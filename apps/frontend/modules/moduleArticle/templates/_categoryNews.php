@@ -6,7 +6,7 @@
             $path = '/uploads/' . sfConfig::get('app_article_images') . $listNews[0]['image_path'];
             ?>
             <div class="box-news">
-                <h3 class="title-main"><span class="label"><?php echo htmlspecialchars($category->getName()); ?>
+                <h3 class="title-main"><span class="label"><a style="color: #fff;" href="<?php echo url_for2('category_news',array('slug'=>$category->getSlug())) ?>"><?php echo htmlspecialchars($category->getName()); ?>
                         &raquo</span></h3>
 
                 <div class="item news-item">
@@ -22,7 +22,7 @@
                             if($listNews[0]['published_time']) echo VtHelper::getFormatDate($listNews[0]['published_time']);
                             ?>
                         </p>
-                        <a href="" class="readmore" title="Xem tiếp">Xem tiếp</a>
+                        <a href="<?php echo url_for2('article_detail',array('slug'=>$listNews[0]['slug'])) ?>" class="readmore" title="Xem tiếp">Xem tiếp</a>
                     </div>
                 </div>
                 <?php if(count($listNews)>1): ?>

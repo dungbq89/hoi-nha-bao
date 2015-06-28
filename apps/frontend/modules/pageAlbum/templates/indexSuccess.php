@@ -3,6 +3,7 @@
 
     <?php include_component('pageAlbum', 'pageContent') ?>
 </div>
+
 <script>
     $(document).ready(function() {
         $("#content-slider").lightSlider({
