@@ -7,6 +7,7 @@ if (isset($listDocument) && $listDocument):
         <ul>
             <?php
             foreach ($listDocument as $doc):
+                $newLink = '';
                 if ($doc['file_path']) {
                     $newLink = '/uploads/' . sfConfig::get('app_document') . '/' . $doc['file_path'];
                 }

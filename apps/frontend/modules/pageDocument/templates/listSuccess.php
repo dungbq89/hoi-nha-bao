@@ -10,36 +10,8 @@
 <div class="main">
     <div class="col-main">
         <div class="box">
-            <h3 class="title-main"><span class="label">Văn bản pháp quy &raquo</span></h3>
-            <div class="box-form">
-                <form class="frm-log" action="" method="POST">
-                    <?php echo $form->renderHiddenFields() ?>
-                    <div class="frm-item">
-                        <span class="label">Lĩnh vực</span>
-                        <span class="btn-in">
-                             <?php echo $form['category']->render(array('class'=>'select'));
-                             if ($form['category']->hasError()) {
-                                 echo '<span class="help-inline">' . $form['category']->renderError() . '</span>';
-                             }?>
-                        </span>
-                    </div>
-                    <div class="frm-item">
-                        <span class="label">Từ khóa</span>
-                        <span class="btn-in">
-                            <?php echo $form['keyword']->render(array('class'=>'in-txt'));
-                            if ($form['keyword']->hasError()) {
-                                echo '<span class="help-inline">' . $form['keyword']->renderError() . '</span>';
-                            }?>
-                        </span>
-                        <div class="notic-frm"></div>
-                    </div>
+            <h3 class="title-main"><span class="label"><?php if(isset($catName)) echo htmlspecialchars($catName); ?></span></h3>
 
-                    <div class="box-btn">
-                        <button name="" type="submit" class="btn">Tra cứu</button>
-                    </div>
-
-                </form>
-            </div>
 
             <?php if(isset($listDocument)):
                 $i=1;

@@ -58,4 +58,5 @@ class AdDocumentTable extends Doctrine_Table
         }
         return $query;
     }
+
 }

@@ -19,7 +19,7 @@ class AdPhotoTable extends Doctrine_Table
     public static function getPhotoByAlbumId($albumId)
     {
         return AdPhotoTable::getInstance()->createQuery()
-            ->select()
+//            ->select('*')
             ->where('album_id=?',$albumId)
             ->andwhere('is_active=1');
     }

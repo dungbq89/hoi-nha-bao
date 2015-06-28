@@ -48,4 +48,31 @@ class pageDocumentActions extends sfActions {
         }
         $this->form=$form;
     }
+
+    public function executeList(sfWebRequest $request)
+    {
+        $id = $request->getParameter('id');
+        if($id){
+            $category = AdDocumentCategoryTable::getCategoryDocumentById($id);
+            if($category){
+                $this->catName = $category->getName();
+                $this->url_paging = 'category_document';
+                $this->page = $this->getRequestParameter('page', 1);
+                $pager = new sfDoctrinePager('AdDocument', 10);
+                $pager->setQuery(AdDocumentTable::getDocumentByCatId($category->getId()));
+                $pager->setPage($this->page);
+                $pager->init();
+                $this->pager = $pager;
+                $this->listDocument = $pager->getResults();
+            }
+            else{
+                return $this->redirect404();
+            }
+
+        }
+        else{
+            return $this->redirect404();
+        }
+
+    }
 }

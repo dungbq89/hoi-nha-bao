@@ -24,6 +24,13 @@ class AdDocumentCategoryTable extends Doctrine_Table
         return $query->fetchOne();
     }
 
+    public static function getCategoryDocumentBySlug($slug)
+    {
+        $query = AdDocumentCategoryTable::getInstance()->createQuery()
+            ->Where('slug=?', $slug);
+        return $query->fetchOne();
+    }
+
     //lay danh sach chuyen muc tai lieu hien thi trang chu
     public static function getCategoryDocumentHot($limit=null)
     {

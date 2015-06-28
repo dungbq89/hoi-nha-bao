@@ -21,6 +21,12 @@ category_news:
 document:
   url: /van-ban-phap-quy
   param: {module: pageDocument, action: index}
+
+#trang danh ba hoi vien
+category_document:
+  url: /chuyen-muc-van-ban/:id
+  param: {module: pageDocument, action: list}
+
 #trang danh ba hoi vien
 contact:
   url: /lien-he
