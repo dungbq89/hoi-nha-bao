@@ -34,7 +34,7 @@ all:
   storage:
     class: myPDOSessionStorage
     param:
-      session_name: viettelportal
+      session_name: hoinhabao
       db_table: sessions_admin
       database: doctrine
       db_id_col: sess_id

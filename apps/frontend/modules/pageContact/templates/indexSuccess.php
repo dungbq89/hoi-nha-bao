@@ -10,32 +10,25 @@
 <div class="main">
     <div class="col-main">
         <div class="box">
-            <h3 class="title-main"><span class="label">Liên hệ &raquo</span></h3>
-            <div class="box-info">
-                <table class="table-border">
-                    <tr>
-                        <td class="txt-label">Tên hội</td>
-                        <td>Hội nhà báo VNTY Hà Nội</td>
-                    </tr>
-                    <tr>
-                        <td class="txt-label">Địa chỉ</td>
-                        <td>58 Lý Thường Kiệt - Hàng Bài, Hà Nội</td>
-                    </tr>
-                    <tr>
-                        <td class="txt-label">Số điện thoại</td>
-                        <td>043-456-7865. Hotline: 0988876543</td>
-                    </tr>
-                    <tr>
-                        <td class="txt-label">Fax</td>
-                        <td>0975356878</td>
-                    </tr>
-                </table>
-            </div>
+            <?php if ($contact): ?>
+                <h3 class="title-main"><span class="label">Liên hệ &raquo</span></h3>
+                <div class="box-info">
+                    <h3 class="title"><?php echo htmlspecialchars($contact->getTitle());?></h3>
+                    <?php echo nl2br(htmlspecialchars($contact->getContent())); ?>
+                </div>
 
-            <div class="box-map">
-                <h3 class="title-item">Sơ đồ đường đi</h3>
-                <img src="/img/img-map.png" class=""/>
-            </div>
+                <div class="box-map">
+                    <h3 class="title-item">Sơ đồ đường đi</h3>
+                    <div class="map">
+                        <!--Lay ca giai tri cho map-->
+                        <input id="zoom" type="hidden" value="<?php echo (int)htmlspecialchars($contact->getZoom()) ?>">
+                        <input id="lat" type="hidden" value="<?php echo floatval(htmlspecialchars($contact->getLat())) ?>">
+                        <input id="lng" type="hidden" value="<?php echo floatval(htmlspecialchars($contact->getLng())) ?>">
+                        <!-- The maps -->
+                        <div id="map-canvas" style="float: left; height: 335px; width: 100%; position: relative; background-color: rgb(229, 227, 223); overflow: hidden;"></div>
+                    </div>
+                </div>
+            <?php endif; ?>
 
             <div class="box-form-contact">
                 <h3 class="title-item">Gửi thông tin liên hệ</h3>

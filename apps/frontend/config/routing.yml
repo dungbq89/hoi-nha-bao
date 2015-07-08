@@ -5,6 +5,10 @@ page_album:
   url: /album/:slug
   param: {module: pageAlbum, action: index, slug: ''}
 #trang gioi thieu
+videopage:
+  url: /video/:slug
+  param: {module: pageVideo, action: index, slug: ''}
+#trang gioi thieu
 introduction:
   url: /gioi-thieu/:slug
   param: {module: pageIntroduction, action: index}

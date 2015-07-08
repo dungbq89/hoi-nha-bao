@@ -1,0 +1,4 @@
+indexSuccess:
+  metas:
+    title: Thông tin liên h?
+  javascripts: [google-api/google-maps-api.js, maps.js]

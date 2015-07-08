@@ -7,6 +7,8 @@
  */
 class pageContactActions extends sfActions {
     public function executeIndex(sfWebRequest $request) {
+        $this->contact = AdContactTable::getContact();
+
         $form=new contactForm();
 
         if($request->isMethod('POST')){

@@ -16,4 +16,10 @@ class AdContactTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('AdContact');
     }
+
+	public  static  function getContact(){
+	    return AdContactTable::getInstance()->createQuery()
+	        ->select()
+	        ->fetchOne();
+	}
 }
