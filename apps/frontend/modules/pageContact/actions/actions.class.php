@@ -23,6 +23,7 @@ class pageContactActions extends sfActions {
                 $comment->setDescription(trim($values['description']));
                 $comment->setCreateDate(date('Y-m-d H:i:s',time()));
                 $comment->save();
+                $this->getUser()->setFlash('success','Cảm ơn bạn đã gửi thông tin cho chúng tôi.');
             }
         }
         $this->form=$form;
