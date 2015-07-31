@@ -2,9 +2,9 @@
 if (isset($articles) && $articles):
     ?>
     <div class="box-notic">
-        <div class="btn-hot">Hot</div>
+        <div class="btn-hot">TIN MỚI NHẬN</div>
         <div class="box-mequ">
-            <marquee direction="left" scrollamount="1" scrolldelay="40" width="480px" style="width: 480px;">
+            <marquee direction="left" width="480px" style="width: 480px;">
                 <?php
                 foreach($articles as $value):
                     ?>

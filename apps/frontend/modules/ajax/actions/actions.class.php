@@ -17,7 +17,18 @@ class ajaxActions extends sfActions {
             if ($video) {
                 $path = '/uploads/' . sfConfig::get('app_advertise_images') . $video->getImagePath();
                 $url_file = sfConfig::get('app_url_media_file') . '/video/' . $video->getFilePath();
-                $emb_video = VtHelper::generateEmbedJwplayer($url_file,300,220,$path);
+                $emb_video = '<script type="text/javascript">';
+                $emb_video .= 'jwplayer("box-video-play").setup({
+                            flashplayer: "/js/jwplayer/jwplayer.flash.swf",
+                            file: "'.$url_file.'",
+                            image: "'.$path.'",
+                            autostart: false,
+                            height: 168,
+                            width: 300,
+                             aspectratio: "16:9",
+
+                        });';
+                $emb_video .= '</script>';
             }
         }
         return $this->renderText(json_encode($emb_video));

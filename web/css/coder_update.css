@@ -14,3 +14,7 @@
 .more-video h3{
     line-height: 26px;
 }
+#csdl_lylichhoivien_ngaysinh_month, #csdl_lylichhoivien_ngaysinh_day, #csdl_lylichhoivien_ngaysinh_year{
+    padding: 5px 10px;
+    width: 111px;
+}

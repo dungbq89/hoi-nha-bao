@@ -7,6 +7,7 @@
                          <span class="txt-date">
                             <?php if ($article['published_time']) echo VtHelper::getFormatDate($article['published_time']); ?>
                         </span>
+
                         <span class="txt-artice-intro">
                             <?php echo htmlspecialchars($article['header']); ?>
                         </span>
