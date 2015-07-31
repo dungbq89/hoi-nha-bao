@@ -25,12 +25,18 @@ class AdVideoTable extends Doctrine_Table
         return $query;
     }
 
-    public static function updateDefault()
+    public static function updateDefault($id)
     {
         $query=AdVideoTable::getInstance()->createQuery()
             ->update()
             ->set('is_default', '?', VtCommonEnum::NUMBER_ZERO)
             ->where('is_default=?',VtCommonEnum::NUMBER_ONE);
+         $query->execute();
+
+        $query=AdVideoTable::getInstance()->createQuery()
+            ->update()
+            ->set('is_default', '?', VtCommonEnum::NUMBER_ONE)
+            ->where('id=?',$id);
         return $query->execute();
     }
 
