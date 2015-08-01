@@ -1,16 +1,12 @@
+<script type="text/javascript">jwplayer.key="5qMQ1qMprX8KZ79H695ZPnH4X4zDHiI0rCXt1g==";</script>
 <?php if (isset($listVideo) && count($listVideo) > 0): ?>
-
+    <?php
+    $url_file = sfConfig::get('app_url_media_file') . '/video/';
+    $path = '/uploads/' . sfConfig::get('app_advertise_images')  . $listVideo[0]->getImagePath();
+    ?>
     <div class="item item-video">
 
-        <div id="box-video-play" class="video-play">
-            <?php
-            $url_file = sfConfig::get('app_url_media_file') . '/video/';
-            $path = '/uploads/' . sfConfig::get('app_advertise_images') . $listVideo[0]->getImagePath();
-            echo '<div style="margin-bottom: 20px;">';
-            echo VtHelper::generateEmbedJwplayer($url_file . $listVideo[0]->getFilePath(), 300, 220, $path);
-            echo '</div>';
-            ?>
-        </div>
+        <div id="box-video-play" class="video-play" width="300" height="168"></div>
 
         <div class="more-video">
             <?php
@@ -29,9 +25,23 @@
     </div>
 
 <?php endif; ?>
-<!--<script type="text/javascript" src="/js/jwplayer/jwplayer.js"></script>-->
+<div id="script-video">
+    <script type="text/javascript">
+        jwplayer("box-video-play").setup({
+            flashplayer: "/js/jwplayer/jwplayer.flash.swf",
+            file: "<?php echo $url_file . $listVideo[0]->getFilePath(); ?>",
+            image: "<?php echo $path; ?>",
+            aspectratio: '16:9',
+            height: 168,
+            width: 300
+        });
+    </script>
+
+</div>
+
 <script type="text/javascript">
-    function ajaxLoadVideo(url, id){
+    function ajaxLoadVideo(url, id) {
+
         $.ajax({
             type: "GET",
             url: url,
@@ -42,11 +52,12 @@
             success: function(data) {
                 $('a').removeClass('title-video-active');
                 obj = $.parseJSON(data);
-                $('#box-video-play').html(obj);
+                $('#script-video').html(obj);
                 $('#tit-video'+id).addClass('title-video-active');
             },
             error: function() {
             }
         });
     }
+
 </script>

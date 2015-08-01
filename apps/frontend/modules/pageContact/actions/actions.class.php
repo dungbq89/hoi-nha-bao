@@ -7,6 +7,8 @@
  */
 class pageContactActions extends sfActions {
     public function executeIndex(sfWebRequest $request) {
+        $this->contact = AdContactTable::getContact();
+
         $form=new contactForm();
 
         if($request->isMethod('POST')){
@@ -21,6 +23,7 @@ class pageContactActions extends sfActions {
                 $comment->setDescription(trim($values['description']));
                 $comment->setCreateDate(date('Y-m-d H:i:s',time()));
                 $comment->save();
+                $this->getUser()->setFlash('success','Cảm ơn bạn đã gửi thông tin cho chúng tôi.');
             }
         }
         $this->form=$form;

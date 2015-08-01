@@ -381,9 +381,8 @@ a.news-img img{
     float: left;
     color: red;
     margin-right: 10px;
-    width: 50px;
-    background: url("../img/btn-hot.png") no-repeat;
-    padding-left: 30px;
+    width: 95px;
+    padding-left: 5px;
     height: 25px;
     margin-top: 3px;
     padding-top: 3px;
@@ -498,6 +497,8 @@ a.news-img img{
     border: none;
     float: left;
     width: 205px;
+    color:#ccc;
+    font-style:italic;
 }
 .box-form-search{
     float: right;
@@ -587,12 +588,12 @@ a.news-img img{
 	padding: 10px
 }
 .news-detail .title-article{
-    font-size: 15px;
+    font-size: 20px;
     margin: 10px 0px 10px 0px;
-    color: #233587;
+    color: #333;
 }
 .news-detail .title-article a{
-    color: #233587;
+    color: #333;
 }
 .news-detail .txt-date{
     font-size: 13px;

@@ -28,7 +28,7 @@ class AdArticleTable extends Doctrine_Table
 
     public static function getSearchArticle($keyword)
     {
-        $keyword = addcslashes($keyword, "%_");
+        $keyword = addcslashes($keyword, sfConfig::get('app_addcslashes_charlist', "'%_-\\"));
         return AdArticleTable::getInstance()->createQuery('a')
             ->select('a.id, a.title as name')
             ->where('LOWER(a.title) like LOWER(?) COLLATE utf8_bin', '%' . trim($keyword) . '%')

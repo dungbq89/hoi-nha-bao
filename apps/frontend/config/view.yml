@@ -25,9 +25,9 @@ default:
     - jquery.min.js
     - jquery.mCustomScrollbar.concat.min.js
     - jquery.bxslider.min.js
-
     - main.js
-
+    - jwplayer/jwplayer.js
+    - lightslider.js
 
   has_layout:     true
   layout:         layout

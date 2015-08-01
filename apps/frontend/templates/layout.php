@@ -29,7 +29,7 @@
                 <a href="/lien-he"><button class="btn">Liên hệ</button></a>
             </div>
             <form class="frm-search" method="get" action="<?php echo url_for1('@page_search') ?>">
-                <input type="text" class="in-search" name="query" value="">
+                <input type="text" class="in-search" name="query" placeholder="Nhập từ khóa tìm kiếm" value="">
                 <input type="submit" value="">
             </form>
         </div>
@@ -47,10 +47,9 @@
     <div class="footer">
         <div class="bg-word"></div>
         <p class="copyright">
-            Cơ quản chủ quản: Công ty truyền thông CNT<br>
-            Giấy phép hoạt động báo điện tử số 378GP - BTTVH Hà Nội<br>
-            Tòa soạn: Số 2 (nhà 48) Giảng Võ, Quận Đống Đa, Hà Nội<br>
-            Email: info@truyenthongcnt.com.vn. Website: http://www.cntabc.com.vn </p>
+            HỘI NHÀ BÁO HÀ TĨNH <br /><br />
+            Văn phòng Hội: Số 34 đường Nguyễn Công Trứ, thành phố Hà Tĩnh, tỉnh Hà Tĩnh <br /><br />
+            Email: info@hoinhabaohatinh.vn     Website: http:/www.hoinhabaohatinh.vn</p>
         <div class="clear"></div>
     </div>
     <div class="clear"></div>

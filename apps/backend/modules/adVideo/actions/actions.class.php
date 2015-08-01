@@ -35,10 +35,10 @@ class adVideoActions extends autoAdVideoActions
             try {
                 $ad_video = $form->save();
                 $vals = $form->getValues();
-                if($vals['is_default']=='on'){
+
+                if($vals['is_default']==true){
                     //Cap nhat trang thai defaul ve false
-                    AdVideoTable::updateDefault();
-                    $ad_video->is_default=1;
+                    AdVideoTable::updateDefault($ad_video->id);
                 }
                 $ad_video->extension=pathinfo($ad_video->file_path, PATHINFO_EXTENSION);
                 $ad_video->lang=sfContext::getInstance()->getUser()->getCulture();

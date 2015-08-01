@@ -20,7 +20,7 @@ abstract class BaseAdCommentForm extends BaseFormDoctrine
       'full_name'    => new sfWidgetFormInputText(),
       'phone_number' => new sfWidgetFormInputText(),
       'email'        => new sfWidgetFormInputText(),
-      'description'  => new sfWidgetFormInputText(),
+      'description'  => new sfWidgetFormTextarea(),
       'create_date'  => new sfWidgetFormDateTime(),
     ));
 
@@ -30,7 +30,7 @@ abstract class BaseAdCommentForm extends BaseFormDoctrine
       'full_name'    => new sfValidatorString(array('max_length' => 255)),
       'phone_number' => new sfValidatorString(array('max_length' => 25, 'required' => false)),
       'email'        => new sfValidatorString(array('max_length' => 255, 'required' => false)),
-      'description'  => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'description'  => new sfValidatorString(array('max_length' => 500, 'required' => false)),
       'create_date'  => new sfValidatorDateTime(array('required' => false)),
     ));
 

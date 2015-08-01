@@ -14,7 +14,7 @@ $listVideo = $pager->getResults();
     <?php
     if ($listVideo) {
         foreach ($listVideo as $item) {
-            $path = '/uploads/' . sfConfig::get('app_video_images') . $item->getImagePath();
+            $path = '/uploads/' . sfConfig::get('app_advertise_images') . $item->getImagePath();
             ?>
             <div class="gallary-item">
                 <a href="<?php echo url_for('@videopage?slug=' . $item->getSlug()) ?>" title="">

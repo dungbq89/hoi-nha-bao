@@ -193,7 +193,7 @@ AdComment:
     full_name: {type: string(255), notnull: true, comment: "Ho ten nguoi gop y"}
     phone_number: {type: string(25), notnull: false, default: null}
     email: {type: string(255), notnull: false, default: null}
-    description: {type: string(255), notnull: false, default: null}
+    description: {type: string(500), notnull: false, default: null}
     create_date: { type: timestamp(25), notnull: false, comment: "Ngày tạo"}
 #Thông tin lu tru hoi vien
 AdPersonal:

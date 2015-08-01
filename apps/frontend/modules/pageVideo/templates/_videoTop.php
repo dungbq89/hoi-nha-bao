@@ -7,7 +7,7 @@ $url_file = sfConfig::get('app_url_media_file') . '/video/';
         <?php
         if ($videoDefault) {
             $url_file = sfConfig::get('app_url_media_file') . '/video/'.$videoDefault->getFilePath();
-            $path = '/uploads/' . sfConfig::get('app_video_images') . $videoDefault->getImagePath();
+            $path = '/uploads/' . sfConfig::get('app_advertise_images') . $videoDefault->getImagePath();
         }
         ?>
         <div id="box-video-play" width="630" height="350"></div>
