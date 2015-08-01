@@ -10,12 +10,12 @@
                     <img class="img-gallery" src="<?php echo VtHelper::getThumbUrl($path, 180, 108) ?>"/>
 
                     <div class="txt-gallery">
-                        <h3><a href="" title="">Viettel công bố chính sách ưu đãi riêng cho khách hàng</a></h3>
+                        <h3><a href="" title=""><?php echo htmlspecialchars($album->getName()) ?></a></h3>
                         <span class="txt-gallery-date">
-                            Thứ năm, 29/09/2013 09:40PM
+                            <?php if($album->getEventDate()) echo VtHelper::getFormatDate($album->getEventDate()); ?>
                         </span>
                         <span class="txt-gallery-news">
-                            Với nhiệm vụ nghiên cứu, xây dựng và triển khai các hệ thống công nghệ thông tin phục vụ Tập đoàn   Với nhiệm vụ nghiên cứu, xây dựng và triển khai các hệ thống công nghệ thông tin phục vụ Tập đoàn   Với nhiệm vụ nghiên cứu..
+                            <?php echo htmlspecialchars($album->getDescription()) ?>
                         </span>
                     </div>
                 </li>
@@ -29,4 +29,43 @@
 
 
 </div>
+
+<script>
+    $(document).ready(function() {
+        $("#content-slider").lightSlider({
+            loop:true,
+            keyPress:true
+        });
+        $('#image-gallery').lightSlider({
+            gallery:true,
+            item:1,
+            thumbItem:7,
+            slideMargin: 0,
+            speed:700,
+            auto:true,
+            loop:true,
+            rtl:false,
+            adaptiveHeight:false,
+
+            vertical:false,
+            verticalHeight:2000,
+            vThumbWidth:100,
+
+            pager: true,
+            galleryMargin: 12,
+            thumbMargin: 15,
+            currentPagerPosition: 'middle',
+
+            enableTouch:true,
+            enableDrag:true,
+            freeMove:true,
+            swipeThreshold: 40,
+
+            responsive : [],
+            onSliderLoad: function() {
+                $('#image-gallery').removeClass('cS-hidden');
+            }
+        });
+    });
+</script>
 

@@ -22,17 +22,17 @@ $i = 0;
                 $subMenu[] = $item;
             }
         }
-        $link = '';
+        $link1 = url_for2('category_news',array('slug'=>$menu['slug']));
         if ($menu['link'] != '') {
             if (VtHelper::startsWith($menu['link'], '@')) {
-                $link = url_for($menu['link']);
+                $link1 = url_for($menu['link']);
             } else {
-                $link = $menu['link'];
+                $link1 = $menu['link'];
             }
         }
 
         echo '<li>';
-        echo '<a href="' . $link . '">' . VtHelper::strip_html_tags_and_decode($menu['name']) . '</a>';
+        echo '<a href="' . $link1 . '">' . VtHelper::strip_html_tags_and_decode($menu['name']) . '</a>';
         $i++;
         if (count($subMenu) == 0) {
             echo '</li>';
@@ -40,6 +40,7 @@ $i = 0;
             $i = 1;
             echo '<ul>';
             foreach ($subMenu as $sub) {
+                $link = url_for2('category_news',array('slug'=>$sub['slug']));
                 $parentMenu = array();
                 foreach ($mainMenu as $item) {
                     if ($item['parent_id'] == $sub['id']) {

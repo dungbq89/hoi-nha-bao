@@ -59,4 +59,10 @@ class AdDocumentTable extends Doctrine_Table
         return $query;
     }
 
+    public static function getDocumentById($id){
+        return AdDocumentTable::getInstance()->createQuery()
+            ->where('is_active=?',VtCommonEnum::NUMBER_ONE)
+            ->andWhere('id=?',$id);
+    }
+
 }

@@ -18,6 +18,7 @@ class pageAlbumComponents extends sfComponents
             $slug = $request->getParameter('slug');
             $album = AdAlbumTable::getALbumBySlug($slug)->fetchOne();
             if ($album) {
+                $this->album = $album;
                 $this->listImage = AdPhotoTable::getPhotoByAlbumId($album->getId())->fetchArray();
             } else {
                 return sfView::NONE;
@@ -26,6 +27,7 @@ class pageAlbumComponents extends sfComponents
         else{
             $album = AdAlbumTable::getALbumDefault()->fetchOne();
             if ($album) {
+                $this->album = $album;
                 $this->listImage = AdPhotoTable::getPhotoByAlbumId($album->getId())->fetchArray();
             } else {
                 return sfView::NONE;
