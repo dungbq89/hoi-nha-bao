@@ -25,4 +25,24 @@ class moduleMenuComponents extends sfComponents
             return sfView::NONE;
         $this->footerMenu=$footerMenu;
     }
+
+    public function executeLinkRight(){
+        $listLink = AdLinkTable::getLink(1);
+        if($listLink){
+            $this->links = $listLink;
+        }
+        else{
+            return sfView::NONE;
+        }
+    }
+
+    public function executeLinkFooter(){
+        $listLink = AdLinkTable::getLink(2);
+        if($listLink){
+            $this->links = $listLink;
+        }
+        else{
+            return sfView::NONE;
+        }
+    }
 }

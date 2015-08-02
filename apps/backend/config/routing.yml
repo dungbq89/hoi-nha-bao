@@ -1,3 +1,12 @@
+ad_link:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AdLink
+    module:               adLink
+    prefix_path:          /adLink
+    column:               id
+    with_wildcard_routes: true
+
 ad_document:
   class: sfDoctrineRouteCollection
   options:

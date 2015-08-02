@@ -52,6 +52,8 @@ all:
               route: ad_advertise_location
             Quản lý Banner - quảng cáo:
               route: ad_advertise
+            Quản lý liên kết:
+              route: ad_link
         Quản trị hệ thống:
           credentials: [admin]
           dropdown:

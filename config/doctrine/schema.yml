@@ -268,3 +268,16 @@ SessionsAdmin:
     sess_data: {type: clob, notnull: true}
     sess_time: {type: integer(11), notnull: true}
     sess_userid: {type: integer(20), default: null}
+
+AdLink:
+  #connection: doctrine
+  tableName: ad_link
+  actAs:
+    VtBlameable: ~
+    Timestampable: ~
+  columns:
+    name: { type: string(255), notnull: true,  comment: "Tên link"}
+    link: { type: string(255), comment: "Đường dẫn" }
+    priority: {type: integer(5), default: null}
+    type: {type: integer(5), default: 1, comment: "1: kiểu link cột bên phải, 2 là link footer"}
+    is_active: { type: boolean, notnull: true, default: false, comment: "Trạng thái duyệt bài viết"}
