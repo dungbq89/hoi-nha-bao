@@ -18,3 +18,75 @@
     padding: 5px 10px;
     width: 111px;
 }
+.commentTitle{
+    font-size: 12px;
+    border-bottom: 1px solid #ccc;
+    margin-top: 25px;
+    padding-bottom: 10px;
+    width: 630px;
+
+}
+.commentTitle h3{
+    font-weight: bold;
+}
+.comment-form{
+    margin: 0 auto 30px;
+    overflow: hidden;
+    width: 600px
+}
+.comment-form .box-btn{
+    float:left;
+    margin-left: 120px;
+}
+.comment-form .in-txt{
+    border: 1px solid #d7d7d7;
+    padding: 5px 10px;
+    width: 350px !important;
+}
+div.atc .cover {
+    height: 110px;
+    margin-bottom: 8px;
+    width: 100%;
+}
+div.atc .cover {
+    background-position: 50% top;
+    background-repeat: no-repeat;
+    background-size: cover !important;
+    cursor: pointer;
+    float: left;
+    overflow: hidden;
+}
+.cover {
+    background-position: 50% top;
+    background-repeat: no-repeat;
+    background-size: cover !important;
+    cursor: pointer;
+    float: left;
+    height: 66px;
+    margin-right: 8px;
+    overflow: hidden;
+    width: 100px;
+}
+div.atc div.hed h1 {
+    font-size: 12px;
+    line-height: 16px;
+    margin: 0;
+}
+div.atc {
+    margin-right: 1%;
+    width: 24%;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+div.atc {
+    color: #000;
+    float: left;
+    position: relative;
+    z-index: 1;
+}
+div.atc, .aside, details, figcaption, figure, div.footer, div.hed, .hgroup, menu, div.nav {
+    display: block;
+}
+.box{
+    margin-bottom: 15px;
+}
