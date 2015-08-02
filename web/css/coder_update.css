@@ -31,6 +31,7 @@
     width: 100%;
     border: 1px solid #cdcdcd;
     margin-top: 5px;
+    clear: both;
 }
 #link-footer{
     padding: 0px;

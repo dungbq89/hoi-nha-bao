@@ -36,6 +36,7 @@
 <div class="col-right">
     <?php include_component('moduleDocument', 'hotDocument', array('limit' => 3)) ?>
     <?php include_component('moduleArticle', 'categoryHot', array('limit' => 3)) ?>
+    <?php include_component('moduleMenu','linkRight') ?>
     <?php include_component('moduleAdvertise', 'advertise', array('location' => 'right')); ?>
 
 </div>
