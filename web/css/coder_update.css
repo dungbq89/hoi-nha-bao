@@ -55,3 +55,11 @@
     font-weight: bold;
     color: #fff;
 }
+.child-cat{
+    font-weight: normal;
+    padding-right: 10px;
+}
+.span-news{
+    display: block;
+    line-height: 30px;
+}

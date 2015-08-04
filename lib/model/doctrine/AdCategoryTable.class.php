@@ -425,6 +425,15 @@ class AdCategoryTable extends Doctrine_Table
         return $query->fetchArray();
     }
 
-
+    //lay danh sach chuyen muc tin tuc
+    public static function getChildCategory($parentId, $limit=null){
+        $query = self::getActiveCategoryQuery()
+            //->andWhere('c.is_category=?',VtCommonEnum::NUMBER_ONE)
+            ->andWhere('c.parent_id=?',$parentId);
+        if($limit){
+            $query->limit($limit);
+        }
+        return $query;
+    }
 
 }
