@@ -6,7 +6,7 @@
     ?>
     <div class="item item-video">
 
-        <div id="box-video-play" class="video-play" width="300" height="168"></div>
+        <div id="box-video-play" class="video-play" width="300" height="250"></div>
 
         <div class="more-video">
             <?php
@@ -32,7 +32,7 @@
             file: "<?php echo $url_file . $listVideo[0]->getFilePath(); ?>",
             image: "<?php echo $path; ?>",
             aspectratio: '16:9',
-            height: 168,
+            height: 250,
             width: 300
         });
     </script>

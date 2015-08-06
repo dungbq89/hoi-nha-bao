@@ -25,7 +25,7 @@ class adArticlesEditorFormAdmin extends BaseAdArticleForm
         'header'          => new sfWidgetFormTextarea(array(),array('style' => 'width:690px')),
         'body'            => new sfWidgetFormCKEditor(
                             array(
-                                'jsoptions' => array('toolbar' => 'Basic', 
+                                'jsoptions' => array('toolbar' => 'Full',
                                                      'width' => '700',
                                                      'height' => '200'),
                             )),
