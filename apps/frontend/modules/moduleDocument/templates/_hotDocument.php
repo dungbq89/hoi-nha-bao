@@ -7,15 +7,10 @@ if (isset($listDocument) && $listDocument):
         <ul>
             <?php
             foreach ($listDocument as $doc):
-                $newLink = '';
-                if ($doc['file_path']) {
-                    $newLink = '/uploads/' . sfConfig::get('app_document') . '/' . $doc['file_path'];
-                }
                 ?>
                 <li>
-                    <a href="<?php echo htmlspecialchars($newLink); ?>"
-                       title="<?php echo htmlspecialchars($doc['name']); ?>"
-                       target="_blank"><?php echo htmlspecialchars($doc['name']); ?></a>
+                    <a href="<?php echo url_for('@page_document_detail?id='.$doc['id']); ?>"
+                       title="<?php echo htmlspecialchars($doc['name']); ?>" ><?php echo htmlspecialchars($doc['name']); ?></a>
                 </li>
             <?php endforeach; ?>
         </ul>

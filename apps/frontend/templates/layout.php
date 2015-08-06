@@ -43,7 +43,7 @@
     <?php include_component('moduleAdvertise','topOne'); ?>
 
     <?php echo $sf_content ?>
-
+    <?php include_component('moduleMenu','linkFooter') ?>
     <div class="footer">
         <div class="bg-word"></div>
         <p class="copyright">

@@ -6,7 +6,7 @@
             $path = '/uploads/' . sfConfig::get('app_album_images') . $item->getImagePath();
             ?>
             <div class="gallary-item">
-                <a href="" title=""> <img class="img-gallary-item" src="<?php echo $path; ?>" alt=""></a>
+                <a href="<?php echo url_for('@page_album?slug='.$item->getSlug()); ?>" title=""> <img class="img-gallary-item" src="<?php echo $path; ?>" alt=""></a>
                <span class="txt-date">
                     <?php if($item->getEventDate()) echo VtHelper::getFormatDate($item->getEventDate()); ?>
                </span>

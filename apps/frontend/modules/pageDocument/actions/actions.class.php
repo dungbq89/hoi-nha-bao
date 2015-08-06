@@ -75,4 +75,19 @@ class pageDocumentActions extends sfActions {
         }
 
     }
+
+    public function executeDetail(sfWebRequest $request){
+        $id = $request->getParameter('id');
+        if($id){
+            $document = AdDocumentTable::getDocumentById($id)->fetchOne();
+            if($document){
+                $this->document = $document;
+            }else{
+                return $this->redirect404();
+            }
+        }
+        else{
+            return $this->redirect404();
+        }
+    }
 }

@@ -1,5 +1,12 @@
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
+page_document_detail:
+  url: /chi-tiet-van-ban/:id
+  param: {module: pageDocument, action: detail, id: ''}
+pageError:
+  url:  /error.:sf_format
+  param: { module:  default, action: error404, sf_format: html}
+  requirements: {sf_method: get }
 #trang album
 page_register:
   url: /dang-ky

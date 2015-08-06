@@ -14,10 +14,15 @@
 .more-video h3{
     line-height: 26px;
 }
+.td-document-detail {
+    width: 150px;
+    background: #e1f8ff;
+}
 #csdl_lylichhoivien_ngaysinh_month, #csdl_lylichhoivien_ngaysinh_day, #csdl_lylichhoivien_ngaysinh_year{
     padding: 5px 10px;
     width: 111px;
 }
+
 .commentTitle{
     font-size: 12px;
     border-bottom: 1px solid #ccc;
@@ -89,4 +94,44 @@ div.atc, .aside, details, figcaption, figure, div.footer, div.hed, .hgroup, menu
 }
 .box{
     margin-bottom: 15px;
+#link-right{
+    padding: 5px;
+    margin: 5px 10px 10px;
+    width: 94%;
+}
+#div-website{
+    width: 100%;
+    border: 1px solid #cdcdcd;
+    margin-top: 5px;
+    clear: both;
+}
+#link-footer{
+    padding: 0px;
+    margin-left: 5px;
+}
+#link-footer li{
+    display: inline-block;
+    height: 20px;
+    list-style: outside none none;
+    margin-right: 10px;
+    overflow: hidden;
+    width: 180px;
+}
+#link-footer li a:hover{
+    color: #0788d9;
+    text-decoration: none;
+}
+.website-unit{
+    padding: 5px;
+    background: #727BDE;
+    font-weight: bold;
+    color: #fff;
+}
+.child-cat{
+    font-weight: normal;
+    padding-right: 10px;
+}
+.span-news{
+    display: block;
+    line-height: 30px;
 }

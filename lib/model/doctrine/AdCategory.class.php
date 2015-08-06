@@ -15,4 +15,8 @@ class AdCategory extends BaseAdCategory
     public function getNewsByCategory(){
         return AdArticleTable::getListArticle($this->getId(),4)->fetchArray();
     }
+
+    public function getChildCategory(){
+        return AdCategoryTable::getChildCategory($this->getId(),3)->fetchArray();
+    }
 }
