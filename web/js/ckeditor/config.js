@@ -20,22 +20,20 @@ CKEDITOR.editorConfig = function( config )
             [ 'ShowBlocks' ],
             [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ]
         ];
-    config.toolbar = 'ImuzikBasic';
-    config.toolbar_Imuzik =
+    config.toolbar_Full =
         [
-                ['imuziksong'],
-                [ 'Bold','Italic','Underline','Strike','-','RemoveFormat' ],
-                [ 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','CreateDiv',
-                    '-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
-                [ 'Link','Unlink','Anchor' ] ,
-                [ 'Image','Table','HorizontalRule'],'/',
-                [ 'Styles','Format','Font','FontSize'] ,
-                [ 'TextColor','BGColor' ],
-                [ 'ShowBlocks' ],
-                [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ]
+            ['Preview','Templates'],
+            [ 'Bold','Italic','Underline','Strike', 'Subscript', 'Superscript', '-','RemoveFormat' ],
+            [ 'list', 'indent', 'blocks', 'align', 'bidi' ],
+            [ 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','CreateDiv',
+                '-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
+            [ 'Link','Unlink','Anchor' ] ,
+            [ 'Image','Table','HorizontalRule','Smiley','SpecialChar','PageBreak','Iframe'],
+            [ 'Styles','Format','Font','FontSize' ] ,
+            [ 'TextColor','BGColor' ],
+            [ 'ShowBlocks' ],
+            [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ]
         ];
-    config.extraPlugins = 'imuziksong';
-
     config.toolbar_simple =[];
 };
 

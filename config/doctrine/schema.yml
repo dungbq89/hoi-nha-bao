@@ -72,7 +72,17 @@ AdArticlesRelated:
   columns:
     article_id: { type: integer, comment: "Id của bài tin tức"}
     related_article_id: { type: integer, comment: "Id của bài viết liên quan"}
-
+#Bảng comment tin tuc
+AdArticlesComment:
+  tableName: ad_article_comment
+  actAs:
+    Timestampable: ~
+  columns:
+    article_id: { type: integer, comment: "Id của bài tin tức"}
+    fullname: { type: string(255), comment: "ho ten" }
+    email: { type: string(255), comment: "Email" }
+    content: { type: string(1000), comment: "Noi dung comment" }
+    is_active: { type: boolean, notnull: true, default: false, comment: "Trạng thái duyệt bài viết"}
 #Module Html dành cho các trang chỉ có nội dung chi tiết: Giới thiệu, Điều kiện sử dụng, thủ thục hòa mạng, ...
 AdHtml:
   #connection: doctrine

@@ -16,7 +16,7 @@ class adManageHtmlFormAdmin extends BaseAdHtmlForm {
             'name' => new sfWidgetFormInputText(array(), array('style' => 'width:690px')),
             'content' => new sfWidgetFormCKEditor(
                     array(
-                'jsoptions' => array('toolbar' => 'Basic',
+                'jsoptions' => array('toolbar' => 'Full',
                     'width' => '700',
                     'height' => '200'),
                     )),
