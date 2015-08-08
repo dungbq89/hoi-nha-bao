@@ -66,13 +66,11 @@
                 <?php $i++; } ?>
             </table>
                 <!--  paging-->
-                <div class="box-pagging">
-                    <?php
-                    if ($pager->haveToPaginate()) {
-                        include_component("common", "pagging", array('redirectUrl' => 'document', 'pager' => $pager));
-                    }
-                    ?>
-                </div>
+                <?php
+                if ($pager->haveToPaginate()) {
+                    include_component("common", "pagging", array('redirectUrl' => 'document', 'pager' => $pager));
+                }
+                ?>
             <?php endif; ?>
 
         </div>

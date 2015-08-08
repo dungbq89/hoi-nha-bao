@@ -23,7 +23,7 @@ class ajaxActions extends sfActions {
                             file: "'.$url_file.'",
                             image: "'.$path.'",
                             autostart: false,
-                            height: 168,
+                            height: 250,
                             width: 300,
                              aspectratio: "16:9",
 

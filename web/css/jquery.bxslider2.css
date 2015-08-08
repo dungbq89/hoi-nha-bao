@@ -16,16 +16,21 @@
 
 .bx-wrapper {
 	position: relative;
-	margin: 0 auto 60px;
+	margin: 0 auto 20px;
 	padding: 0;
 	*zoom: 1;
 }
 
-.bx-wrapper img {
-	max-width: 100%;
+.bx-wrapper img.img-gallery {
+	float: left;
 	display: block;
+    width: 630px;
+    height:340px;
 }
-
+.bx-pager{
+    overflow: hidden;
+    background-color: red;
+}
 /** THEME
 ===================================*/
 

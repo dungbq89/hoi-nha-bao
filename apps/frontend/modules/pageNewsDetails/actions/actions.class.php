@@ -12,12 +12,16 @@ class pageNewsDetailsActions extends sfActions
 {
     public function executeIndex(sfWebRequest $request)
     {
+        //lay thong tin chi tiet bai viet
+        $articleId=0;
         $slug = $request->getParameter('slug');
         if($slug){
             $article = AdArticleTable::getArticleBySlug($slug);
             if($article){
+                $articleId=$article['id'];
                 $this->article = $article;
                 $this->articleRelated = AdArticleTable::getListArticleRelated($article['id']);
+                $this->articleOther=AdArticleTable::getListArticle($article['category_id'],4,$articleId)->fetchArray();
             }
             else{
                 return $this->redirect404();
@@ -27,7 +31,22 @@ class pageNewsDetailsActions extends sfActions
         else{
             return $this->redirect404();
         }
-
+        //Khai bao form comment
+        $form=new ArticlesCommentForm();
+        if($request->isMethod('POST')){
+            $values = $request->getParameter($form->getName());
+            $form->bind($values);
+            if($form->isValid()){
+                $comment=new AdArticlesComment();
+                $comment->setArticleId($articleId);
+                $comment->setFullName(trim($values['fullname']));
+                $comment->setEmail(trim($values['email']));
+                $comment->setContent(trim($values['content']));
+                $comment->save();
+                $this->getUser()->setFlash('success','Cảm ơn bạn đã góp ý cho bài viết. Trân trọng!');
+            }
+        }
+        $this->form=$form;
     }
 
 }

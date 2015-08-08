@@ -8,10 +8,6 @@ pageError:
   param: { module:  default, action: error404, sf_format: html}
   requirements: {sf_method: get }
 #trang album
-page_register:
-  url: /dang-ky
-  param: {module: pageRegister, action: index}
-#trang album
 page_album:
   url: /album/:slug
   param: {module: pageAlbum, action: index, slug: ''}
@@ -31,15 +27,17 @@ page_search:
 category_news:
   url: /chuyen-muc/:slug
   param: {module: pageNews, action: index}
+
 #trang danh ba hoi vien
 document:
   url: /van-ban-phap-quy
   param: {module: pageDocument, action: index}
+  
 #trang danh ba hoi vien
 category_document:
   url: /chuyen-muc-van-ban/:id
   param: {module: pageDocument, action: list}
-
+  
 #trang danh ba hoi vien
 contact:
   url: /lien-he
@@ -47,7 +45,7 @@ contact:
 personnal:
   url: /danh-ba-hoi-vien
   param: {module: pagePersonal, action: index}
-  
+
 #ajax load video
 ajax_load_video:
   url: /load-video

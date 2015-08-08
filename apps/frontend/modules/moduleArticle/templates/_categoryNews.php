@@ -14,11 +14,13 @@
                     $listChild = $category->getChildCategory();
                     if($listChild){
                         echo "<span class='span-news'>";
+                        echo "<ul class='ul-child'>";
                         foreach($listChild as $child){
                             ?>
-                            <a class="child-cat" href=""><?php echo $child['name']; ?></a>
+                            <li><a class="child-cat" href=""><?php echo $child['name']; ?></a></li>
                             <?php
                         }
+                        echo "</ul>";
                         echo "</span>";
                     }
                     ?>

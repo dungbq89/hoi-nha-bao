@@ -73,13 +73,11 @@
                 </table>
 
                 <!--  paging-->
-                <div class="box-pagging">
-                    <?php
-                    if ($pager->haveToPaginate()) {
-                        include_component("common", "pagging", array('redirectUrl' => 'personnal', 'pager' => $pager));
-                    }
-                    ?>
-                </div>
+                <?php
+                if ($pager->haveToPaginate()) {
+                    include_component("common", "pagging", array('redirectUrl' => 'personnal', 'pager' => $pager));
+                }
+                ?>
             <?php endif; ?>
         </div>
     </div>

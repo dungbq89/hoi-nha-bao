@@ -109,7 +109,7 @@ class adArticlesEditorFormAdmin extends BaseAdArticleForm
       }
       $this->widgetSchema['item_list'] = new sfWidgetFormViettelTable(array(
             'label' => 'Tin liên quan',
-            'model' => 'AdArticle',
+            'model' => 'VtpArticle',
             'table_method' => 'getArticleArrayId',
             'relation_type' => 'ONE2MANY',
             'search_method' => 'LoadArticle',

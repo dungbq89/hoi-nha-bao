@@ -256,10 +256,12 @@ width: 290px;
     float: left;
   /*  background: url('../img/bg--right-main.png') repeat-y top right;*/
     padding-right: 10px;
+    margin-top: 10px;
 }
 .col-right{
     width: 310px;
     float: right;
+    margin-top: 10px;
 }
 .list-news,
 .box-news{
@@ -278,8 +280,7 @@ width: 290px;
 
 }
 .box-news .news-item{
-    width: 420px;
-	margin-left: 10px
+    width: 425px;
 }
 .box-news .news-item{
     overflow: hidden;
@@ -358,7 +359,7 @@ a.news-img img{
     border-bottom: 1px solid #ccc;
 }
 .news-more{
-    width: 187px;
+    width: 192px;
     background-color: #fcfcfc;
     padding: 2px 10px;
     height: 114px;
