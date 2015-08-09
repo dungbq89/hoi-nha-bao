@@ -63,4 +63,8 @@ class moduleArticleComponents extends sfComponents
         }
     }
 
+    public function executeFocusNews(sfWebRequest $request){
+
+    }
+
 }

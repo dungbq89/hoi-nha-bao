@@ -8,6 +8,8 @@
     </div>
     <div class="clear"></div>
     <div class="line"></div>
+    <?php include_component('moduleArticle','focusNews',array('limit'=>15)) ?>
+    <div class="clear"></div>
     <div class="main">
         <div class="col-main">
         <?php include_component('moduleArticle','categoryNews',array('limit'=>15)) ?>

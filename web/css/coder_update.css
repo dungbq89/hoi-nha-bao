@@ -110,8 +110,9 @@ div.atc {
 div.atc, .aside, details, figcaption, figure, div.footer, div.hed, .hgroup, menu, div.nav {
     display: block;
 }
-.box{
+.box {
     margin-bottom: 15px;
+}
 #link-right{
     padding: 5px;
     margin: 5px 10px 10px;
@@ -242,4 +243,42 @@ div.atc, .aside, details, figcaption, figure, div.footer, div.hed, .hgroup, menu
     line-height: 20px;
     font-size: 12px;
     padding: 5px 10px;
+}
+
+/* tin tieu diem */
+
+#multimedia {
+    border-top: 5px solid #3398cc;
+    float: left;
+    margin: 8px 0 20px;
+    width: 100%;
+}
+
+#multimedia > div.hed {
+    margin-bottom: 0;
+}
+div.hed {
+    width: 100%;
+}
+
+#multimedia > div.hed h1 {
+    background: #fff none repeat scroll 0 0;
+    color: #3398cc;
+    display: inline;
+    font-family: "Roboto Condensed",sans-serif;
+    font-size: 1.1em;
+    font-weight: normal;
+    left: 10px;
+    padding: 0 12px;
+    position: relative;
+    text-transform: uppercase;
+    top: -11px;
+}
+
+#multimedia div.atc {
+    border-bottom: 0 none;
+    float: left;
+    margin-right: 1%;
+    padding-bottom: 0;
+    width: 19.2%;
 }
