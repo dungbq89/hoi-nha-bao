@@ -64,7 +64,19 @@ class moduleArticleComponents extends sfComponents
     }
 
     public function executeFocusNews(sfWebRequest $request){
-
+        $limit = $this->getVar('limit');
+        if (!isset($limit))
+            $limit = 5;
+        $attributes=$this->getVar('att');
+        if (!isset($attributes))
+            $attributes = 8;
+        $articles = AdArticleTable::getRandomArticle($attributes,$limit);
+        if($articles){
+            $this->articles = $articles;
+        }
+        else{
+            return sfView::NONE;
+        }
     }
 
 }

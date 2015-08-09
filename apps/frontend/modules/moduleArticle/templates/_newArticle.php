@@ -9,12 +9,12 @@ if (isset($articles) && $articles):
         </a>
 
         <p><?php echo VtHelper::truncate($articles[0]['header'],200,'...'); ?></p>
-        <div class="thumb-hot">
-            <div class="news-thumb">
-                <a href="#"><img src="<?php echo VtHelper::getThumbUrl($path, 150, 100, '') ?>" /></a>
-                <p><?php echo VtHelper::truncate($articles[0]['header'],200,'...'); ?></p>
-            </div>
-        </div>
+<!--        <div class="thumb-hot">-->
+<!--            <div class="news-thumb">-->
+<!--                <a href="#"><img src="--><?php //echo VtHelper::getThumbUrl($path, 150, 100, '') ?><!--" /></a>-->
+<!--                <p>--><?php //echo VtHelper::truncate($articles[0]['header'],200,'...'); ?><!--</p>-->
+<!--            </div>-->
+<!--        </div>-->
 
     </div>
     <div class="item item-lastest-news">

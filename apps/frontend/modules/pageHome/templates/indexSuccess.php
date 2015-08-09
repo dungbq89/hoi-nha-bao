@@ -8,7 +8,7 @@
     </div>
     <div class="clear"></div>
     <div class="line"></div>
-    <?php include_component('moduleArticle','focusNews',array('limit'=>15)) ?>
+    <?php include_component('moduleArticle','focusNews',array('limit'=>5,'att'=>8)) ?>
     <div class="clear"></div>
     <div class="main">
         <div class="col-main">
