@@ -278,7 +278,11 @@ div.hed {
 #multimedia div.atc {
     border-bottom: 0 none;
     float: left;
-    margin-right: 1%;
+    margin-right: 1.25%;
     padding-bottom: 0;
-    width: 19.2%;
+    width: 19%;
+}
+#multimedia div.atc:last-child{
+    width: 19%;
+    margin-right: 0% !important;
 }
