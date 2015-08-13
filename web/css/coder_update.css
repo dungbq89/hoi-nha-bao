@@ -307,3 +307,79 @@ div.hed {
 .hide-on-small{
     padding: 0px;
 }
+
+/*CSS tin moi*/
+div.sct.featured {
+    border-bottom: 0 none;
+    float: left;
+    margin: 0;
+    width: 470px;
+}
+
+div.sct.featured div.atc.featured {
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    width: 100%;
+}
+#homepage.focus_layout div.sct.featured div.atc.featured .cover {
+    float: none;
+    height: 313px;
+    margin-bottom: 4px;
+    width: 470px;
+}
+div.sct.featured div.atc.featured div.hed {
+    display: block;
+    max-height: none;
+}
+div.sct.featured div.atc div.hed {
+    overflow: hidden;
+}
+div.hed {
+    width: 100%;
+}
+#homepage.focus_layout div.sct.featured div.atc.featured div.hed h1 {
+    font-size: 1.6em;
+    margin-top: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+div.sct.featured div.atc.featured div.hed h1 {
+    font-size: 18px;
+    height: auto;
+    letter-spacing: -1px;
+    line-height: 22px;
+    margin-bottom: 4px;
+    margin-top: 0;
+}
+
+div.sct.featured div.atc.featured div.hed h1 a {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    color: #3398cc;
+    padding: 0;
+    text-indent: 0;
+}
+div.sct.featured div.atc {
+    margin-bottom: 10px;
+    margin-right: 2%;
+    width: 32%;
+}
+div.atc {
+    color: #000;
+    float: left;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
+div.sct.featured div.atc div.hed h1 {
+    font-size: 12px;
+    line-height: 16px;
+    overflow: hidden;
+}
+
+div.sct.featured div.atc div.hed h1 a {
+    color: #444;
+    display: block;
+    overflow: hidden;
+}
