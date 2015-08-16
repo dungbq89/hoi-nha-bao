@@ -864,3 +864,7 @@ a {
 .news-detail .cate a:hover{
     color: #0099cc;
 }
+.col-right .more-video a {
+    font-size: 14px;
+    font-family: "Roboto Condensed",sans-serif;
+}
