@@ -235,8 +235,8 @@ div.atc, .aside, details, figcaption, figure, div.footer, div.hed, .hgroup, menu
 .ul-child li{
     display: inline-block !important;
     border-right: 1px solid #cdcdcd;
-    height: 20px;
-    margin-top: 5px;
+    /*height: 20px;*/
+    /*margin-top: 5px;*/
 }
 .ul-child li:last-child{
     border-right: none;
@@ -562,7 +562,6 @@ div.hed{
 .main{
     margin-top: 5px;
 }
-<<<<<<< HEAD
 #dslide b{
     background-color: #333;
     bottom: 0;
