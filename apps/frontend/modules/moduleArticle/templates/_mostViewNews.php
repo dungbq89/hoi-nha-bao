@@ -8,7 +8,7 @@ if (isset($articles) && $articles):
         ?>
             <div class="atc">
                 <div class="cover">
-                    <a href="/xay-dung-dang/tap-trung-tai-co-cau-de-doanh-nghiep-phat-trien-ben-vung/99855.htm">
+                    <a href="<?php echo url_for2('article_detail',array('slug'=>$article['slug'])) ?>">
                         <img style="display: block; width: 75px; height: 70px;"
                             src="<?php echo VtHelper::getThumbUrl($path, 75, 70, '') ?>">
                     </a>

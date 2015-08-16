@@ -106,4 +106,18 @@ class moduleArticleComponents extends sfComponents
             return sfView::NONE;
         }
     }
+
+    //tin doc nhieu
+    public function executeReadNews(sfWebRequest $request){
+        $limit = $this->getVar('limit');
+        if (!isset($limit))
+            $limit = 10;
+        $articles = AdArticleTable::getMostViewNews($limit)->fetchArray();
+        if($articles){
+            $this->articles = $articles;
+        }
+        else{
+            return sfView::NONE;
+        }
+    }
 }
