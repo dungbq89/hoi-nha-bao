@@ -39,6 +39,7 @@
     <div class="nav">
         <?php include_component('moduleMenu','mainMenu'); ?>
     </div>
+    <?php include_component('moduleArticle','hotArticle',array('limit'=>10,'att'=>1)) ?>
 
     <?php include_component('moduleAdvertise','topOne'); ?>
 

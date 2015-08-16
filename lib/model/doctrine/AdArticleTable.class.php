@@ -212,4 +212,11 @@ class AdArticleTable extends Doctrine_Table
         return $query;
     }
 
+    public static function updateHitCounter($id){
+        $query=AdArticleTable::getInstance()->createQuery()
+            ->update()
+            ->set('hit_count', '1+hit_count')
+            ->where('id=?',$id);
+        return $query->execute();
+    }
 }
