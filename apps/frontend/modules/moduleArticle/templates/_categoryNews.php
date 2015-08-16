@@ -2,7 +2,8 @@
     <?php foreach ($categories as $category): ?>
         <?php
         $listNews = $category->getNewsByCategory();
-        if (count($listNews)):
+        $count=count($listNews);
+        if ($count):
             $path = '/uploads/' . sfConfig::get('app_article_images') . $listNews[0]['image_path'];
             ?>
             <div class="box-news">
@@ -44,11 +45,35 @@
                         <a href="<?php echo url_for2('article_detail', array('slug' => $listNews[0]['slug'])) ?>"
                            class="readmore" title="Xem tiếp">Xem tiếp</a>
                     </div>
+                    <?php if ($count > 1):
+                        $path = '/uploads/' . sfConfig::get('app_article_images') . $listNews[1]['image_path'];
+                        ?>
+                    <div class="clear"></div>
+                    <br />
+                    <a href="<?php echo url_for2('article_detail', array('slug' => $listNews[1]['slug'])) ?>" title=""
+                       class="news-img"><img src="<?php echo VtHelper::getThumbUrl($path, 197, 118, '') ?>" alt=""></a>
+
+                    <div class="news-info">
+                        <a href="<?php echo url_for2('article_detail', array('slug' => $listNews[1]['slug'])) ?>"
+                           title="" class="news-title"><?php echo htmlspecialchars($listNews[1]['alttitle']); ?></a>
+
+                        <p class="news-txt"><?php echo VtHelper::truncate($listNews[1]['header'], 80, '...'); ?></p>
+
+                        <p class="news-date">
+                            <?php
+                            if ($listNews[1]['published_time']) echo VtHelper::getFormatDate($listNews[1]['published_time']);
+                            ?>
+                        </p>
+                        <a href="<?php echo url_for2('article_detail', array('slug' => $listNews[1]['slug'])) ?>"
+                           class="readmore" title="Xem tiếp">Xem tiếp</a>
+                    </div>
+                    <?php endif; ?>
                 </div>
-                <?php if (count($listNews) > 1): ?>
+
+                <?php if ($count > 2): ?>
                     <div class="item news-more">
                         <ul>
-                            <?php for ($i = 1; $i < count($listNews); $i++): ?>
+                            <?php for ($i = 2; $i < count($listNews); $i++): ?>
                                 <li>
                                     <a href="<?php echo url_for2('article_detail', array('slug' => $listNews[$i]['slug'])) ?>"
                                        title="<?php echo htmlspecialchars($listNews[$i]['title']); ?>"><?php echo VtHelper::truncate($listNews[$i]['alttitle'], 40, '...'); ?></a>

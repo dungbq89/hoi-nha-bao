@@ -134,7 +134,8 @@ class AdArticleTable extends Doctrine_Table
     {
         $query =  self::getActiveArticleQuery()
             ->select('a.title, a.alttitle, a.header, a.image_path, a.slug, a.published_time')
-            ->andWhere('a.category_id=?', $catId)
+            ->innerJoin("a.AdArticleCategory c ON c.id = a.category_id")
+            ->andWhere('(a.category_id=? or c.parent_id=?)', array($catId,$catId))
             ->orderBy('a.published_time desc');
         if($articleId){
             $query->andWhere('a.id<>?', $articleId);

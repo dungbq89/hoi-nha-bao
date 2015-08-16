@@ -397,7 +397,8 @@ class AdCategoryTable extends Doctrine_Table
     //lay danh sach chuyen muc tin tuc
     public static function getCategoryFrontend($limit=null){
         $query = self::getActiveCategoryQuery()
-            ->andWhere('c.is_category=?',VtCommonEnum::NUMBER_ONE);
+            ->andWhere('c.is_category=?',VtCommonEnum::NUMBER_ONE)
+            ->andWhere('c.parent_id is null');
         if($limit){
             $query->limit($limit);
         }
