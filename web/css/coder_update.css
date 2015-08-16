@@ -892,3 +892,17 @@ a {
 .slide{
     margin-bottom: 0px;
 }
+.box .download{
+    text-align: center;
+    height: 40px;
+}
+.box .download img{
+    margin-bottom: -10px;
+    height: 35px;
+}
+.box .download span{
+    color: #3398cc;
+    font-size: 18px;
+    text-decoration: underline;
+    font-family: "Roboto Condensed",sans-serif;
+}
