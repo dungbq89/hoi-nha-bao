@@ -219,4 +219,13 @@ class AdArticleTable extends Doctrine_Table
             ->where('id=?',$id);
         return $query->execute();
     }
+    /**
+     * Bai viet xem nhieu
+     */
+    public static function getMostViewNews($limit = 10)
+    {
+        return self::getActiveArticleQuery()
+            ->limit($limit)
+            ->orderBy('a.hit_count, a.published_time DESC');
+    }
 }
