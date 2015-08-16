@@ -45,32 +45,27 @@
 
     <?php echo $sf_content ?>
     <?php include_component('moduleMenu','linkFooter') ?>
+    <div class="clear"></div>
+</div>
+<div id="dfooter">
     <div class="footer">
+        <div class="foothr"></div>
         <div class="copyright">
             <div class="ilog">
                 <a href="http://baohatinh.vn"><b>&copy; Copyright 2009 hoinhabaohatinh.vn</b></a>
-                <p class="hide-on-small">Văn phòng Hội: Số 34 đường Nguyễn Công Trứ, thành phố Hà Tĩnh, tỉnh Hà Tĩnh
+                <p class="hide-on-small">Văn phòng hội: Số 34 đường Nguyễn Công Trứ, thành phố Hà Tĩnh, tỉnh Hà Tĩnh
                 </p>
                 <p class="hide-on-small"> Email: info@hoinhabaohatinh.vn</p>
                 <p class="hide-on-small"> Website: http:/www.hoinhabaohatinh.vn</p>
             </div>
-<!--            <div class="info vcard hide-on-small">-->
-<!--                Liên hệ quảng cáo<br>-->
-<!--                Thông tin Tòa soạn: <a style="font-weight:bold" href="mailto: info@hoinhabaohatinh.vn">info@hoinhabaohatinh.vn</a><br>-->
-<!--            </div>-->
+            <div class="info vcard hide-on-small">
+                Liên hệ quảng cáo<br>
+                Thông tin Tòa soạn: <a style="font-weight:bold" href="mailto:hatinhdientu@gmail.com">hatinhdientu@gmail.com</a><br>
+            </div>
             <div style="clear:both"></div>
         </div>
-
-
-<!--        <div class="bg-word"></div>-->
-<!--        <p class="copyright">-->
-<!--            HỘI NHÀ BÁO HÀ TĨNH <br /><br />-->
-<!--            Văn phòng Hội: Số 34 đường Nguyễn Công Trứ, thành phố Hà Tĩnh, tỉnh Hà Tĩnh <br /><br />-->
-<!--            Email: info@hoinhabaohatinh.vn     Website: http:/www.hoinhabaohatinh.vn</p>-->
-        <div class="clear"></div>
     </div>
-    <div class="clear"></div>
+    <a style="" class="back-to-top" href="#top">&nbsp;</a>
 </div>
-
 </body>
 </html>

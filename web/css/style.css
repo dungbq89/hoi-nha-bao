@@ -74,7 +74,7 @@ a{
     color: #231f20;
 }
 a:hover{
-    text-decoration: underline;
+    text-decoration: none;
 }
 h4{
     font-size: 18px;
@@ -999,17 +999,6 @@ span.btn-in input[type="text"]{
     overflow: hidden;
 }
 
-
-
-.footer{
-    clear: both;
-    height: 105px;
-    background: url("../img/bg-footer.png") repeat-x;
-    position: relative;
-    text-align: center;
-    padding-bottom: 12px;
-    margin-top: 10px;
-}
 .copyright{
     padding-top: 18px;
 }

@@ -13,7 +13,7 @@ if (count($advertise) > 0) {
             </a>
 
         <?php
-        } else if ($location == 'right') {
+        } else if ($location == 'right' || $location == 'right_middle') {
             ?>
             <div class="box-adv box-mod">
                 <a href="<?php if ($advertiseImage[0]['link']) echo $advertiseImage[0]['link']; ?>" target="_blank">

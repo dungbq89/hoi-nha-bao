@@ -22,4 +22,14 @@ class moduleAdvertiseComponents extends sfComponents
         $this->advertise = AdAdvertiseTable::getAdvertise($page, $location, VtCommonEnum::portalDefault);
         $this->location = $location;
     }
+    public function executeLeft()
+    {
+        $page = sfContext::getInstance()->getRouting()->getCurrentRouteName();
+        $this->advertise = AdAdvertiseTable::getAdvertise($page, $this->getVar('location'), VtCommonEnum::portalDefault);
+    }
+    public function executeRightTop()
+    {
+        $page = sfContext::getInstance()->getRouting()->getCurrentRouteName();
+        $this->advertise = AdAdvertiseTable::getAdvertise($page, $this->getVar('location'), VtCommonEnum::portalDefault);
+    }
 }

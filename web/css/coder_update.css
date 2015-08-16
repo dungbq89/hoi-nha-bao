@@ -562,3 +562,45 @@ div.hed{
 .main{
     margin-top: 5px;
 }
+#dslide b{
+    background-color: #333;
+    bottom: 0;
+    color: #fff;
+    display: block;
+    font-weight: bold;
+    left: 0;
+    padding: 3px;
+    text-align: center;
+    width: 100%;
+}
+#dslide b span{
+    display: block;
+    height: 38px;
+    line-height: 18px;
+    overflow: hidden;
+}
+#dslide img {
+    margin: 0 0 -2px;
+}
+#dfooter{
+    background: #eee none repeat scroll 0 0;
+    border-top: 1px solid #ddd;
+    padding-top: 8px;
+    width: 100%;
+    margin-top: 10px;
+}
+.footer{
+    color: #333;
+    margin: 2px auto;
+    width: 980px;
+}
+.back-to-top{
+    background: rgba(0, 0, 0, 0) url("/img/icon_gototop.png") no-repeat scroll 0 0;
+    bottom: 55px;
+    display: block;
+    height: 36px;
+    position: fixed;
+    right: 15px;
+    width: 36px;
+    z-index: 99999999;
+}

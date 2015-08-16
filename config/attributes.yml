@@ -1,8 +1,11 @@
 advertise_template:
-  topone: {value: topone, alias: "Quảng cáo top"}
-  right: {value: right, alias: "Mẫu hiển thị cột phải"}
-  bottom: {value: bottom, alias: "Mẫu hiển thị cuối trang"}
-  header: {value: header, alias: "Mẫu hiển thị đầu trang"}
+  topone: {value: topone, alias: "Quảng cáo Slide"}
+  right: {value: right, alias: "Quảng cáo phải cuối cùng"}
+  right_top: {value: right, alias: "Quảng cáo phải trên"}
+  right_middle: {value: right, alias: "Quảng cáo phải giữa"}
+  left: {value: right, alias: "Quảng  cáo trái"}
+  bottom: {value: bottom, alias: "Quảng cáo cuối trang"}
+  header: {value: header, alias: "Quảng cáo đầu trang"}
 view_page:
   homepage: {value: homepage, alias: "Trang chủ"}
   document: {value: document, alias: "Trang văn bản pháp quy"}
