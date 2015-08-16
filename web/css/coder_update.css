@@ -872,5 +872,11 @@ a {
     padding-bottom: 5px;
 }
 .news-more{
-    height: 260px;
+    height: 270px;
+}
+.box-news .news-more li{
+    border-bottom: dotted 1px #ccc;
+}
+.box-news .news-more a{
+    padding-left: 0px;
 }

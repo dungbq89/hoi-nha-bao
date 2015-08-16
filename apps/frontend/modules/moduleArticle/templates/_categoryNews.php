@@ -33,7 +33,7 @@
 
                     <div class="news-info">
                         <a href="<?php echo url_for2('article_detail', array('slug' => $listNews[0]['slug'])) ?>"
-                           title="" class="news-title"><?php echo htmlspecialchars($listNews[0]['alttitle']); ?></a>
+                           title="" class="news-title"><?php echo VtHelper::truncate($listNews[0]['title'],60, ' ...'); ?></a>
 
                         <p class="news-txt"><?php echo VtHelper::truncate($listNews[0]['header'], 80, '...'); ?></p>
 
@@ -55,7 +55,7 @@
 
                     <div class="news-info">
                         <a href="<?php echo url_for2('article_detail', array('slug' => $listNews[1]['slug'])) ?>"
-                           title="" class="news-title"><?php echo htmlspecialchars($listNews[1]['alttitle']); ?></a>
+                           title="" class="news-title"><?php echo VtHelper::truncate($listNews[1]['title'],60, ' ...'); ?></a>
 
                         <p class="news-txt"><?php echo VtHelper::truncate($listNews[1]['header'], 80, '...'); ?></p>
 
@@ -76,7 +76,7 @@
                             <?php for ($i = 2; $i < count($listNews); $i++): ?>
                                 <li>
                                     <a href="<?php echo url_for2('article_detail', array('slug' => $listNews[$i]['slug'])) ?>"
-                                       title="<?php echo htmlspecialchars($listNews[$i]['title']); ?>"><?php echo VtHelper::truncate($listNews[$i]['alttitle'], 40, '...'); ?></a>
+                                       title="<?php echo htmlspecialchars($listNews[$i]['title']); ?>"><?php echo VtHelper::truncate($listNews[$i]['title'], 50, '...'); ?></a>
                                 </li>
                             <?php endfor; ?>
                         </ul>
