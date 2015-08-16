@@ -733,6 +733,7 @@ div.sct.recommendation > div.hed h1 {
     top: -16px;
     width: 180px;
 }
+
 .col-right div.sct.topic {
     border-top: 3px solid #3398cc;
 }
@@ -859,4 +860,7 @@ a {
     padding: 0;
     text-decoration: none;
     vertical-align: baseline;
+}
+.news-detail .cate a:hover{
+    color: #0099cc;
 }
