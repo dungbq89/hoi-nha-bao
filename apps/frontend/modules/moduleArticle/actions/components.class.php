@@ -62,7 +62,7 @@ class moduleArticleComponents extends sfComponents
             return sfView::NONE;
         }
     }
-
+    //tin tieu diem
     public function executeFocusNews(sfWebRequest $request){
         $limit = $this->getVar('limit');
         if (!isset($limit))
@@ -78,7 +78,6 @@ class moduleArticleComponents extends sfComponents
             return sfView::NONE;
         }
     }
-
     public function executeNewsImages(sfWebRequest $request){
         $limit = $this->getVar('limit');
         if (!isset($limit))
@@ -87,6 +86,13 @@ class moduleArticleComponents extends sfComponents
         if (!isset($attributes))
             $attributes = 2;
         $articles = AdArticleTable::getRandomArticle($attributes,$limit);
+    }
+    //tin xem nhieu
+    public function executeMostViewNews(sfWebRequest $request){
+        $limit = $this->getVar('limit');
+        if (!isset($limit))
+            $limit = 10;
+        $articles = AdArticleTable::getMostViewNews($limit)->fetchArray();
         if($articles){
             $this->articles = $articles;
         }
