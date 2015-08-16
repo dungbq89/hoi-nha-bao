@@ -868,3 +868,6 @@ a {
     font-size: 14px;
     font-family: "Roboto Condensed",sans-serif;
 }
+.header{
+    padding-bottom: 5px;
+}
