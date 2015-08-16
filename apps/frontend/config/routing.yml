@@ -8,6 +8,10 @@ pageError:
   param: { module:  default, action: error404, sf_format: html}
   requirements: {sf_method: get }
 #trang album
+page_register:
+  url: /dang-ky
+  param: {module: pageRegister, action: index}
+#trang album
 page_album:
   url: /album/:slug
   param: {module: pageAlbum, action: index, slug: ''}

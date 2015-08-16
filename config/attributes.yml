@@ -13,7 +13,7 @@ view_page:
   category_news: {value: category_news, alias: "Trang tin chuyên mục"}
 promotion_attributes:
   new: {value: 1, alias: "Tin mới"}
-  new: {value: 2, alias: "Tin 2"}
-  new: {value: 4, alias: "Tin 4"}
-  new: {value: 8, alias: "Tin sự kiện"}
-  new: {value: 16, alias: "Tin 16"}
+  images: {value: 2, alias: "Tin ảnh"}
+  video: {value: 4, alias: "Tin video"}
+  hot: {value: 8, alias: "Tin tiêu điểm"}
+  right: {value: 16, alias: "Tin bản quyền"}

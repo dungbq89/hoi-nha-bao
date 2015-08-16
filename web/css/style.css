@@ -297,7 +297,8 @@ width: 290px;
 
 }
 .box-news .news-item{
-    width: 425px;
+    width: 420px;
+	margin-left: 10px
 }
 .box-news .news-item{
     overflow: hidden;
@@ -376,7 +377,7 @@ a.news-img img{
     border-bottom: 1px solid #ccc;
 }
 .news-more{
-    width: 192px;
+    width: 187px;
     background-color: #fcfcfc;
     padding: 2px 10px;
     height: 114px;

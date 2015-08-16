@@ -378,12 +378,12 @@ class adManageCategoryActions extends autoAdManageCategoryActions
             if(count($check)>0){
                 $this->getUser()->setFlash('notice', $i18n->__('Bạn phải xóa các chuyên mục con trước.'));
             }else{
-                $checkArticle=VtpArticleTable::getArticleByCategoryId($record->id);
+                $checkArticle= AdArticleTable::getArticleByCategoryId($record->id);
                 if(count($checkArticle)>0){
                     $this->getUser()->setFlash('notice', $i18n->__('Bạn phải xóa các các bài viết bên trong chuyên mục trước.'));
                 }else{
                     try{
-                        VtpadCategoryPermissionTable::deletePermissionByCategory($record->id);
+                        AdCategoryPermissionTable::deletePermissionByCategory($record->id);
                         $this->dispatcher->notify(new sfEvent($this, 'admin.delete_object', array('object' => $record)));
                         $record->delete();
                         $this->getUser()->setFlash('success', 'The selected items have been deleted successfully.');

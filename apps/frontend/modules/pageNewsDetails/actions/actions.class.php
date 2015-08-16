@@ -22,6 +22,7 @@ class pageNewsDetailsActions extends sfActions
                 $this->article = $article;
                 $this->articleRelated = AdArticleTable::getListArticleRelated($article['id']);
                 $this->articleOther=AdArticleTable::getListArticle($article['category_id'],4,$articleId)->fetchArray();
+                AdArticleTable::updateHitCounter($article['id']);
             }
             else{
                 return $this->redirect404();

@@ -88,7 +88,7 @@ class adManageAdvertiseActions extends autoAdManageAdvertiseActions
         $this->getUser()->setFlash('successImage', 'The selected items have been deleted successfully.');
         //set lại page trong truong hop xoa toan bo du lieu tren trang
         $adId= $this->getUser()->getAttribute('adManageAdvertiseImage.adid', -1, 'admin_module');
-        $ad_advertise = VtpAdvertiseTable::getAdvertiseById($adId);
+        $ad_advertise = AdAdvertiseTable::getAdvertiseById($adId);
 
         $page=$this->getUser()->getAttribute('adManageAdvertiseImage.page', array(), 'admin_module');
         if ($page >= $request->getParameter('lastPage')){

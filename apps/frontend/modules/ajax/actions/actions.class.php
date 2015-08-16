@@ -24,7 +24,7 @@ class ajaxActions extends sfActions {
                             image: "'.$path.'",
                             autostart: false,
                             height: 250,
-                            width: 300,
+                            width: 310,
                              aspectratio: "16:9",
 
                         });';

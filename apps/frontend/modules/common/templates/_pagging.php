@@ -7,7 +7,7 @@ if (isset($vtParams)) {
 }
 ?>
 <?php if ($pager->haveToPaginate()): ?>
-    <div class="box-pagging">
+
         <ul class="pagination">
             <?php if ($pager->getPage() != $pager->getFirstPage()): ?>
             <li><a class="prev" href="<?php echo url_for($redirectUrl, array_merge(array('page' => $pager->getPreviousPage()), $params)); ?>">&laquo;</a></li>
@@ -23,6 +23,5 @@ if (isset($vtParams)) {
             <li><a class="prev" href="<?php echo url_for($redirectUrl, array_merge(array('page' => $pager->getNextPage()), $params)); ?>">&raquo;</a></li>
             <?php endif; ?>
         </ul>
-    </div>
 
 <?php endif; ?>
