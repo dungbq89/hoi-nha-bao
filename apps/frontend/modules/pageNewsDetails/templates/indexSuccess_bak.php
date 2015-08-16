@@ -1,4 +1,7 @@
 <div class="col-main">
+    <div class="box">
+        <h3 class="title-main"><span class="label">Tin tức 1 »</span></h3>
+
         <div class="news-detail">
             <h3 class="title-article"><?php echo htmlspecialchars($article['title']); ?></h3>
                          <span class="txt-date">
@@ -103,6 +106,7 @@
                 <?php endforeach; ?>
             </div>
          <?php endif; ?>
+    </div>
 </div>
 <div class="col-right">
     <?php include_component('moduleDocument', 'hotDocument', array('limit' => 3)) ?>

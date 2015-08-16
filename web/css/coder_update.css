@@ -393,3 +393,20 @@ div.sct.featured div.atc div.hed h1 a {
 div.sct.featured{
     margin-top: -10px !important;
 }
+/*chi tiet bai viet */
+.content-wrap {
+    float: left;
+    /*position: relative;*/
+    width: 664px;
+    z-index: -1;
+}
+
+#content {
+    float: left;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 0;
+    /*position: relative;*/
+    width: 660px;
+    z-index: 9;
+}
