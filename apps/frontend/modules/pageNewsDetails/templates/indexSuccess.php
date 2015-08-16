@@ -1,7 +1,8 @@
 <div class="col-main">
     <div class="news-detail">
         <div class="btip">
-            <p class="cate"><a href="">Xây dựng Đảng</a></p>
+            <?php if(isset($category) && $category) ?>
+            <p class="cate"><a href="<?php echo url_for2('category_news', array('slug' => $category->getSlug())) ?>" title="<?php echo htmlspecialchars($category->name); ?>"><?php echo htmlspecialchars($category->name); ?></a></p>
             <time
                 class="stime"><?php if ($article['published_time']) echo VtHelper::getFormatDate($article['published_time']); ?></time>
         </div>

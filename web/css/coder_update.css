@@ -732,3 +732,6 @@ div.sct.recommendation > div.hed h1 {
     top: -16px;
     width: 180px;
 }
+.news-detail .cate a:hover{
+    color: #0099cc;
+}

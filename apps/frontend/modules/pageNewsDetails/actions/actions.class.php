@@ -18,6 +18,7 @@ class pageNewsDetailsActions extends sfActions
         if($slug){
             $article = AdArticleTable::getArticleBySlug($slug);
             if($article){
+                $this->category = $category = AdCategoryTable::getCategoryById($article['category_id']);
                 $articleId=$article['id'];
                 $this->article = $article;
                 $this->articleRelated = AdArticleTable::getListArticleRelated($article['id']);
