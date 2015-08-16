@@ -880,3 +880,15 @@ a {
 .box-news .news-more a{
     padding-left: 0px;
 }
+.item-lastest-news h3.title, .col-right .box-mod h3.title{
+    color: #3398cc;
+    font-family: "Roboto Condensed",sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    padding: 5px 10px 0;
+    border-top: 3px solid #3398cc;
+    height: 30px;
+}
+.slide{
+    margin-bottom: 0px;
+}
