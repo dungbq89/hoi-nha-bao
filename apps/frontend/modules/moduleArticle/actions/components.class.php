@@ -86,6 +86,12 @@ class moduleArticleComponents extends sfComponents
         if (!isset($attributes))
             $attributes = 2;
         $articles = AdArticleTable::getRandomArticle($attributes,$limit);
+        if($articles){
+            $this->articles = $articles;
+        }
+        else{
+            return sfView::NONE;
+        }
     }
     //tin xem nhieu
     public function executeMostViewNews(sfWebRequest $request){
