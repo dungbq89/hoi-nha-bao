@@ -19,7 +19,11 @@
                         foreach($listChild as $child){
                             $link=url_for2('category_news', array('slug' => $child['slug']));
                             if($child['link']!=''){
-                                $link=$child['link'];
+                                if (VtHelper::startsWith($child['link'], '@')) {
+                                    $link = url_for($child['link']);
+                                } else {
+                                    $link=$child['link'];
+                                }
                             }
                             ?>
                             <li><a class="child-cat" href="<?php echo $link; ?>">
