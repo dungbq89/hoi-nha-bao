@@ -2,14 +2,14 @@ all:
   slave:
     class: sfDoctrineDatabase
     param:
-      dsn: 'mysql:host=localhost;dbname=hnb_log'
-      username: root
-      password:
+      dsn: 'mysql:host=103.27.236.90;dbname=csdl'
+      username: hoinhabao
+      password: Hnb!23$
       attributes: { default_table_charset: utf8, default_table_collate: utf8_general_ci }
   doctrine:
     class: sfDoctrineDatabase
     param:
-      dsn: 'mysql:host=localhost;dbname=hnb'
-      username: root
-      password:
+      dsn: 'mysql:host=103.27.236.90;dbname=hnb'
+      username: hoinhabao
+      password: Hnb!23$
       attributes: { default_table_charset: utf8, default_table_collate: utf8_general_ci }

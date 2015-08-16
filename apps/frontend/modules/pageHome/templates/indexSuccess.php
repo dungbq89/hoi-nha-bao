@@ -1,4 +1,4 @@
-
+Ôªø
 
 <div class="box-hot">
     <div class="box-hot-news">
@@ -7,16 +7,16 @@
         <div class="sct sidebar" id="right1">
             <div class="sct pictures" rel="38" id="ta38">
                 <div class="hed">
-                    <h1><a href="/image/tin-anh">Tin ?nh</a></h1>
+                    <h1><a href="/image/tin-anh">Tin ·∫£nh</a></h1>
                 </div>
                 <div class="slidebox" id="dslide">
-                    <a href="javascript:djSlide.clickNext('dslide')" class="next" title="Next">B‡i tru?c</a>
-                    <a href="javascript:djSlide.clickPrev('dslide')" class="prev" title="Previous">B‡i sau</a>
+                    <a href="javascript:djSlide.clickNext('dslide')" class="next" title="Next">B√†i tr∆∞·ªõc</a>
+                    <a href="javascript:djSlide.clickPrev('dslide')" class="prev" title="Previous">B√†i sau</a>
                     <div id="dslide_1" style="display: block; opacity: 1;">
-                        <a href="/diem-den/nhung-trai-nghiem-thu-vi-khong-nen-bo-lo-khi-den-sa-pa/99720.htm"><img src="http://i.baohatinh.vn/news/1531/106v99720l1.jpeg"><b><span>Nh?ng tr?i nghi?m th˙ v? khÙng nÍn b? l? khi d?n Sa Pa</span></b></a>
+                        <a href="/diem-den/nhung-trai-nghiem-thu-vi-khong-nen-bo-lo-khi-den-sa-pa/99720.htm"><img src="http://i.baohatinh.vn/news/1531/106v99720l1.jpeg"><b><span>Nh?ng tr?i nghi?m thÔøΩ v? khÔøΩng nÔøΩn b? l? khi d?n Sa Pa</span></b></a>
                     </div>
                     <div id="dslide_2" style="display: none; opacity: -0.05;">
-                        <a href="/diem-den/vong-quanh-the-gioi-ngam-canh-binh-minh-tuyet-dep/99708.htm"><img src="http://i.baohatinh.vn/news/1531/106v99708l1.jpeg"><b><span>VÚng quanh th? gi?i ng?m c?nh bÏnh minh tuy?t d?p</span></b></a>
+                        <a href="/diem-den/vong-quanh-the-gioi-ngam-canh-binh-minh-tuyet-dep/99708.htm"><img src="http://i.baohatinh.vn/news/1531/106v99708l1.jpeg"><b><span>VÔøΩng quanh th? gi?i ng?m c?nh bÔøΩnh minh tuy?t d?p</span></b></a>
                     </div>
                     <div id="dslide_3" style="display: none; opacity: -0.05;">
                         <a href="/du-lich/angkor-wat-tuyet-dieu/99609.htm"><img src="http://i.baohatinh.vn/news/1531/105v99609l1.jpeg"><b><span>Angkor Wat tuy?t di?u</span></b></a>
@@ -29,11 +29,11 @@
                     <li class="email">
                         <span>Email</span>
                         <a href="mailto:hatinhdientu@gmail.com" title="G?i email">hatinhdientu@gmail.com</a>
-                        | <a onclick="dj('#quick-mail').show();return false" href="#" title="LiÍn h?">LiÍn h?</a>
+                        | <a onclick="dj('#quick-mail').show();return false" href="http://" title="Li√™n h·ªá">Li√™n h·ªá</a>
                     </li>
                     <li class="phone">
-                        <span>–u?ng d‚y nÛng</span>
-                        <a title="–i?n tho?i nÛng" onclick="dj('#quick-phone').show();return false" href="#">–u?ng d‚y nÛng: <b>0393.693.427</b></a>
+                        <span>ƒê∆∞·ªùng d√¢y n√≥ng</span>
+                        <a title="ƒê∆∞·ªùng d√¢y n√≥ng" onclick="dj('#quick-phone').show();return false" href="#">ƒê∆∞·ªùng d√¢y n√≥ng: <b>0393.693.427</b></a>
                     </li>
                 </ul>
             </div>
