@@ -17,8 +17,15 @@
                         echo "<span class='span-news'>";
                         echo "<ul class='ul-child'>";
                         foreach($listChild as $child){
+                            $link=url_for2('category_news', array('slug' => $child['slug']));
+                            if($child['link']!=''){
+                                $link=$child['link'];
+                            }
                             ?>
-                            <li><a class="child-cat" href=""><?php echo $child['name']; ?></a></li>
+                            <li><a class="child-cat" href="<?php echo $link; ?>">
+                                    <?php echo $child['name']; ?>
+                                </a>
+                            </li>
                             <?php
                         }
                         echo "</ul>";
