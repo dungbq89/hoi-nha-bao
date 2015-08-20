@@ -65,7 +65,8 @@
             <div style="clear:both"></div>
         </div>
     </div>
-    <a style="" class="back-to-top" href="#top">&nbsp;</a>
+    <div id='bttop' class="back-to-top"></div>
 </div>
 </body>
+
 </html>

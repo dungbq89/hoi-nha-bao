@@ -28,6 +28,6 @@ default:
     - main.js
     - lightslider.js
     - jwplayer/jwplayer.js
-
+    - scroll.js
   has_layout:     true
   layout:         layout
