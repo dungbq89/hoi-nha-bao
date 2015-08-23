@@ -291,3 +291,14 @@ AdLink:
     priority: {type: integer(5), default: null}
     type: {type: integer(5), default: 1, comment: "1: kiểu link cột bên phải, 2 là link footer"}
     is_active: { type: boolean, notnull: true, default: false, comment: "Trạng thái duyệt bài viết"}
+AdReportTotalRecord:
+  tableName: ad_report_total_record
+  columns:
+    category_id: {type: integer(5), default: 0, comment: 'chuyen muc thong ke'}
+    total_record: {type: integer(5), default: 0, comment: 'tong so ban ghi trong chuyen muc'}
+    date_time: {type: timestamp(25), notnull: false, default: null}
+AdReportHicounter:
+  tableName: ad_report_hitcounter
+  columns:
+    category_id: {type: integer(5), default: 0, comment: 'chuyen muc thong ke'}
+    hitcounter: {type: integer(5), default: 0, comment: 'Tong so luot xem'}

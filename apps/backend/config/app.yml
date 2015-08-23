@@ -61,6 +61,10 @@ all:
               route: sf_guard_user
             Danh sách quyền hạn:
               route: sf_guard_permission
+            Thống kê bài viết trong chuyên mục:
+              route: ad_report_total_record
+            Thống kê lượt xem bài trong chuyên mục:
+              route: ad_report_hicounter
 
   sf_captchagd:
      image_width:                180 # image width in pixels

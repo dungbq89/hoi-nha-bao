@@ -1,3 +1,21 @@
+ad_report_hicounter:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AdReportHicounter
+    module:               adReportHicounter
+    prefix_path:          /adReportHicounter
+    column:               id
+    with_wildcard_routes: true
+
+ad_report_total_record:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AdReportTotalRecord
+    module:               adReportTotalRecord
+    prefix_path:          /adReportTotalRecord
+    column:               id
+    with_wildcard_routes: true
+
 ad_link:
   class: sfDoctrineRouteCollection
   options:
