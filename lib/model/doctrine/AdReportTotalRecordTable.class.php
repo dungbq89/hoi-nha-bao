@@ -16,4 +16,17 @@ class AdReportTotalRecordTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('AdReportTotalRecord');
     }
+
+    public static function getReport($catId, $fromDate, $toDate){
+        $q= AdReportTotalRecordTable::getInstance()->createQuery()
+            ->andWhere('date_time >= ?', $fromDate)
+            ->andWhere('date_time <= ? ', $toDate)
+            ->orderby('date_time, category_id');
+        if($catId!=''){
+            $q->andWhere('(category_id=? or parent_id=?)',array($catId,$catId));
+        }else{
+            $q->andWhere('parent_id=0');
+        }
+          return  $q->fetchArray();
+    }
 }

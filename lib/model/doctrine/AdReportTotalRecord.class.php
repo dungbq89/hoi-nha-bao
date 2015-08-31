@@ -12,5 +12,12 @@
  */
 class AdReportTotalRecord extends BaseAdReportTotalRecord
 {
+    public function setUp()
+    {
+        parent::setUp();
 
+        $this->hasOne('AdCategory as AdReportTotalRecord', array(
+            'local' => 'category_id',
+            'foreign' => 'id'));
+    }
 }

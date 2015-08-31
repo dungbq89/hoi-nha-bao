@@ -103,6 +103,53 @@ class AdCategoryTable extends Doctrine_Table
         return $arrResult;
     }
 
+    public static function getCategoryReportFilter()
+    {
+        $query = AdCategoryTable::getInstance()->createQuery()
+            ->select('name, parent_id, level, priority')
+            ->andWhere('is_category=1')
+            ->andWhere('parent_id is null')
+            ->andWhere('lang=?', sfContext::getInstance()->getUser()->getCulture())
+            ->orderby('priority asc');
+        $arrCat = $query->execute();
+        $arrResult = array();
+        $i18n = sfContext::getInstance()->getI18N();
+        $arrResult[''] = $i18n->__('---Tất cả chuyên mục---');
+        foreach ($arrCat as $cat) {
+            $strTab = '';
+            if ($cat->level > 0) {
+                for ($i = 0; $i < $cat->level; $i++) {
+                    $strTab = $strTab . '...';
+                }
+            }
+            $arrResult[$cat->id] = $strTab . $cat->name;
+        }
+
+        return $arrResult;
+    }
+
+    public static function getCategoryNameReport($catId='')
+    {
+        $query = AdCategoryTable::getInstance()->createQuery()
+            ->select('name, parent_id, level, priority')
+            ->andWhere('is_category=1')
+
+            ->andWhere('lang=?', sfContext::getInstance()->getUser()->getCulture())
+            ->orderby('priority asc');
+        if($catId==''){
+            $query->andWhere('parent_id is null');
+        }else{
+            $query->andWhere('(id =? or parent_id =?)',array($catId,$catId));
+        }
+        $arrCat = $query->execute();
+        $arrResult = array();
+        foreach ($arrCat as $cat) {
+            $arrResult[$cat->id] = $cat->name;
+        }
+
+        return $arrResult;
+    }
+
     //Cập nhật thứ tự
     public static function updateOrder($categoryId, $parent_id, $level, $priority)
     {
