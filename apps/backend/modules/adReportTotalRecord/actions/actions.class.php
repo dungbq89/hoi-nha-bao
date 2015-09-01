@@ -13,22 +13,22 @@ require_once dirname(__FILE__).'/../lib/adReportTotalRecordGeneratorHelper.class
  */
 class adReportTotalRecordActions extends autoAdReportTotalRecordActions
 {
-    public function generateChart(){
+    public function generateChart($filterValues){
 
-        $datay1 = array(20,15,23,15);
-        $datay2 = array(12,9,42,8);
-        $datay3 = array(5,17,32,24);
-        $datay4 = array(10,27,22,42,50);
-
-// Setup the graph
-        $graph = new Graph(300,250);
+        $from_date=$filterValues['date_time']['from'];
+        $to_date=$filterValues['date_time']['to'];
+        $catId=$filterValues['category_id'];
+        if ($from_date===null || $to_date===null){
+            $this->getUser()->setFlash('notice', 'bạn phải chọn ngày tháng để thống kê.');
+            $this->redirect('@ad_report_total_record');
+        }
+        // Khoi tao bieu do
+        $graph = new Graph(600,450);
         $graph->SetScale("textlin");
 
         $theme_class=new UniversalTheme;
 
         $graph->SetTheme($theme_class);
-        $graph->img->SetAntiAliasing(false);
-        $graph->title->Set('Filled Y-grid');
         $graph->SetBox(false);
 
         $graph->img->SetAntiAliasing();
@@ -36,37 +36,62 @@ class adReportTotalRecordActions extends autoAdReportTotalRecordActions
         $graph->yaxis->HideZeroLabel();
         $graph->yaxis->HideLine(false);
         $graph->yaxis->HideTicks(false,false);
-
+        /**
+         * thuc hien do du lieu
+         *
+         */
+        $arrX=array(); //Khai bao mang thoi gian
+        $time=''; //Bien thoi gian
+        //lay gia tri du lieu
+        $result=AdReportTotalRecordTable::getReport($catId,$from_date,$to_date);
+        $data=array();//Khai bao mang du lieu chuyen muc
+        for ($j=0;$j<count($result);$j++){
+            //day time vao mang
+            if ($time!=$result[$j]['date_time']){
+                array_push($arrX,date('d-m',strtotime($result[$j]['date_time'])));
+                $time=$result[$j]['date_time'];
+            }
+            $data[$result[$j]['category_id']]=array();
+        }
+        //set gia tri cho truc X
         $graph->xgrid->Show();
         $graph->xgrid->SetLineStyle("solid");
-        $graph->xaxis->SetTickLabels(array('A','B','C','D','E'));
+        $graph->xaxis->SetTickLabels($arrX);
         $graph->xgrid->SetColor('#E3E3E3');
+        $graph->xaxis->SetPos('min');
 
-// Create the first line
-        $p1 = new LinePlot($datay1);
-        $graph->Add($p1);
-        $p1->SetColor("#6495ED");
-        $p1->SetLegend('Line 1');
-
-// Create the second line
-        $p2 = new LinePlot($datay2);
-        $graph->Add($p2);
-        $p2->SetColor("#B22222");
-        $p2->SetLegend('Line 2');
-
-// Create the third line
-        $p3 = new LinePlot($datay3);
-        $graph->Add($p3);
-        $p3->SetColor("#FF1493");
-        $p3->SetLegend('Line 3');
-
-        $p4 = new LinePlot($datay4);
-        $graph->Add($p4);
-        $p4->SetColor("#Aa1493");
-        $p4->SetLegend('Line 4');
+        //Day gia tri vao chuyen muc
+        $time='';
+        for ($j=0;$j<count($result);$j++){
+            foreach($data as $key=>$value){
+                if($key==$result[$j]['category_id']){
+                    array_push($data[$key],$result[$j]['total_record']);
+                }else{
+                    if ($time!=$result[$j]['date_time']){
+                        array_push($data[$key],0);
+                        $time=$result[$j]['date_time'];
+                    }
+                }
+            }
+        }
+//        var_dump($data);die;
+        //Chuyen muc
+        $arrCat=AdCategoryTable::getCategoryNameReport($catId);
+        $cl=0;//bien chay mau
+        $color=array('#6495ED','#B22222','#Aa1493','#54A954','#0055CC','#FF5722','#E91E63','#673AB7','#FF9800');
+        foreach($data as $key=>$value){
+            $p = new LinePlot($value);
+            $graph->Add($p);
+            $p->SetColor($color[$cl]);
+            $p->SetLegend($arrCat[$key]);
+            $cl=$cl+1;
+        }
 
         $graph->legend->SetFrameWeight(1);
 
+        $graph->yaxis->title->Set('Tổng số tin bài');
+        $graph->xaxis->title->Set('Thời gian');
+        $graph->title->Set('Thống kê bài viết trong chuyên mục');
         // Display the graph
         //        $graph->Stroke();
         $user = sfContext::getInstance()->getUser();
@@ -122,15 +147,50 @@ class adReportTotalRecordActions extends autoAdReportTotalRecordActions
             self::generateChart($this->filters->getValues()); //ngoctv: tao bieu do thong ke
             $this->redirect('@ad_report_total_record');
         }
-        $this->sidebar_status = null;// $this->configuration->getListSidebarStatus();
-        $this->pager = null;//$this->getPager();
-        $this->sort = null;//$this->getSort();
+        $this->sidebar_status =  $this->configuration->getListSidebarStatus();
+        $this->pager = $this->getPager();
+        $this->sort = $this->getSort();
 
         $this->setTemplate('index');
     }
 
+
     public function executeIndex(sfWebRequest $request)
     {
-        self::generateChart();
+        // sorting
+        if ($request->getParameter('sort') && $this->isValidSortColumn($request->getParameter('sort')))
+        {
+            $this->setSort(array($request->getParameter('sort'), $request->getParameter('sort_type')));
+        }
+
+        // pager
+        if ($request->getParameter('page'))
+        {
+            $this->setPage($request->getParameter('page'));
+        }
+        else
+        {
+            $this->setPage(1);
+        }
+
+        // max per page
+        if ($request->getParameter('max_per_page'))
+        {
+            $this->setMaxPerPage($request->getParameter('max_per_page'));
+        }
+
+        $this->sidebar_status = $this->configuration->getListSidebarStatus();
+        $this->pager = $this->getPager();
+
+        //Start - thongnq1 - 03/05/2013 - fix loi xoa du lieu tren trang danh sach
+        if ($request->getParameter('current_page'))
+        {
+            $current_page = $request->getParameter('current_page');
+            $this->setPage($current_page);
+            $this->pager = $this->getPager();
+        }
+        //end thongnq1
+        $this->sort = $this->getSort();
     }
+
 }

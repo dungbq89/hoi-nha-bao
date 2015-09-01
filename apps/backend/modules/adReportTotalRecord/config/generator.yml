@@ -1,8 +1,8 @@
 generator:
-  class: sfDoctrineGenerator
+  class: tmcTwitterBootstrapDoctrineGenerator
   param:
     model_class:           AdReportTotalRecord
-    theme:                 admin
+    theme:                 tmcTwitterBootstrap
     non_verbose_templates: true
     with_show:             false
     singular:              ~
@@ -13,9 +13,14 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
+      fields: ~
       list:    ~
-      filter:  ~
+      filter:
+        class: AdReportTotalRecordFilter
+        display: [category_id, date_time]
+        fields:
+          category_id: {label: Chuyên mục}
+          date_time: {label: Ngày tháng *}
       form:    ~
       edit:    ~
       new:     ~

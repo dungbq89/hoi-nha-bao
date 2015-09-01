@@ -1,8 +1,8 @@
 generator:
-  class: sfDoctrineGenerator
+  class: tmcTwitterBootstrapDoctrineGenerator
   param:
     model_class:           AdReportHicounter
-    theme:                 admin
+    theme:                 tmcTwitterBootstrap
     non_verbose_templates: true
     with_show:             false
     singular:              ~
@@ -14,8 +14,13 @@ generator:
     config:
       actions: ~
       fields:  ~
-      list:    ~
-      filter:  ~
+      list:
+        title: Thống kê lượt xem bài trong chuyên mục
+      filter:
+        class: AdReportHicounterFilter
+        display: [category_id]
+        fields:
+          category_id: {label: Chuyên mục}
       form:    ~
       edit:    ~
       new:     ~
