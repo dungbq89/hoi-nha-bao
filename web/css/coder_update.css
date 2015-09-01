@@ -1183,3 +1183,10 @@ a {
 #dslide .bx-wrapper .bx-controls-direction a{
     margin-top: -65px !important;
 }
+
+.container{
+    min-width: 975px !important;
+}
+.col-right{
+    width: 305px !important;
+}
