@@ -1,5 +1,10 @@
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
+#ajax load video
+get_province:
+  url: /get-province
+  param: {module: pageRegister, action: loadProvince}
+
 page_document_detail:
   url: /chi-tiet-van-ban/:id
   param: {module: pageDocument, action: detail, id: ''}

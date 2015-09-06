@@ -21,4 +21,18 @@ class pageRegisterActions extends sfActions {
         }
         $this->form=$form;
     }
+
+    public function executeLoadProvince(sfWebRequest $request) {
+        $id = $request->getParameter('id');
+        $strProvince = "<option selected='selected' value=''>----- Chọn quận/huyện -----</option>";
+        if($id){
+            $provinces = csdl_areaTable::getProvinceByCityCode($id)->fetchArray();
+            if(count($provinces)>0){
+                foreach($provinces as $value){
+                    $strProvince .= "<option value=".$value['DISTRICT'].">".$value['NAME']."</option>";
+                }
+            }
+        }
+        return $this->renderText(json_encode($strProvince));
+    }
 }

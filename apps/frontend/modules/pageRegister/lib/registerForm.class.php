@@ -10,54 +10,104 @@ class registerForm extends Basecsdl_lylichhoivienForm
 {
     public function configure()
     {
-        $this->setWidgets(array(
-            'id'            => new sfWidgetFormInputHidden(),
-            'hoivien_id'    => new sfWidgetFormInputText(),
-            'ten'           => new sfWidgetFormInputText(),
-            'hodem'         => new sfWidgetFormInputText(),
-            'ngaysinh'      => new sfWidgetFormDateTime(array('with_time'=>false)),
-            'gioitinh'      => new sfWidgetFormInputText(),
-            'diachi'        => new sfWidgetFormInputText(),
-            'maquan'        => new sfWidgetFormInputText(),
-            'matinh'        => new sfWidgetFormInputText(),
-            'ngayvaodoan'   => new sfWidgetFormDateTime(),
-            'noiketnapdoan' => new sfWidgetFormInputText(),
-            'ngayvaodang'   => new sfWidgetFormDateTime(),
-            'noiketnapdang' => new sfWidgetFormInputText(),
-            'tieusu'        => new sfWidgetFormTextarea(),
-            'nghenghiep_id' => new sfWidgetFormInputText(),
-            'dantoc_id'     => new sfWidgetFormInputText(),
-            'quoctich'      => new sfWidgetFormInputText(),
-            'donvi_id'      => new sfWidgetFormInputText(),
-            'created_at'    => new sfWidgetFormDateTime(),
-            'updated_at'    => new sfWidgetFormDateTime(),
-        ));
 
-        $this->setValidators(array(
-            'id'            => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-            'hoivien_id'    => new sfValidatorInteger(array('required' => false)),
-            'ten'           => new sfValidatorString(array('max_length' => 255, 'required' => false)),
-            'hodem'         => new sfValidatorString(array('max_length' => 255, 'required' => false)),
-            'ngaysinh'      => new sfValidatorDateTime(array('required' => false)),
-            'gioitinh'      => new sfValidatorString(array('max_length' => 25, 'required' => false)),
-            'diachi'        => new sfValidatorString(array('max_length' => 255, 'required' => false)),
-            'maquan'        => new sfValidatorString(array('max_length' => 25, 'required' => false)),
-            'matinh'        => new sfValidatorString(array('max_length' => 255, 'required' => false)),
-            'ngayvaodoan'   => new sfValidatorDateTime(array('required' => false)),
-            'noiketnapdoan' => new sfValidatorString(array('max_length' => 255, 'required' => false)),
-            'ngayvaodang'   => new sfValidatorDateTime(array('required' => false)),
-            'noiketnapdang' => new sfValidatorString(array('max_length' => 255, 'required' => false)),
-            'tieusu'        => new sfValidatorString(array('max_length' => 1000, 'required' => false)),
-            'nghenghiep_id' => new sfValidatorInteger(array('required' => false)),
-            'dantoc_id'     => new sfValidatorInteger(array('required' => false)),
-            'quoctich'      => new sfValidatorString(array('max_length' => 255, 'required' => false)),
-            'donvi_id'      => new sfValidatorInteger(array('required' => false)),
-            'created_at'    => new sfValidatorDateTime(),
-            'updated_at'    => new sfValidatorDateTime(),
-        ));
+        $i18n = sfContext::getInstance()->getI18N();
+        unset($this['created_at'], $this['updated_at']);
+        $this->widgetSchema['ten'] = new sfWidgetFormInputText(array());
+        $this->validatorSchema['ten'] = new sfValidatorString(array('required' => true, 'trim' => true, 'max_length' => 255));
+
+        $this->widgetSchema['ngaysinh'] = new sfWidgetFormVnDatePicker(array(),array('readonly'=>true));
+        $this->validatorSchema['ngaysinh'] = new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d H:i:s'));
+
+
+        $this->widgetSchema['gioitinh'] = new sfWidgetFormChoice(array(
+            'choices' => $this->getSex(),
+            'multiple' => false,
+            'expanded' => false));
+        $this->validatorSchema['gioitinh'] = new sfValidatorChoice(array(
+            'required' => false,
+            'choices' => array_keys($this->getSex()),));
+
+        $this->widgetSchema['nghenghiep_id'] = new sfWidgetFormChoice(array(
+        'choices' => $this->getJob(),
+        'multiple' => false,
+        'expanded' => false));
+        $this->validatorSchema['nghenghiep_id'] = new sfValidatorChoice(array(
+            'required' => false,
+            'choices' => array_keys($this->getJob()),));
+
+        $this->widgetSchema['donvi_id'] = new sfWidgetFormChoice(array(
+            'choices' => $this->getDonVi(),
+            'multiple' => false,
+            'expanded' => false));
+        $this->validatorSchema['donvi_id'] = new sfValidatorChoice(array(
+            'required' => false,
+            'choices' => array_keys($this->getDonVi()),));
+
+        $this->widgetSchema['matinh'] = new sfWidgetFormChoice(array(
+            'choices' => $this->getCity(),
+            'multiple' => false,
+            'expanded' => false));
+        $this->validatorSchema['matinh'] = new sfValidatorChoice(array(
+            'required' => false,
+            'choices' => array_keys($this->getCity()),));
+
+        $this->widgetSchema['maquan'] = new sfWidgetFormChoice(array(
+            'choices' => $this->getProvince(),
+            'multiple' => false,
+            'expanded' => false));
+        $this->validatorSchema['maquan'] = new sfValidatorChoice(array(
+            'required' => false,
+            'choices' => array_keys($this->getProvince()),));
 
         $this->widgetSchema->setNameFormat('csdl_lylichhoivien[%s]');
 
         $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+    }
+
+    protected function getSex()
+    {
+        return array(
+            '0' => 'Nữ',
+            '1' => 'Nam'
+        );
+    }
+
+    protected function getJob(){
+        $arrJobs = array(''=>'----- Chọn nghề nghiệp -----');
+        $jobs = csdl_dmnghenghiepTable::getJob()->fetchArray();
+        if(count($jobs)>0){
+            foreach($jobs as $value){
+                $arrJobs[$value['id']] = $value['tendanhmuc'];
+            }
+        }
+        return $arrJobs;
+    }
+
+    protected function getDonVi(){
+        $arrJobs = array(''=>'----- Chọn đơn vị -----');
+        $jobs = csdl_coquanbaochiTable::getJob()->fetchArray();
+        if(count($jobs)>0){
+            foreach($jobs as $value){
+                $arrJobs[$value['id']] = $value['tendonvi'];
+            }
+        }
+        return $arrJobs;
+    }
+
+    protected function getCity(){
+        $arrJobs = array(''=>'----- Chọn tỉnh/thành phố -----');
+        $jobs = csdl_areaTable::getCity()->fetchArray();
+        if(count($jobs)>0){
+            foreach($jobs as $value){
+                $arrJobs[$value['PROVINCE']] = $value['NAME'];
+            }
+        }
+        return $arrJobs;
+    }
+
+    protected function getProvince(){
+        $arrJobs = array(''=>'----- Chọn quận/huyện -----');
+        return $arrJobs;
     }
 }

@@ -19,6 +19,9 @@ default:
     - jquery.bxslider.css
     - style-table.css
     - lightslider.css
+    - jquery.ui.core.js
+    - ui.datepicker.css
+    - ui.theme.css
     - coder_update.css
 
   javascripts:
@@ -29,5 +32,10 @@ default:
     - lightslider.js
     - jwplayer/jwplayer.js
     - scroll.js
+    - jquery-migrate-1.0.0.js
+    - jquery.ui.datepicker.js
+    - ui.datepicker.min.js
+    - jquery-ui-1.8.22.custom.min.js
+    - jquery-ui-timepicker-addon.js
   has_layout:     true
   layout:         layout

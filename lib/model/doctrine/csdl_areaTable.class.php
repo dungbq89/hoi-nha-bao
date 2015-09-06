@@ -16,4 +16,17 @@ class csdl_areaTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('csdl_area');
     }
+    //Lay danh sach tinh thanh pho
+    public static function getCity(){
+        $query=  csdl_areaTable::getInstance()->createQuery()
+            ->where("DISTRICT = '' AND PRECINCT = '' AND STATUS = 1");
+        return $query;
+    }
+
+    public static function getProvinceByCityCode($cityCode){
+        $query=  csdl_areaTable::getInstance()->createQuery()
+            ->where("PROVINCE =? ", $cityCode)
+            ->andWhere("DISTRICT <> '' AND PRECINCT = '' AND STATUS = 1");
+        return $query;
+    }
 }

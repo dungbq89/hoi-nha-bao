@@ -16,4 +16,10 @@ class csdl_coquanbaochiTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('csdl_coquanbaochi');
     }
+
+    public static function getJob(){
+        $query=  csdl_coquanbaochiTable::getInstance()->createQuery()
+            ->andWhere('trangthai = ',VtCommonEnum::NUMBER_ONE);
+        return $query;
+    }
 }
