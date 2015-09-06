@@ -12,6 +12,7 @@ class moduleVideoComponents extends sfComponents
         $limit = $this->getVar('limit');
         if (!isset($limit))
             $limit = 5;
+        $this->width=($this->getVar('width'))?$this->getVar('width'):'310';
         $listVideo = AdVideoTable::getListVideoHome($limit)->execute();
         if($listVideo){
             $this->listVideo = $listVideo;

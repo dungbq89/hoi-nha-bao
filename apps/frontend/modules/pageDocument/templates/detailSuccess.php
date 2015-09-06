@@ -42,7 +42,10 @@
         </div>
     </div>
     </div>
+
     <div class="col-right">
+        <?php include_component('moduleVideo','listVideoHome',array('limit'=>5,'width'=>'305')) ?>
+        <?php include_component('moduleArticle','readNews',array('limit'=>5)) ?>
         <?php include_component('moduleDocument', 'hotDocument', array('limit' => 3)) ?>
         <?php include_component('moduleArticle', 'categoryHot', array('limit' => 3)) ?>
 

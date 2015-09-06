@@ -10,7 +10,7 @@
             $path = '/uploads/' . sfConfig::get('app_article_images') . $articles[$i]['image_path'];
             ?>
             <li><a href="<?php echo url_for2('article_detail',array('slug'=>$articles[$i]['slug'])) ?>">
-                    <img src="<?php echo VtHelper::getThumbUrl($path, 300, 200, '') ?>" title="<?php echo htmlspecialchars($articles[$i]['title']); ?>" />
+                    <img src="<?php echo VtHelper::getThumbUrl($path, 305, 200, '') ?>" title="<?php echo htmlspecialchars($articles[$i]['title']); ?>" />
                 </a>
             </li>
         <?php endfor; ?>
