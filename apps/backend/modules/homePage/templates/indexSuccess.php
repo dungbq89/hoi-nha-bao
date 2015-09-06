@@ -23,11 +23,6 @@ include_component('tmcTwitterBootstrap', 'header');
                 <?php foreach ($menus as $name => $menu): ?>
                     <?php
 
-                    //ngoctv kiem tra portal hien tai co phai la khach hang doanh nghiep hay khong
-                    $khdn=isset($menu['khdn']) ? $menu['khdn'] : null;
-                    if($khdn!=null && $khdn==sfContext::getInstance()->getUser()->getAttribute('portal')){
-                        continue;
-                    }
                     $credentials = isset($menu['credentials']) ? $menu['credentials'] : null;
                     if ($credentials && !$sf_user->hasCredential($credentials)) {
                         continue;
@@ -65,13 +60,7 @@ include_component('tmcTwitterBootstrap', 'header');
 
                                                         <?php foreach ($submenus as $name => $menu): ?>
                                                             <?php $route = $menu['route']; ?>
-                                                            <?php
-                                                            //ngoctv kiem tra portal hien tai co phai la khach hang doanh nghiep hay khong
-                                                            $khdn=isset($menu['khdn']) ? $menu['khdn'] : null;
-                                                            if($khdn!=null && $khdn==sfContext::getInstance()->getUser()->getAttribute('portal')){
-                                                                continue;
-                                                            }
-                                                            ?>
+
                                                             <?php
                                                             $credentials = isset($menu['credentials']) ? $menu['credentials'] : null;
                                                             if ($credentials && !$sf_user->hasCredential($credentials)) {
@@ -86,13 +75,7 @@ include_component('tmcTwitterBootstrap', 'header');
 
                                                     <?php else: ?>
                                                         <?php $route = $menu['route']; ?>
-                                                        <?php
-                                                        //ngoctv kiem tra portal hien tai co phai la khach hang doanh nghiep hay khong
-                                                        $khdn=isset($menu['khdn']) ? $menu['khdn'] : null;
-                                                        if($khdn!=null && $khdn==sfContext::getInstance()->getUser()->getAttribute('portal')){
-                                                            continue;
-                                                        }
-                                                        ?>
+
                                                         <?php
                                                         $credentials = isset($menu['credentials']) ? $menu['credentials'] : null;
                                                         if ($credentials && !$sf_user->hasCredential($credentials)) {
@@ -111,7 +94,7 @@ include_component('tmcTwitterBootstrap', 'header');
                                                     <tr>
                                                         <?php foreach ($row as $i => $value): ?>
                                                             <?php $c = count($row); ?>
-                                                            <td<?php if ($c < $colspan && ($c - 1) == $i) echo ' colspan="' . ($colspan - $i) . '"' ?>>
+                                                            <td<?php if ($c < $colspan && ($c - 1) == $i) {echo ' colspan="' . ($colspan - $i) . '"';}else{echo ' style="width: 30%"';}  ?>>
                                                                 <?php echo link_to(__($value['name']), '@' . $value['route']) ?>
                                                             </td>
                                                         <?php endforeach; ?>
