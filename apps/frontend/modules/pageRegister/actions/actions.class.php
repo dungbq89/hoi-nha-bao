@@ -15,8 +15,20 @@ class pageRegisterActions extends sfActions {
             $values = $request->getParameter($form->getName());
             $form->bind($values);
             if($form->isValid()){
-
+                $reg = new csdl_lylichhoivien();
+                $reg->setHodem($values['hodem']);
+                $year = date('Y-m-d h:i:s', strtotime($values['ngaysinh']['date']));
+                $reg->setNgaysinh($year);
+                $reg->setGioitinh($values['gioitinh']);
+                $reg->setMatinh($values['matinh']);
+                $reg->setMaquan($values['maquan']);
+                $reg->setDiachi($values['diachi']);
+                $reg->setDonviId($values['donvi_id']);
+                $reg->setNghenghiepId($values['nghenghiep_id']);
+                $reg->setHodem($values['hodem']);
+                $reg->save();
                 $this->getUser()->setFlash('success','Bạn đã đăng ký thành công, chúng tôi sẽ xét duyệt hồ sơ của bạn.');
+                $this->form = new registerForm();
             }
         }
         $this->form=$form;
