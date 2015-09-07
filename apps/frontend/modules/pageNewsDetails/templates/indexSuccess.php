@@ -13,6 +13,9 @@
         <div class="cover-detail">
             <div class="detail-body">
                 <?php echo $article['body']; ?>
+                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                <div class="clear"></div>
+                <div class="addthis_native_toolbox"></div>
             </div>
             <div class="detail-mostview">
                 <?php include_component('moduleArticle','mostViewNews',array('limit'=>5)); ?>
@@ -131,3 +134,5 @@
     <?php include_component('moduleAdvertise', 'advertise', array('location' => 'right')); ?>
 
 </div>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-537227b70ef6e827" async="async"></script>
