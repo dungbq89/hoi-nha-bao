@@ -29,4 +29,10 @@ class csdl_areaTable extends Doctrine_Table
             ->andWhere("DISTRICT <> '' AND PRECINCT = '' AND STATUS = 1");
         return $query;
     }
+
+    public static function getProvinceKey(){
+        $query=  csdl_areaTable::getInstance()->createQuery()
+            ->where("DISTRICT <> '' AND PRECINCT = '' AND STATUS = 1");
+        return $query;
+    }
 }

@@ -13,8 +13,8 @@ class registerForm extends Basecsdl_lylichhoivienForm
 
         $i18n = sfContext::getInstance()->getI18N();
         unset($this['created_at'], $this['updated_at']);
-        $this->widgetSchema['ten'] = new sfWidgetFormInputText(array());
-        $this->validatorSchema['ten'] = new sfValidatorString(array('required' => true, 'trim' => true, 'max_length' => 255));
+        $this->widgetSchema['hodem'] = new sfWidgetFormInputText(array());
+        $this->validatorSchema['hodem'] = new sfValidatorString(array('required' => true, 'trim' => true, 'max_length' => 255));
 
         $this->widgetSchema['ngaysinh'] = new sfWidgetFormVnDatePicker(array(),array('readonly'=>true));
         $this->validatorSchema['ngaysinh'] = new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d H:i:s'));
@@ -58,7 +58,7 @@ class registerForm extends Basecsdl_lylichhoivienForm
             'expanded' => false));
         $this->validatorSchema['maquan'] = new sfValidatorChoice(array(
             'required' => false,
-            'choices' => array_keys($this->getProvince()),));
+            'choices' => array_keys($this->getProvinceKey()),));
 
         $this->widgetSchema->setNameFormat('csdl_lylichhoivien[%s]');
 
@@ -108,6 +108,16 @@ class registerForm extends Basecsdl_lylichhoivienForm
 
     protected function getProvince(){
         $arrJobs = array(''=>'----- Chọn quận/huyện -----');
+        return $arrJobs;
+    }
+    protected function getProvinceKey(){
+        $arrJobs = array(''=>'----- Chọn quận/huyện -----');
+        $jobs = csdl_areaTable::getProvinceKey()->fetchArray();
+        if(count($jobs)>0){
+            foreach($jobs as $value){
+                $arrJobs[$value['DISTRICT']] = $value['NAME'];
+            }
+        }
         return $arrJobs;
     }
 }

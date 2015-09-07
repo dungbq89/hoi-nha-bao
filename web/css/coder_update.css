@@ -1190,6 +1190,9 @@ a {
 .col-right{
     width: 305px !important;
 }
+.col-main{
+    min-height: 500px;
+}
 .ui-icon ui-icon-circle-triangle-w{
     text-indent: 2000px !important;
 }
