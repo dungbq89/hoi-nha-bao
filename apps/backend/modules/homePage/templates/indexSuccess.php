@@ -14,7 +14,7 @@ include_component('tmcTwitterBootstrap', 'header');
                     <p>
                         <?php echo __('Hệ thống Quản trị nội dung. Mọi khó khăn liên hệ quản trị:') ?>
                     <ul>
-                        <li>NgocTV84@gmail.com</li>
+                        <li>Ninhtiki@gmail.com</li>
                     </ul>
                     </p>
                 </div>
@@ -59,7 +59,7 @@ include_component('tmcTwitterBootstrap', 'header');
                                                         <?php $submenus = $menu['dropdown']; ?>
 
                                                         <?php foreach ($submenus as $name => $menu): ?>
-                                                            <?php $route = $menu['route']; ?>
+                                                            <?php $route = $menu['route']; $icon=$menu['icon']?>
 
                                                             <?php
                                                             $credentials = isset($menu['credentials']) ? $menu['credentials'] : null;
@@ -70,11 +70,11 @@ include_component('tmcTwitterBootstrap', 'header');
                                                             <?php if (!array_key_exists($route, $routes)): ?>
                                                                 <?php continue; ?>
                                                             <?php endif; ?>
-                                                            <?php $rows[] = array('route' => $route, 'name' => $name); ?>
+                                                            <?php $rows[] = array('route' => $route, 'name' => $name,'icon'=>$icon); ?>
                                                         <?php endforeach; ?>
 
                                                     <?php else: ?>
-                                                        <?php $route = $menu['route']; ?>
+                                                        <?php $route = $menu['route']; $icon=$menu['icon']?>
 
                                                         <?php
                                                         $credentials = isset($menu['credentials']) ? $menu['credentials'] : null;
@@ -85,7 +85,7 @@ include_component('tmcTwitterBootstrap', 'header');
                                                         <?php if (!array_key_exists($route, $routes)): ?>
                                                             <?php continue; ?>
                                                         <?php endif; ?>
-                                                        <?php $rows[] = array('route' => $route, 'name' => $name); ?>
+                                                        <?php $rows[] = array('route' => $route, 'name' => $name,'icon'=>$icon); ?>
                                                     <?php endif; ?>
                                                 <?php endforeach; ?>
 
@@ -93,8 +93,11 @@ include_component('tmcTwitterBootstrap', 'header');
                                                 <?php foreach (array_chunk($rows, $colspan) as $row): ?>
                                                     <tr>
                                                         <?php foreach ($row as $i => $value): ?>
-                                                            <?php $c = count($row); ?>
+                                                            <?php $c = count($row); $icon=$value['icon'];?>
                                                             <td<?php if ($c < $colspan && ($c - 1) == $i) {echo ' colspan="' . ($colspan - $i) . '"';}else{echo ' style="width: 30%"';}  ?>>
+                                                                <?php if($icon!=''): ?>
+                                                                    <img src="<?php echo '/themeAdmin/img/' .$icon; ?>" />
+                                                                <?php endif; ?>
                                                                 <?php echo link_to(__($value['name']), '@' . $value['route']) ?>
                                                             </td>
                                                         <?php endforeach; ?>

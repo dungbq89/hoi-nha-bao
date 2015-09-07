@@ -22,17 +22,18 @@ CKEDITOR.editorConfig = function( config )
         ];
     config.toolbar_Full =
         [
-            ['Preview','Templates'],
-            [ 'Bold','Italic','Underline','Strike', 'Subscript', 'Superscript', '-','RemoveFormat' ],
+            ['Source','DocProps','-','Save','NewPage','Preview','Templates'],
+            [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],
+            [ 'Bold','Italic','Underline','Strike', 'Subscript', 'Superscript' ],
             [ 'list', 'indent', 'blocks', 'align', 'bidi' ],
             [ 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','CreateDiv',
                 '-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
+            ['Form','Checkbox','Radio','TextField','Textarea','Select','Button','ImageButton','HiddenField'],
             [ 'Link','Unlink','Anchor' ] ,
             [ 'Image','Table','HorizontalRule','Smiley','SpecialChar','PageBreak','Iframe'],
             [ 'Styles','Format','Font','FontSize' ] ,
             [ 'TextColor','BGColor' ],
-            [ 'ShowBlocks' ],
-            [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ]
+            [ 'FitWindow','ShowBlocks' ]
         ];
     config.toolbar_simple =[];
 };

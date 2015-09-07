@@ -19,52 +19,71 @@ all:
           dropdown:
             Quản lý tin đợi duyệt:
               route: ad_article
+              icon: text.png
             Quản lý tin đợi đăng:
               route: ad_article_adArticlesAproved
+              icon: text.png
             Quản lý tin đã đăng:
               route: ad_article_adArticlesPublish
+              icon: text.png
         Phân hệ khác:
           credentials: [admin]
           dropdown:
             Quản lý chuyên mục:
               route: ad_category
+              icon: squares36.png
             Trang liên hệ:
               route: ad_contact
+              icon: business133.png
             Quản lý video:
               credentials: [[admin]]
               route: ad_video
+              icon: movie36.png
             Quản lý album:
               credentials: [[admin]]
               route: ad_album
+              icon: pictures1.png
             Quản lý chuyên mục văn bản:
               credentials: [[admin]]
               route: ad_document_category
+              icon: squares36.png
             Quản lý văn bản:
               credentials: [[admin]]
               route: ad_document
+              icon: books8.png
             Quản lý nội dung:
               route: ad_html
+              icon: text.png
             Quản lý thông tin phản hồi:
               route: ad_comment
+              icon: text.png
             Danh sách hội viên:
               route: ad_personal
-            Vị trí quảng cao:
+              icon: users6.png
+            Vị trí quảng cáo:
               route: ad_advertise_location
+              icon: computer.png
             Quản lý Banner - quảng cáo:
               route: ad_advertise
+              icon: computer.png
             Quản lý liên kết:
               route: ad_link
+              icon: link71.png
         Quản trị hệ thống:
           credentials: [admin]
           dropdown:
             Danh sách người dùng:
               route: sf_guard_user
+              icon: users6.png
             Danh sách quyền hạn:
               route: sf_guard_permission
+              icon: users6.png
             Thống kê bài viết trong chuyên mục:
               route: ad_report_total_record
+              icon: file148.png
             Thống kê lượt xem bài trong chuyên mục:
               route: ad_report_hicounter
+              icon: pie-chart9.png
 
   sf_captchagd:
      image_width:                180 # image width in pixels
