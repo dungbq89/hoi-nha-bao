@@ -38,7 +38,7 @@ class AdCategoryTable extends Doctrine_Table
         //        $permission=sfGuardPermissionTable::getPermissionByName($permissionName);
 
         if ($permission != null) {
-            $strCat = VtpCategoryPermissionTable::getCatgoryIdByPermission($permission);
+            $strCat = AdCategoryPermissionTable::getCatgoryIdByPermission($permission);
             if ($strCat != '') {
                 $query = AdCategoryTable::getInstance()->createQuery()
                     ->select('name, parent_id, level, priority')
@@ -227,7 +227,7 @@ class AdCategoryTable extends Doctrine_Table
     public static function getActiveCategoryWithParentSlugQuery($slug)
     {
         return self::getActiveCategoryQuery()
-            ->leftJoin('c.VtpParentCategory p')
+            ->leftJoin('c.AdParentCategory p')
             ->andWhere('p.lang=?', sfContext::getInstance()->getUser()->getCulture())
             ->andWhere('p.slug=?', $slug)
             ->andWhere('p.is_active=?', VtCommonEnum::NUMBER_ONE);
@@ -395,7 +395,7 @@ class AdCategoryTable extends Doctrine_Table
         return $this->createQuery('c')
             ->where('c.lang=?', sfContext::getInstance()->getUser()->getCulture())
             ->andWhere('c.is_active=?', VtCommonEnum::NUMBER_ONE)
-            ->leftJoin('c.VtpParentCategory p')
+            ->leftJoin('c.AdParentCategory p')
             ->andWhere('p.lang=?', sfContext::getInstance()->getUser()->getCulture())
             ->andWhere('p.id=?', $parentId)
             ->andWhere('p.is_active=?', VtCommonEnum::NUMBER_ONE)

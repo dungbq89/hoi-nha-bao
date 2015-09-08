@@ -96,7 +96,7 @@ class AdVideoTable extends Doctrine_Table
             ->andWhere('slug<>?', $slug)
             ->orderBy('event_date desc');
 
-        $pager = new sfDoctrinePager('VtpVideo', $limit);
+        $pager = new sfDoctrinePager('AdVideo', $limit);
         $pager->setQuery($query);
         $pager->setPage($page);
         $pager->init();
