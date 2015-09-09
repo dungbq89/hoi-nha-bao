@@ -6,9 +6,9 @@
             <time
                 class="stime"><?php if ($article['published_time']) echo VtHelper::getFormatDate($article['published_time']); ?></time>
         </div>
-        <h3 class="title-article"><?php echo htmlspecialchars($article['title']); ?></h3>
+        <h3 class="title-article"><?php  echo htmlspecialchars($article['title']); ?></h3>
         <span class="txt-artice-intro">
-            <?php echo htmlspecialchars($article['header']); ?>
+            <?php echo (isset($newsCopyright) && $newsCopyright)?'<b><i>(hoinhabaohatinh.vn) - </i></b>':''; echo htmlspecialchars($article['header']); ?>
         </span>
         <div class="cover-detail">
             <div class="detail-body">

@@ -20,6 +20,9 @@ class pageNewsDetailsActions extends sfActions
             if($article){
                 $this->category = $category = AdCategoryTable::getCategoryById($article['category_id']);
                 $articleId=$article['id'];
+
+                if (($article['attributes'] & 8))
+                    $this->newsCopyright=true;
                 $this->article = $article;
                 $this->articleRelated = AdArticleTable::getListArticleRelated($article['id']);
                 $this->articleOther=AdArticleTable::getListArticle($article['category_id'],4,$articleId)->fetchArray();

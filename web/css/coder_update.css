@@ -1196,3 +1196,15 @@ a {
 .ui-icon ui-icon-circle-triangle-w{
     text-indent: 2000px !important;
 }
+.txt-artice-intro {
+    display: block;
+    font-family: "Noticia Text",Times,serif;
+    font-size: 1.3em;
+    font-weight: normal;
+    line-height: 28px;
+    margin-bottom: 18px;
+}
+.detail-body, .detail-body p, .detail-body span {
+    font-family: "Noticia Text";
+    line-height: 24px;
+}
