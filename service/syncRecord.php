@@ -22,7 +22,7 @@ function mysqlConnect(){
 $conn = mysqlConnect();
 mysqli_set_charset($conn,'utf8');
 //Xoa du lieu trong bang ad_report_hitcounter
-$sql ="DELETE FROM ad_report_total_record";
+$sql ="TRUNCATE ad_report_total_record";
 $exe = mysqli_query($conn,$sql);
 
 //Cap nhat lai thong tin
