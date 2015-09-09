@@ -14,6 +14,7 @@
             <div class="detail-body">
                 <?php echo $article['body']; ?>
                 <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                <p class="pAuthor"><?php  echo htmlspecialchars($article['author']); ?></p>
                 <div class="clear"></div>
                 <div class="addthis_native_toolbox"></div>
             </div>
