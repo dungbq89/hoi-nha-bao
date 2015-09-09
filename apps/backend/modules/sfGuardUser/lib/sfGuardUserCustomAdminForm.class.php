@@ -129,6 +129,11 @@ class sfGuardUserCustomAdminForm extends PluginsfGuardUserForm
        $values['last_name']= trim($values['last_name']);
        $values['phone']= trim($values['phone']);
        $values['email_address']= trim($values['email_address']);
+      if(trim($values['password'])!=''){
+          $values['pass_update_at'] = null;
+
+      }
+
     parent::doBind($values);
   }
   /**
@@ -143,7 +148,12 @@ class sfGuardUserCustomAdminForm extends PluginsfGuardUserForm
     $values = parent::processValues($values);
 
     // chinh sua pass thi yeu cau nguoi dung phai thay doi lai
-    $values['pass_update_at'] = null;
+      if(trim($values['password'])!=''){
+          $values['pass_update_at'] = null;
+    }else{
+          $values['pass_update_at'] = date('Y-m-d H:i:s',time());
+      }
+
 //    $values['is_super_admin'] = 1;
     if(!$this->isNew())
     {
