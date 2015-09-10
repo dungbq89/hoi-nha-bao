@@ -27,7 +27,7 @@ all:
               route: ad_article_adArticlesPublish
               icon: text.png
         Phân hệ khác:
-          credentials: [admin]
+          credentials: [[admin]]
           dropdown:
             Quản lý chuyên mục:
               route: ad_category
@@ -36,11 +36,11 @@ all:
               route: ad_contact
               icon: business133.png
             Quản lý video:
-              credentials: [[admin]]
+              credentials: [[admin,subAdmin]]
               route: ad_video
               icon: movie36.png
             Quản lý album:
-              credentials: [[admin]]
+              credentials: [[admin,subAdmin]]
               route: ad_album
               icon: pictures1.png
             Quản lý chuyên mục văn bản:
@@ -52,6 +52,7 @@ all:
               route: ad_document
               icon: books8.png
             Quản lý nội dung:
+              credentials: [[admin,subAdmin]]
               route: ad_html
               icon: text.png
             Quản lý thông tin phản hồi:
@@ -61,9 +62,11 @@ all:
               route: ad_personal
               icon: users6.png
             Vị trí quảng cáo:
+              credentials: [[admin,subAdmin]]
               route: ad_advertise_location
               icon: computer.png
             Quản lý Banner - quảng cáo:
+              credentials: [[admin,subAdmin]]
               route: ad_advertise
               icon: computer.png
             Quản lý liên kết:

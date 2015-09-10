@@ -44,6 +44,10 @@ class adReportTotalRecordActions extends autoAdReportTotalRecordActions
         $time=''; //Bien thoi gian
         //lay gia tri du lieu
         $result=AdReportTotalRecordTable::getReport($catId,$from_date,$to_date);
+        if(count($result)==0){
+            $this->getUser()->setFlash('notice', 'Không có dữ liệu.');
+            $this->redirect('@ad_report_total_record');
+        }
         $data=array();//Khai bao mang du lieu chuyen muc
         for ($j=0;$j<count($result);$j++){
             //day time vao mang

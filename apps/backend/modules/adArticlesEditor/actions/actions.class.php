@@ -59,7 +59,9 @@ class adArticlesEditorActions extends autoAdArticlesEditorActions
 
                 $ad_article->lang=sfContext::getInstance()->getUser()->getCulture();
 
-
+                if ($ad_article->is_active=='2' && $ad_article->published_time ===null){
+                    $ad_article->published_time=date('Y-m-d H:i:s',time());
+                }
                 $slug=removeSignClass::removeSign($ad_article->title);
                 if($slug==''){
                     $slug=VtHelper::generateString(5);
