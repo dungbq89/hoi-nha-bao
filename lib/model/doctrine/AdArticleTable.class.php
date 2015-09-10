@@ -26,15 +26,21 @@ class AdArticleTable extends Doctrine_Table
         return $query;
     }
 
-    public static function getSearchArticle($keyword)
+    public static function getSearchArticle($keyword,$articleId='')
     {
         $keyword = addcslashes($keyword, sfConfig::get('app_addcslashes_charlist', "'%_-\\"));
-        return AdArticleTable::getInstance()->createQuery('a')
+        $q= AdArticleTable::getInstance()->createQuery('a')
             ->select('a.id, a.title as name')
             ->where('LOWER(a.title) like LOWER(?) COLLATE utf8_bin', '%' . trim($keyword) . '%')
+
             ->andWhere('a.is_active=?', VtCommonEnum::NUMBER_TWO)
             ->andWhere('a.lang=?', sfContext::getInstance()->getUser()->getCulture())
             ->orderBy('updated_at desc');
+        if ($articleId!=''){
+            $q->andWhere('a.id<>?', $articleId);
+        }
+        return $q;
+
     }
 
     public static function getArticleSameByCategory($article_id, $category_id, $limit = 5)
