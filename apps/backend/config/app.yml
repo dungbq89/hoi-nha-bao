@@ -15,19 +15,22 @@ all:
     header:
       menu:
         Phân hệ Tin tức:
-          credentials: [admin]
+          credentials: [[admin,news_editor,news_approved,news_public]]
           dropdown:
             Quản lý tin đợi duyệt:
+              credentials: [[admin,news_editor,news_approved,news_public]]
               route: ad_article
               icon: text.png
             Quản lý tin đợi đăng:
+              credentials: [[admin,news_editor,news_approved,news_public]]
               route: ad_article_adArticlesAproved
               icon: text.png
             Quản lý tin đã đăng:
+              credentials: [[admin,news_editor,news_approved,news_public]]
               route: ad_article_adArticlesPublish
               icon: text.png
         Phân hệ khác:
-          credentials: [[admin]]
+          credentials: [[admin,subAdmin]]
           dropdown:
             Quản lý chuyên mục:
               route: ad_category
