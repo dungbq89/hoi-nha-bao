@@ -1217,3 +1217,19 @@ a {
     margin: 8px 0;
     text-align: right;
 }
+
+#multimedia .bx-wrapper .bx-controls-direction a{
+    top: 28%;
+}
+#multimedia .bx-wrapper .bx-prev{
+    left: -45px;
+}
+#multimedia .bx-wrapper .bx-next{
+    right: -45px;
+}
+.focus-news{
+    margin: 5px 0px;
+}
+#multimedia .bx-viewport,#multimedia .bx-wrapper{
+    height: 190px !important;
+}
