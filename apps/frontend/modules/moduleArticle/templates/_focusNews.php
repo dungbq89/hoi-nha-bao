@@ -1,23 +1,42 @@
 <?php if (isset($articles) && $articles): ?>
     <div id="multimedia" class="sct">
         <div class="hed"><h1>Tin tiêu điểm</h1></div>
-        <?php foreach ($articles as $article):
-            $path = '/uploads/' . sfConfig::get('app_article_images') . $article['image_path'];
-            ?>
-            <div class="atc dor">
-                <div
-                    style="background-image: url(<?php echo VtHelper::getThumbUrl($path, 187, 125, ''); ?>); background-size: cover;"
-                    class="cover">
-                    <a href="<?php echo url_for2('article_detail', array('slug' => $article['slug'])) ?>"></a>
-                </div>
-                <div class="hed"><h1>
+        <ul class="bx-news-focus">
+            <?php foreach ($articles as $article):
+                $path = '/uploads/' . sfConfig::get('app_article_images') . $article['image_path'];
+                ?>
+
+                <li><a href="<?php echo url_for2('article_detail',array('slug'=>$article['slug'])) ?>">
+                        <img src="<?php echo VtHelper::getThumbUrl($path, 187, 125, '') ?>" title="<?php echo htmlspecialchars($article['title']); ?>" />
+                    </a>
+                    <h3 class="focus-news">
                         <a href="<?php echo url_for2('article_detail', array('slug' => $article['slug'])) ?>"
                            title="<?php echo htmlspecialchars($article['title']); ?>">
                             <?php
-                            echo VtHelper::truncate($article['alttitle'], 50, '...'); ?>
-                        </a></h1></div>
-            </div>
+                            if ($article['alttitle']) {
+                                echo VtHelper::truncate($article['alttitle'], 50, '...');
+                            } else {
+                                echo VtHelper::truncate($article['title'], 50, '...');
+                            }
 
-        <?php endforeach; ?>
+                            ?>
+                        </a></h3>
+                </li>
+
+            <?php endforeach; ?>
+        </ul>
     </div>
 <?php endif; ?>
+<script type="text/javascript">
+    $(function () {
+        $('.bx-news-focus').bxSlider({
+            minSlides: 1,
+            maxSlides: 5,
+            slideWidth: 170,
+            slideMargin: 10,
+            pager: false,
+            moveSlides: 1
+        });
+    });
+
+</script>

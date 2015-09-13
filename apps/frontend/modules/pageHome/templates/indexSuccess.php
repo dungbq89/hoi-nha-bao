@@ -14,7 +14,7 @@
                 <ul>
                     <li class="email">
                         <span>Email</span>
-                        <a href="mailto:hatinhdientu@gmail.com" title="G?i email">hatinhdientu@gmail.com</a>
+                        <a href="mailto:hatinhdientu@gmail.com" title="Gửi email">hatinhdientu@gmail.com</a>
                         | <a onclick="dj('#quick-mail').show();return false" href="http://hoinhabaohatinh.vn/lien-he" title="Liên hệ">Liên hệ</a>
                     </li>
                     <li class="phone">
