@@ -15,24 +15,29 @@ all:
     header:
       menu:
         Phân hệ Tin tức:
-          credentials: [admin]
+          credentials: [[admin,news_editor,news_approved,news_public]]
           dropdown:
             Quản lý tin đợi duyệt:
+              credentials: [[admin,news_editor,news_approved,news_public]]
               route: ad_article
               icon: text.png
             Quản lý tin đợi đăng:
+              credentials: [[admin,news_editor,news_approved,news_public]]
               route: ad_article_adArticlesAproved
               icon: text.png
             Quản lý tin đã đăng:
+              credentials: [[admin,news_editor,news_approved,news_public]]
               route: ad_article_adArticlesPublish
               icon: text.png
         Phân hệ khác:
-          credentials: [[admin]]
+          credentials: [[admin,subAdmin]]
           dropdown:
             Quản lý chuyên mục:
+              credentials: [[admin]]
               route: ad_category
               icon: squares36.png
             Trang liên hệ:
+              credentials: [[admin]]
               route: ad_contact
               icon: business133.png
             Quản lý video:
@@ -56,9 +61,11 @@ all:
               route: ad_html
               icon: text.png
             Quản lý thông tin phản hồi:
+              credentials: [[admin]]
               route: ad_comment
               icon: text.png
             Danh sách hội viên:
+              credentials: [[admin]]
               route: ad_personal
               icon: users6.png
             Vị trí quảng cáo:
@@ -70,6 +77,7 @@ all:
               route: ad_advertise
               icon: computer.png
             Quản lý liên kết:
+              credentials: [[admin]]
               route: ad_link
               icon: link71.png
         Quản trị hệ thống:
