@@ -42,4 +42,12 @@ class AdHtmlTable extends Doctrine_Table
             ->andWhere('lang=?',sfContext::getInstance()->getUser()->getCulture());
         return $query->fetchOne();
     }
+
+    public static function getHtmlById($id){
+        $query=  AdHtmlTable::getInstance()->createQuery()
+            ->where('is_active=?',VtCommonEnum::NUMBER_ONE)
+            ->andWhere('id=?',$id)
+            ->andWhere('lang=?',sfContext::getInstance()->getUser()->getCulture());
+        return $query->fetchOne();
+    }
 }

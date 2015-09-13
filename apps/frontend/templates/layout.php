@@ -52,11 +52,12 @@
         <div class="foothr"></div>
         <div class="copyright">
             <div class="ilog">
-                <a href="http://baohatinh.vn"><b>&copy; Copyright 2009 hoinhabaohatinh.vn</b></a>
-                <p class="hide-on-small">Văn phòng hội: Số 34 đường Nguyễn Công Trứ, thành phố Hà Tĩnh, tỉnh Hà Tĩnh
-                </p>
-                <p class="hide-on-small"> Email: info@hoinhabaohatinh.vn</p>
-                <p class="hide-on-small"> Website: http:/www.hoinhabaohatinh.vn</p>
+                <?php include_component('moduleMenu','contentFooter') ?>
+<!--                <a href="http://baohatinh.vn"><b>&copy; Copyright 2009 hoinhabaohatinh.vn</b></a>-->
+<!--                <p class="hide-on-small">Văn phòng hội: Số 34 đường Nguyễn Công Trứ, thành phố Hà Tĩnh, tỉnh Hà Tĩnh-->
+<!--                </p>-->
+<!--                <p class="hide-on-small"> Email: info@hoinhabaohatinh.vn</p>-->
+<!--                <p class="hide-on-small"> Website: http:/www.hoinhabaohatinh.vn</p>-->
             </div>
             <div class="info vcard hide-on-small">
                 Liên hệ quảng cáo<br>

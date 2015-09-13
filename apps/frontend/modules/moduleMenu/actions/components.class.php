@@ -45,4 +45,20 @@ class moduleMenuComponents extends sfComponents
             return sfView::NONE;
         }
     }
+
+    public function executeContentFooter(){
+        $footerId = sfConfig::get('app_footer_id');
+        if($footerId){
+            $content = AdHtmlTable::getHtmlById($footerId);
+            if($content){
+                $this->content = $content->content;
+            }else{
+                return sfView::NONE;
+            }
+
+        }
+        else{
+            return sfView::NONE;
+        }
+    }
 }

@@ -4,3 +4,4 @@
 # default values
 all:
   cat_id: 2
+  footer_id: 12
