@@ -15,7 +15,14 @@ if (isset($articles) && $articles):
         <header>
             <h1>
                 <a href="<?php echo url_for2('article_detail',array('slug'=>$article['slug'])) ?>">
-                    <?php echo htmlspecialchars($article['title']); ?>
+                    <?php
+                    if($article['alttitle']){
+                        echo htmlspecialchars($article['alttitle']);
+                    }else{
+                        echo htmlspecialchars($article['title']);
+                    }
+
+                    ?>
                 </a>
             </h1>
             <time datetime=""><?php echo VtHelper::getFormatDate($article['published_time']); ?> </time>

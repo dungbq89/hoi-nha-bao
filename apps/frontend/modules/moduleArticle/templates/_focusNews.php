@@ -7,7 +7,7 @@
                 ?>
 
                 <li><a href="<?php echo url_for2('article_detail',array('slug'=>$article['slug'])) ?>">
-                        <img src="<?php echo VtHelper::getThumbUrl($path, 187, 125, '') ?>" title="<?php echo htmlspecialchars($article['title']); ?>" />
+                        <img src="<?php echo VtHelper::getThumbUrl($path, 187, 125, 'image_default') ?>" title="<?php echo htmlspecialchars($article['title']); ?>" />
                     </a>
                     <h3 class="focus-news">
                         <a href="<?php echo url_for2('article_detail', array('slug' => $article['slug'])) ?>"

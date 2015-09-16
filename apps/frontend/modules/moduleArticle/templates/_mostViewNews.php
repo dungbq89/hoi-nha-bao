@@ -10,7 +10,7 @@ if (isset($articles) && $articles):
                 <div class="cover">
                     <a href="<?php echo url_for2('article_detail',array('slug'=>$article['slug'])) ?>">
                         <img style="display: block; width: 75px; height: 70px;"
-                            src="<?php echo VtHelper::getThumbUrl($path, 75, 70, '') ?>">
+                            src="<?php echo VtHelper::getThumbUrl($path, 75, 70, 'image_75_70') ?>">
                     </a>
                 </div>
                 <div class="hed"><h1>
