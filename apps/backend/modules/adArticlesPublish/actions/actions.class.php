@@ -64,4 +64,26 @@ class adArticlesPublishActions extends autoAdArticlesPublishActions
 
         return $pager;
     }
+
+    public function executeLoadFilter(sfWebRequest $request)
+    {
+        $this->setPage(1);
+        $catId = $request->getParameter('catid');
+        $this->filters = $this->configuration->getFilterForm($this->getFilters());
+        //Chuyennv2 trim du lieu
+        $filterValues = $request->getParameter($this->filters->getName());
+        $filterValues['category_id'] = $catId;
+        $this->filters->bind($filterValues);
+        if ($this->filters->isValid())
+        {
+            $this->setFilters($this->filters->getValues());
+
+            $this->redirect('@ad_article_adArticlesPublish');
+        }
+        $this->sidebar_status = $this->configuration->getListSidebarStatus();
+        $this->pager = $this->getPager();
+        $this->sort = $this->getSort();
+
+        $this->setTemplate('index');
+    }
 }

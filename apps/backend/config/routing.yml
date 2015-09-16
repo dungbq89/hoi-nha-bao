@@ -1,3 +1,7 @@
+load_article_by_cat:
+  url:   /load-article
+  param: { module: adArticlesPublish, action: loadFilter }
+
 ad_report_hicounter:
   class: sfDoctrineRouteCollection
   options:

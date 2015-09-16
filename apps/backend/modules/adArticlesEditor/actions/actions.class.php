@@ -314,4 +314,6 @@ class adArticlesEditorActions extends autoAdArticlesEditorActions
         $pager->init();
         return $pager;
     }
+
+
 }
