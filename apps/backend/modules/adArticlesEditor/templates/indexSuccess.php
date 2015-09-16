@@ -70,3 +70,26 @@
     </div>
 
 <?php include_partial('adArticlesEditor/footer') ?>
+
+<script type="text/javascript">
+    $( document ).ready(function() {
+        $("#ad_article_filters_category_id").change(function() {
+            var categoryId = $("#ad_article_filters_category_id").val();
+            var url = "<?php echo url_for('@load_article_editor'); ?>";
+            var url_redirect = "<?php echo url_for('@ad_article'); ?>";
+            $.ajax({
+                type: "POST",
+                url: url,
+                cache: true,
+                data: {
+                    catid: categoryId
+                },
+                success: function(data) {
+                    window.open(url_redirect , '_self');
+                },
+                error: function() {
+                }
+            });
+        });
+    });
+</script>

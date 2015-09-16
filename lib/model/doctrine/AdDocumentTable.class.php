@@ -21,8 +21,7 @@ class AdDocumentTable extends Doctrine_Table
     public static function getDocumentByCatId($catId, $limit=null){
         $query = AdDocumentTable::getInstance()->createQuery()
             ->where('category_id =? ',$catId)
-            ->andWhere('is_active=?', VtCommonEnum::NUMBER_ONE)
-            ->andWhere('is_home=?',VtCommonEnum::NUMBER_ONE);
+            ->andWhere('is_active=?', VtCommonEnum::NUMBER_ONE);
         if($limit){
             $query->limit($limit);
         }

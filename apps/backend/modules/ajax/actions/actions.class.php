@@ -95,15 +95,29 @@ class ajaxActions extends sfActions{
         }
         return $this->renderText(json_encode($arrResult));
     }
+    //load tin theo chuyen muc
+    public function executeLoadFilter(sfWebRequest $request)
+    {
+        $catId = $request->getParameter('catid');
+        $filterValues['category_id'] = $catId;
+        sfContext::getInstance()->getUser()->setAttribute('adArticlesPublish.filters', $filterValues, 'admin_module');
+        return $this->renderText(json_encode(false));
+    }
 
-    //ajax load tin tuc theo chuyen muc
-    public function executeLoadArticleByCategory(sfWebRequest $request){
+    public function executeLoadFilterEditor(sfWebRequest $request)
+    {
+        $catId = $request->getParameter('catid');
+        $filterValues['category_id'] = $catId;
+        sfContext::getInstance()->getUser()->setAttribute('adArticlesEditor.filters', $filterValues, 'admin_module');
+        return $this->renderText(json_encode(false));
+    }
 
-        $catId=$request->getParameter('catid');
-        if($catId){
-
-        }
-        return $this->renderText(json_encode($arrayResult));
+    public function executeLoadFilterApproved(sfWebRequest $request)
+    {
+        $catId = $request->getParameter('catid');
+        $filterValues['category_id'] = $catId;
+        sfContext::getInstance()->getUser()->setAttribute('adArticlesAproved.filters', $filterValues, 'admin_module');
+        return $this->renderText(json_encode(false));
     }
 }
 

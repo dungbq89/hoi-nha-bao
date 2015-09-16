@@ -38,7 +38,7 @@
 
                     <?php include_partial('adArticlesPublish/list', array('pager' => $pager, 'sort' => $sort, 'helper' => $helper)) ?>
                     <div>
-                        <?php include_partial('adArticlesAproved/list_batch_actions', array('helper' => $helper)) ?>
+                        <?php include_partial('adArticlesPublish/list_batch_actions', array('helper' => $helper)) ?>
                     </div>
 
                 </form>
@@ -68,24 +68,25 @@
 
 <?php include_partial('adArticlesPublish/footer') ?>
 
-<!--<script type="text/javascript">-->
-<!--    $( document ).ready(function() {-->
-<!--        $("#vtp_article_filters_category_id").change(function() {-->
-<!--            var categoryId = $("#vtp_article_filters_category_id").val();-->
-<!--            var url = "--><?php //echo url_for('@load_article_by_cat'); ?>//";
-//            $.ajax({
-//                type: "POST",
-//                url: url,
-//                cache: true,
-//                data: {
-//                    catid: categoryId
-//                },
-//                success: function(data) {
-//
-//                },
-//                error: function() {
-//                }
-//            });
-//        });
-//    });
-//</script>
+<script type="text/javascript">
+    $( document ).ready(function() {
+        $("#vtp_article_filters_category_id").change(function() {
+            var categoryId = $("#vtp_article_filters_category_id").val();
+            var url = "<?php echo url_for('@load_article_by_cat'); ?>";
+            var url_redirect = "<?php echo url_for('@ad_article_adArticlesPublish'); ?>";
+            $.ajax({
+                type: "POST",
+                url: url,
+                cache: true,
+                data: {
+                    catid: categoryId
+                },
+                success: function(data) {
+                    window.open(url_redirect , '_self');
+                },
+                error: function() {
+                }
+            });
+        });
+    });
+</script>
