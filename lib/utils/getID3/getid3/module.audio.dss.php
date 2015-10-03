@@ -28,7 +28,7 @@ class getid3_dss extends getid3_handler
 			return false;
 		}
 
-		// some structure information taken from http://cpansearch.perl.org/src/RGIBSON/Audio-DSS-0.02/lib/Audio/DSS.pm
+		// some structure information taken from http://cpansearch.perl.org/src/RGIBSON/audio-DSS-0.02/lib/audio/DSS.pm
 		$info['encoding']              = 'ISO-8859-1'; // not certain, but assumed
 		$info['dss'] = array();
 

@@ -8,7 +8,7 @@
 /////////////////////////////////////////////////////////////////
 //                                                             //
 // module.audio.tta.php                                        //
-// module for analyzing TTA Audio files                        //
+// module for analyzing TTA audio files                        //
 // dependencies: NONE                                          //
 //                                                            ///
 /////////////////////////////////////////////////////////////////

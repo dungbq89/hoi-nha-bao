@@ -8,7 +8,7 @@
 /////////////////////////////////////////////////////////////////
 //                                                             //
 // module.audio.mod.php                                        //
-// module for analyzing MOD Audio files                        //
+// module for analyzing MOD audio files                        //
 // dependencies: NONE                                          //
 //                                                            ///
 /////////////////////////////////////////////////////////////////

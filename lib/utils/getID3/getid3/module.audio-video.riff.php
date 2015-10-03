@@ -184,7 +184,7 @@ class getid3_riff extends getid3_handler
 
 					$thisfile_audio = getid3_lib::array_merge_noclobber($thisfile_audio, $thisfile_riff_audio[$streamindex]);
 					if (substr($thisfile_audio['codec'], 0, strlen('unknown: 0x')) == 'unknown: 0x') {
-						$info['warning'][] = 'Audio codec = '.$thisfile_audio['codec'];
+						$info['warning'][] = 'audio codec = '.$thisfile_audio['codec'];
 					}
 					$thisfile_audio['bitrate'] = $thisfile_riff_audio[$streamindex]['bitrate'];
 
@@ -1892,7 +1892,7 @@ class getid3_riff extends getid3_handler
 			0x0022	DSP Group TrueSpeech
 			0x0023	Echo Speech EchoSC1
 			0x0024	Audiofile AF36
-			0x0025	Audio Processing Technology APTX
+			0x0025	audio Processing Technology APTX
 			0x0026	AudioFile AF10
 			0x0027	Prosody 1612
 			0x0028	LRC
@@ -1972,10 +1972,10 @@ class getid3_riff extends getid3_handler
 			0x0150	Qualcomm PureVoice
 			0x0151	Qualcomm HalfRate
 			0x0155	Ring Zero Systems TUB GSM
-			0x0160	Microsoft Audio 1
-			0x0161	Windows Media Audio V7 / V8 / V9
-			0x0162	Windows Media Audio Professional V9
-			0x0163	Windows Media Audio Lossless V9
+			0x0160	Microsoft audio 1
+			0x0161	Windows Media audio V7 / V8 / V9
+			0x0162	Windows Media audio Professional V9
+			0x0163	Windows Media audio Lossless V9
 			0x0200	Creative Labs ADPCM
 			0x0202	Creative Labs Fastspeech8
 			0x0203	Creative Labs Fastspeech10
@@ -2313,7 +2313,7 @@ class getid3_riff extends getid3_handler
 			SMSD	Radius SMSD
 			smsv	WorldConnect Wavelet Video
 			SPIG	Radius Spigot
-			SPLC	Splash Studios ACM Audio Codec (www.splashstudios.net)
+			SPLC	Splash Studios ACM audio Codec (www.splashstudios.net)
 			SQZ2	Microsoft VXTreme Video Codec V2
 			STVA	ST Microelectronics CMOS Imager Data (Bayer)
 			STVB	ST Microelectronics CMOS Imager Data (Nudged Bayer)

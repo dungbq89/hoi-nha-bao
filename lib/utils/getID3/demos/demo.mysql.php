@@ -1610,7 +1610,7 @@ if (!empty($_REQUEST['scan']) || !empty($_REQUEST['newscan']) || !empty($_REQUES
 			$AVFormats .= $thisline;
 		}
 	}
-	echo 'Duplicated MD5_DATA (Audio/Video files):<table border="1" cellspacing="0" cellpadding="2">';
+	echo 'Duplicated MD5_DATA (audio/Video files):<table border="1" cellspacing="0" cellpadding="2">';
 	echo $AVFormats.'</table><hr>';
 	echo 'Duplicated MD5_DATA (Other files):<table border="1" cellspacing="0" cellpadding="2">';
 	echo $OtherFormats.'</table><hr>';
@@ -2151,7 +2151,7 @@ echo '<li><a href="'.htmlentities($_SERVER['PHP_SELF'].'?md5datadupes=1').'">Lis
 echo '<li><a href="'.htmlentities($_SERVER['PHP_SELF'].'?artisttitledupes=1').'">List files with identical artist + title</a> (<a href="'.$_SERVER['PHP_SELF'].'?artisttitledupes=1&samemix=1">same mix only</a>)</li>';
 echo '<li><a href="'.htmlentities($_SERVER['PHP_SELF'].'?fileextensions=1').'">File with incorrect file extension</a></li>';
 echo '<li><a href="'.htmlentities($_SERVER['PHP_SELF'].'?formatdistribution=1').'">File Format Distribution</a></li>';
-echo '<li><a href="'.htmlentities($_SERVER['PHP_SELF'].'?audiobitrates=1').'">Audio Bitrate Distribution</a></li>';
+echo '<li><a href="'.htmlentities($_SERVER['PHP_SELF'].'?audiobitrates=1').'">audio Bitrate Distribution</a></li>';
 echo '<li><a href="'.htmlentities($_SERVER['PHP_SELF'].'?vbrmethod=1').'">VBR_Method Distribution</a></li>';
 echo '<li><a href="'.htmlentities($_SERVER['PHP_SELF'].'?tagtypes=1').'">Tag Type Distribution</a></li>';
 echo '<li><a href="'.htmlentities($_SERVER['PHP_SELF'].'?genredistribution='.urlencode('%')).'">Genre Distribution</a></li>';

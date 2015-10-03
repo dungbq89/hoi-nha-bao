@@ -542,7 +542,7 @@ class getID3
 		if (empty($format_info)) {
 			$format_info = array(
 
-				// Audio formats
+				// audio formats
 
 				// AC-3   - audio      - Dolby AC-3 / Dolby Digital
 				'ac3'  => array(
@@ -552,7 +552,7 @@ class getID3
 							'mime_type' => 'audio/ac3',
 						),
 
-				// AAC  - audio       - Advanced Audio Coding (AAC) - ADIF format
+				// AAC  - audio       - Advanced audio Coding (AAC) - ADIF format
 				'adif' => array(
 							'pattern'   => '^ADIF',
 							'group'     => 'audio',
@@ -570,7 +570,7 @@ class getID3
 							'mime_type' => 'audio/audible',
 						),
 */
-				// AAC  - audio       - Advanced Audio Coding (AAC) - ADTS format (very similar to MP3)
+				// AAC  - audio       - Advanced audio Coding (AAC) - ADTS format (very similar to MP3)
 				'adts' => array(
 							'pattern'   => '^\xFF[\xF0-\xF1\xF8-\xF9]',
 							'group'     => 'audio',
@@ -588,7 +588,7 @@ class getID3
 							'mime_type' => 'audio/basic',
 						),
 
-				// AVR  - audio       - Audio Visual Research
+				// AVR  - audio       - audio Visual Research
 				'avr'  => array(
 							'pattern'   => '^2BIT',
 							'group'     => 'audio',
@@ -620,7 +620,7 @@ class getID3
 							'mime_type' => 'audio/dts',
 						),
 
-				// FLAC - audio       - Free Lossless Audio Codec
+				// FLAC - audio       - Free Lossless audio Codec
 				'flac' => array(
 							'pattern'   => '^fLaC',
 							'group'     => 'audio',
@@ -628,7 +628,7 @@ class getID3
 							'mime_type' => 'audio/x-flac',
 						),
 
-				// LA   - audio       - Lossless Audio (LA)
+				// LA   - audio       - Lossless audio (LA)
 				'la'   => array(
 							'pattern'   => '^LA0[2-4]',
 							'group'     => 'audio',
@@ -636,7 +636,7 @@ class getID3
 							'mime_type' => 'application/octet-stream',
 						),
 
-				// LPAC - audio       - Lossless Predictive Audio Compression (LPAC)
+				// LPAC - audio       - Lossless Predictive audio Compression (LPAC)
 				'lpac' => array(
 							'pattern'   => '^LPAC',
 							'group'     => 'audio',
@@ -652,7 +652,7 @@ class getID3
 							'mime_type' => 'audio/midi',
 						),
 
-				// MAC  - audio       - Monkey's Audio Compressor
+				// MAC  - audio       - Monkey's audio Compressor
 				'mac'  => array(
 							'pattern'   => '^MAC ',
 							'group'     => 'audio',
@@ -739,7 +739,7 @@ class getID3
 							'fail_ape'  => 'ERROR',
 						),
 
-				// TTA  - audio       - TTA Lossless Audio Compressor (http://tta.corecodec.org)
+				// TTA  - audio       - TTA Lossless audio Compressor (http://tta.corecodec.org)
 				'tta'  => array(
 							'pattern'   => '^TTA',  // could also be '^TTA(\x01|\x02|\x03|2|1)'
 							'group'     => 'audio',
@@ -772,9 +772,9 @@ class getID3
 						),
 
 
-				// Audio-Video formats
+				// audio-Video formats
 
-				// ASF  - audio/video - Advanced Streaming Format, Windows Media Video, Windows Media Audio
+				// ASF  - audio/video - Advanced Streaming Format, Windows Media Video, Windows Media audio
 				'asf'  => array(
 							'pattern'   => '^\x30\x26\xB2\x75\x8E\x66\xCF\x11\xA6\xD9\x00\xAA\x00\x62\xCE\x6C',
 							'group'     => 'audio-video',
@@ -841,7 +841,7 @@ class getID3
 							'mime_type' => 'video/quicktime',
 						),
 
-				// RIFF - audio/video - Resource Interchange File Format (RIFF) / WAV / AVI / CD-audio / SDSS = renamed variant used by SmartSound QuickTracks (www.smartsound.com) / FORM = Audio Interchange File Format (AIFF)
+				// RIFF - audio/video - Resource Interchange File Format (RIFF) / WAV / AVI / CD-audio / SDSS = renamed variant used by SmartSound QuickTracks (www.smartsound.com) / FORM = audio Interchange File Format (AIFF)
 				'riff' => array(
 							'pattern'   => '^(RIFF|SDSS|FORM)',
 							'group'     => 'audio-video',

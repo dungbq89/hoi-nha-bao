@@ -842,7 +842,7 @@ class getid3_write_id3v2
 					break;
 
 				case 'AENC':
-					// 4.19  AENC Audio encryption
+					// 4.19  AENC audio encryption
 					// Owner identifier   <text string> $00
 					// Preview start      $xx xx
 					// Preview length     $xx xx
@@ -1079,7 +1079,7 @@ class getid3_write_id3v2
 					break;
 
 				case 'ASPI':
-					// 4.30  ASPI Audio seek point index (ID3v2.4+ only)
+					// 4.30  ASPI audio seek point index (ID3v2.4+ only)
 					// Indexed data start (S)         $xx xx xx xx
 					// Indexed data length (L)        $xx xx xx xx
 					// Number of index points (N)     $xx xx

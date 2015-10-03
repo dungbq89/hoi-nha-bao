@@ -8,7 +8,7 @@
 /////////////////////////////////////////////////////////////////
 //                                                             //
 // module.audio.lpac.php                                       //
-// module for analyzing LPAC Audio files                       //
+// module for analyzing LPAC audio files                       //
 // dependencies: module.audio-video.riff.php                   //
 //                                                            ///
 /////////////////////////////////////////////////////////////////

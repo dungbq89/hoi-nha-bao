@@ -1449,7 +1449,7 @@ if (isset($_POST['Analyze']) && $_POST['HeaderHexBytes']) {
 	$headerbitstream  = '11111111111';                               // A - Frame sync (all bits set)
 
 	$MPEGversionLookup = array('2.5'=>'00', '2'=>'10', '1'=>'11');
-	$headerbitstream .= $MPEGversionLookup[$_POST['version']];       // B - MPEG Audio version ID
+	$headerbitstream .= $MPEGversionLookup[$_POST['version']];       // B - MPEG audio version ID
 
 	$MPEGlayerLookup = array('III'=>'01', 'II'=>'10', 'I'=>'11');
 	$headerbitstream .= $MPEGlayerLookup[$_POST['layer']];           // C - Layer description
@@ -2734,7 +2734,7 @@ function MPEGaudioHeaderValid($rawarray, $echoerrors=false) {
 function MPEGaudioHeaderDecode($Header4Bytes) {
 	// AAAA AAAA  AAAB BCCD  EEEE FFGH  IIJJ KLMM
 	// A - Frame sync (all bits set)
-	// B - MPEG Audio version ID
+	// B - MPEG audio version ID
 	// C - Layer description
 	// D - Protection bit
 	// E - Bitrate index

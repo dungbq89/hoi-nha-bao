@@ -14,12 +14,12 @@
                 <ul>
                     <li class="email">
                         <span>Email</span>
-                        <a href="mailto:hatinhdientu@gmail.com" title="Gửi email">hatinhdientu@gmail.com</a>
+                        <a href="mailto:hatinhdientu@gmail.com" title="Gửi email">nguoilambao168@gmail.com</a>
                         | <a onclick="dj('#quick-mail').show();return false" href="http://hoinhabaohatinh.vn/lien-he" title="Liên hệ">Liên hệ</a>
                     </li>
                     <li class="phone">
                         <span>Đường dây nóng</span>
-                        <a title="Đường dây nóng" onclick="dj('#quick-phone').show();return false" href="#">Đường dây nóng: <b>0393.693.427</b></a>
+                        <a title="Đường dây nóng" onclick="dj('#quick-phone').show();return false" href="#">Đường dây nóng: <b> 0393.855463 - 850548</b></a>
                     </li>
                 </ul>
             </div>

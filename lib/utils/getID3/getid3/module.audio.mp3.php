@@ -1762,7 +1762,7 @@ class getid3_mp3 extends getid3_handler
 	public static function MPEGaudioHeaderDecode($Header4Bytes) {
 		// AAAA AAAA  AAAB BCCD  EEEE FFGH  IIJJ KLMM
 		// A - Frame sync (all bits set)
-		// B - MPEG Audio version ID
+		// B - MPEG audio version ID
 		// C - Layer description
 		// D - Protection bit
 		// E - Bitrate index

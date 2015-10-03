@@ -299,7 +299,7 @@ class getid3_asf extends getid3_handler
 					// Reserved                     GUID         128             // hardcoded: 86D15241-311D-11D0-A3A4-00A0C90348F6
 					// Codec Entries Count          DWORD        32              // number of entries in Codec Entries array
 					// Codec Entries                array of:    variable        //
-					// * Type                       WORD         16              // 0x0001 = Video Codec, 0x0002 = Audio Codec, 0xFFFF = Unknown Codec
+					// * Type                       WORD         16              // 0x0001 = Video Codec, 0x0002 = audio Codec, 0xFFFF = Unknown Codec
 					// * Codec Name Length          WORD         16              // number of Unicode characters stored in the Codec Name field
 					// * Codec Name                 WCHAR        variable        // array of Unicode characters - name of codec used to create the content
 					// * Codec Description Length   WORD         16              // number of Unicode characters stored in the Codec Description field
@@ -1455,7 +1455,7 @@ class getid3_asf extends getid3_handler
 		static $ASFCodecListObjectTypeLookup = array();
 		if (empty($ASFCodecListObjectTypeLookup)) {
 			$ASFCodecListObjectTypeLookup[0x0001] = 'Video Codec';
-			$ASFCodecListObjectTypeLookup[0x0002] = 'Audio Codec';
+			$ASFCodecListObjectTypeLookup[0x0002] = 'audio Codec';
 			$ASFCodecListObjectTypeLookup[0xFFFF] = 'Unknown Codec';
 		}
 

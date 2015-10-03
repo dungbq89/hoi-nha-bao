@@ -209,7 +209,7 @@ class getid3_la extends getid3_handler
 				if (substr($rawdata, $offset, 2) == 'LA') {
 					$info['error'][] = 'This version of getID3() ['.$this->getid3->version().'] does not support LA version '.substr($rawdata, $offset + 2, 1).'.'.substr($rawdata, $offset + 3, 1).' which this appears to be - check http://getid3.sourceforge.net for updates.';
 				} else {
-					$info['error'][] = 'Not a LA (Lossless-Audio) file';
+					$info['error'][] = 'Not a LA (Lossless-audio) file';
 				}
 				return false;
 				break;

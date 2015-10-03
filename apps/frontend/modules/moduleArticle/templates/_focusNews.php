@@ -14,9 +14,9 @@
                            title="<?php echo htmlspecialchars($article['title']); ?>">
                             <?php
                             if ($article['alttitle']) {
-                                echo VtHelper::truncate($article['alttitle'], 50, '...');
+                                echo VtHelper::truncate($article['alttitle'], 40, '...');
                             } else {
-                                echo VtHelper::truncate($article['title'], 50, '...');
+                                echo VtHelper::truncate($article['title'], 40, '...');
                             }
 
                             ?>
