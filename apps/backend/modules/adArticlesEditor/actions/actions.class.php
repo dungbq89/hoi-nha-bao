@@ -111,7 +111,7 @@ class adArticlesEditorActions extends autoAdArticlesEditorActions
                 return sfView::SUCCESS;
             }
 
-            $this->dispatcher->notify(new sfEvent($this, 'admin.save_object', array('form' => $form, 'object' => $vtp_article)));
+            $this->dispatcher->notify(new sfEvent($this, 'admin.save_object', array('form' => $form, 'object' => $ad_article)));
 
             if ($request->hasParameter('_save_and_exit'))
             {
@@ -314,4 +314,6 @@ class adArticlesEditorActions extends autoAdArticlesEditorActions
         $pager->init();
         return $pager;
     }
+
+
 }

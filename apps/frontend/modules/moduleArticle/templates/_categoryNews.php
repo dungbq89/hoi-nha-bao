@@ -40,7 +40,7 @@
 
                 <div class="item news-item">
                     <a href="<?php echo url_for2('article_detail', array('slug' => $listNews[0]['slug'])) ?>" title=""
-                       class="news-img"><img src="<?php echo VtHelper::getThumbUrl($path, 197, 118, '') ?>" alt=""></a>
+                       class="news-img"><img src="<?php echo VtHelper::getThumbUrl($path, 197, 118, 'image_hot') ?>" alt=""></a>
 
                     <div class="news-info">
                         <a href="<?php echo url_for2('article_detail', array('slug' => $listNews[0]['slug'])) ?>"
@@ -62,7 +62,7 @@
                     <div class="clear"></div>
                     <br />
                     <a href="<?php echo url_for2('article_detail', array('slug' => $listNews[1]['slug'])) ?>" title=""
-                       class="news-img"><img src="<?php echo VtHelper::getThumbUrl($path, 197, 118, '') ?>" alt=""></a>
+                       class="news-img"><img src="<?php echo VtHelper::getThumbUrl($path, 197, 118, 'image_hot') ?>" alt=""></a>
 
                     <div class="news-info">
                         <a href="<?php echo url_for2('article_detail', array('slug' => $listNews[1]['slug'])) ?>"

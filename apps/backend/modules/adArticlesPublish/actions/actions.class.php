@@ -64,4 +64,8 @@ class adArticlesPublishActions extends autoAdArticlesPublishActions
 
         return $pager;
     }
+
+
+
+
 }

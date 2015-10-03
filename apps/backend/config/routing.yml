@@ -1,3 +1,15 @@
+load_article_by_cat:
+  url:   /load-article
+  param: { module: ajax, action: loadFilter }
+
+load_article_editor:
+  url:   /load-article-editor
+  param: { module: ajax, action: loadFilterEditor }
+
+load_article_approved:
+  url:   /load-article-approved
+  param: { module: ajax, action: loadFilterApproved }
+
 ad_report_hicounter:
   class: sfDoctrineRouteCollection
   options:
