@@ -8,7 +8,7 @@
 /////////////////////////////////////////////////////////////////
 //                                                             //
 // module.audio.mpc.php                                        //
-// module for analyzing Musepack/MPEG+ Audio files             //
+// module for analyzing Musepack/MPEG+ audio files             //
 // dependencies: NONE                                          //
 //                                                            ///
 /////////////////////////////////////////////////////////////////
@@ -188,7 +188,7 @@ class getid3_mpc extends getid3_handler
 
 				case 'ST': // Seek Table
 				case 'SE': // Stream End
-				case 'AP': // Audio Data
+				case 'AP': // audio Data
 					// nothing useful here, just skip this packet
 					$thisPacket = array();
 					break;
@@ -491,7 +491,7 @@ class getid3_mpc extends getid3_handler
 		static $MPCsv8PacketName = array();
 		if (empty($MPCsv8PacketName)) {
 			$MPCsv8PacketName = array(
-				'AP' => 'Audio Packet',
+				'AP' => 'audio Packet',
 				'CT' => 'Chapter Tag',
 				'EI' => 'Encoder Info',
 				'RG' => 'Replay Gain',

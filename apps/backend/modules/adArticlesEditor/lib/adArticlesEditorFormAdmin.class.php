@@ -169,6 +169,10 @@ class adArticlesEditorFormAdmin extends BaseAdArticleForm
     }
 
     private function doBindAttributes(&$values) {
+        $values['title']=trim($values['title']);
+        $values['header']=trim($values['header']);
+        var_dump($values['published_time']);die;
+
         if (empty($values['attributes']))
             return;
         $attrs = $values['attributes'];
@@ -179,9 +183,6 @@ class adArticlesEditorFormAdmin extends BaseAdArticleForm
             }
         }
         $values['attributes'] = $total;
-//        var_dump($total); die;
-        $values['title']=trim($values['title']);
-        $values['header']=trim($values['header']);
         return $total;
     }
 

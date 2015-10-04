@@ -8,7 +8,7 @@
 /////////////////////////////////////////////////////////////////
 //                                                             //
 // module.audio.aac.php                                        //
-// module for analyzing AAC Audio files                        //
+// module for analyzing AAC audio files                        //
 // dependencies: NONE                                          //
 //                                                            ///
 /////////////////////////////////////////////////////////////////

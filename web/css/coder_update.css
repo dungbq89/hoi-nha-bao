@@ -378,7 +378,7 @@ div.atc, .aside, details, figcaption, figure, div.footer, div.hed, .hgroup, menu
 
 .ul-child li a {
     line-height: 20px;
-    font-size: 12px;
+    font-size: 1em;
     padding: 5px 10px;
 }
 
@@ -387,7 +387,7 @@ div.atc, .aside, details, figcaption, figure, div.footer, div.hed, .hgroup, menu
 #multimedia {
     border-top: 5px solid #3398cc;
     float: left;
-    margin: 8px 0 20px;
+    margin: 8px 0 5px;
     width: 100%;
 }
 
@@ -439,7 +439,7 @@ div.hed {
 .footer .copyright .ilog {
     float: left;
     font-size: 0.9em;
-    width: 70%;
+    width: 65%;
     text-align: left;
 
 }
@@ -571,6 +571,7 @@ div.sct.featured {
 .child-cat {
     font-weight: normal;
     padding-right: 10px;
+    font-family: "Roboto Condensed",sans-serif;
 }
 
 .span-news {
@@ -1096,7 +1097,7 @@ a {
 }
 
 .news-more {
-    height: 270px;
+    height: 280px;
 }
 
 .box-news .news-more li {
@@ -1105,6 +1106,7 @@ a {
 
 .box-news .news-more a {
     padding-left: 0px;
+    line-height: 22px;
 }
 
 .item-lastest-news h3.title, .col-right .box-mod h3.title {
@@ -1202,11 +1204,14 @@ a {
     font-size: 1.3em;
     font-weight: normal;
     line-height: 28px;
+    font-style: italic;
     margin-bottom: 18px;
+    text-align: justify;
 }
-.detail-body, .detail-body > p, .detail-body > span {
+.detail-body, .detail-body > p, .detail-body > p > span {
     font-family: "Noticia Text";
-    line-height: 24px;
+    line-height: 1.6;
+    font-size: 1.1em !important;
 }
 
 .cover-detail .pAuthor {
@@ -1231,5 +1236,5 @@ a {
     margin: 5px 0px;
 }
 #multimedia .bx-viewport,#multimedia .bx-wrapper{
-    height: 190px !important;
+    height: 170px !important;
 }

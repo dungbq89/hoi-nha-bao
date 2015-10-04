@@ -743,7 +743,7 @@ if (!empty($atom_structure['sample_description_table'][$i]['width']) && !empty($
 									$info['audio']['bits_per_sample']          = $info['quicktime']['audio']['bit_depth'];
 									switch ($atom_structure['sample_description_table'][$i]['data_format']) {
 										case 'raw ': // PCM
-										case 'alac': // Apple Lossless Audio Codec
+										case 'alac': // Apple Lossless audio Codec
 											$info['audio']['lossless'] = true;
 											break;
 										default:
@@ -1641,7 +1641,7 @@ if (!empty($atom_structure['sample_description_table'][$i]['width']) && !empty($
 			$QuicktimeAudioCodecLookup['.mp3']          = 'Fraunhofer MPEG Layer-III alias';
 			$QuicktimeAudioCodecLookup['aac ']          = 'ISO/IEC 14496-3 AAC';
 			$QuicktimeAudioCodecLookup['agsm']          = 'Apple GSM 10:1';
-			$QuicktimeAudioCodecLookup['alac']          = 'Apple Lossless Audio Codec';
+			$QuicktimeAudioCodecLookup['alac']          = 'Apple Lossless audio Codec';
 			$QuicktimeAudioCodecLookup['alaw']          = 'A-law 2:1';
 			$QuicktimeAudioCodecLookup['conv']          = 'Sample Format';
 			$QuicktimeAudioCodecLookup['dvca']          = 'DV';
@@ -1653,8 +1653,8 @@ if (!empty($atom_structure['sample_description_table'][$i]['width']) && !empty($
 			$QuicktimeAudioCodecLookup['in24']          = '24-bit Integer';
 			$QuicktimeAudioCodecLookup['in32']          = '32-bit Integer';
 			$QuicktimeAudioCodecLookup['lpc ']          = 'LPC 23:1';
-			$QuicktimeAudioCodecLookup['MAC3']          = 'Macintosh Audio Compression/Expansion (MACE) 3:1';
-			$QuicktimeAudioCodecLookup['MAC6']          = 'Macintosh Audio Compression/Expansion (MACE) 6:1';
+			$QuicktimeAudioCodecLookup['MAC3']          = 'Macintosh audio Compression/Expansion (MACE) 3:1';
+			$QuicktimeAudioCodecLookup['MAC6']          = 'Macintosh audio Compression/Expansion (MACE) 6:1';
 			$QuicktimeAudioCodecLookup['mixb']          = '8-bit Mixer';
 			$QuicktimeAudioCodecLookup['mixw']          = '16-bit Mixer';
 			$QuicktimeAudioCodecLookup['mp4a']          = 'ISO/IEC 14496-3 AAC';
@@ -1729,45 +1729,45 @@ if (!empty($atom_structure['sample_description_table'][$i]['width']) && !empty($
 		if (empty($QuicktimeIODSaudioProfileNameLookup)) {
 			$QuicktimeIODSaudioProfileNameLookup = array(
 			    0x00 => 'ISO Reserved (0x00)',
-			    0x01 => 'Main Audio Profile @ Level 1',
-			    0x02 => 'Main Audio Profile @ Level 2',
-			    0x03 => 'Main Audio Profile @ Level 3',
-			    0x04 => 'Main Audio Profile @ Level 4',
-			    0x05 => 'Scalable Audio Profile @ Level 1',
-			    0x06 => 'Scalable Audio Profile @ Level 2',
-			    0x07 => 'Scalable Audio Profile @ Level 3',
-			    0x08 => 'Scalable Audio Profile @ Level 4',
-			    0x09 => 'Speech Audio Profile @ Level 1',
-			    0x0A => 'Speech Audio Profile @ Level 2',
-			    0x0B => 'Synthetic Audio Profile @ Level 1',
-			    0x0C => 'Synthetic Audio Profile @ Level 2',
-			    0x0D => 'Synthetic Audio Profile @ Level 3',
-			    0x0E => 'High Quality Audio Profile @ Level 1',
-			    0x0F => 'High Quality Audio Profile @ Level 2',
-			    0x10 => 'High Quality Audio Profile @ Level 3',
-			    0x11 => 'High Quality Audio Profile @ Level 4',
-			    0x12 => 'High Quality Audio Profile @ Level 5',
-			    0x13 => 'High Quality Audio Profile @ Level 6',
-			    0x14 => 'High Quality Audio Profile @ Level 7',
-			    0x15 => 'High Quality Audio Profile @ Level 8',
-			    0x16 => 'Low Delay Audio Profile @ Level 1',
-			    0x17 => 'Low Delay Audio Profile @ Level 2',
-			    0x18 => 'Low Delay Audio Profile @ Level 3',
-			    0x19 => 'Low Delay Audio Profile @ Level 4',
-			    0x1A => 'Low Delay Audio Profile @ Level 5',
-			    0x1B => 'Low Delay Audio Profile @ Level 6',
-			    0x1C => 'Low Delay Audio Profile @ Level 7',
-			    0x1D => 'Low Delay Audio Profile @ Level 8',
-			    0x1E => 'Natural Audio Profile @ Level 1',
-			    0x1F => 'Natural Audio Profile @ Level 2',
-			    0x20 => 'Natural Audio Profile @ Level 3',
-			    0x21 => 'Natural Audio Profile @ Level 4',
-			    0x22 => 'Mobile Audio Internetworking Profile @ Level 1',
-			    0x23 => 'Mobile Audio Internetworking Profile @ Level 2',
-			    0x24 => 'Mobile Audio Internetworking Profile @ Level 3',
-			    0x25 => 'Mobile Audio Internetworking Profile @ Level 4',
-			    0x26 => 'Mobile Audio Internetworking Profile @ Level 5',
-			    0x27 => 'Mobile Audio Internetworking Profile @ Level 6',
+			    0x01 => 'Main audio Profile @ Level 1',
+			    0x02 => 'Main audio Profile @ Level 2',
+			    0x03 => 'Main audio Profile @ Level 3',
+			    0x04 => 'Main audio Profile @ Level 4',
+			    0x05 => 'Scalable audio Profile @ Level 1',
+			    0x06 => 'Scalable audio Profile @ Level 2',
+			    0x07 => 'Scalable audio Profile @ Level 3',
+			    0x08 => 'Scalable audio Profile @ Level 4',
+			    0x09 => 'Speech audio Profile @ Level 1',
+			    0x0A => 'Speech audio Profile @ Level 2',
+			    0x0B => 'Synthetic audio Profile @ Level 1',
+			    0x0C => 'Synthetic audio Profile @ Level 2',
+			    0x0D => 'Synthetic audio Profile @ Level 3',
+			    0x0E => 'High Quality audio Profile @ Level 1',
+			    0x0F => 'High Quality audio Profile @ Level 2',
+			    0x10 => 'High Quality audio Profile @ Level 3',
+			    0x11 => 'High Quality audio Profile @ Level 4',
+			    0x12 => 'High Quality audio Profile @ Level 5',
+			    0x13 => 'High Quality audio Profile @ Level 6',
+			    0x14 => 'High Quality audio Profile @ Level 7',
+			    0x15 => 'High Quality audio Profile @ Level 8',
+			    0x16 => 'Low Delay audio Profile @ Level 1',
+			    0x17 => 'Low Delay audio Profile @ Level 2',
+			    0x18 => 'Low Delay audio Profile @ Level 3',
+			    0x19 => 'Low Delay audio Profile @ Level 4',
+			    0x1A => 'Low Delay audio Profile @ Level 5',
+			    0x1B => 'Low Delay audio Profile @ Level 6',
+			    0x1C => 'Low Delay audio Profile @ Level 7',
+			    0x1D => 'Low Delay audio Profile @ Level 8',
+			    0x1E => 'Natural audio Profile @ Level 1',
+			    0x1F => 'Natural audio Profile @ Level 2',
+			    0x20 => 'Natural audio Profile @ Level 3',
+			    0x21 => 'Natural audio Profile @ Level 4',
+			    0x22 => 'Mobile audio Internetworking Profile @ Level 1',
+			    0x23 => 'Mobile audio Internetworking Profile @ Level 2',
+			    0x24 => 'Mobile audio Internetworking Profile @ Level 3',
+			    0x25 => 'Mobile audio Internetworking Profile @ Level 4',
+			    0x26 => 'Mobile audio Internetworking Profile @ Level 5',
+			    0x27 => 'Mobile audio Internetworking Profile @ Level 6',
 			    0x28 => 'AAC Profile @ Level 1',
 			    0x29 => 'AAC Profile @ Level 2',
 			    0x2A => 'AAC Profile @ Level 4',

@@ -8,7 +8,7 @@
 /////////////////////////////////////////////////////////////////
 //                                                             //
 // module.audio.monkey.php                                     //
-// module for analyzing Monkey's Audio files                   //
+// module for analyzing Monkey's audio files                   //
 // dependencies: NONE                                          //
 //                                                            ///
 /////////////////////////////////////////////////////////////////

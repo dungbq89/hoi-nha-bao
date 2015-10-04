@@ -8,7 +8,7 @@
 /////////////////////////////////////////////////////////////////
 //                                                             //
 // module.audio.wavpack.php                                    //
-// module for analyzing WavPack v4.0+ Audio files              //
+// module for analyzing WavPack v4.0+ audio files              //
 // dependencies: NONE                                          //
 //                                                            ///
 /////////////////////////////////////////////////////////////////

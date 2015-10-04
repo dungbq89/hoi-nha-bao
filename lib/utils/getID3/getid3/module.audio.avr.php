@@ -8,7 +8,7 @@
 /////////////////////////////////////////////////////////////////
 //                                                             //
 // module.audio.avr.php                                        //
-// module for analyzing AVR Audio files                        //
+// module for analyzing AVR audio files                        //
 // dependencies: NONE                                          //
 //                                                            ///
 /////////////////////////////////////////////////////////////////

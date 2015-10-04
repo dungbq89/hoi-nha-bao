@@ -4,11 +4,11 @@
             <?php if(isset($category) && $category) ?>
             <p class="cate"><a href="<?php echo url_for2('category_news', array('slug' => $category->getSlug())) ?>" title="<?php echo htmlspecialchars($category->name); ?>"><?php echo htmlspecialchars($category->name); ?></a></p>
             <time
-                class="stime"><?php if ($article['published_time']) echo VtHelper::getFormatDate($article['published_time']); ?></time>
+                class="stime"><?php if ($article['published_time']) echo date('H:i',strtotime($article['updated_at'])). ' '. VtHelper::getFormatDate($article['published_time']); ?></time>
         </div>
         <h3 class="title-article"><?php  echo htmlspecialchars($article['title']); ?></h3>
         <span class="txt-artice-intro">
-            <?php echo (isset($newsCopyright) && $newsCopyright)?'<b><i>(hoinhabaohatinh.vn) - </i></b>':''; echo htmlspecialchars($article['header']); ?>
+            <?php echo (isset($newsCopyright) && $newsCopyright)?'<b><i>(hoinhabaohatinh.org.vn) - </i></b>':''; echo htmlspecialchars($article['header']); ?>
         </span>
         <div class="cover-detail">
             <div class="detail-body">

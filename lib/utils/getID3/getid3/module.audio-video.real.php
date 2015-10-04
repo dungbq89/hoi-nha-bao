@@ -8,7 +8,7 @@
 /////////////////////////////////////////////////////////////////
 //                                                             //
 // module.audio-video.real.php                                 //
-// module for analyzing Real Audio/Video files                 //
+// module for analyzing Real audio/Video files                 //
 // dependencies: module.audio-video.riff.php                   //
 //                                                            ///
 /////////////////////////////////////////////////////////////////

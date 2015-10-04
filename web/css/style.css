@@ -223,6 +223,8 @@ color: #fff;
     height: 22px;
     float: left;
     display: block;
+    font-family: "Roboto Condensed",sans-serif;
+    font-weight: normal
 }
 .col-main h3.title-main span.raquo{
     font-size: 12px;
@@ -491,9 +493,9 @@ a.news-img img{
     margin-bottom: 5px;
 }
 .img-adv{
-    height: 55px;
-    margin-top: 10px;
-    width: 520px;
+    height: 69px;
+    margin-top: 5px;
+    width: 460px;
 }
 .logo{
     margin-top: 5px;

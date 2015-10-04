@@ -192,7 +192,7 @@ define('EBML_ID_CLUSTERDURATION',                 0x4F); //             [CF] -- 
 define('EBML_ID_TRACKNUMBER',                     0x57); //             [D7] -- The track number as used in the Block Header (using more than 127 tracks is not encouraged, though the design allows an unlimited number).
 define('EBML_ID_CUEREFERENCE',                    0x5B); //             [DB] -- The Clusters containing the required referenced Blocks.
 define('EBML_ID_VIDEO',                           0x60); //             [E0] -- Video settings.
-define('EBML_ID_AUDIO',                           0x61); //             [E1] -- Audio settings.
+define('EBML_ID_AUDIO',                           0x61); //             [E1] -- audio settings.
 define('EBML_ID_CLUSTERTIMESLICE',                0x68); //             [E8] -- Contains extra time information about the data contained in the Block. While there are a few files in the wild with this element, it is no longer in use and has been deprecated. Being able to interpret this element is not required for playback.
 define('EBML_ID_CUECODECSTATE',                   0x6A); //             [EA] -- The position of the Codec State corresponding to this Cue element. 0 means that the data is taken from the initial Track Entry.
 define('EBML_ID_CUEREFCODECSTATE',                0x6B); //             [EB] -- The position of the Codec State corresponding to this referenced element. 0 means that the data is taken from the initial Track Entry.
@@ -317,7 +317,7 @@ class getid3_matroska extends getid3_handler
 						$info['video']['streams'][] = $track_info;
 						break;
 
-					case 2: // Audio
+					case 2: // audio
 						$track_info['sample_rate'] = (isset($trackarray['SamplingFrequency']) ? $trackarray['SamplingFrequency'] : 8000.0);
 						$track_info['channels']    = (isset($trackarray['Channels']) ? $trackarray['Channels'] : 1);
 						$track_info['language']    = (isset($trackarray['Language']) ? $trackarray['Language'] : 'eng');
@@ -1539,7 +1539,7 @@ class getid3_matroska extends getid3_handler
 			$EBMLidList[EBML_ID_ATTACHEDFILE]               = 'AttachedFile';
 			$EBMLidList[EBML_ID_ATTACHMENTLINK]             = 'AttachmentLink';
 			$EBMLidList[EBML_ID_ATTACHMENTS]                = 'Attachments';
-			$EBMLidList[EBML_ID_AUDIO]                      = 'Audio';
+			$EBMLidList[EBML_ID_AUDIO]                      = 'audio';
 			$EBMLidList[EBML_ID_BITDEPTH]                   = 'BitDepth';
 			$EBMLidList[EBML_ID_CHANNELPOSITIONS]           = 'ChannelPositions';
 			$EBMLidList[EBML_ID_CHANNELS]                   = 'Channels';

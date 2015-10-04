@@ -8,7 +8,7 @@
 /////////////////////////////////////////////////////////////////
 //                                                             //
 // module.audio.voc.php                                        //
-// module for analyzing Creative VOC Audio files               //
+// module for analyzing Creative VOC audio files               //
 // dependencies: NONE                                          //
 //                                                            ///
 /////////////////////////////////////////////////////////////////

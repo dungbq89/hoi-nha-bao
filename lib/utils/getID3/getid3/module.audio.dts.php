@@ -8,7 +8,7 @@
 /////////////////////////////////////////////////////////////////
 //                                                             //
 // module.audio.dts.php                                        //
-// module for analyzing DTS Audio files                        //
+// module for analyzing DTS audio files                        //
 // dependencies: NONE                                          //
 //                                                             //
 /////////////////////////////////////////////////////////////////

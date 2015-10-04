@@ -74,7 +74,7 @@ class AudioInfo {
 	* Extract information - only public function
 	*
 	* @access   public
-	* @param    string  file    Audio file to extract info from.
+	* @param    string  file    audio file to extract info from.
 	*/
 
 	function Info($file) {
@@ -168,13 +168,13 @@ class AudioInfo {
 
 
 	/**
-	* post-getID3() data handling for Monkey's Audio files.
+	* post-getID3() data handling for Monkey's audio files.
 	*
 	* @access   private
 	*/
 
 	function macInfo() {
-		$this->result['format_name']     = 'Monkey\'s Audio';
+		$this->result['format_name']     = 'Monkey\'s audio';
 	}
 
 
@@ -182,7 +182,7 @@ class AudioInfo {
 
 
 	/**
-	* post-getID3() data handling for Lossless Audio files.
+	* post-getID3() data handling for Lossless audio files.
 	*
 	* @access   private
 	*/

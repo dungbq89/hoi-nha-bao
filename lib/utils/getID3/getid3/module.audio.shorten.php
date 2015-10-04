@@ -8,7 +8,7 @@
 /////////////////////////////////////////////////////////////////
 //                                                             //
 // module.audio.shorten.php                                    //
-// module for analyzing Shorten Audio files                    //
+// module for analyzing Shorten audio files                    //
 // dependencies: NONE                                          //
 //                                                            ///
 /////////////////////////////////////////////////////////////////

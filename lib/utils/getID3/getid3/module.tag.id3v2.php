@@ -1569,11 +1569,11 @@ class getid3_id3v2 extends getid3_handler
 			unset($parsedFrame['data']);
 
 
-		} elseif ((($id3v2_majorversion >= 3) && ($parsedFrame['frame_name'] == 'AENC')) || // 4.19  AENC Audio encryption
-				(($id3v2_majorversion == 2) && ($parsedFrame['frame_name'] == 'CRA'))) {     // 4.21  CRA  Audio encryption
+		} elseif ((($id3v2_majorversion >= 3) && ($parsedFrame['frame_name'] == 'AENC')) || // 4.19  AENC audio encryption
+				(($id3v2_majorversion == 2) && ($parsedFrame['frame_name'] == 'CRA'))) {     // 4.21  CRA  audio encryption
 			//   There may be more than one 'AENC' frames in a tag,
 			//   but only one with the same 'Owner identifier'
-			// <Header for 'Audio encryption', ID: 'AENC'>
+			// <Header for 'audio encryption', ID: 'AENC'>
 			// Owner identifier   <text string> $00
 			// Preview start      $xx xx
 			// Preview length     $xx xx
@@ -1866,7 +1866,7 @@ class getid3_id3v2 extends getid3_handler
 			$parsedFrame['data']          = getid3_lib::BigEndian2Int(substr($parsedFrame['data'], $frame_offset, 4));
 
 
-		} elseif (($id3v2_majorversion >= 4) && ($parsedFrame['frame_name'] == 'ASPI')) { // 4.30  ASPI Audio seek point index (ID3v2.4+ only)
+		} elseif (($id3v2_majorversion >= 4) && ($parsedFrame['frame_name'] == 'ASPI')) { // 4.30  ASPI audio seek point index (ID3v2.4+ only)
 			//   There may only be one 'audio seek point index' frame in a tag
 			// <Header for 'Seek Point Index', ID: 'ASPI'>
 			// Indexed data start (S)         $xx xx xx xx
@@ -2966,15 +2966,15 @@ class getid3_id3v2 extends getid3_handler
 
 		/** This is not a comment!
 
-			AENC	Audio encryption
+			AENC	audio encryption
 			APIC	Attached picture
-			ASPI	Audio seek point index
+			ASPI	audio seek point index
 			BUF	Recommended buffer size
 			CNT	Play counter
 			COM	Comments
 			COMM	Comments
 			COMR	Commercial frame
-			CRA	Audio encryption
+			CRA	audio encryption
 			CRM	Encrypted meta frame
 			ENCR	Encryption method registration
 			EQU	Equalisation
