@@ -15,7 +15,7 @@ Doctrine_Manager::getInstance()->bindComponent('AdReportHicounter', 'doctrine');
  * @method AdReportHicounter setCategoryId()  Sets the current record's "category_id" value
  * @method AdReportHicounter setHitcounter()  Sets the current record's "hitcounter" value
  * 
- * @package    Vt_Portals
+ * @package    Web_Portals
  * @subpackage model
  * @author     ngoctv1
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $

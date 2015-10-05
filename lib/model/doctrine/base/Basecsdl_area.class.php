@@ -33,7 +33,7 @@ Doctrine_Manager::getInstance()->bindComponent('csdl_area', 'slave');
  * @method csdl_area setFULLNAME()     Sets the current record's "FULL_NAME" value
  * @method csdl_area setSTATUS()       Sets the current record's "STATUS" value
  * 
- * @package    Vt_Portals
+ * @package    Web_Portals
  * @subpackage model
  * @author     ngoctv1
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $

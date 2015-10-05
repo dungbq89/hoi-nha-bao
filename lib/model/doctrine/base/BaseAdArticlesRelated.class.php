@@ -15,7 +15,7 @@ Doctrine_Manager::getInstance()->bindComponent('AdArticlesRelated', 'doctrine');
  * @method AdArticlesRelated setArticleId()          Sets the current record's "article_id" value
  * @method AdArticlesRelated setRelatedArticleId()   Sets the current record's "related_article_id" value
  * 
- * @package    Vt_Portals
+ * @package    Web_Portals
  * @subpackage model
  * @author     ngoctv1
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $

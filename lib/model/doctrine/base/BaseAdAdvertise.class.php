@@ -39,7 +39,7 @@ Doctrine_Manager::getInstance()->bindComponent('AdAdvertise', 'doctrine');
  * @method AdAdvertise         setAdvertiseImage()    Sets the current record's "AdvertiseImage" collection
  * @method AdAdvertise         setAdvertiseLocation() Sets the current record's "AdvertiseLocation" value
  * 
- * @package    Vt_Portals
+ * @package    Web_Portals
  * @subpackage model
  * @author     ngoctv1
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $

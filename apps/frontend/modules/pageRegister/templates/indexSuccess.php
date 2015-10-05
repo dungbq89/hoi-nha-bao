@@ -42,7 +42,15 @@
                              }?>
                         </span>
                     </div>
-
+<!--                    <div class="frm-item">-->
+<!--                        <span class="label">Hình ảnh</span>-->
+<!--                        <span class="btn-in">-->
+<!--                             --><?php //echo $form['images']->render(array('class'=>'in-txt'));
+//                             if ($form['images']->hasError()) {
+//                                 echo '<span class="help-inline">' . $form['images']->renderError() . '</span>';
+//                             }?>
+<!--                        </span>-->
+<!--                    </div>-->
                     <div class="frm-item">
                         <span class="label">Tỉnh/thành phố (*)</span>
                         <span class="btn-in">
@@ -109,10 +117,14 @@
     </div>
     <div class="col-right">
 
+        <?php include_component('moduleVideo','listVideoHome',array('limit'=>5)) ?>
+        <?php include_component('moduleAdvertise','advertise',array('location'=>'right_middle')); ?>
+        <?php include_component('moduleArticle','readNews',array('limit'=>5)) ?>
         <?php include_component('moduleDocument','hotDocument',array('limit'=>3)) ?>
         <?php include_component('moduleArticle','categoryHot',array('limit'=>3)) ?>
-
+        <?php include_component('moduleMenu','linkRight') ?>
         <?php include_component('moduleAdvertise','advertise',array('location'=>'right')); ?>
+
     </div>
     <div class="clear"></div>
 </div>

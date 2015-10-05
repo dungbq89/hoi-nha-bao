@@ -18,7 +18,7 @@ Doctrine_Manager::getInstance()->bindComponent('AdReportTotalRecord', 'doctrine'
  * @method AdReportTotalRecord setTotalRecord()  Sets the current record's "total_record" value
  * @method AdReportTotalRecord setDateTime()     Sets the current record's "date_time" value
  * 
- * @package    Vt_Portals
+ * @package    Web_Portals
  * @subpackage model
  * @author     ngoctv1
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $

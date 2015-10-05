@@ -23,6 +23,8 @@ all:
   album_images: album
   video_images: video
   document: document
+  member_images: member
+  upload_member: E:/Data_D/hoi-nha-bao/svn_csdl/hnb_csdl/web/uploads
 
   upload_media_file: E:/Data_D/code/hoi-nha-bao/web/uploads
   url_media_file: http://localhost:8086/uploads

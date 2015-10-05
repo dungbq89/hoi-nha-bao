@@ -10,15 +10,22 @@ class registerForm extends Basecsdl_lylichhoivienForm
 {
     public function configure()
     {
-
+        $years = range(date('Y'), date('Y') - 75);
         $i18n = sfContext::getInstance()->getI18N();
         unset($this['created_at'], $this['updated_at']);
         $this->widgetSchema['hodem'] = new sfWidgetFormInputText(array());
         $this->validatorSchema['hodem'] = new sfValidatorString(array('required' => true, 'trim' => true, 'max_length' => 255));
 
-        $this->widgetSchema['ngaysinh'] = new sfWidgetFormVnDatePicker(array(),array('readonly'=>true));
-        $this->validatorSchema['ngaysinh'] = new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d H:i:s'));
-
+        $this->widgetSchema['ngaysinh'] =new sfWidgetFormDateTime(array(
+            'date' => array(
+                'format' => '%day%/%month%/%year%',
+                'can_be_empty' => false,
+                'years' => array_combine($years, $years)
+            ),
+            'format' => '%date%',
+            'default' => date('Y/m/d H:i', time())
+        ));
+        $this->validatorSchema['ngaysinh'] =  new sfValidatorDateTime(array('required' => true));
 
         $this->widgetSchema['gioitinh'] = new sfWidgetFormChoice(array(
             'choices' => $this->getSex(),
@@ -59,6 +66,26 @@ class registerForm extends Basecsdl_lylichhoivienForm
         $this->validatorSchema['maquan'] = new sfValidatorChoice(array(
             'required' => false,
             'choices' => array_keys($this->getProvinceKey()),));
+
+        $this->widgetSchema['images'] = new sfWidgetFormInputFileEditable(array(
+            'label' => ' ',
+            'file_src' => VtHelper::getUrlImagePathThumb(sfConfig::get('app_member_images'), $this->getObject()->getImages()),
+            'is_image' => true,
+            'edit_mode' => !$this->isNew(),
+            'template' => '<div>%file%<br />%input%</div>',
+        ));
+
+        $this->validatorSchema['images'] = new sfValidatorFileViettel(
+            array(
+                'max_size' => sfConfig::get('app_image_maxsize', 999999),
+                'mime_types' => array('image/jpeg','image/jpg', 'image/png', 'image/gif'),
+                'path' => sfConfig::get("app_upload_member") . '/' . sfConfig::get('app_member_images'),
+                'required' => false
+            ),
+            array(
+                'mime_types' => $i18n->__('Bạn phải tải lên file hình ảnh.'),
+                'max_size' => $i18n->__('Tối đa 5MB')
+            ));
 
         $this->widgetSchema->setNameFormat('csdl_lylichhoivien[%s]');
 

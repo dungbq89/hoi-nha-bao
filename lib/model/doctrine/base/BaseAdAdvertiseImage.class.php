@@ -30,7 +30,7 @@ Doctrine_Manager::getInstance()->bindComponent('AdAdvertiseImage', 'doctrine');
  * @method AdAdvertiseImage setLink()             Sets the current record's "link" value
  * @method AdAdvertiseImage setAdAdvertiseImage() Sets the current record's "AdAdvertiseImage" value
  * 
- * @package    Vt_Portals
+ * @package    Web_Portals
  * @subpackage model
  * @author     ngoctv1
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $

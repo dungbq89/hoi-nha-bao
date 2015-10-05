@@ -13,11 +13,19 @@ class pageRegisterActions extends sfActions {
 
         if($request->isMethod('POST')){
             $values = $request->getParameter($form->getName());
-            $form->bind($values);
+            $form->bind($values,$request->getFiles($form->getName()));
             if($form->isValid()){
                 $reg = new csdl_lylichhoivien();
-                $reg->setHodem($values['hodem']);
-                $year = date('Y-m-d h:i:s', strtotime($values['ngaysinh']['date']));
+
+                $name = trim($values['hodem']);
+                $parts = explode(" ", $name);
+                $lastname = array_pop($parts);
+                $firstname = implode(" ", $parts);
+
+                $reg->setHodem($firstname);
+                $reg->setTen($lastname);
+
+                $year = date('Y-m-d', strtotime($values['ngaysinh']['day'].'-'.$values['ngaysinh']['month'].'-'.$values['ngaysinh']['year']));
                 $reg->setNgaysinh($year);
                 $reg->setGioitinh($values['gioitinh']);
                 $reg->setMatinh($values['matinh']);
@@ -25,7 +33,7 @@ class pageRegisterActions extends sfActions {
                 $reg->setDiachi($values['diachi']);
                 $reg->setDonviId($values['donvi_id']);
                 $reg->setNghenghiepId($values['nghenghiep_id']);
-                $reg->setHodem($values['hodem']);
+//                $reg->setImages($values['images']);
                 $reg->save();
                 $this->getUser()->setFlash('success','Bạn đã đăng ký thành công, chúng tôi sẽ xét duyệt hồ sơ của bạn.');
                 $this->form = new registerForm();

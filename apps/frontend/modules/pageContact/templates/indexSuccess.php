@@ -179,10 +179,12 @@
         </div>
     </div>
     <div class="col-right">
-
+        <?php include_component('moduleVideo','listVideoHome',array('limit'=>5)) ?>
+        <?php include_component('moduleAdvertise','advertise',array('location'=>'right_middle')); ?>
+        <?php include_component('moduleArticle','readNews',array('limit'=>5)) ?>
         <?php include_component('moduleDocument','hotDocument',array('limit'=>3)) ?>
         <?php include_component('moduleArticle','categoryHot',array('limit'=>3)) ?>
-
+        <?php include_component('moduleMenu','linkRight') ?>
         <?php include_component('moduleAdvertise','advertise',array('location'=>'right')); ?>
     </div>
     <div class="clear"></div>

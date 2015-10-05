@@ -27,7 +27,7 @@ Doctrine_Manager::getInstance()->bindComponent('AdContact', 'doctrine');
  * @method AdContact setZoom()      Sets the current record's "zoom" value
  * @method AdContact setMaptypeid() Sets the current record's "maptypeid" value
  * 
- * @package    Vt_Portals
+ * @package    Web_Portals
  * @subpackage model
  * @author     ngoctv1
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $

@@ -25,6 +25,9 @@ csdl_lylichhoivien:
     dantoc_id: { type: integer(5), comment: "Danh muc dan toc"}
     quoctich: { type: string(255), comment: "quoc tich" }
     donvi_id:  { type: integer(5), comment: "don vị công tác"}
+    images:  { type: string(255), comment: "hinh anh" }
+    dienthoai: { type: string(255), comment: "Số điện thoại" }
+    email: { type: string(255), comment: "Email" }
 #Danh mục tỉnh/ thành phố quận/ huyện
 csdl_area:
   tableName: csdl_area

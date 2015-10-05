@@ -30,7 +30,7 @@ Doctrine_Manager::getInstance()->bindComponent('AdPersonal', 'doctrine');
  * @method AdPersonal setAddress()      Sets the current record's "address" value
  * @method AdPersonal setIntroduction() Sets the current record's "introduction" value
  * 
- * @package    Vt_Portals
+ * @package    Web_Portals
  * @subpackage model
  * @author     ngoctv1
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $

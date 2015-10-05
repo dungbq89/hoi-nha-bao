@@ -5,7 +5,7 @@
  *
  * @method csdl_lylichhoivien getObject() Returns the current form's model object
  *
- * @package    Vt_Portals
+ * @package    Web_Portals
  * @subpackage form
  * @author     ngoctv1
  * @version    SVN: $Id: sfDoctrineFormGeneratedTemplate.php 29553 2010-05-20 14:33:00Z Kris.Wallsmith $
@@ -33,6 +33,9 @@ abstract class Basecsdl_lylichhoivienForm extends BaseFormDoctrine
       'dantoc_id'     => new sfWidgetFormInputText(),
       'quoctich'      => new sfWidgetFormInputText(),
       'donvi_id'      => new sfWidgetFormInputText(),
+      'images'        => new sfWidgetFormInputText(),
+      'dienthoai'     => new sfWidgetFormInputText(),
+      'email'         => new sfWidgetFormInputText(),
       'created_at'    => new sfWidgetFormDateTime(),
       'updated_at'    => new sfWidgetFormDateTime(),
     ));
@@ -56,6 +59,9 @@ abstract class Basecsdl_lylichhoivienForm extends BaseFormDoctrine
       'dantoc_id'     => new sfValidatorInteger(array('required' => false)),
       'quoctich'      => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'donvi_id'      => new sfValidatorInteger(array('required' => false)),
+      'images'        => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'dienthoai'     => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'email'         => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'created_at'    => new sfValidatorDateTime(),
       'updated_at'    => new sfValidatorDateTime(),
     ));

@@ -33,7 +33,7 @@ Doctrine_Manager::getInstance()->bindComponent('AdPhoto', 'doctrine');
  * @method AdPhoto setIsDefault()    Sets the current record's "is_default" value
  * @method AdPhoto setAdAlbumPhoto() Sets the current record's "AdAlbumPhoto" value
  * 
- * @package    Vt_Portals
+ * @package    Web_Portals
  * @subpackage model
  * @author     ngoctv1
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $

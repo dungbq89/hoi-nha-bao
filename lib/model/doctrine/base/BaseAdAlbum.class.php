@@ -39,7 +39,7 @@ Doctrine_Manager::getInstance()->bindComponent('AdAlbum', 'doctrine');
  * @method AdAlbum             setSlug()        Sets the current record's "slug" value
  * @method AdAlbum             setAlbumPhoto()  Sets the current record's "AlbumPhoto" collection
  * 
- * @package    Vt_Portals
+ * @package    Web_Portals
  * @subpackage model
  * @author     ngoctv1
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $

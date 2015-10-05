@@ -3,7 +3,7 @@
 /**
  * sfGuardGroup filter form base class.
  *
- * @package    Vt_Portals
+ * @package    Web_Portals
  * @subpackage filter
  * @author     ngoctv1
  * @version    SVN: $Id: sfDoctrineFormFilterGeneratedTemplate.php 29570 2010-05-21 14:49:47Z Kris.Wallsmith $
