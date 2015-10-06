@@ -27,6 +27,7 @@ Doctrine_Manager::getInstance()->bindComponent('csdl_lylichhoivien', 'slave');
  * @property string $images
  * @property string $dienthoai
  * @property string $email
+ * @property sfGuardUserHNB $Groups
  * 
  * @method integer            getHoivienId()     Returns the current record's "hoivien_id" value
  * @method string             getTen()           Returns the current record's "ten" value
@@ -48,6 +49,7 @@ Doctrine_Manager::getInstance()->bindComponent('csdl_lylichhoivien', 'slave');
  * @method string             getImages()        Returns the current record's "images" value
  * @method string             getDienthoai()     Returns the current record's "dienthoai" value
  * @method string             getEmail()         Returns the current record's "email" value
+ * @method sfGuardUserHNB     getGroups()        Returns the current record's "Groups" value
  * @method csdl_lylichhoivien setHoivienId()     Sets the current record's "hoivien_id" value
  * @method csdl_lylichhoivien setTen()           Sets the current record's "ten" value
  * @method csdl_lylichhoivien setHodem()         Sets the current record's "hodem" value
@@ -68,6 +70,7 @@ Doctrine_Manager::getInstance()->bindComponent('csdl_lylichhoivien', 'slave');
  * @method csdl_lylichhoivien setImages()        Sets the current record's "images" value
  * @method csdl_lylichhoivien setDienthoai()     Sets the current record's "dienthoai" value
  * @method csdl_lylichhoivien setEmail()         Sets the current record's "email" value
+ * @method csdl_lylichhoivien setGroups()        Sets the current record's "Groups" value
  * 
  * @package    Web_Portals
  * @subpackage model
@@ -188,6 +191,10 @@ abstract class Basecsdl_lylichhoivien extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
+        $this->hasOne('sfGuardUserHNB as Groups', array(
+             'local' => 'hoivien_id',
+             'foreign' => 'id'));
+
         $timestampable0 = new Doctrine_Template_Timestampable();
         $this->actAs($timestampable0);
     }

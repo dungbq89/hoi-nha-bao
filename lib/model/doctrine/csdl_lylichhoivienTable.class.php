@@ -16,4 +16,34 @@ class csdl_lylichhoivienTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('csdl_lylichhoivien');
     }
+
+    public static function getListPersonal($limit = null, $offset = null){
+        return csdl_lylichhoivienTable::getInstance()->createQuery('a')
+            ->orderBy('a.ten asc')
+            ->fetchArray();
+    }
+
+
+    //frontend
+    public static function getListPerson($full_name, $phone_number,$email,$limit)
+    {
+        $query = csdl_lylichhoivienTable::getInstance()->createQuery('s')
+            ->select('s.ten, s.hodem, c.phone as phone, c.email_address as email_address, s.diachi')
+            ->innerJoin('s.Groups c')
+//            ->where('s.id = c.hoivien_id')
+            ->orderBy('s.ten asc')
+            ->limit($limit);
+
+        if($full_name!=""){
+            $query->andWhere("s.ten LIKE ? OR s.hodem LIKE ?", array( "%" . trim($full_name). "%",  "%" . trim($full_name) . "%"));
+        }
+        if($phone_number!=""){
+            $query->andWhere('c.phone LIKE ?',"%" . trim($phone_number). "%");
+        }
+        if($email!=""){
+            $query->andWhere('c.email_address LIKE ?',"%" . trim($email). "%");
+        }
+        return $query;
+    }
+
 }

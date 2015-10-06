@@ -63,10 +63,10 @@
                     <?php foreach ($listPersonal as $key => $personal) { ?>
                     <tr>
                         <td><?php echo $i; ?></td>
-                        <td><?php echo $personal->full_name; ?></td>
-                        <td><?php echo $personal->address; ?></td>
-                        <td><?php echo $personal->phone_number; ?></td>
-                        <td><?php echo $personal->email; ?></td>
+                        <td><?php echo $personal->hodem.' '.$personal->ten; ?></td>
+                        <td><?php echo $personal->diachi; ?></td>
+                        <td><?php echo $personal->phone; ?></td>
+                        <td><?php echo $personal->email_address; ?></td>
                     </tr>
 
                     <?php $i++; } ?>

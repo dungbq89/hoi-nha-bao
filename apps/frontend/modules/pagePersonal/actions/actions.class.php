@@ -24,8 +24,8 @@ class pagePersonalActions extends sfActions {
             $user->setAttribute('email', $values['email']);
 
             $this->page = $request->getParameter('page', 1);
-            $query = AdPersonalTable::getListPerson($values['full_name'],$values['phone_number'],$values['email'],$limit);
-            $pager = new sfDoctrinePager('AdPersonal', $limit);
+            $query = csdl_lylichhoivienTable::getListPerson($values['full_name'],$values['phone_number'],$values['email'],$limit);
+            $pager = new sfDoctrinePager('sfGuardUserHNB', $limit);
             $pager->setQuery($query);
             $pager->setPage($this->page);
             $pager->init();
@@ -42,8 +42,8 @@ class pagePersonalActions extends sfActions {
             $user->setAttribute('email', $values['email']);
 
             $this->page = $request->getParameter('page', 1);
-            $query = AdPersonalTable::getListPerson($values['full_name'],$values['phone_number'],$values['email'],$limit);
-            $pager = new sfDoctrinePager('AdPersonal', $limit);
+            $query = csdl_lylichhoivienTable::getListPerson($values['full_name'],$values['phone_number'],$values['email'],$limit);
+            $pager = new sfDoctrinePager('sfGuardUserHNB', $limit);
             $pager->setQuery($query);
             $pager->setPage($this->page);
             $pager->init();
