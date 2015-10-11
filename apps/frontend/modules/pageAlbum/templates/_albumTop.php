@@ -6,8 +6,8 @@
             foreach ($listImage as $image) {
                 $path = '/uploads/' . sfConfig::get('app_album_images') . $image['file_path'];
                 ?>
-                <li data-thumb="<?php echo VtHelper::getThumbUrl($path, 180, 108) ?>">
-                    <img class="img-gallery" src="<?php echo VtHelper::getThumbUrl($path, 180, 108) ?>"/>
+                <li data-thumb="<?php echo VtHelper::getThumbUrl($path, 630, 378) ?>">
+                    <img class="img-gallery" src="<?php echo VtHelper::getThumbUrl($path, 630, 378) ?>"/>
 
                     <div class="txt-gallery">
                         <h3><a href="" title=""><?php echo htmlspecialchars($album->getName()) ?></a></h3>

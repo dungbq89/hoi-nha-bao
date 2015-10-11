@@ -49,7 +49,7 @@ class pageAlbumComponents extends sfComponents
         }
         $this->url_paging = 'page_album';
         $this->page = $this->getRequestParameter('page', 1);
-        $pager = new sfDoctrinePager('AdAlbum', 10);
+        $pager = new sfDoctrinePager('AdAlbum', 8);
         $pager->setQuery(AdAlbumTable::getListAlbum());
         $pager->setPage($this->page);
         $pager->init();

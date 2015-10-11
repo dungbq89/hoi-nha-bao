@@ -1238,3 +1238,6 @@ a {
 #multimedia .bx-viewport,#multimedia .bx-wrapper{
     height: 170px !important;
 }
+.pagination{
+    clear: both;
+}
