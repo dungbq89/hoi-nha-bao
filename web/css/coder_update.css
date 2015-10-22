@@ -1241,3 +1241,6 @@ a {
 .pagination{
     clear: both;
 }
+.personal-name:hover{
+    color: #0000cc;
+}

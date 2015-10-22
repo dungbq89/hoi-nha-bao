@@ -52,4 +52,19 @@ class pagePersonalActions extends sfActions {
         }
         $this->form=$form;
     }
+
+    public function executeDetail(sfWebRequest $request) {
+        $id = $request->getParameter('id');
+        if($id){
+            $person = csdl_lylichhoivienTable::getPersonById($id)->fetchOne();
+            if($person){
+                $this->personal = $person;
+            }
+            else{
+                $this->redirect404();
+            }
+        }else{
+            $this->redirect404();
+        }
+    }
 }

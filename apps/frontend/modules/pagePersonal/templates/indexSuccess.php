@@ -63,7 +63,7 @@
                     <?php foreach ($listPersonal as $key => $personal) { ?>
                     <tr>
                         <td><?php echo $i; ?></td>
-                        <td><?php echo $personal->hodem.' '.$personal->ten; ?></td>
+                        <td><a class="personal-name" href="<?php echo url_for2('personnal_detail',array('id'=>$personal->id)) ?>"><?php echo $personal->hodem.' '.$personal->ten; ?></a></td>
                         <td><?php echo $personal->diachi; ?></td>
                         <td><?php echo $personal->phone; ?></td>
                         <td><?php echo $personal->email_address; ?></td>

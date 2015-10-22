@@ -55,6 +55,10 @@ personnal:
   url: /danh-ba-hoi-vien
   param: {module: pagePersonal, action: index}
 
+personnal_detail:
+  url: /chi-tiet-hoi-vien/:id
+  param: {module: pagePersonal, action: detail}
+
 #ajax load video
 ajax_load_video:
   url: /load-video
