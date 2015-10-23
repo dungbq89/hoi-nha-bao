@@ -1,3 +1,12 @@
+ad_articles_comment:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AdArticlesComment
+    module:               adArticlesComment
+    prefix_path:          /adArticlesComment
+    column:               id
+    with_wildcard_routes: true
+
 load_article_by_cat:
   url:   /load-article
   param: { module: ajax, action: loadFilter }

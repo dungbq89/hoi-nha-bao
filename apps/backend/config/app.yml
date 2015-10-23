@@ -80,6 +80,10 @@ all:
               credentials: [[admin]]
               route: ad_link
               icon: link71.png
+            Quản lý comment bài viết:
+              credentials: [[admin]]
+              route: ad_articles_comment
+              icon: text.png
         Quản trị hệ thống:
           credentials: [admin]
           dropdown:

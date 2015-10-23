@@ -1,0 +1,33 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           AdArticlesComment
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          ad_articles_comment
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        article_id: {label: Tên bài viết}
+        fullname: {label: Họ và tên}
+        email: {label: Email}
+        content: {label: Nội dung}
+        is_active: {label: Trạng thái}
+        created_at: {label: Ngày tạo}
+      list:
+        title: Danh sách comment bài viết tin tức
+        display: [article_id, fullname, email, content, is_active, created_at]
+        object_actions:
+          _edit: {label: Chi tiết}
+          _delete: ~
+      filter:
+        display: [article_id]
+      form:    ~
+      edit:    ~
+      new:     ~
