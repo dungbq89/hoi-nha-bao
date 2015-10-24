@@ -16,4 +16,12 @@ class AdArticlesCommentTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('AdArticlesComment');
     }
+
+    public static function getCommentArticleById($id){
+        return AdArticlesCommentTable::getInstance()->createQuery()
+            ->where('article_id=?',$id)
+            ->andWhere('is_active=1')
+            ->orderBy('created_at desc')
+            ->fetchArray();
+    }
 }
