@@ -43,6 +43,7 @@
                         </span>
                     </div>
                     <div class="box-btn">
+                        
                         <button name="" type="submit" class="btn">Tra cứu</button>
                         <button name="" type="reset" class="btn">Hủy bỏ</button>
                     </div>

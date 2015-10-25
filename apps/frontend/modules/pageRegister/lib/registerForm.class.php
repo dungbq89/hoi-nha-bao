@@ -79,7 +79,7 @@ class registerForm extends Basecsdl_lylichhoivienForm
             array(
                 'max_size' => sfConfig::get('app_image_maxsize', 999999),
                 'mime_types' => array('image/jpeg','image/jpg', 'image/png', 'image/gif'),
-                'path' => sfConfig::get("app_upload_member") . '/' . sfConfig::get('app_member_images'),
+                'path' => sfConfig::get("sf_upload_dir") . '/' . sfConfig::get('app_member_images'),
                 'required' => false
             ),
             array(
@@ -147,4 +147,6 @@ class registerForm extends Basecsdl_lylichhoivienForm
         }
         return $arrJobs;
     }
+
+
 }
