@@ -35,7 +35,8 @@ class csdl_lylichhoivienTable extends Doctrine_Table
             ->limit($limit);
 
         if($full_name!=""){
-            $query->andWhere("s.ten LIKE ? OR s.hodem LIKE ? OR CONCAT(s.hodem, s.ten) LIKE ?", array( "%" . trim($full_name). "%",  "%" . trim($full_name) . "%",  "%" . trim($full_name) . "%"));
+//            $query->andWhere("CONCAT(s.hodem, s.ten) LIKE ?", array("%" . trim($full_name) . "%"));
+            $query->andWhere("s.hodem LIKE ?", array("%" . trim($full_name) . "%"));
         }
         if($phone_number!=""){
             $query->andWhere('c.phone LIKE ?',"%" . trim($phone_number). "%");

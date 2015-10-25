@@ -1,25 +1,30 @@
 <div class="col-main">
     <div class="news-detail">
         <div class="btip">
-            <?php if(isset($category) && $category) ?>
-            <p class="cate"><a href="<?php echo url_for2('category_news', array('slug' => $category->getSlug())) ?>" title="<?php echo htmlspecialchars($category->name); ?>"><?php echo htmlspecialchars($category->name); ?></a></p>
+            <?php if (isset($category) && $category) ?>
+            <p class="cate"><a href="<?php echo url_for2('category_news', array('slug' => $category->getSlug())) ?>"
+                               title="<?php echo htmlspecialchars($category->name); ?>"><?php echo htmlspecialchars($category->name); ?></a>
+            </p>
             <time
-                class="stime"><?php if ($article['published_time']) echo date('H:i',strtotime($article['updated_at'])). ' '. VtHelper::getFormatDate($article['published_time']); ?></time>
+                class="stime"><?php if ($article['published_time']) echo date('H:i', strtotime($article['updated_at'])) . ' ' . VtHelper::getFormatDate($article['published_time']); ?></time>
         </div>
-        <h3 class="title-article"><?php  echo htmlspecialchars($article['title']); ?></h3>
+        <h3 class="title-article"><?php echo htmlspecialchars($article['title']); ?></h3>
         <span class="txt-artice-intro">
-            <?php echo (isset($newsCopyright) && $newsCopyright)?'<b><i>(hoinhabaohatinh.org.vn) - </i></b>':''; echo htmlspecialchars($article['header']); ?>
+            <?php echo (isset($newsCopyright) && $newsCopyright) ? '<b><i>(hoinhabaohatinh.org.vn) - </i></b>' : '';
+            echo htmlspecialchars($article['header']); ?>
         </span>
+
         <div class="cover-detail">
             <div class="detail-body">
                 <?php echo $article['body']; ?>
                 <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                <p class="pAuthor"><?php  echo htmlspecialchars($article['author']); ?></p>
+                <p class="pAuthor"><?php echo htmlspecialchars($article['author']); ?></p>
+
                 <div class="clear"></div>
                 <div class="addthis_native_toolbox"></div>
             </div>
             <div class="detail-mostview">
-                <?php include_component('moduleArticle','mostViewNews',array('limit'=>5)); ?>
+                <?php include_component('moduleArticle', 'mostViewNews', array('limit' => 5)); ?>
             </div>
         </div>
 
@@ -93,13 +98,36 @@
             </div>
 
         </form>
+        <div class="comment-article">
+            <?php
+            if (isset($articleComment) && count($articleComment)) {
+                echo '<h3 class="h3-count-comment">' . count($articleComment) . ' bình luận</h3>';
+                foreach ($articleComment as $comment) {
+                    ?>
+                    <div class="cmt-div">
+                        <a class="cmt-author"><?php echo htmlspecialchars($comment['fullname']) ?>&nbsp;&nbsp;&nbsp;<span
+                                class="date-comment"><?php echo date('H:i', strtotime($comment['created_at'])) . ' ' . VtHelper::getFormatDate($comment['created_at']) ?></span></a>
+
+                        <h3></h3>
+
+                        <p><?php echo htmlspecialchars($comment['content']) ?></p>
+                    </div>
+                <?php
+                }
+            } else {
+                echo '<h3 class="h3-count-comment">0 bình luận</h3>';
+            }
+            ?>
+        </div>
     </div>
     <?php
     if (isset($articleOther) && count($articleOther)):
         ?>
 
         <div class="sct recommendation" id="dothor2">
-            <div class="hed"><div class="hgroup"><h1><a href="#">CÁC TIN ĐÃ ĐƯA</a></h1></div></div>
+            <div class="hed">
+                <div class="hgroup"><h1><a href="#">CÁC TIN ĐÃ ĐƯA</a></h1></div>
+            </div>
             <?php
             foreach ($articleOther as $value):
                 $path = '/uploads/' . sfConfig::get('app_article_images') . $value['image_path'];
@@ -124,11 +152,11 @@
 </div>
 <!--            tin anh-->
 <div class="sct sidebar" id="right1" style="margin-top: 35px;">
-    <?php include_component('moduleArticle','newsImages',array('limit'=>5,'att'=>2)) ?>
+    <?php include_component('moduleArticle', 'newsImages', array('limit' => 5, 'att' => 2)) ?>
 </div>
 <div class="col-right">
-    <?php include_component('moduleVideo','listVideoHome',array('limit'=>5,'width'=>'305')) ?>
-    <?php include_component('moduleArticle','readNews',array('limit'=>5)) ?>
+    <?php include_component('moduleVideo', 'listVideoHome', array('limit' => 5, 'width' => '305')) ?>
+    <?php include_component('moduleArticle', 'readNews', array('limit' => 5)) ?>
     <?php include_component('moduleMenu', 'linkRight') ?>
     <?php include_component('moduleDocument', 'hotDocument', array('limit' => 3)) ?>
     <?php include_component('moduleArticle', 'categoryHot', array('limit' => 3)) ?>
@@ -136,4 +164,5 @@
 
 </div>
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-537227b70ef6e827" async="async"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-537227b70ef6e827"
+        async="async"></script>
