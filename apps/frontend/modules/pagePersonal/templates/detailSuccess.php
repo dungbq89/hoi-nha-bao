@@ -16,12 +16,20 @@
                 <table class="table bordered">
                     <tr>
                         <td>Họ và tên</td>
-                        <td><?php echo $personal->hodem.' '.$personal->ten; ?></td>
+                        <td><?php echo $personal->hodem; ?></td>
                     </tr>
                     <tr>
-                        <td>Địa chỉ</td>
-                        <td><?php echo $personal->diachi; ?></td>
+                        <td >Giới tính</td>
+                        <td>
+                            <?php if($personal->gioitinh==1) echo "Nam"; else echo "Nữ"; ?>
+                        </td>
                     </tr>
+
+                    <tr>
+                        <td>Ngày sinh</td>
+                        <td><?php echo date('d/m/Y',strtotime($personal->ngaysinh)); ?></td>
+                    </tr>
+
                     <tr>
                         <td>Số điện thoại</td>
                         <td><?php echo $personal->phone; ?></td>
