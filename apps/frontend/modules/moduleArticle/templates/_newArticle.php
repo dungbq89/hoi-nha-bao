@@ -12,10 +12,16 @@ if (isset($articles) && $articles):
             <div class="hed">
                 <h1><a href="<?php echo url_for2('article_detail', array('slug' => $articles[0]['slug'])) ?>">
                         <?php
+                        if (($articles['attributes'] & 8)){
+                            $str='<b><i>(hoinhabaohatinh.org.vn) - </i></b>';
+                        }else{
+                            $str='';
+                        }
+
                         if ($articles[0]['alttitle']) {
-                            echo htmlspecialchars($articles[0]['alttitle']);
+                            echo $str. htmlspecialchars($articles[0]['alttitle']);
                         } else {
-                            echo htmlspecialchars($articles[0]['title']);
+                            echo $str. htmlspecialchars($articles[0]['title']);
                         }
 
                         ?>

@@ -20,9 +20,9 @@ class pageRegisterActions extends sfActions {
                 $name = trim($values['hodem']);
                 $parts = explode(" ", $name);
                 $lastname = array_pop($parts);
-                $firstname = implode(" ", $parts);
+                //$firstname = implode(" ", $parts);
 
-                $reg->setHodem($firstname);
+                $reg->setHodem($name);
                 $reg->setTen($lastname);
 
                 $year = date('Y-m-d', strtotime($values['ngaysinh']['day'].'-'.$values['ngaysinh']['month'].'-'.$values['ngaysinh']['year']));

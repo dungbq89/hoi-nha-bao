@@ -45,7 +45,7 @@ generator:
           title: {label: Tiêu đề *}
           category_id: {label: Chuyên mục *}
           priority: {label: Thứ tự}
-          header: {label: Tóm tắt *}
+          header: {label: Tóm tắt}
 
           published_time: {label: Ngày đăng}
           expiredate_time: {label: Ngày kết thúc}

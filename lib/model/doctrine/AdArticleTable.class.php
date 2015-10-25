@@ -84,7 +84,7 @@ class AdArticleTable extends Doctrine_Table
     public static function getRandomArticle($attributes, $limit)
     {
         return self::getActiveArticleQuery()
-            ->select('a.title, a.alttitle, a.header, a.image_path, a.slug, a.published_time')
+            ->select('a.title, a.alttitle, a.header, a.image_path, a.slug, a.published_time, a.attributes')
             ->andWhere('a.attributes & ?=?', array($attributes, $attributes))
             ->orderBy('a.published_time desc')
             ->limit($limit)
