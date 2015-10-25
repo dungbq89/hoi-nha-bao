@@ -63,7 +63,7 @@ class adArticlesEditorFormAdmin extends BaseAdArticleForm
         'id'              => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
         'title'           => new sfValidatorString(array('max_length' => 255, 'required'=>true, 'trim'=>true)),
         'alttitle'        => new sfValidatorString(array('max_length' => 255, 'required' => false, 'trim'=>true)),
-        'header'          => new sfValidatorString(array('max_length' => 1000, 'required' => true, 'trim'=>true)),
+        'header'          => new sfValidatorString(array('max_length' => 1000, 'required' => false, 'trim'=>true)),
         'body'            => new sfValidatorString(
                             array(
                                 'required' => false,
