@@ -12,9 +12,13 @@
             <h3 class="title-main"><span class="label">Chi tiết hội viên &raquo</span></h3>
 
             <?php if(isset($personal)):
+                $avatar =  '/uploads/' . sfConfig::get('app_member_images') . $personal->images;
                 ?>
                 <table class="table bordered">
                     <tr>
+                        <td rowspan="3">
+                            <img src="<?php echo sfConfig::get('app_url_csdl').$personal->images; ?>" alt="">
+                        </td>
                         <td>Họ và tên</td>
                         <td><?php echo $personal->hodem; ?></td>
                     </tr>
@@ -32,15 +36,15 @@
 
                     <tr>
                         <td>Số điện thoại</td>
-                        <td><?php echo $personal->phone; ?></td>
+                        <td colspan="2"><?php echo $personal->phone; ?></td>
                     </tr>
                     <tr>
                         <td>Email</td>
-                        <td><?php echo $personal->email_address; ?></td>
+                        <td colspan="2"><?php echo $personal->email_address; ?></td>
                     </tr>
                     <tr>
                         <td>Địa chỉ</td>
-                        <td><?php echo $personal->diachi; ?></td>
+                        <td colspan="2"><?php echo $personal->diachi; ?></td>
                     </tr>
                 </table>
             <?php endif; ?>

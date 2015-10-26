@@ -11,6 +11,17 @@ class pagePersonalActions extends sfActions {
     public function executeIndex(sfWebRequest $request) {
         $form =new personalForm();
         $user = sfContext::getInstance()->getUser();
+
+        $this->page = $request->getParameter('page', 1);
+        $limit = 30;
+        $query = csdl_lylichhoivienTable::getAllListPerson($limit);
+        $pager = new sfDoctrinePager('sfGuardUserHNB', $limit);
+        $pager->setQuery($query);
+        $pager->setPage($this->page);
+        $pager->init();
+        $this->pager = $pager;
+        $this->listPersonal = $this->pager->getResults();
+
         if ($request->hasParameter('page') && $user->getAttribute('search', false)) {
             $values = $request->getParameter($form->getName());
             $values['full_name']=$user->getAttribute('full_name');
