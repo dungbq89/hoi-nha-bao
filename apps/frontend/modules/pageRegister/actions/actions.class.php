@@ -12,29 +12,30 @@ class pageRegisterActions extends sfActions {
         $form=new registerForm();
 
         if($request->isMethod('POST')){
-            $values = $request->getParameter($form->getName());
-            $form->bind($values,$request->getFiles($form->getName()));
+            $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
             if($form->isValid()){
-                $reg = new csdl_lylichhoivien();
-
-                $name = trim($values['hodem']);
-                $parts = explode(" ", $name);
-                $lastname = array_pop($parts);
-                //$firstname = implode(" ", $parts);
-
-                $reg->setHodem($name);
-                $reg->setTen($lastname);
-
-                $year = date('Y-m-d', strtotime($values['ngaysinh']['day'].'-'.$values['ngaysinh']['month'].'-'.$values['ngaysinh']['year']));
-                $reg->setNgaysinh($year);
-                $reg->setGioitinh($values['gioitinh']);
-                $reg->setMatinh($values['matinh']);
-                $reg->setMaquan($values['maquan']);
-                $reg->setDiachi($values['diachi']);
-                $reg->setDonviId($values['donvi_id']);
-                $reg->setNghenghiepId($values['nghenghiep_id']);
+                $values = $form->getValues();
+                $form->save();
+//                $reg = new csdl_lylichhoivien();
+//
+//                $name = trim($values['hodem']);
+//                $parts = explode(" ", $name);
+//                $lastname = array_pop($parts);
+//                //$firstname = implode(" ", $parts);
+//
+//                $reg->setHodem($name);
+//                $reg->setTen($lastname);
+//
+//                $year = date('Y-m-d', strtotime($values['ngaysinh']['day'].'-'.$values['ngaysinh']['month'].'-'.$values['ngaysinh']['year']));
+//                $reg->setNgaysinh($year);
+//                $reg->setGioitinh($values['gioitinh']);
+//                $reg->setMatinh($values['matinh']);
+//                $reg->setMaquan($values['maquan']);
+//                $reg->setDiachi($values['diachi']);
+//                $reg->setDonviId($values['donvi_id']);
+//                $reg->setNghenghiepId($values['nghenghiep_id']);
 //                $reg->setImages($values['images']);
-                $reg->save();
+//                $reg->save();
                 $this->getUser()->setFlash('success','Bạn đã đăng ký thành công, chúng tôi sẽ xét duyệt hồ sơ của bạn.');
                 $this->form = new registerForm();
             }
