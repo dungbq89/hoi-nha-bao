@@ -13,4 +13,13 @@ require_once dirname(__FILE__).'/../lib/adArticlesCommentGeneratorHelper.class.p
  */
 class adArticlesCommentActions extends autoAdArticlesCommentActions
 {
+    public static function getArticleName($articleId){
+        $article=AdArticleTable::getArticleById($articleId);
+        if ($article){
+            return $article->title;
+        }
+        else{
+            return '';
+        }
+    }
 }

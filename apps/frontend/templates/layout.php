@@ -24,8 +24,7 @@
         <?php include_component('moduleAdvertise','advertise',array('location'=>'header')); ?>
         <div class="box-form-search">
             <div class="box-btn">
-                <a href="/index.php"><button class="btn">Diễn đàn</button></a>
-                <a href="/danh-ba-hoi-vien"><button class="btn"> Danh bạ </button></a>
+                <a href="/danh-ba-hoi-vien"><button class="btn"> CSDL Hội viên </button></a>
                 <a href="/lien-he"><button class="btn">Liên hệ</button></a>
             </div>
             <form class="frm-search" method="get" action="<?php echo url_for1('@page_search') ?>">

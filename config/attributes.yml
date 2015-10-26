@@ -17,6 +17,5 @@ view_page:
 promotion_attributes:
   new: {value: 1, alias: "Tin mới"}
   images: {value: 2, alias: "Tin ảnh"}
-  video: {value: 4, alias: "Tin video"}
-  hot: {value: 8, alias: "Tin tiêu điểm"}
-  right: {value: 16, alias: "Tin bản quyền"}
+  hot: {value: 4, alias: "Tin tiêu điểm"}
+  right: {value: 8, alias: "Tin bản quyền"}

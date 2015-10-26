@@ -10,8 +10,8 @@ CKEDITOR.editorConfig = function( config ) {
 
     config.extraPlugins = 'youtube,lineheight,videodetector,googledocs,letterspacing,audio';
     //config youtube
-    config.youtube_width = '640';
-    config.youtube_height = '480';
+    config.youtube_width = '450';
+    config.youtube_height = '400';
     config.youtube_related = true;
     config.youtube_older = false;
     config.youtube_privacy = false;

@@ -171,7 +171,6 @@ class adArticlesEditorFormAdmin extends BaseAdArticleForm
     private function doBindAttributes(&$values) {
         $values['title']=trim($values['title']);
         $values['header']=trim($values['header']);
-        var_dump($values['published_time']);die;
 
         if (empty($values['attributes']))
             return;

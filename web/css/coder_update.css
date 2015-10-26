@@ -1278,3 +1278,6 @@ a {
     border-bottom: 1px solid #eee;
     padding: 5px 0px;
 }
+.sidebar .contact li.phone{
+    border-bottom: solid 1px #fff;
+}

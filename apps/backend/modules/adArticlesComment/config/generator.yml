@@ -14,7 +14,7 @@ generator:
     config:
       actions: ~
       fields:
-        article_id: {label: Tên bài viết}
+        article_id: {label: Mã bài viết}
         fullname: {label: Họ và tên}
         email: {label: Email}
         content: {label: Nội dung}
@@ -23,6 +23,8 @@ generator:
       list:
         title: Danh sách comment bài viết tin tức
         display: [article_id, fullname, email, content, is_active, created_at]
+        fields:
+          article_id: {label: Tên bài viết}
         object_actions:
           _edit: {label: Chi tiết}
           _delete: ~
