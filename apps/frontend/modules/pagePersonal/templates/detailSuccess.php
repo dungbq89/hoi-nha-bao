@@ -68,7 +68,7 @@
                 <?php if (isset($quatrinhs) && count($quatrinhs)) {
                     foreach ($quatrinhs as $quatrinh) {
                         ?>
-                        <table class="table bordered vanban tb-hoivien">
+                        <table class="table bordered vanban tb-hoivien"  style="width: 100%;">
                             <tr>
                                 <td class="td-document-detail">Thời gian bắt đầu</td>
                                 <td><?php echo date('d/m/Y', strtotime($quatrinh->batdau)); ?></td>
@@ -97,7 +97,7 @@
                 <?php if (isset($thehoiviens) && count($thehoiviens)) {
                     foreach ($thehoiviens as $thehoivien) {
                         ?>
-                        <table class="table bordered vanban tb-hoivien">
+                        <table class="table bordered vanban tb-hoivien"  style="width: 100%;">
                             <tr>
                                 <td class="td-document-detail">Mã thẻ</td>
                                 <td><?php echo htmlspecialchars($thehoivien->mathe); ?></td>
@@ -157,7 +157,7 @@
                 <?php if(isset($giaithuong) && count($giaithuong)){
                     foreach($giaithuong as $item) {
                         ?>
-                        <table class="table bordered vanban tb-hoivien">
+                        <table class="table bordered vanban tb-hoivien" style="width: 100%;">
                             <tr>
                                 <td class="td-document-detail">Tên giải thưởng</td>
                                 <td><?php echo htmlspecialchars($item->tengiaithuong); ?></td>
