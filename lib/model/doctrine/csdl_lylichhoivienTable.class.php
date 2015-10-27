@@ -28,7 +28,7 @@ class csdl_lylichhoivienTable extends Doctrine_Table
     public static function getListPerson($full_name, $phone_number,$email,$limit)
     {
         $query = csdl_lylichhoivienTable::getInstance()->createQuery('s')
-            ->select('s.ten, s.hodem, c.phone as phone, c.email_address as email_address, s.diachi')
+            ->select('s.ten, s.hodem, c.phone as phone, c.email_address as email_address, s.diachi, s.images')
             ->innerJoin('s.Groups c')
 //            ->where('s.id = c.hoivien_id')
             ->orderBy('s.ten asc')
@@ -58,7 +58,7 @@ class csdl_lylichhoivienTable extends Doctrine_Table
     public static function getAllListPerson($limit)
     {
         $query = csdl_lylichhoivienTable::getInstance()->createQuery('s')
-            ->select('s.ten, s.hodem, c.phone as phone, c.email_address as email_address, s.diachi')
+            ->select('s.ten, s.hodem, c.phone as phone, c.email_address as email_address, s.diachi, s.images')
             ->innerJoin('s.Groups c')
             ->orderBy('s.ten asc')
             ->limit($limit);

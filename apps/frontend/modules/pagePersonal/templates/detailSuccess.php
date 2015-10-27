@@ -12,12 +12,12 @@
             <h3 class="title-main"><span class="label">Chi tiết hội viên &raquo</span></h3>
 
             <?php if(isset($personal)):
-                $avatar =  '/uploads/' . sfConfig::get('app_member_images') . $personal->images;
+                $path = '/uploads/member'. $personal->images;
                 ?>
                 <table class="table bordered">
                     <tr>
-                        <td rowspan="3">
-                            <img src="<?php echo sfConfig::get('app_url_csdl').$personal->images; ?>" alt="">
+                        <td rowspan="3" style="text-align: center;">
+                            <img src="<?php echo VtHelper::getThumbUrl($path, 120, 120) ?>" alt="">
                         </td>
                         <td>Họ và tên</td>
                         <td><?php echo $personal->hodem; ?></td>

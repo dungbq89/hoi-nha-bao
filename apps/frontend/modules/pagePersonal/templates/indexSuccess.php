@@ -55,15 +55,17 @@
                 ?>
                 <table class="table bordered">
                     <tr>
-                        <th class="col-stt">STT</th>
+                        <th class="col-stt">Ảnh đại diện</th>
                         <th>Họ tên</th>
                         <th>Địa chỉ</th>
                         <th>Điện thoại</th>
                         <th>Email</th>
                     </tr>
-                    <?php foreach ($listPersonal as $key => $personal) { ?>
+                    <?php foreach ($listPersonal as $key => $personal) {
+                        $path = '/uploads/member'. $personal->images;
+                    ?>
                     <tr>
-                        <td><?php echo $i; ?></td>
+                        <td><img src="<?php echo VtHelper::getThumbUrl($path, 90, 90) ?>" alt=""></td>
                         <td><a class="personal-name" href="<?php echo url_for2('personnal_detail',array('id'=>$personal->id)) ?>"><?php echo $personal->hodem; ?></a></td>
                         <td><?php echo $personal->diachi; ?></td>
                         <td><?php echo $personal->phone; ?></td>
