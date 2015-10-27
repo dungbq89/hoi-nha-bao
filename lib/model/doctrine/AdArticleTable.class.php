@@ -67,6 +67,13 @@ class AdArticleTable extends Doctrine_Table
         return AdArticleTable::getInstance()->createQuery('a')
             ->where('a.category_id=?', $categoryID)->execute();
     }
+    public static function getArticleById($articleId)
+    {
+        return AdArticleTable::getInstance()->createQuery()
+            ->select('id, title')
+            ->addWhere('id=?', $articleId)
+            ->fetchOne();
+    }
 
     /*
      * Frontend BEGIN
