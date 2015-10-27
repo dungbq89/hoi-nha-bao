@@ -22,6 +22,7 @@ default:
     - jquery.ui.core.js
     - ui.datepicker.css
     - ui.theme.css
+    - tabcontent.css
     - coder_update.css
 
   javascripts:
@@ -37,5 +38,6 @@ default:
     - ui.datepicker.min.js
     - jquery-ui-1.8.22.custom.min.js
     - jquery-ui-timepicker-addon.js
+    - tabcontent.js
   has_layout:     true
   layout:         layout

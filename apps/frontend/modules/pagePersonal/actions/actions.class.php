@@ -70,6 +70,33 @@ class pagePersonalActions extends sfActions {
             $person = csdl_lylichhoivienTable::getPersonById($id)->fetchOne();
             if($person){
                 $this->personal = $person;
+                $hoivienId = $person->hoivien_id;
+                if($hoivienId>0){
+                    $user = csdl_lylichhoivienTable::getUserDetail($hoivienId)->fetchOne();
+
+                    if($user){
+                        $this->userDetail = $user;
+                        //Qua trinh cong tac
+                        $quaTrinh = csdl_quatrinhcongtacTable::getQuaTrinhCongTac($hoivienId)->execute();
+                        if($quaTrinh){
+                            $this->quatrinhs = $quaTrinh;
+                        }
+                        //the hoi vien
+                        $thehoivien = csdl_thehoivienTable::getTheHoiVien($hoivienId)->execute();
+                        if($thehoivien){
+                            $this->thehoiviens = $thehoivien;
+                        }
+                        //giai thuong
+                        $this->giaithuong=csdl_giaithuongTable::getListGiaithuongByHoivien($hoivienId);
+                        //danh sach tac pham cua hoi vien
+                        $tacpham = csdl_tacphamTable::getTacphamByHoiVienId($hoivienId);
+                        if(count($tacpham)){
+                            $this->listTacpham = $tacpham;
+                        }
+                    }
+                }
+
+
             }
             else{
                 $this->redirect404();

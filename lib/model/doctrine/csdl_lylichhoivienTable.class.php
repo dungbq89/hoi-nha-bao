@@ -65,4 +65,12 @@ class csdl_lylichhoivienTable extends Doctrine_Table
         return $query;
     }
 
+    public static function getUserDetail($hoiVienId)
+    {
+        return csdl_lylichhoivienTable::getInstance()->createQuery()
+            ->where('hoivien_id =?',$hoiVienId);
+    }
+
+
+
 }
