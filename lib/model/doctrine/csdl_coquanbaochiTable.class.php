@@ -19,7 +19,8 @@ class csdl_coquanbaochiTable extends Doctrine_Table
 
     public static function getJob(){
         $query=  csdl_coquanbaochiTable::getInstance()->createQuery()
-            ->andWhere('trangthai = ',VtCommonEnum::NUMBER_ONE);
+//            ->andWhere('trangthai = ',VtCommonEnum::NUMBER_ONE);
+            ->orderBy('tendonvi');
         return $query;
     }
 }

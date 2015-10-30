@@ -15,10 +15,6 @@ Doctrine_Manager::getInstance()->bindComponent('csdl_lylichhoivien', 'slave');
  * @property string $diachi
  * @property string $maquan
  * @property string $matinh
- * @property timestamp $ngayvaodoan
- * @property string $noiketnapdoan
- * @property timestamp $ngayvaodang
- * @property string $noiketnapdang
  * @property string $tieusu
  * @property integer $nghenghiep_id
  * @property integer $dantoc_id
@@ -27,6 +23,16 @@ Doctrine_Manager::getInstance()->bindComponent('csdl_lylichhoivien', 'slave');
  * @property string $images
  * @property string $dienthoai
  * @property string $email
+ * @property string $hocvan
+ * @property string $ngoaingu
+ * @property string $chinhtri
+ * @property string $dangvien
+ * @property string $butdanh
+ * @property integer $tacpham_id
+ * @property integer $giaithuong_id
+ * @property sring $thehnbht
+ * @property sring $cqcongtac
+ * @property sring $chucvu
  * @property sfGuardUserHNB $Groups
  * 
  * @method integer            getHoivienId()     Returns the current record's "hoivien_id" value
@@ -37,10 +43,6 @@ Doctrine_Manager::getInstance()->bindComponent('csdl_lylichhoivien', 'slave');
  * @method string             getDiachi()        Returns the current record's "diachi" value
  * @method string             getMaquan()        Returns the current record's "maquan" value
  * @method string             getMatinh()        Returns the current record's "matinh" value
- * @method timestamp          getNgayvaodoan()   Returns the current record's "ngayvaodoan" value
- * @method string             getNoiketnapdoan() Returns the current record's "noiketnapdoan" value
- * @method timestamp          getNgayvaodang()   Returns the current record's "ngayvaodang" value
- * @method string             getNoiketnapdang() Returns the current record's "noiketnapdang" value
  * @method string             getTieusu()        Returns the current record's "tieusu" value
  * @method integer            getNghenghiepId()  Returns the current record's "nghenghiep_id" value
  * @method integer            getDantocId()      Returns the current record's "dantoc_id" value
@@ -49,6 +51,16 @@ Doctrine_Manager::getInstance()->bindComponent('csdl_lylichhoivien', 'slave');
  * @method string             getImages()        Returns the current record's "images" value
  * @method string             getDienthoai()     Returns the current record's "dienthoai" value
  * @method string             getEmail()         Returns the current record's "email" value
+ * @method string             getHocvan()        Returns the current record's "hocvan" value
+ * @method string             getNgoaingu()      Returns the current record's "ngoaingu" value
+ * @method string             getChinhtri()      Returns the current record's "chinhtri" value
+ * @method string             getDangvien()      Returns the current record's "dangvien" value
+ * @method string             getButdanh()       Returns the current record's "butdanh" value
+ * @method integer            getTacphamId()     Returns the current record's "tacpham_id" value
+ * @method integer            getGiaithuongId()  Returns the current record's "giaithuong_id" value
+ * @method sring              getThehnbht()      Returns the current record's "thehnbht" value
+ * @method sring              getCqcongtac()     Returns the current record's "cqcongtac" value
+ * @method sring              getChucvu()        Returns the current record's "chucvu" value
  * @method sfGuardUserHNB     getGroups()        Returns the current record's "Groups" value
  * @method csdl_lylichhoivien setHoivienId()     Sets the current record's "hoivien_id" value
  * @method csdl_lylichhoivien setTen()           Sets the current record's "ten" value
@@ -58,10 +70,6 @@ Doctrine_Manager::getInstance()->bindComponent('csdl_lylichhoivien', 'slave');
  * @method csdl_lylichhoivien setDiachi()        Sets the current record's "diachi" value
  * @method csdl_lylichhoivien setMaquan()        Sets the current record's "maquan" value
  * @method csdl_lylichhoivien setMatinh()        Sets the current record's "matinh" value
- * @method csdl_lylichhoivien setNgayvaodoan()   Sets the current record's "ngayvaodoan" value
- * @method csdl_lylichhoivien setNoiketnapdoan() Sets the current record's "noiketnapdoan" value
- * @method csdl_lylichhoivien setNgayvaodang()   Sets the current record's "ngayvaodang" value
- * @method csdl_lylichhoivien setNoiketnapdang() Sets the current record's "noiketnapdang" value
  * @method csdl_lylichhoivien setTieusu()        Sets the current record's "tieusu" value
  * @method csdl_lylichhoivien setNghenghiepId()  Sets the current record's "nghenghiep_id" value
  * @method csdl_lylichhoivien setDantocId()      Sets the current record's "dantoc_id" value
@@ -70,6 +78,16 @@ Doctrine_Manager::getInstance()->bindComponent('csdl_lylichhoivien', 'slave');
  * @method csdl_lylichhoivien setImages()        Sets the current record's "images" value
  * @method csdl_lylichhoivien setDienthoai()     Sets the current record's "dienthoai" value
  * @method csdl_lylichhoivien setEmail()         Sets the current record's "email" value
+ * @method csdl_lylichhoivien setHocvan()        Sets the current record's "hocvan" value
+ * @method csdl_lylichhoivien setNgoaingu()      Sets the current record's "ngoaingu" value
+ * @method csdl_lylichhoivien setChinhtri()      Sets the current record's "chinhtri" value
+ * @method csdl_lylichhoivien setDangvien()      Sets the current record's "dangvien" value
+ * @method csdl_lylichhoivien setButdanh()       Sets the current record's "butdanh" value
+ * @method csdl_lylichhoivien setTacphamId()     Sets the current record's "tacpham_id" value
+ * @method csdl_lylichhoivien setGiaithuongId()  Sets the current record's "giaithuong_id" value
+ * @method csdl_lylichhoivien setThehnbht()      Sets the current record's "thehnbht" value
+ * @method csdl_lylichhoivien setCqcongtac()     Sets the current record's "cqcongtac" value
+ * @method csdl_lylichhoivien setChucvu()        Sets the current record's "chucvu" value
  * @method csdl_lylichhoivien setGroups()        Sets the current record's "Groups" value
  * 
  * @package    Web_Portals
@@ -122,29 +140,9 @@ abstract class Basecsdl_lylichhoivien extends sfDoctrineRecord
              'comment' => 'Ma tinh/thanh pho',
              'length' => 255,
              ));
-        $this->hasColumn('ngayvaodoan', 'timestamp', 25, array(
-             'type' => 'timestamp',
-             'comment' => 'ngay vao doan',
-             'length' => 25,
-             ));
-        $this->hasColumn('noiketnapdoan', 'string', 255, array(
-             'type' => 'string',
-             'comment' => 'nơi kết nạp đoàn',
-             'length' => 255,
-             ));
-        $this->hasColumn('ngayvaodang', 'timestamp', 25, array(
-             'type' => 'timestamp',
-             'comment' => 'ngay vao dang',
-             'length' => 25,
-             ));
-        $this->hasColumn('noiketnapdang', 'string', 255, array(
-             'type' => 'string',
-             'comment' => 'nơi kết nạp đảng',
-             'length' => 255,
-             ));
         $this->hasColumn('tieusu', 'string', 1000, array(
              'type' => 'string',
-             'comment' => 'nơi kết nạp đảng',
+             'comment' => 'Tiểu sử',
              'length' => 1000,
              ));
         $this->hasColumn('nghenghiep_id', 'integer', 5, array(
@@ -180,6 +178,56 @@ abstract class Basecsdl_lylichhoivien extends sfDoctrineRecord
         $this->hasColumn('email', 'string', 255, array(
              'type' => 'string',
              'comment' => 'Email',
+             'length' => 255,
+             ));
+        $this->hasColumn('hocvan', 'string', 255, array(
+             'type' => 'string',
+             'comment' => 'Học vấn',
+             'length' => 255,
+             ));
+        $this->hasColumn('ngoaingu', 'string', 255, array(
+             'type' => 'string',
+             'comment' => 'Ngoại ngữ',
+             'length' => 255,
+             ));
+        $this->hasColumn('chinhtri', 'string', 255, array(
+             'type' => 'string',
+             'comment' => 'Chính trị',
+             'length' => 255,
+             ));
+        $this->hasColumn('dangvien', 'string', 255, array(
+             'type' => 'string',
+             'comment' => 'Đảng viên',
+             'length' => 255,
+             ));
+        $this->hasColumn('butdanh', 'string', 255, array(
+             'type' => 'string',
+             'comment' => 'Bút danh',
+             'length' => 255,
+             ));
+        $this->hasColumn('tacpham_id', 'integer', 10, array(
+             'type' => 'integer',
+             'comment' => 'Tác phẩm tiêu biểu',
+             'length' => 10,
+             ));
+        $this->hasColumn('giaithuong_id', 'integer', 10, array(
+             'type' => 'integer',
+             'comment' => 'Giải thưởng',
+             'length' => 10,
+             ));
+        $this->hasColumn('thehnbht', 'sring', 255, array(
+             'type' => 'sring',
+             'comment' => 'Thẻ hội nhà báo hà tĩnh',
+             'length' => 255,
+             ));
+        $this->hasColumn('cqcongtac', 'sring', 255, array(
+             'type' => 'sring',
+             'comment' => 'Cơ quan công tác',
+             'length' => 255,
+             ));
+        $this->hasColumn('chucvu', 'sring', 255, array(
+             'type' => 'sring',
+             'comment' => 'Chức vụ hiện tại',
              'length' => 255,
              ));
 

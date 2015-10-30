@@ -15,12 +15,15 @@ class pageRegisterActions extends sfActions {
             $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
             if($form->isValid()){
                 $values = $form->getValues();
-                $form->save();
+                $user = $form->save();
+
 //                $reg = new csdl_lylichhoivien();
 //
-//                $name = trim($values['hodem']);
-//                $parts = explode(" ", $name);
-//                $lastname = array_pop($parts);
+                $name = trim($values['hodem']);
+                $parts = explode(" ", $name);
+                $lastname = array_pop($parts);
+                $user->setTen($lastname);
+                $user->save();
 //                //$firstname = implode(" ", $parts);
 //
 //                $reg->setHodem($name);

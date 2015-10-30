@@ -16,6 +16,13 @@ class registerForm extends Basecsdl_lylichhoivienForm
         $this->widgetSchema['hodem'] = new sfWidgetFormInputText(array());
         $this->validatorSchema['hodem'] = new sfValidatorString(array('required' => true, 'trim' => true, 'max_length' => 255));
 
+        $this->widgetSchema['chucvu'] = new sfWidgetFormInputText(array());
+        $this->validatorSchema['chucvu'] = new sfValidatorString(array('required' => false, 'trim' => true, 'max_length' => 255));
+
+        $this->widgetSchema['cqcontac'] = new sfWidgetFormInputText(array());
+        $this->validatorSchema['cqcontac'] = new sfValidatorString(array('required' => false, 'trim' => true, 'max_length' => 255));
+
+
         $this->widgetSchema['ngaysinh'] =new sfWidgetFormDateTime(array(
             'date' => array(
                 'format' => '%day%/%month%/%year%',
@@ -112,7 +119,7 @@ class registerForm extends Basecsdl_lylichhoivienForm
     }
 
     protected function getDonVi(){
-        $arrJobs = array(''=>'----- Chọn đơn vị -----');
+        $arrJobs = array(''=>'----- Chọn chi hội -----');
         $jobs = csdl_coquanbaochiTable::getJob()->fetchArray();
         if(count($jobs)>0){
             foreach($jobs as $value){
