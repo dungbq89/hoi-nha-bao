@@ -41,8 +41,7 @@ csdl_lylichhoivien:
       type: one
       foreignAlias: sfGuardUserHoiVien
 
-
-#Danh sach user
+	  #Danh sach user
 sfGuardUserHNB:
   tableName: sf_guard_user
   actAs: [Timestampable]
@@ -81,7 +80,6 @@ sfGuardUserHNB:
   indexes:
     is_active_idx:
       fields: [is_active]
-
 #qua trinh cong tac
 csdl_quatrinhcongtac:
   tableName: csdl_quatrinh_congtac

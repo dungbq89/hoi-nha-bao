@@ -6,6 +6,12 @@
  * Time: 11:29 PM
  */
 ?>
+<style>
+    .bordered td{
+        padding: 5px;
+    }
+
+</style>
 <div class="main">
     <div class="col-main">
         <div class="box">
@@ -16,10 +22,10 @@
                 ?>
                 <table class="table bordered">
                     <tr>
-                        <td rowspan="3" style="text-align: center;">
+                        <td rowspan="3" style="text-align: center; width: 150px;">
                             <img src="<?php echo VtHelper::getThumbUrl($path, 120, 120) ?>" alt="">
                         </td>
-                        <td>Họ và tên</td>
+                        <td style="width: 150px;">Họ và tên</td>
                         <td><?php echo $personal->hodem; ?></td>
                     </tr>
                     <tr>
@@ -36,7 +42,7 @@
 
                     <tr>
                         <td>Số điện thoại</td>
-                        <td colspan="2"><?php echo $personal->phone; ?></td>
+                        <td colspan="2"><?php echo $personal->dienthoai; ?></td>
                     </tr>
                     <tr>
                         <td>Email</td>
@@ -46,13 +52,32 @@
                         <td>Địa chỉ</td>
                         <td colspan="2"><?php echo $personal->diachi; ?></td>
                     </tr>
+                    <tr>
+                        <td>Chức vụ</td>
+                        <td colspan="2"><?php echo $personal->chucvu; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Cơ quan công tác</td>
+                        <td colspan="2"><?php echo $personal->cqcongtac; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Bút danh</td>
+                        <td colspan="2"><?php echo $personal->butdanh; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Học vấn</td>
+                        <td colspan="2"><?php echo $personal->hocvan; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Ngoại ngữ</td>
+                        <td colspan="2"><?php echo $personal->ngoaingu; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Chính trị</td>
+                        <td colspan="2"><?php echo $personal->chinhtri; ?></td>
+                    </tr>
                 </table>
             <?php endif; ?>
-
-
-
-
-
         </div>
 
 
