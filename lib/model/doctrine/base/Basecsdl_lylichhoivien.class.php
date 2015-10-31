@@ -33,8 +33,7 @@ Doctrine_Manager::getInstance()->bindComponent('csdl_lylichhoivien', 'slave');
  * @property sring $thehnbht
  * @property sring $cqcongtac
  * @property sring $chucvu
- * @property sfGuardUserHNB $Groups
- * 
+ *
  * @method integer            getHoivienId()     Returns the current record's "hoivien_id" value
  * @method string             getTen()           Returns the current record's "ten" value
  * @method string             getHodem()         Returns the current record's "hodem" value
@@ -61,7 +60,7 @@ Doctrine_Manager::getInstance()->bindComponent('csdl_lylichhoivien', 'slave');
  * @method sring              getThehnbht()      Returns the current record's "thehnbht" value
  * @method sring              getCqcongtac()     Returns the current record's "cqcongtac" value
  * @method sring              getChucvu()        Returns the current record's "chucvu" value
- * @method sfGuardUserHNB     getGroups()        Returns the current record's "Groups" value
+
  * @method csdl_lylichhoivien setHoivienId()     Sets the current record's "hoivien_id" value
  * @method csdl_lylichhoivien setTen()           Sets the current record's "ten" value
  * @method csdl_lylichhoivien setHodem()         Sets the current record's "hodem" value
@@ -88,7 +87,9 @@ Doctrine_Manager::getInstance()->bindComponent('csdl_lylichhoivien', 'slave');
  * @method csdl_lylichhoivien setThehnbht()      Sets the current record's "thehnbht" value
  * @method csdl_lylichhoivien setCqcongtac()     Sets the current record's "cqcongtac" value
  * @method csdl_lylichhoivien setChucvu()        Sets the current record's "chucvu" value
+
  * @method csdl_lylichhoivien setGroups()        Sets the current record's "Groups" value
+
  * 
  * @package    Web_Portals
  * @subpackage model
@@ -239,10 +240,6 @@ abstract class Basecsdl_lylichhoivien extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('sfGuardUserHNB as Groups', array(
-             'local' => 'hoivien_id',
-             'foreign' => 'id'));
-
         $timestampable0 = new Doctrine_Template_Timestampable();
         $this->actAs($timestampable0);
     }

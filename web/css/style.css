@@ -666,11 +666,11 @@ h3.h3-more{
 }
 
 .txt-gallery{
-    padding: 75px 40px 20px 40px;
+    padding: 75px 0px 20px 0px;
     float: right;
-    width: 270px;
+    width: 350px;
     background-color: #6C8091;
-    height:250px;
+    height:284px;
 }
 .bxslider li{
     overflow: hidden;
@@ -679,6 +679,7 @@ h3.h3-more{
     font-size: 18px;
     color: #fff;
     line-height: 20px;
+    margin-left: 40px;
 }
 .txt-gallery,.txt-gallery h3 a{
     color: #fff;
@@ -687,7 +688,7 @@ h3.h3-more{
     display: block;
     clear: both;
     font-size: 12px;
-    margin: 10px 0px 20px 0px;
+    margin: 10px 0px 20px 40px;
 }
 .txt-gallery span.txt-gallery-news{
     line-height: 18px;
@@ -695,6 +696,7 @@ h3.h3-more{
     display: block;
     height: 89px;
     overflow: hidden;
+    margin-left: 40px;
 }
 .gallary-item{
     width: 230px;

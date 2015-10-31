@@ -16,7 +16,7 @@ abstract class Basecsdl_lylichhoivienForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'            => new sfWidgetFormInputHidden(),
-      'hoivien_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Groups'), 'add_empty' => true)),
+      'hoivien_id'    => new sfWidgetFormInputText(),
       'ten'           => new sfWidgetFormInputText(),
       'hodem'         => new sfWidgetFormInputText(),
       'ngaysinh'      => new sfWidgetFormDateTime(),
@@ -48,7 +48,7 @@ abstract class Basecsdl_lylichhoivienForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'            => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'hoivien_id'    => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Groups'), 'required' => false)),
+      'hoivien_id'    => new sfValidatorInteger(array('required' => false)),
       'ten'           => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'hodem'         => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'ngaysinh'      => new sfValidatorDateTime(array('required' => false)),

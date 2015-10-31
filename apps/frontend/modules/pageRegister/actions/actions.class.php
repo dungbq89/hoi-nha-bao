@@ -15,30 +15,29 @@ class pageRegisterActions extends sfActions {
             $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
             if($form->isValid()){
                 $values = $form->getValues();
-                $user = $form->save();
 
-//                $reg = new csdl_lylichhoivien();
-//
+               // $form->save();
+                $reg = new csdl_lylichhoivien();
+
                 $name = trim($values['hodem']);
                 $parts = explode(" ", $name);
                 $lastname = array_pop($parts);
-                $user->setTen($lastname);
-                $user->save();
-//                //$firstname = implode(" ", $parts);
-//
-//                $reg->setHodem($name);
-//                $reg->setTen($lastname);
-//
-//                $year = date('Y-m-d', strtotime($values['ngaysinh']['day'].'-'.$values['ngaysinh']['month'].'-'.$values['ngaysinh']['year']));
-//                $reg->setNgaysinh($year);
-//                $reg->setGioitinh($values['gioitinh']);
-//                $reg->setMatinh($values['matinh']);
-//                $reg->setMaquan($values['maquan']);
-//                $reg->setDiachi($values['diachi']);
-//                $reg->setDonviId($values['donvi_id']);
-//                $reg->setNghenghiepId($values['nghenghiep_id']);
-//                $reg->setImages($values['images']);
-//                $reg->save();
+                //$firstname = implode(" ", $parts);
+
+                $reg->setHodem($name);
+                $reg->setTen($lastname);
+
+                $year = date('Y-m-d', strtotime($values['ngaysinh']['day'].'-'.$values['ngaysinh']['month'].'-'.$values['ngaysinh']['year']));
+                $reg->setNgaysinh($year);
+                $reg->setGioitinh($values['gioitinh']);
+                $reg->setMatinh($values['matinh']);
+                $reg->setMaquan($values['maquan']);
+                $reg->setDiachi($values['diachi']);
+                $reg->setDonviId($values['donvi_id']);
+                $reg->setNghenghiepId($values['nghenghiep_id']);
+                $reg->setImages($values['images']);
+                $reg->save();
+
                 $this->getUser()->setFlash('success','Bạn đã đăng ký thành công, chúng tôi sẽ xét duyệt hồ sơ của bạn.');
                 $this->form = new registerForm();
             }
