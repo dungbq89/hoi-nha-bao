@@ -42,15 +42,53 @@
                              }?>
                         </span>
                     </div>
-<!--                    <div class="frm-item">-->
-<!--                        <span class="label">Hình ảnh</span>-->
-<!--                        <span class="btn-in">-->
-<!--                             --><?php //echo $form['images']->render(array('class'=>'in-txt'));
-//                             if ($form['images']->hasError()) {
-//                                 echo '<span class="help-inline">' . $form['images']->renderError() . '</span>';
-//                             }?>
-<!--                        </span>-->
-<!--                    </div>-->
+                    <div class="frm-item">
+                        <span class="label">Tiểu sử</span>
+                        <span class="btn-in">
+                             <?php echo $form['tieusu']->render(array('class'=>'in-txt'));
+                             if ($form['tieusu']->hasError()) {
+                                 echo '<span class="help-inline">' . $form['tieusu']->renderError() . '</span>';
+                             }?>
+                        </span>
+                    </div>
+                    <div class="frm-item">
+                        <span class="label">Nghề nghiệp (*)</span>
+                        <span class="btn-in">
+                             <?php echo $form['nghenghiep_id']->render(array('class'=>'in-txt'));
+                             if ($form['nghenghiep_id']->hasError()) {
+                                 echo '<span class="help-inline">' . $form['nghenghiep_id']->renderError() . '</span>';
+                             }?>
+                        </span>
+                    </div>
+
+                    <div class="frm-item">
+                        <span class="label">Chi hội (*)</span>
+                        <span class="btn-in">
+                             <?php echo $form['donvi_id']->render(array('class'=>'in-txt'));
+                             if ($form['donvi_id']->hasError()) {
+                                 echo '<span class="help-inline">' . $form['donvi_id']->renderError() . '</span>';
+                             }?>
+                        </span>
+                    </div>
+                    <div class="frm-item">
+                        <span class="label">Dân tộc</span>
+                        <span class="btn-in">
+                             <?php echo $form['dantoc_id']->render(array('class'=>'in-txt'));
+                             if ($form['dantoc_id']->hasError()) {
+                                 echo '<span class="help-inline">' . $form['dantoc_id']->renderError() . '</span>';
+                             }?>
+                        </span>
+                    </div>
+                    <div class="frm-item">
+                        <span class="label">Quốc tịch</span>
+                        <span class="btn-in">
+                             <?php echo $form['quoctich']->render(array('class'=>'in-txt'));
+                             if ($form['quoctich']->hasError()) {
+                                 echo '<span class="help-inline">' . $form['quoctich']->renderError() . '</span>';
+                             }?>
+                        </span>
+                    </div>
+
                     <div class="frm-item">
                         <span class="label">Tỉnh/thành phố (*)</span>
                         <span class="btn-in">
@@ -71,7 +109,7 @@
                     </div>
 
                     <div class="frm-item">
-                        <span class="label">Địa chỉ (*)</span>
+                        <span class="label">Quê quán (*)</span>
                         <span class="btn-in">
                              <?php echo $form['diachi']->render(array('class'=>'in-txt'));
                              if ($form['diachi']->hasError()) {
@@ -81,34 +119,82 @@
                     </div>
 
                     <div class="frm-item">
-                        <span class="label">Chi hội (*)</span>
+                        <span class="label">Điện thoại</span>
                         <span class="btn-in">
-                             <?php echo $form['donvi_id']->render(array('class'=>'in-txt'));
-                             if ($form['donvi_id']->hasError()) {
-                                 echo '<span class="help-inline">' . $form['donvi_id']->renderError() . '</span>';
+                             <?php echo $form['dienthoai']->render(array('class'=>'in-txt'));
+                             if ($form['dienthoai']->hasError()) {
+                                 echo '<span class="help-inline">' . $form['dienthoai']->renderError() . '</span>';
                              }?>
                         </span>
                     </div>
+
+
                     <div class="frm-item">
-                        <span class="label">Nghề nghiệp (*)</span>
+                        <span class="label">Email</span>
                         <span class="btn-in">
-                             <?php echo $form['nghenghiep_id']->render(array('class'=>'in-txt'));
-                             if ($form['nghenghiep_id']->hasError()) {
-                                 echo '<span class="help-inline">' . $form['nghenghiep_id']->renderError() . '</span>';
+                             <?php echo $form['email']->render(array('class'=>'in-txt'));
+                             if ($form['email']->hasError()) {
+                                 echo '<span class="help-inline">' . $form['email']->renderError() . '</span>';
                              }?>
                         </span>
                     </div>
 
                     <div class="frm-item">
-                        <span class="label">Chức vụ</span>
+                        <span class="label">Đảng viên</span>
                         <span class="btn-in">
-                             <?php echo $form['chucvu']->render(array('class'=>'in-txt'));
-                             if ($form['chucvu']->hasError()) {
-                                 echo '<span class="help-inline">' . $form['chucvu']->renderError() . '</span>';
+                             <?php echo $form['dangvien']->render(array('class'=>'in-txt'));
+                             if ($form['dangvien']->hasError()) {
+                                 echo '<span class="help-inline">' . $form['dangvien']->renderError() . '</span>';
                              }?>
                         </span>
                     </div>
 
+                    <div class="frm-item">
+                        <span class="label">Học vấn</span>
+                        <span class="btn-in">
+                             <?php echo $form['hocvan']->render(array('class'=>'in-txt'));
+                             if ($form['hocvan']->hasError()) {
+                                 echo '<span class="help-inline">' . $form['hocvan']->renderError() . '</span>';
+                             }?>
+                        </span>
+                    </div>
+
+                    <div class="frm-item">
+                        <span class="label">Chính trị</span>
+                        <span class="btn-in">
+                             <?php echo $form['chinhtri']->render(array('class'=>'in-txt'));
+                             if ($form['chinhtri']->hasError()) {
+                                 echo '<span class="help-inline">' . $form['chinhtri']->renderError() . '</span>';
+                             }?>
+                        </span>
+                    </div>
+                    <div class="frm-item">
+                        <span class="label">Ngoại ngữ</span>
+                        <span class="btn-in">
+                             <?php echo $form['ngoaingu']->render(array('class'=>'in-txt'));
+                             if ($form['ngoaingu']->hasError()) {
+                                 echo '<span class="help-inline">' . $form['ngoaingu']->renderError() . '</span>';
+                             }?>
+                        </span>
+                    </div>
+                    <div class="frm-item">
+                        <span class="label">Bút danh</span>
+                        <span class="btn-in">
+                             <?php echo $form['butdanh']->render(array('class'=>'in-txt'));
+                             if ($form['butdanh']->hasError()) {
+                                 echo '<span class="help-inline">' . $form['butdanh']->renderError() . '</span>';
+                             }?>
+                        </span>
+                    </div>
+                    <div class="frm-item">
+                        <span class="label">Thẻ HNB Hà tĩnh</span>
+                        <span class="btn-in">
+                             <?php echo $form['thehnbht']->render(array('class'=>'in-txt'));
+                             if ($form['thehnbht']->hasError()) {
+                                 echo '<span class="help-inline">' . $form['thehnbht']->renderError() . '</span>';
+                             }?>
+                        </span>
+                    </div>
                     <div class="frm-item">
                         <span class="label">Cơ quan công tác</span>
                         <span class="btn-in">
@@ -118,7 +204,15 @@
                              }?>
                         </span>
                     </div>
-
+                    <div class="frm-item">
+                        <span class="label">Chức vụ hiện tại</span>
+                        <span class="btn-in">
+                             <?php echo $form['chucvu']->render(array('class'=>'in-txt'));
+                             if ($form['chucvu']->hasError()) {
+                                 echo '<span class="help-inline">' . $form['chucvu']->renderError() . '</span>';
+                             }?>
+                        </span>
+                    </div>
                     <div class="frm-item">
                         <span class="label"></span>
                         <span class="btn-in">

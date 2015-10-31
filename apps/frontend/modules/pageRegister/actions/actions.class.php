@@ -27,15 +27,27 @@ class pageRegisterActions extends sfActions {
                 $reg->setHodem($name);
                 $reg->setTen($lastname);
 
-                $year = date('Y-m-d', strtotime($values['ngaysinh']['day'].'-'.$values['ngaysinh']['month'].'-'.$values['ngaysinh']['year']));
-                $reg->setNgaysinh($year);
+                //$year = date('Y-m-d', strtotime($values['ngaysinh']['day'].'-'.$values['ngaysinh']['month'].'-'.$values['ngaysinh']['year']));
+                $reg->setNgaysinh($values['ngaysinh']);
                 $reg->setGioitinh($values['gioitinh']);
+                $reg->setTieusu($values['tieusu']);
+                $reg->setNghenghiepId($values['nghenghiep_id']);
+                $reg->setDonviId($values['donvi_id']);
+                $reg->setDantocId($values['dantoc_id']);
+                $reg->setQuoctich($values['quoctich']);
                 $reg->setMatinh($values['matinh']);
                 $reg->setMaquan($values['maquan']);
                 $reg->setDiachi($values['diachi']);
-                $reg->setDonviId($values['donvi_id']);
-                $reg->setNghenghiepId($values['nghenghiep_id']);
-                $reg->setImages($values['images']);
+                $reg->setDienthoai($values['dienthoai']);
+                $reg->setEmail($values['email']);
+                $reg->setDangvien($values['dangvien']);
+                $reg->setHocvan($values['hocvan']);
+                $reg->setChinhtri($values['chinhtri']);
+                $reg->setNgoaingu($values['ngoaingu']);
+                $reg->setButdanh($values['butdanh']);
+                $reg->setThehnbht($values['thehnbht']);
+                $reg->setCqcongtac($values['cqcongtac']);
+                $reg->setChucvu($values['chucvu']);
                 $reg->save();
 
                 $this->getUser()->setFlash('success','Bạn đã đăng ký thành công, chúng tôi sẽ xét duyệt hồ sơ của bạn.');
