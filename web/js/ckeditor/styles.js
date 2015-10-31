@@ -39,8 +39,7 @@ CKEDITOR.stylesSet.add( 'default', [
 		styles: {
 			padding: '5px 10px',
 			background: '#eee',
-			border: '1px solid #ccc',
-            margin: '0px 0px 5px 0px'
+			border: '1px solid #ccc'
 		}
 	},
 
@@ -59,9 +58,6 @@ CKEDITOR.stylesSet.add( 'default', [
 	*/
 
 	{ name: 'Marker',			element: 'span', attributes: { 'class': 'marker' } },
-	{ name: 'Red',			element: 'span', attributes: { 'class': 'markerRed' } },
-	{ name: 'Green',			element: 'span', attributes: { 'class': 'markerGreen' } },
-	{ name: 'Blue',			element: 'span', attributes: { 'class': 'markerBlue' } },
 
 	{ name: 'Big',				element: 'big' },
 	{ name: 'Small',			element: 'small' },
@@ -78,8 +74,8 @@ CKEDITOR.stylesSet.add( 'default', [
 	{ name: 'Cited Work',		element: 'cite' },
 	{ name: 'Inline Quotation',	element: 'q' },
 
-//	{ name: 'Language: RTL',	element: 'span', attributes: { 'dir': 'rtl' } },
-//	{ name: 'Language: LTR',	element: 'span', attributes: { 'dir': 'ltr' } },
+	{ name: 'Language: RTL',	element: 'span', attributes: { 'dir': 'rtl' } },
+	{ name: 'Language: LTR',	element: 'span', attributes: { 'dir': 'ltr' } },
 
 	/* Object Styles */
 

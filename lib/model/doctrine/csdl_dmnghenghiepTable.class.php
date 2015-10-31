@@ -17,9 +17,9 @@ class csdl_dmnghenghiepTable extends Doctrine_Table
         return Doctrine_Core::getTable('csdl_dmnghenghiep');
     }
 
-    public static function getJob(){
-        $query=  csdl_dmnghenghiepTable::getInstance()->createQuery()
-            ->andWhere('id = ',VtCommonEnum::NUMBER_ONE);
-        return $query;
+    public static function getAllJob()
+    {
+        return csdl_dmnghenghiepTable::getInstance()->createQuery()
+            ->orderBy('thutu desc');
     }
 }

@@ -17,9 +17,21 @@ class csdl_coquanbaochiTable extends Doctrine_Table
         return Doctrine_Core::getTable('csdl_coquanbaochi');
     }
 
-    public static function getJob(){
+    public static function dsCoquan(){
         $query=  csdl_coquanbaochiTable::getInstance()->createQuery()
-            ->andWhere('trangthai = ',VtCommonEnum::NUMBER_ONE);
+//            ->andWhere('trangthai = ',VtCommonEnum::NUMBER_ONE);
+        ->orderBy('tendonvi');
         return $query;
+    }
+
+    public static function tenDonvi($Id){
+        $result= csdl_coquanbaochiTable::getInstance()->createQuery()
+            ->select('tendonvi')
+            ->where('id=?',$Id)
+            ->fetchArray();
+        if(count($result)>0){
+            return $result[0]['tendonvi'];
+        }
+        return '';
     }
 }
