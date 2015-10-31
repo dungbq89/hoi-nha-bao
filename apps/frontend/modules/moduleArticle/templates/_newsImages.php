@@ -9,8 +9,8 @@
         <?php for($i=0;$i<count($articles);$i++):
             $path = '/uploads/' . sfConfig::get('app_article_images') . $articles[$i]['image_path'];
             ?>
-            <li><a href="<?php echo url_for2('article_detail',array('slug'=>$articles[$i]['slug'])) ?>">
-                    <img src="<?php echo VtHelper::getThumbUrl($path, 305, 200, '') ?>" title="<?php echo htmlspecialchars($articles[$i]['title']); ?>" />
+            <li style="width: 315px;"><a href="<?php echo url_for2('article_detail',array('slug'=>$articles[$i]['slug'])) ?>">
+                    <img src="<?php echo VtHelper::getThumbUrl($path, 315, 200, '') ?>" title="<?php echo htmlspecialchars($articles[$i]['title']); ?>" />
                 </a>
             </li>
         <?php endfor; ?>
@@ -28,3 +28,8 @@
     </script>
     <?php endif; ?>
 </div>
+<style>
+    .bx-news li{
+        width: 315px !important;
+    }
+</style>

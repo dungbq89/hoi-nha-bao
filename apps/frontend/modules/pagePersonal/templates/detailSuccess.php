@@ -6,6 +6,8 @@
  * Time: 11:29 PM
  */
 ?>
+<?php use_stylesheet('tabcontent.css') ?>
+<?php use_javascript('tabcontent.js') ?>
 <style>
     .bordered td{
         padding: 5px;
@@ -49,6 +51,10 @@
                         <td colspan="2"><?php echo $personal->email_address; ?></td>
                     </tr>
                     <tr>
+                        <td>Thẻ HNB Hà Tĩnh</td>
+                        <td colspan="2"><?php echo $personal->thehnbht; ?></td>
+                    </tr>
+                    <tr>
                         <td>Địa chỉ</td>
                         <td colspan="2"><?php echo $personal->diachi; ?></td>
                     </tr>
@@ -75,6 +81,10 @@
                     <tr>
                         <td>Chính trị</td>
                         <td colspan="2"><?php echo $personal->chinhtri; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Đảng viên</td>
+                        <td colspan="2"><?php echo $personal->dangvien; ?></td>
                     </tr>
                 </table>
             <?php endif; ?>

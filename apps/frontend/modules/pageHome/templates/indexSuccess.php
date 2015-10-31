@@ -18,9 +18,10 @@
                 </ul>
             </div>
 <!--            tin anh-->
-            <?php include_component('moduleArticle','newsImages',array('limit'=>5,'att'=>2)) ?>
+
 <!--            quang cao top-->
             <?php include_component('moduleAdvertise','rightTop',array('location'=>'right_top')) ?>
+            <?php include_component('moduleArticle','newsImages',array('limit'=>5,'att'=>2)) ?>
 
 
         </div>

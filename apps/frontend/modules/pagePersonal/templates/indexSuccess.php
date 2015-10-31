@@ -57,7 +57,7 @@
                     <tr>
                         <th class="col-stt">Ảnh đại diện</th>
                         <th>Họ tên</th>
-                        <th>Chức vụ</th>
+                        <th>Chi hội</th>
                         <th>Điện thoại</th>
                         <th>Email</th>
                     </tr>
@@ -67,7 +67,12 @@
                     <tr>
                         <td><img src="<?php echo VtHelper::getThumbUrl($path, 90, 90) ?>" alt=""></td>
                         <td><a class="personal-name" href="<?php echo url_for2('personnal_detail',array('id'=>$personal->id)) ?>"><?php echo $personal->hodem; ?></a></td>
-                        <td><?php echo $personal->chucvu; ?></td>
+                        <td>
+                            <?php
+                                $donvi = csdl_coquanbaochiTable::tenDonvi($personal->donvi_id);
+                                echo $donvi;
+                            ?>
+                        </td>
                         <td><?php echo $personal->phone; ?></td>
                         <td><?php echo $personal->email_address; ?></td>
                     </tr>
