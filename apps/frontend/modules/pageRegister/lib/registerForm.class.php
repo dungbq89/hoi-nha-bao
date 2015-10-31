@@ -88,25 +88,6 @@ class registerForm extends Basecsdl_lylichhoivienForm
             'required' => false,
             'choices' => array_keys($this->getProvinceKey()),));
 
-        $this->widgetSchema['images'] = new sfWidgetFormInputFileEditable(array(
-            'label' => ' ',
-            'file_src' => VtHelper::getUrlImagePathThumb(sfConfig::get('app_member_images'), $this->getObject()->getImages()),
-            'is_image' => true,
-            'edit_mode' => !$this->isNew(),
-            'template' => '<div>%file%<br />%input%</div>',
-        ));
-        $this->validatorSchema['images'] = new sfValidatorFileViettel(
-            array(
-                'max_size' => sfConfig::get('app_image_maxsize', 999999),
-                'mime_types' => array('image/jpeg','image/jpg', 'image/png', 'image/gif'),
-                'path' => sfConfig::get("sf_upload_dir") . '/' . sfConfig::get('app_member_images'),
-                'required' => false
-            ),
-            array(
-                'mime_types' => $i18n->__('Bạn phải tải lên file hình ảnh.'),
-                'max_size' => $i18n->__('Tối đa 5MB')
-            ));
-
         $this->widgetSchema['hocvan'] = new  sfWidgetFormChoice(array(
             'choices' => $this->getHocvan(),
             'multiple' => false,

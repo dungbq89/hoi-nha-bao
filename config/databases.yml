@@ -5,7 +5,6 @@ all:
 #      dsn: 'mysql:host=103.237.145.134;dbname=csdl'
 #      username: root
 #      password: 3n@SFIw1
-
       dsn: 'mysql:host=localhost;dbname=csdl'
       username: root
       password:
@@ -20,3 +19,4 @@ all:
       username: root
       password:
       attributes: { default_table_charset: utf8, default_table_collate: utf8_general_ci }
+  

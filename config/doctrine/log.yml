@@ -3,7 +3,6 @@ options:
   collate: utf8_general_ci
   charset: utf8
   type: InnoDB
-#Ly lich hoi vien
 csdl_lylichhoivien:
   tableName: csdl_lylich_hoivien
   actAs:
@@ -42,8 +41,7 @@ csdl_lylichhoivien:
       type: one
       foreignAlias: sfGuardUserHoiVien
 
-
-#Danh sach user
+	  #Danh sach user
 sfGuardUserHNB:
   tableName: sf_guard_user
   actAs: [Timestampable]
