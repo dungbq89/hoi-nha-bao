@@ -24,9 +24,9 @@ all:
   video_images: video
   document: document
   member_images: member
-  upload_member: E:\Data_D\code\hoi-nha-bao\web\uploads
+  upload_member: F:\code\hnb\hoi-nha-bao\web\uploads
 
-  upload_media_file: E:\Data_D\code\hoi-nha-bao\web\uploads
+  upload_media_file: F:\code\hnb\hoi-nha-bao\web\uploads
   url_media_file: http://localhost:8086/uploads
   url_media_default_file: http://localhost:8086/images/default-image.jpg
   #upload_media_file: /uploads
