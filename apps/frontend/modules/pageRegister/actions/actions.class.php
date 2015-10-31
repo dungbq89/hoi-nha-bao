@@ -15,6 +15,7 @@ class pageRegisterActions extends sfActions {
             $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
             if($form->isValid()){
                 $values = $form->getValues();
+
                // $form->save();
                 $reg = new csdl_lylichhoivien();
 
@@ -36,6 +37,7 @@ class pageRegisterActions extends sfActions {
                 $reg->setNghenghiepId($values['nghenghiep_id']);
                 $reg->setImages($values['images']);
                 $reg->save();
+
                 $this->getUser()->setFlash('success','Bạn đã đăng ký thành công, chúng tôi sẽ xét duyệt hồ sơ của bạn.');
                 $this->form = new registerForm();
             }

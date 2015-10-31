@@ -81,7 +81,7 @@
                     </div>
 
                     <div class="frm-item">
-                        <span class="label">Đơn vị (*)</span>
+                        <span class="label">Chi hội (*)</span>
                         <span class="btn-in">
                              <?php echo $form['donvi_id']->render(array('class'=>'in-txt'));
                              if ($form['donvi_id']->hasError()) {
@@ -98,6 +98,27 @@
                              }?>
                         </span>
                     </div>
+
+                    <div class="frm-item">
+                        <span class="label">Chức vụ</span>
+                        <span class="btn-in">
+                             <?php echo $form['chucvu']->render(array('class'=>'in-txt'));
+                             if ($form['chucvu']->hasError()) {
+                                 echo '<span class="help-inline">' . $form['chucvu']->renderError() . '</span>';
+                             }?>
+                        </span>
+                    </div>
+
+                    <div class="frm-item">
+                        <span class="label">Cơ quan công tác</span>
+                        <span class="btn-in">
+                             <?php echo $form['cqcongtac']->render(array('class'=>'in-txt'));
+                             if ($form['cqcongtac']->hasError()) {
+                                 echo '<span class="help-inline">' . $form['cqcongtac']->renderError() . '</span>';
+                             }?>
+                        </span>
+                    </div>
+
                     <div class="frm-item">
                         <span class="label"></span>
                         <span class="btn-in">

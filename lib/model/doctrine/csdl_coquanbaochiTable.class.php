@@ -20,7 +20,9 @@ class csdl_coquanbaochiTable extends Doctrine_Table
     public static function dsCoquan(){
         $query=  csdl_coquanbaochiTable::getInstance()->createQuery()
 //            ->andWhere('trangthai = ',VtCommonEnum::NUMBER_ONE);
+
         ->orderBy('tendonvi');
+
         return $query;
     }
 

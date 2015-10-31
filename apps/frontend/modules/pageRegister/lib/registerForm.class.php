@@ -261,5 +261,4 @@ class registerForm extends Basecsdl_lylichhoivienForm
         return $arr;
     }
 
-
 }
