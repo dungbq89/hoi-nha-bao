@@ -11,9 +11,9 @@ class pagePersonalActions extends sfActions {
     public function executeIndex(sfWebRequest $request) {
         $form =new personalForm();
         $user = sfContext::getInstance()->getUser();
-
+        $this->url_paging = 'personnal';
         $this->page = $request->getParameter('page', 1);
-        $limit = 30;
+        $limit = 10;
         $query = csdl_lylichhoivienTable::getAllListPerson($limit);
         $pager = new sfDoctrinePager('sfGuardUserHNB', $limit);
         $pager->setQuery($query);
@@ -28,7 +28,6 @@ class pagePersonalActions extends sfActions {
              $values['phone_number']=$user->getAttribute('phone_number');
              $values['email']=$user->getAttribute('email');
             $form->bind($values);
-            $limit = 20;
             $user->setAttribute('search', true);
             $user->setAttribute('full_name', $values['full_name']);
             $user->setAttribute('phone_number', $values['phone_number']);
@@ -46,7 +45,6 @@ class pagePersonalActions extends sfActions {
         if($request->isMethod('POST')){
             $values = $request->getParameter($form->getName());
             $form->bind($values);
-            $limit = 20;
             $user->setAttribute('search', true);
             $user->setAttribute('full_name', $values['full_name']);
             $user->setAttribute('phone_number', $values['phone_number']);

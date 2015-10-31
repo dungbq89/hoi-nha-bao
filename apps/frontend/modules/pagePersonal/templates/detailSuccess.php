@@ -25,7 +25,7 @@
                 <table class="table bordered">
                     <tr>
                         <td rowspan="3" style="text-align: center; width: 150px;">
-                            <img src="<?php echo VtHelper::getThumbUrl($path, 120, 120) ?>" alt="">
+                            <img src="<?php echo VtHelper::getThumbUrl($path, 90, 120, 'user_90_120') ?>" alt="">
                         </td>
                         <td style="width: 150px;">Họ và tên</td>
                         <td><?php echo $personal->hodem; ?></td>

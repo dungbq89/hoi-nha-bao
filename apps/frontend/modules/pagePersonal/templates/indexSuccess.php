@@ -6,7 +6,7 @@
  * Time: 11:29 PM
  */
 ?>
-<div class="main">
+<div class="main" xmlns="http://www.w3.org/1999/html">
     <div class="col-main">
         <div class="box">
             <h3 class="title-main"><span class="label">Tra cứu hội viên &raquo</span></h3>
@@ -50,45 +50,57 @@
 
                 </form>
             </div>
-            <?php if(isset($listPersonal)):
-                $i=1;
-                ?>
-                <table class="table bordered">
-                    <tr>
-                        <th class="col-stt">Ảnh đại diện</th>
-                        <th>Họ tên</th>
-                        <th>Chi hội</th>
-                        <th>Điện thoại</th>
-                        <th>Email</th>
-                    </tr>
-                    <?php foreach ($listPersonal as $key => $personal) {
-                        $path = '/uploads/member'. $personal->images;
+
+
+            <?php
+            if (isset($listPersonal) && count($listPersonal)):
+                foreach ($listPersonal as $personal):
+                    $path = '/uploads/member'. $personal->images;
                     ?>
-                    <tr>
-                        <td><img src="<?php echo VtHelper::getThumbUrl($path, 90, 90) ?>" alt=""></td>
-                        <td><a class="personal-name" href="<?php echo url_for2('personnal_detail',array('id'=>$personal->id)) ?>"><?php echo $personal->hodem; ?></a></td>
-                        <td>
-                            <?php
+                    <div class="list-news">
+                        <a href="<?php echo url_for2('personnal_detail',array('id'=>$personal->id)) ?>" title="" class="news-img" style="width: 90px;"><img style="width: 90px; height: 120px;" src="<?php echo VtHelper::getThumbUrl($path, 90, 120, 'user_90_120') ?>" alt=""></a>
+
+                        <div class="info-hoivien">
+                            <a href="<?php echo url_for2('personnal_detail',array('id'=>$personal->id)) ?>" title="" class="news-title"  style="margin-bottom: 5px; color: #3398cc;">
+                                <?php echo $personal->hodem; ?>
+                            </a>
+
+                            <p class="news-txt-hoivien">
+                                <span><b>Số thẻ hội viên: </b><?php echo $personal->thehnbht; ?></span>&nbsp;&nbsp;&nbsp;
+                                <?php
                                 $donvi = csdl_coquanbaochiTable::tenDonvi($personal->donvi_id);
                                 echo $donvi;
-                            ?>
-                        </td>
-                        <td><?php echo $personal->phone; ?></td>
-                        <td><?php echo $personal->email_address; ?></td>
-                    </tr>
+                                ?>
+                                &nbsp;&nbsp;&nbsp;
+                                <span><b>Chức vụ: </b><?php echo $personal->chucvu; ?></span>
+                            </p>
+                            <p class="news-txt-hoivien">
+                                <span><b>Địa chỉ: </b><?php echo $personal->diachi; ?></span>&nbsp;&nbsp;&nbsp;
+                                <span><b>Giới tính: </b><?php if($personal->gioitinh=='1') echo 'Nam'; else echo 'Nữ';?>
+                            </p>
+                            <p class="news-txt-hoivien">
+                                <span><b>Ngày sinh: </b><?php if($personal->ngaysinh) echo VtHelper::getFormatDate($personal->ngaysinh); ?></span>&nbsp;&nbsp;&nbsp;
+                            </p>
+                            <p class="news-txt-hoivien">
+                                <span><b>Số điện thoại: </b><?php echo $personal->phone; ?></span>&nbsp;&nbsp;&nbsp;
+                                <span><b>Bút danh: </b><?php echo $personal->butdanh; ?></span>&nbsp;&nbsp;&nbsp;
+                                <span><b>Email: </b><?php echo $personal->email; ?>
+                            </p>
 
-                    <?php $i++; } ?>
-                </table>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                <?php
+                endforeach;
+            endif;
+            ?>
 
-                <!--  paging-->
-                <div class="box-pagging">
-                    <?php
-                    if ($pager->haveToPaginate()) {
-                        include_component("common", "pagging", array('redirectUrl' => 'personnal', 'pager' => $pager));
-                    }
-                    ?>
-                </div>
-            <?php endif; ?>
+            <?php
+            if ($pager->haveToPaginate()){
+                include_component("common", "pagging", array('redirectUrl'=>$url_paging,'pager'=>$pager,'vtParams'=>array('slug'=>sfContext::getInstance()->getRequest()->getParameter('slug'))));
+            }
+            ?>
+
         </div>
     </div>
     <div class="col-right">

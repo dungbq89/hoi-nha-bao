@@ -14,3 +14,4 @@ all:
     image_75_70: '/img/image_75_70.png'
     image_150_100: '/img/image_150_100.png'
     imge_user: '/img/no-avatar.png'
+    user_90_120: '/img/user_90_120.png'
