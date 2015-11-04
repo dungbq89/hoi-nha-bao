@@ -22,15 +22,14 @@
             <?php if(isset($personal)):
                 $path = '/uploads/member'. $personal->images;
                 ?>
-                <table class="table bordered">
+                <img style="margin: 10px;" src="<?php echo VtHelper::getThumbUrl($path, 90, 120, 'user_90_120') ?>" alt="">
+                <table class="table bordered" style="float: right; width: 520px;">
                     <tr>
-                        <td rowspan="3" style="text-align: center; width: 150px;">
-                            <img src="<?php echo VtHelper::getThumbUrl($path, 90, 120, 'user_90_120') ?>" alt="">
-                        </td>
+
                         <td style="width: 150px;">Họ và tên</td>
                         <td><?php echo $personal->hodem; ?></td>
                     </tr>
-                    <tr>
+                    <tr >
                         <td >Giới tính</td>
                         <td>
                             <?php if($personal->gioitinh==1) echo "Nam"; else echo "Nữ"; ?>
