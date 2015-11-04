@@ -79,7 +79,7 @@
                                 <span><b>Giới tính: </b><?php if($personal->gioitinh=='1') echo 'Nam'; else echo 'Nữ';?>
                             </p>
                             <p class="news-txt-hoivien">
-                                <span><b>Ngày sinh: </b><?php if($personal->ngaysinh) echo VtHelper::getFormatDate($personal->ngaysinh); ?></span>&nbsp;&nbsp;&nbsp;
+                                <span><b>Ngày sinh: </b><?php if($personal->ngaysinh) echo date('d/m/Y',strtotime($personal->ngaysinh)); ?></span>&nbsp;&nbsp;&nbsp;
                             </p>
                             <p class="news-txt-hoivien">
                                 <span><b>Số điện thoại: </b><?php echo $personal->phone; ?></span>&nbsp;&nbsp;&nbsp;
