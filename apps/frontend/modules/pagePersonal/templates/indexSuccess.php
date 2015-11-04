@@ -45,12 +45,12 @@
                     <div class="box-btn">
 
                         <button name="" type="submit" class="btn">Tra cứu</button>
-                        <button name="" type="reset" class="btn">Hủy bỏ</button>
+<!--                        <button name="" type="reset" class="btn">Hủy bỏ</button>-->
                     </div>
 
                 </form>
             </div>
-
+            <h3 class="slice-list">Danh sách hội viên Hội nhà báo Hà Tĩnh</h3>
 
             <?php
             if (isset($listPersonal) && count($listPersonal)):
@@ -71,19 +71,15 @@
                                 $donvi = csdl_coquanbaochiTable::tenDonvi($personal->donvi_id);
                                 echo $donvi;
                                 ?>
-                                &nbsp;&nbsp;&nbsp;
-                                <span><b>Chức vụ: </b><?php echo $personal->chucvu; ?></span>
                             </p>
                             <p class="news-txt-hoivien">
-                                <span><b>Địa chỉ: </b><?php echo $personal->diachi; ?></span>&nbsp;&nbsp;&nbsp;
-                                <span><b>Giới tính: </b><?php if($personal->gioitinh=='1') echo 'Nam'; else echo 'Nữ';?>
+                                <span><b>Địa chỉ: </b><?php echo $personal->diachi; ?></span>
                             </p>
                             <p class="news-txt-hoivien">
                                 <span><b>Ngày sinh: </b><?php if($personal->ngaysinh) echo date('d/m/Y',strtotime($personal->ngaysinh)); ?></span>&nbsp;&nbsp;&nbsp;
                             </p>
                             <p class="news-txt-hoivien">
                                 <span><b>Số điện thoại: </b><?php echo $personal->phone; ?></span>&nbsp;&nbsp;&nbsp;
-                                <span><b>Bút danh: </b><?php echo $personal->butdanh; ?></span>&nbsp;&nbsp;&nbsp;
                                 <span><b>Email: </b><?php echo $personal->email; ?>
                             </p>
 
